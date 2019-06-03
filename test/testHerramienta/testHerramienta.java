@@ -4,12 +4,21 @@ package testHerramienta;
 import org.junit.Test;
 import org.junit.jupiter.api.Test;
 
+import AlgoCraft.Hacha;
+import AlgoCraft.Herramienta;
+import AlgoCraft.Madera;
+import AlgoCraft.Material;
+import AlgoCraft.Metal;
+import AlgoCraft.Pico;
+import AlgoCraft.PicoFino;
+import AlgoCraft.Piedra;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
 public class TP2TestsHerramienta{
 
-    @Test
+	@Test
     public void test01HachaDeMaderaDebeTenerDurabilidad100YFuerza2(){
 
         Material madera = new Madera();
@@ -23,6 +32,8 @@ public class TP2TestsHerramienta{
 
 
     }
+    
+    
 
     @Test
     public void test02PicoDeMaderaDebeTenerDurabilidad100YFuerza2(){
@@ -30,7 +41,7 @@ public class TP2TestsHerramienta{
         Material madera = new Madera();
         Herramienta pico = new Pico(madera);
 
-        int durabilidadPico = hacha.durabilidad();
+        int durabilidadPico = pico.durabilidad();
         assertEquals(durabilidadPico, 100);
 
         int fuerzaPico = pico.fuerza();
@@ -48,7 +59,7 @@ public class TP2TestsHerramienta{
         int durabilidadHacha = hacha.durabilidad();
         assertEquals(durabilidadHacha, 400);
 
-        int fuerzaHacha = hacha.fuerza()
+        int fuerzaHacha = hacha.fuerza();
         assertEquals(fuerzaHacha, 10);
 
 
@@ -112,7 +123,6 @@ public class TP2TestsHerramienta{
 
 
     }
-
     @Test
     public void test08UsarHachaDeMaderaContraMetalSeDebeReducirLaDurabilidadDelHachaSegunSuFuerza(){
 

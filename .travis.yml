@@ -1,0 +1,19 @@
+language: java
+jdk:
+  - oraclejdk8
+
+install: ant
+
+script:
+  - ant integracion-continua
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
+
+notifications:
+  email:
+    recipients:
+      - tcolavecchia@fi.uba.ar
+      - chiabauni@gmail.com
+      - yunmenyeyu@gmail.com
+      - gmovia@fi.uba.ar
+    on_failure: always

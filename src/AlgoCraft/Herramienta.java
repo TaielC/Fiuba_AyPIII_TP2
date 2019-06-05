@@ -2,12 +2,11 @@ package AlgoCraft;
 
 public abstract class Herramienta implements Item {
 	
-	protected int durabilidad;
+	protected Durabilidad durabilidad;
 	protected int fuerza;
-	protected MaterialItem materialItem;
-	
-	public int durabilidad() {
-		return durabilidad;
+
+	public double durabilidad() {
+		return durabilidad.getDurabilidad();
 	}
 	
 	public int fuerza() {
@@ -16,6 +15,6 @@ public abstract class Herramienta implements Item {
 	
 	public abstract void usar(Material material);
 
-	public abstract void desgastarse();
+	public abstract void desgastar();
 
 }

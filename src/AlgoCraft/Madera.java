@@ -9,7 +9,7 @@ public class Madera implements Material {
     @Override
     public void sergolpeado(Hacha hacha) {
         durabilidad -= hacha.fuerza();
-        hacha.desgastarse();
+        hacha.desgastar();
 
     }
     @Override

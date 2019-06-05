@@ -20,4 +20,9 @@ public class Metal implements Material{
     public void sergolpeado(PicoFino picoFino) {
 
     }
+
+    @Override
+    public int durabilidad() {
+        return durabilidad;
+    }
 }

@@ -9,25 +9,24 @@ import AlgoCraft.*;
 
 
 public class testMaterial{
-
+/*
 
     @Test
     public void test01MaderaGolpeadaConHachaDeMaderaSeDebeReducirLaDurabilidadDelMaterialSegunLaFuerzaDelHacha(){
+        Madera madera = new Madera();
         Herramienta hacha = new Hacha(new MaderaItem());
 
-        Madera madera = new Madera();
         int durabilidadMadera = madera.durabilidad();
         int fuerzaHacha = hacha.fuerza();
 
         hacha.usar(madera);
         assertEquals(durabilidadMadera - fuerzaHacha, madera.durabilidad());
     }
-/*
 
     @Test
     public void test02MaderaGolpeadaConPicoDeMaderaLaDurabilidadNoSeDebeReducir() {
         Material madera = new Madera();
-        Herramienta pico = new Pico(madera);
+        Herramienta pico = new Pico(new MaderaItem());
         int durabilidadMadera = madera.durabilidad();
         int fuerzaPico = pico.fuerza();
 
@@ -38,8 +37,9 @@ public class testMaterial{
 
     @Test
     public void test03PiedraGolpeadaConHachaDeMaderaLaDurabilidadNoSeDebeReducir(){
+
+        Herramienta hacha = new Hacha(new PiedraItem());
         Material piedra = new Piedra();
-        Herramienta hacha = new Hacha(piedra);
         int durabilidadPiedra = piedra.durabilidad();
 
         piedra.esGolpeada(hacha);
@@ -48,20 +48,21 @@ public class testMaterial{
 
     @Test
     public void test04PiedraGolpeadaConPicoDeMaderaSeDebeReducirLaDurabilidadDelMaterialSegunLaFuerzaDelPico(){
+
+        Herramienta pico = new Pico(new PiedraItem());
         Material piedra = new Piedra();
-        Herramienta pico = new Pico(piedra);
         int durabilidadPiedra = piedra.durabilidad();
         int fuerzaPico = pico.fuerza();
 
         piedra.esGolpeada(pico);
         assertEquals(durabilidadPiedra - fuerzaPico, piedra.durabilidad());
-   }
+    }
 
 
     @Test
     public void test05MetalGolpeaConPicoDeMaderaLaDurabilidadNoSeDebeReducir(){
-        Material madera = new Madera();
-        Herramienta pico = new Pico(madera);
+
+        Herramienta pico = new Pico(new MaderaItem());
         Material metal = new Metal();
         int durabilidadMetal = metal.durabilidad();
 
@@ -72,8 +73,8 @@ public class testMaterial{
 
     @Test
     public void test06MetalGolpeaConPicoDePiedraSeDebeReducirLaDurabilidadDelMaterialSegunLaFuerzaDelPico(){
-        Material piedra = new Piedra();
-        Herramienta pico = new Pico(piedra);
+
+        Herramienta pico = new Pico(new PiedraItem());
         Material metal = new Metal();
         int durabilidadMetal = metal.durabilidad();
         int fuerzaPico = pico.fuerza();
@@ -85,14 +86,13 @@ public class testMaterial{
 
     @Test
     public void test07MetalGolpeaConPicoDeMaderaLaDurabilidadNoDebeReducir(){
-        Material madera = new Madera();
-        Herramienta pico = new Pico(madera);
+
+        Herramienta pico = new Pico(new MaderaItem());
         Material metal = new Metal();
         int durabilidadMetal = metal.durabilidad();
 
         metal.esGolpeada(pico);
         assertEquals(durabilidadMetal,metal.durabilidad());
-
     }
 */
 

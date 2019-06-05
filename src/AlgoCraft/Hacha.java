@@ -2,32 +2,33 @@ package AlgoCraft;
 
 public class Hacha extends Herramienta{
 
+	private MaterialItem material;
+
 	public Hacha(MaderaItem madera) {
-		durabilidad = 100;
+		durabilidad = new DurabilidadFactorFuerza(this, madera);
 		fuerza = 2;
-		materialItem = madera;
+		material = madera;
 	}
 
 	public Hacha(PiedraItem piedra) {
-		durabilidad = 200;
+		durabilidad = new DurabilidadFactorFuerza(this, piedra);
 		fuerza = 5;
-		materialItem = piedra;
+		material = piedra;
 	}
 
 	public Hacha(MetalItem metal) {
-		durabilidad = 400;
+		durabilidad = new DurabilidadFactorFuerza(this, metal);
 		fuerza = 10;
-		materialItem = metal;
+		material = metal;
 	}
 
 	@Override
 	public void usar(Material material) {
 		material.sergolpeado(this);
-
 	}
 	@Override
-	public void desgastarse(){
-		durabilidad -= materialItem.desgastar(this);
+	public void desgastar(){
+		durabilidad.desgastar();
 	}
 
 

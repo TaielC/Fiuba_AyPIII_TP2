@@ -1,23 +1,28 @@
 package testMaterial;
 
 
+
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
+import AlgoCraft.*;
+
 
 public class testMaterial{
-/*
+
 
     @Test
     public void test01MaderaGolpeadaConHachaDeMaderaSeDebeReducirLaDurabilidadDelMaterialSegunLaFuerzaDelHacha(){
-        Material madera = new Madera();
-        Herramienta hacha = new Hacha(madera);
+        Herramienta hacha = new Hacha(new MaderaItem());
+
+        Madera madera = new Madera();
         int durabilidadMadera = madera.durabilidad();
         int fuerzaHacha = hacha.fuerza();
 
-        madera.esGolpeada(hacha);
+        hacha.usar(madera);
         assertEquals(durabilidadMadera - fuerzaHacha, madera.durabilidad());
     }
+/*
 
     @Test
     public void test02MaderaGolpeadaConPicoDeMaderaLaDurabilidadNoSeDebeReducir() {

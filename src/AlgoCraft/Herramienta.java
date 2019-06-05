@@ -4,6 +4,7 @@ public abstract class Herramienta implements Item {
 	
 	protected int durabilidad;
 	protected int fuerza;
+	protected MaterialItem materialItem;
 	
 	public int durabilidad() {
 		return durabilidad;
@@ -14,5 +15,7 @@ public abstract class Herramienta implements Item {
 	}
 	
 	public abstract void usar(Material material);
+
+	public abstract void desgastarse();
 
 }

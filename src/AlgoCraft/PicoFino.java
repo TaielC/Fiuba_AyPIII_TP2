@@ -11,4 +11,9 @@ public class PicoFino extends Herramienta {
     public void usar(Material material) {
 
     }
+
+    @Override
+    public void desgastarse() {
+
+    }
 }

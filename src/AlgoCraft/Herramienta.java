@@ -2,11 +2,11 @@ package AlgoCraft;
 
 public abstract class Herramienta implements Item {
 	
-	int duracion;
-	int fuerza;
+	protected int durabilidad;
+	protected int fuerza;
 	
 	public int durabilidad() {
-		return duracion;
+		return durabilidad;
 	}
 	
 	public int fuerza() {

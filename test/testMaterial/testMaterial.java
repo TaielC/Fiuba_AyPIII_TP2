@@ -1,13 +1,12 @@
-package testHerramienta;
+package testMaterial;
 
 
 import org.junit.Test;
-import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.Assert.assertEquals;
 
 
-public class TP2TestsMaterial{
+public class testMaterial{
+/*
 
     @Test
     public void test01MaderaGolpeadaConHachaDeMaderaSeDebeReducirLaDurabilidadDelMaterialSegunLaFuerzaDelHacha(){
@@ -20,7 +19,7 @@ public class TP2TestsMaterial{
         assertEquals(durabilidadMadera - fuerzaHacha, madera.durabilidad());
     }
 
-/*    @Test
+    @Test
     public void test02MaderaGolpeadaConPicoDeMaderaLaDurabilidadNoSeDebeReducir() {
         Material madera = new Madera();
         Herramienta pico = new Pico(madera);
@@ -30,7 +29,7 @@ public class TP2TestsMaterial{
         madera.golpear(pico);
         assertEquals(durabilidadMadera - fuerzaPico, madera.durabilidad());
 
-    }*/
+    }
 
     @Test
     public void test03PiedraGolpeadaConHachaDeMaderaLaDurabilidadNoSeDebeReducir(){
@@ -42,7 +41,6 @@ public class TP2TestsMaterial{
         assertEquals(durabilidadPiedra, piedra.durabilidad());
     }
 
-/*
     @Test
     public void test04PiedraGolpeadaConPicoDeMaderaSeDebeReducirLaDurabilidadDelMaterialSegunLaFuerzaDelPico(){
         Material piedra = new Piedra();
@@ -53,7 +51,6 @@ public class TP2TestsMaterial{
         piedra.esGolpeada(pico);
         assertEquals(durabilidadPiedra - fuerzaPico, piedra.durabilidad());
    }
-*/
 
 
     @Test
@@ -68,7 +65,7 @@ public class TP2TestsMaterial{
 
     }
 
-/*    @Test
+    @Test
     public void test06MetalGolpeaConPicoDePiedraSeDebeReducirLaDurabilidadDelMaterialSegunLaFuerzaDelPico(){
         Material piedra = new Piedra();
         Herramienta pico = new Pico(piedra);
@@ -91,6 +88,7 @@ public class TP2TestsMaterial{
         metal.esGolpeada(pico);
         assertEquals(durabilidadMetal,metal.durabilidad());
 
-    }*/
+    }
+*/
 
 }

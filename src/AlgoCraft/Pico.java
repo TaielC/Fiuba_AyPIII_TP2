@@ -13,13 +13,13 @@ public class Pico extends Herramienta{
 
 	public Pico(PiedraItem piedra) {
 		durabilidad = new DurabilidadFactorFuerza(this, piedra);
-		fuerza = 5;
+		fuerza = 4;
 		material = piedra;
 	}
 
 	public Pico(MetalItem metal) {
 		durabilidad = new DurabilidadPorUsos(this, metal);
-		fuerza = 10;
+		fuerza = 12;
 		material = metal;
 	}
 

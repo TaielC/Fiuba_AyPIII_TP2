@@ -13,6 +13,11 @@ public class Metal implements Material{
 
     @Override
     public void sergolpeado(Pico pico) {
+    	if(pico.fuerza()==4) { //En caso de que sea pico de piedra se debilita el Metal (Fuerza del pico de piedra==4)
+    		
+    		durabilidad-=pico.fuerza();
+    		pico.desgastar();
+    	}
 
     }
 

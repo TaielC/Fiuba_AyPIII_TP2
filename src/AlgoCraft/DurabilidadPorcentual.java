@@ -6,7 +6,7 @@ public class DurabilidadPorcentual extends Durabilidad {
 
     public DurabilidadPorcentual(PicoFino picoFino) {
         durabilidad = 1000;
-        porcentaje = 0.1; // Será del 10% a cada uso
+        porcentaje = 0.1; 
     }
 
     @Override

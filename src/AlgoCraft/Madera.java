@@ -14,13 +14,15 @@ public class Madera implements Material {
     }
     @Override
     public void sergolpeado(Pico pico){
-
-    }
+    	pico.desgastar();
+    	
+}
 
     @Override
     public void sergolpeado(PicoFino picoFino) {
-
-    }
+   
+    	
+   }
 
     public int durabilidad(){
         return durabilidad;

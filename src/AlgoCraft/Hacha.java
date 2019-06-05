@@ -21,7 +21,8 @@ public class Hacha extends Herramienta{
 		fuerza = 10;
 		material = metal;
 	}
-
+	
+	
 	@Override
 	public void usar(Material material) {
 		material.sergolpeado(this);

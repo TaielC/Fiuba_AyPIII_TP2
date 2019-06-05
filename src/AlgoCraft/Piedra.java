@@ -11,6 +11,8 @@ public class Piedra implements Material{
 
     @Override
     public void sergolpeado(Pico pico) {
+    	durabilidad-=pico.fuerza();
+    	pico.desgastar();
 
     }
 

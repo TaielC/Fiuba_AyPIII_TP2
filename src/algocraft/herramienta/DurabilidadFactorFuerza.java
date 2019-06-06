@@ -1,30 +1,32 @@
-package AlgoCraft;
+package algocraft.herramienta;
+
+import algocraft.material.*;
 
 public class DurabilidadFactorFuerza extends Durabilidad {
 
     private double desgaste;
 
-    public DurabilidadFactorFuerza(Hacha hacha, MaderaItem maderaItem) {
+    public DurabilidadFactorFuerza(Hacha hacha, Madera madera) {
         durabilidad = 100;
         desgaste = 2;
     }
 
-    public DurabilidadFactorFuerza(Hacha hacha, PiedraItem piedraItem) {
+    public DurabilidadFactorFuerza(Hacha hacha, Piedra piedra) {
         durabilidad = 200;
         desgaste = 5;
     }
 
-    public DurabilidadFactorFuerza(Hacha hacha, MetalItem metalItem) {
+    public DurabilidadFactorFuerza(Hacha hacha, Metal metal) {
         durabilidad = 400;
         desgaste = 10/2;
     }
 
-    public DurabilidadFactorFuerza(Pico pico, MaderaItem maderaItem) {
+    public DurabilidadFactorFuerza(Pico pico, Madera madera) {
         durabilidad = 100;
         desgaste = 2;
     }
 
-    public DurabilidadFactorFuerza(Pico pico, PiedraItem piedraItem) {
+    public DurabilidadFactorFuerza(Pico pico, Piedra piedra) {
         durabilidad = 200;
         desgaste = 5/1.5;
     }

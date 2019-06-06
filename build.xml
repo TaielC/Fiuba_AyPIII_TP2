@@ -1,4 +1,4 @@
-<project xmlns:ivy="antlib:org.apache.ivy.ant" name="TP3-AlgoCraft" basedir="." default="test">
+<project xmlns:ivy="antlib:org.apache.ivy.ant" name="TP3-algocraft" basedir="." default="test">
 	<property name="build" location="build" />
 	<property name="libs" location="libs" />
 	<property name="classes.dir" location="build" />

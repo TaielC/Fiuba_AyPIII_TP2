@@ -1,6 +1,8 @@
 package algocraft.material;
 
-public interface MaterialItem {
+import algocraft.Item;
+
+public interface MaterialItem extends Item {
 
     public MaterialDaniable getComoDaniable();
 }

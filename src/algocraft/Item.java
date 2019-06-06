@@ -1,4 +1,4 @@
-package AlgoCraft;
+package algocraft;
 
 public interface Item {
 

@@ -1,10 +1,12 @@
-package AlgoCraft;
+package algocraft.herramienta;
+
+import algocraft.material.Metal;
 
 public class DurabilidadPorUsos extends Durabilidad {
 
     private int usos;
 
-    public DurabilidadPorUsos(Pico pico, MetalItem Metal){
+    public DurabilidadPorUsos(Pico pico, Metal Metal){
         durabilidad = 400;
         usos = 10;
     }

@@ -1,8 +1,6 @@
 package algocraft.material;
 
-import algocraft.herramienta.Hacha;
-import algocraft.herramienta.Pico;
-import algocraft.herramienta.PicoFino;
+import algocraft.herramienta.*;
 
 public class Piedra extends MaterialMineral implements MaterialItem{
 

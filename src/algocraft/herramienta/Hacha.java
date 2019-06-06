@@ -5,20 +5,20 @@ import algocraft.material.*;
 public class Hacha extends Herramienta{
 
 	public Hacha(Madera madera) {
-		durabilidad = new DurabilidadFactorFuerza(this, madera);
 		fuerza = FuerzaHerramientaMadera;
+		durabilidad = new DurabilidadFactorFuerza(DurabilidadHerramientaMadera, fuerza);
 		material = madera;
 	}
 
 	public Hacha(Piedra piedra) {
-		durabilidad = new DurabilidadFactorFuerza(this, piedra);
 		fuerza = FuerzaHachaPiedra;
+		durabilidad = new DurabilidadFactorFuerza(DurabilidadHerramientaPiedra, fuerza);
 		material = piedra;
 	}
 
 	public Hacha(Metal metal) {
-		durabilidad = new DurabilidadFactorFuerza(this, metal);
 		fuerza = FuerzaHachaMetal;
+		durabilidad = new DurabilidadFactorFuerza(DurabilidadHerramientaMetal, fuerza/FactorDesgasteHachaMetal);
 		material = metal;
 	}
 

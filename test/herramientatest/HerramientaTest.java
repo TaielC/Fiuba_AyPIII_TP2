@@ -1,9 +1,6 @@
 package herramientatest;
 
-import algocraft.herramienta.Hacha;
-import algocraft.herramienta.Herramienta;
-import algocraft.herramienta.Pico;
-import algocraft.herramienta.PicoFino;
+import algocraft.herramienta.*;
 import algocraft.material.*;
 import org.junit.Test;
 import static org.junit.Assert.*;
@@ -319,7 +316,6 @@ public class HerramientaTest {
         MaterialMineral madera = new Madera();
         Herramienta pico = new Pico(new Metal());
         double durabilidadPico = pico.durabilidad();
-        int fuerzaPico = pico.fuerza();
 
         pico.golpear(madera);
         assertEquals(durabilidadPico, pico.durabilidad(), 0.00005);
@@ -331,7 +327,6 @@ public class HerramientaTest {
         MaterialMineral piedra = new Piedra();
         Herramienta pico = new Pico(new Metal());
         double durabilidadPico = pico.durabilidad();
-        int fuerzaPico = pico.fuerza();
 
         pico.golpear(piedra);
         assertEquals(durabilidadPico, pico.durabilidad(), 0.00005);
@@ -343,7 +338,6 @@ public class HerramientaTest {
         MaterialMineral metal = new Metal();
         Herramienta pico = new Pico(new Metal());
         double durabilidadPico = pico.durabilidad();
-        int fuerzaPico = pico.fuerza();
 
         pico.golpear(metal);
         assertEquals(durabilidadPico, pico.durabilidad(), 0.00005);
@@ -356,7 +350,6 @@ public class HerramientaTest {
         MaterialMineral diamante = new Diamante();
         Herramienta pico = new Pico(new Metal());
         double durabilidadPico = pico.durabilidad();
-        int fuerzaPico = pico.fuerza();
 
         pico.golpear(diamante);
         assertEquals(durabilidadPico, pico.durabilidad(), 0.00005);

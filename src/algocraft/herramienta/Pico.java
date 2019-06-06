@@ -5,26 +5,26 @@ import algocraft.material.*;
 public class Pico extends Herramienta{
 
 	public Pico(Madera madera) {
-		durabilidad = new DurabilidadFactorFuerza(this, madera);
 		fuerza = FuerzaHerramientaMadera;
+		durabilidad = new DurabilidadFactorFuerza(DurabilidadHerramientaMadera, fuerza);
 		material = madera.getComoDaniable();
 	}
 
 	public Pico(Piedra piedra) {
-		durabilidad = new DurabilidadFactorFuerza(this, piedra);
 		fuerza = FuerzaPicoPiedra;
+		durabilidad = new DurabilidadFactorFuerza(DurabilidadHerramientaPiedra, fuerza/FactorDesgastePicoPiedra);
 		material = piedra.getComoDaniable();
 	}
 
 	public Pico(Metal metal) {
-		durabilidad = new DurabilidadPorUsos(this, metal);
 		fuerza = FuerzaPicoMetal;
+		durabilidad = new DurabilidadPorUsos(DurabilidadHerramientaMetal, CantidadUsosPicoMetal);
 		material = metal.getComoDaniable();
 	}
 
 	public Pico(MetalYPiedra metalYPiedra){
-		durabilidad = new DurabilidadPorcentual(this, metalYPiedra);
 		fuerza = FuerzaPicoMetalYPiedra;
+		durabilidad = new DurabilidadPorcentual(DurabilidadPicoMetalYPiedra, PorcentajeDesgastePicoMetalYPiedra);
 		material = metalYPiedra.getComoDaniable();
 	}
 

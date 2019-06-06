@@ -18,7 +18,7 @@ public abstract class Herramienta implements Item {
 	
 	protected Durabilidad durabilidad;
 	protected int fuerza;
-	protected MaterialItem material;
+	protected MaterialDaniable material;
 
 	public double durabilidad() {
 		return durabilidad.getDurabilidad();
@@ -34,7 +34,7 @@ public abstract class Herramienta implements Item {
 		durabilidad.desgastar();
 	}
 
-	public MaterialItem material(){
+	public MaterialDaniable material(){
 		return material;
 	}
 }

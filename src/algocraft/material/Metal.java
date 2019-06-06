@@ -11,16 +11,13 @@ public class Metal extends MaterialMineral implements MaterialItem{
 
     @Override
     public void serGolpeado(Pico pico) {
-        if(this.esDaniadoPor(pico.material().getComoDaniable())) {
+        if(this.esDaniadoPor(pico.material())) {
             durabilidad -= pico.fuerza();
         }
     }
 
     @Override
     public void serGolpeado(Hacha hacha) {}
-
-    @Override
-    public void serGolpeado(PicoFino picoFino) {}
 
     @Override
     public int durabilidad() {

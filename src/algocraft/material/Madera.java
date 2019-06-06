@@ -14,14 +14,13 @@ public class Madera extends MaterialMineral implements MaterialItem {
 
     @Override
     public void serGolpeado(Hacha hacha) {
-        durabilidad -= hacha.fuerza();
+        if(this.esDaniadoPor(hacha.material())) {
+            durabilidad -= hacha.fuerza();
+        }
     }
 
     @Override
     public void serGolpeado(Pico pico) {}
-
-    @Override
-    public void serGolpeado(PicoFino picoFino) {}
 
     public int durabilidad(){
         return durabilidad;

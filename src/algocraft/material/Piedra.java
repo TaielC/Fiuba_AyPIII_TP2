@@ -13,11 +13,10 @@ public class Piedra extends MaterialMineral implements MaterialItem{
 
     @Override
     public void serGolpeado(Pico pico) {
-    	durabilidad-=pico.fuerza();
+        if(this.esDaniadoPor(pico.material())) {
+            durabilidad -= pico.fuerza();
+        }
     }
-
-    @Override
-    public void serGolpeado(PicoFino picoFino) {}
 
     @Override
     public int durabilidad() {

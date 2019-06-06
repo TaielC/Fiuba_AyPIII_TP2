@@ -18,14 +18,13 @@ public class Diamante extends MaterialMineral {
 	
 	@Override
 	public void serGolpeado(Hacha hacha) {}
-	
-	public void serGolpeado(Pico pico) {}
 
 	@Override
-	public void serGolpeado(PicoFino picoFino) {
-		durabilidad-=picoFino.fuerza();
+	public void serGolpeado(Pico pico) {
+		if(this.esDaniadoPor(pico.material())) {
+			durabilidad -= pico.fuerza();
+		}
 	}
-
 
 	@Override
 	public boolean esDaniadoPor(MaterialDaniable material) {

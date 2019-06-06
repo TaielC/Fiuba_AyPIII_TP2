@@ -4,8 +4,6 @@ import algocraft.material.*;
 
 public class Hacha extends Herramienta{
 
-	private MaterialItem material;
-
 	public Hacha(Madera madera) {
 		durabilidad = new DurabilidadFactorFuerza(this, madera);
 		fuerza = FuerzaHerramientaMadera;

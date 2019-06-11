@@ -3,17 +3,16 @@ package algocraft.material;
 import algocraft.herramienta.*;
 
 public class Diamante extends MaterialMineral {
-	
-	protected int durabilidad;
-	
+
 	public Diamante() {
 		durabilidad=100;
 	}
 	
-	public int durabilidad() {
-		return durabilidad;
+	@Override
+	public String toString(){
+		return "Diamante";
 	}
-	
+
 	@Override
 	public void serGolpeado(Hacha hacha) {}
 

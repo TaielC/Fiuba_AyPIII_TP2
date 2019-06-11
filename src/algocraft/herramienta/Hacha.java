@@ -23,6 +23,11 @@ public class Hacha extends Herramienta{
 	}
 
 	@Override
+	public String toString(){
+		return "HachaDe"+material.toString();
+	}
+
+	@Override
 	public void golpear(MaterialMineral materialMineral) {
 		this.usar();
 		materialMineral.serGolpeado(this);

@@ -5,11 +5,15 @@ import algocraft.herramienta.*;
 
 public abstract class MaterialMineral implements MaterialDaniable {
 
+    protected double durabilidad;
+
     public abstract void serGolpeado(Hacha hacha);
 
     public abstract void serGolpeado(Pico pico);
 
 //    public abstract void serGolpeado(PicoFino picoFino);
 
-    public abstract int durabilidad();
+    public double durabilidad() {
+        return durabilidad;
+    }
 }

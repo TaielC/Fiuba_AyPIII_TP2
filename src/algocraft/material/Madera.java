@@ -4,10 +4,13 @@ import algocraft.herramienta.*;
 
 public class Madera extends MaterialMineral implements MaterialItem {
 
-    protected int durabilidad;
-
     public Madera(){
         durabilidad = 10;
+    }
+
+    @Override
+    public String toString(){
+        return "Madera";
     }
 
     @Override
@@ -19,10 +22,6 @@ public class Madera extends MaterialMineral implements MaterialItem {
 
     @Override
     public void serGolpeado(Pico pico) {}
-
-    public int durabilidad(){
-        return durabilidad;
-    }
 
     @Override
     public boolean esDaniadoPor(MaterialDaniable material) {

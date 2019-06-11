@@ -29,6 +29,11 @@ public class Pico extends Herramienta{
 	}
 
 	@Override
+	public String toString(){
+		return "PicoDe"+material.toString();
+	}
+
+	@Override
 	public void golpear(MaterialMineral materialMineral) {
 		if(material.esDaniadoPor(materialMineral)) { this.usar(); }
 		materialMineral.serGolpeado(this);

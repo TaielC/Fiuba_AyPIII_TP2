@@ -4,7 +4,12 @@ import algocraft.herramienta.*;
 
 public class Piedra extends MaterialMineral implements MaterialItem{
 
-    private int durabilidad;
+    public Piedra(){ durabilidad = 30; }
+
+    @Override
+    public String toString(){
+        return "Piedra";
+    }
 
     @Override
     public void serGolpeado(Hacha hacha) {}
@@ -14,11 +19,6 @@ public class Piedra extends MaterialMineral implements MaterialItem{
         if(this.esDaniadoPor(pico.material())) {
             durabilidad -= pico.fuerza();
         }
-    }
-
-    @Override
-    public int durabilidad() {
-        return durabilidad;
     }
 
     @Override

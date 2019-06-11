@@ -1,22 +1,35 @@
 package algocraft;
 
 import algocraft.herramienta.Hacha;
+import algocraft.herramienta.Herramienta;
 import algocraft.material.Madera;
-
-import java.util.LinkedList;
 
 public class Jugador {
 
-    private LinkedList<Item> inventario;
+    private Inventario inventario;
+    private Herramienta herramientaEquipada;
 
     private static Jugador instanciaJugador = new Jugador();
-
     public static Jugador getInstance() { return instanciaJugador; }
 
     private Jugador() {
-        inventario = new LinkedList<Item>();
-        inventario.add(new Hacha(new Madera()));
+        inventario = Inventario.getInstance();
+        inventario.agregar(new Hacha(new Madera()));
     }
 
-    public LinkedList<Item> getInventario(){ return inventario; }
+    public int agregarAInventario(Herramienta herramienta) {
+        return inventario.agregar(herramienta);
+    }
+
+    public void agregarAInventario(Herramienta herramienta, int posicion) {
+        inventario.agregar(herramienta, posicion);
+    }
+
+    public Herramienta obtenerDeInventario(int posicion) {
+        return inventario.obtener(posicion);
+    }
+
+    public boolean inventarioEstaVacio() {
+        return inventario.estaVacio();
+    }
 }

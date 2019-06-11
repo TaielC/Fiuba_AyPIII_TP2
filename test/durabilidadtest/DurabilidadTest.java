@@ -1,6 +1,6 @@
 package durabilidadtest;
 
-import algocraft.excepciones.ExcepcionDurabilidadEsCero;
+import algocraft.excepciones.DurabilidadEsCeroException;
 import algocraft.herramienta.Durabilidad;
 import algocraft.herramienta.DurabilidadFactorFuerza;
 import algocraft.herramienta.DurabilidadPorUsos;
@@ -24,7 +24,7 @@ public class DurabilidadTest {
 
     }
 
-    @Test (expected = ExcepcionDurabilidadEsCero.class)
+    @Test (expected = DurabilidadEsCeroException.class)
     public void test02DurabilidadFactorFuerzaAlLlegarACeroYQuererDesgastarLanzaExcepcionDurabilidadEsCero() {
         double durabilidad = 10;
         int factor = 1;

@@ -7,7 +7,6 @@ import algocraft.material.Madera;
 public class Jugador {
 
     private Inventario inventario;
-    private Herramienta herramientaEquipada;
 
     private static Jugador instanciaJugador = new Jugador();
     public static Jugador getInstance() { return instanciaJugador; }

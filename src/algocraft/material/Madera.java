@@ -8,6 +8,10 @@ public class Madera extends MaterialMineral implements MaterialItem {
         durabilidad = 10;
     }
 
+    public static Madera crear() {
+        return new Madera();
+    }
+
     @Override
     public String toString(){
         return "Madera";

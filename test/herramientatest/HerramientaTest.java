@@ -418,7 +418,5 @@ public class HerramientaTest {
         pico.golpear(piedra);
 
         assertEquals(0, pico.durabilidad(), 0.00005);
-
-
     }
 }

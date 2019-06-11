@@ -4,6 +4,10 @@ import algocraft.material.*;
 
 public class Hacha extends Herramienta{
 
+	public static Herramienta crear(Madera madera){
+		return new Hacha(madera);
+	}
+
 	public Hacha(Madera madera) {
 		fuerza = FuerzaHerramientaMadera;
 		durabilidad = new DurabilidadFactorFuerza(DurabilidadHerramientaMadera, fuerza);

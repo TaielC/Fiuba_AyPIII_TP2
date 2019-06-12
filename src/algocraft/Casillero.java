@@ -3,9 +3,10 @@ package algocraft;
 
 
 public class Casillero {
-    int x ;
-    int y;
-    Item obtenido = null;
+    private int x ;
+    private int y;
+    private Item obtenido = null;
+
 
     public Casillero(int x, int y){
         this.x = x;
@@ -37,4 +38,6 @@ public class Casillero {
     public Item obtenido(){
         return obtenido;
     }
+
+
 }

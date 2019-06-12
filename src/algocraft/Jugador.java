@@ -7,7 +7,9 @@ import algocraft.material.Madera;
 public class Jugador {
 
     private Inventario inventario;
+    private Casillero casillero;
     private Herramienta herramientaEquipada;
+    private Tablero tablero;
 
     private static Jugador instanciaJugador = new Jugador();
     public static Jugador getInstance() { return instanciaJugador; }
@@ -32,4 +34,19 @@ public class Jugador {
     public boolean inventarioEstaVacio() {
         return inventario.estaVacio();
     }
+
+    public void setCasillero(Casillero casillero){
+        this.casillero = casillero;
+
+    }
+    public void setTablero(Tablero tablero){
+        this.tablero = tablero;
+    }
+
+    public void moverHaciaArriba(){
+        casillero = this.tablero.modificarHaciaArriba(casillero);
+    }
+
+
+
 }

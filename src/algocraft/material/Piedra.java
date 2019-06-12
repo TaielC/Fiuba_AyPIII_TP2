@@ -25,6 +25,10 @@ public class Piedra extends MaterialMineral implements MaterialItem{
             durabilidad -= pico.fuerza();
         }
     }
+    
+    public void serGolpeado(PicoFino picoFino) {
+    	durabilidad-=picoFino.fuerza();
+    }
 
     @Override
     public boolean esDaniadoPor(MaterialDaniable material) {

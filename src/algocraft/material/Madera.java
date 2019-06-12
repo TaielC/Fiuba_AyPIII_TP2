@@ -18,6 +18,11 @@ public class Madera extends MaterialMineral implements MaterialItem {
     }
 
     @Override
+    public Herramienta comoHerramienta() {
+        return null;
+    }
+
+    @Override
     public void serGolpeado(Hacha hacha) {
         if(this.esDaniadoPor(hacha.material())) {
             durabilidad -= hacha.fuerza();

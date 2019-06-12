@@ -34,6 +34,10 @@ public abstract class Herramienta implements Item {
 	
 	public abstract void golpear(MaterialMineral materialMineral);
 
+	public Herramienta comoHerramienta(){
+		return this;
+	}
+
 	public void usar(){
 		durabilidad.desgastar();
 	}

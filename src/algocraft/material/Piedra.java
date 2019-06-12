@@ -12,6 +12,11 @@ public class Piedra extends MaterialMineral implements MaterialItem{
     }
 
     @Override
+    public Herramienta comoHerramienta() {
+        return null;
+    }
+
+    @Override
     public void serGolpeado(Hacha hacha) {}
 
     @Override

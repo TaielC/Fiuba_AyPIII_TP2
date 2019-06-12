@@ -1,8 +1,10 @@
 package algocraft.material;
 
 import algocraft.Item;
+import algocraft.herramienta.Herramienta;
 
 public interface MaterialItem extends Item {
 
-    public MaterialDaniable getComoDaniable();
+    public abstract MaterialDaniable getComoDaniable();
+
 }

@@ -1,10 +1,17 @@
 package algocraft.material;
 
+import algocraft.herramienta.Herramienta;
+
 public class MetalYPiedra implements MaterialDaniable, MaterialItem {
 
     @Override
     public boolean esDaniadoPor(MaterialDaniable material) {
         return material.dania(this);
+    }
+
+    @Override
+    public Herramienta comoHerramienta() {
+        return null;
     }
 
     @Override

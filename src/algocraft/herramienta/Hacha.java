@@ -2,7 +2,7 @@ package algocraft.herramienta;
 
 import algocraft.material.*;
 
-public class Hacha extends Herramienta{
+public class Hacha extends Herramienta {
 
 	public static Herramienta crear(Madera madera){
 		return new Hacha(madera);

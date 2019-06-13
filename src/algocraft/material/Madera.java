@@ -31,6 +31,8 @@ public class Madera extends MaterialMineral implements MaterialItem {
 
     @Override
     public void serGolpeado(Pico pico) {}
+    
+    public void serGolpeado(PicoFino picoFino) {}
 
     @Override
     public boolean esDaniadoPor(MaterialDaniable material) {

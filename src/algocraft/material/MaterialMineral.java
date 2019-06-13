@@ -11,7 +11,7 @@ public abstract class MaterialMineral implements MaterialDaniable {
 
     public abstract void serGolpeado(Pico pico);
 
-//    public abstract void serGolpeado(PicoFino picoFino);
+    public abstract void serGolpeado(PicoFino picoFino);
 
     public int durabilidad() {
         return durabilidad;

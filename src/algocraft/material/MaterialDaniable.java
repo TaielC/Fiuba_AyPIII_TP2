@@ -7,6 +7,5 @@ public interface MaterialDaniable {
     boolean dania(Madera madera);
     boolean dania(Piedra piedra);
     boolean dania(Metal metal);
-    boolean dania(MetalYPiedra metalYPiedra);
     boolean dania(Diamante diamante);
 }

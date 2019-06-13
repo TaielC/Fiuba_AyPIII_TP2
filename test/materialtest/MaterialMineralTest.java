@@ -16,7 +16,7 @@ public class MaterialMineralTest {
 		int durabilidadMadera = madera.durabilidad();
 		int fuerzaHacha = hacha.fuerza();
 
-		hacha.golpear(madera);
+		hacha.usar(madera);
 		assertEquals(durabilidadMadera - fuerzaHacha, madera.durabilidad());
 	}
 
@@ -27,7 +27,7 @@ public class MaterialMineralTest {
 		int durabilidadMadera = madera.durabilidad();
 		int fuerzaPico = pico.fuerza();
 
-		pico.golpear(madera);
+		pico.usar(madera);
 		assertEquals(durabilidadMadera, madera.durabilidad());
 
 	}
@@ -39,7 +39,7 @@ public class MaterialMineralTest {
 		MaterialMineral piedra = new Piedra();
 		int durabilidadPiedra = piedra.durabilidad();
 
-		hacha.golpear(piedra);
+		hacha.usar(piedra);
 		assertEquals(durabilidadPiedra, piedra.durabilidad());
 	}
 
@@ -51,7 +51,7 @@ public class MaterialMineralTest {
 		int durabilidadPiedra = piedra.durabilidad();
 		int fuerzaPico = pico.fuerza();
 
-		pico.golpear(piedra);
+		pico.usar(piedra);
 		assertEquals(durabilidadPiedra - fuerzaPico, piedra.durabilidad());
 	}
 
@@ -63,7 +63,7 @@ public class MaterialMineralTest {
 		MaterialMineral metal = new Metal();
 		int durabilidadMetal = metal.durabilidad();
 
-		pico.golpear(metal);
+		pico.usar(metal);
 		assertEquals(durabilidadMetal,metal.durabilidad());
 
 	}
@@ -76,7 +76,7 @@ public class MaterialMineralTest {
 		int durabilidadMetal = metal.durabilidad();
 		int fuerzaPico = pico.fuerza();
 
-		pico.golpear(metal);
+		pico.usar(metal);
 		assertEquals(durabilidadMetal - fuerzaPico ,metal.durabilidad());
 
 	}
@@ -88,7 +88,7 @@ public class MaterialMineralTest {
 		MaterialMineral metal = new Metal();
 		int durabilidadMetal = metal.durabilidad();
 
-		hacha.golpear(metal);
+		pico.usar(metal);
 		assertEquals(durabilidadMetal,metal.durabilidad());
 	}
 	
@@ -99,7 +99,7 @@ public class MaterialMineralTest {
 		MaterialMineral diamante = new Diamante();
 		int durabilidadDiamante=diamante.durabilidad();
 		
-		hacha.golpear(diamante);
+		hacha.usar(diamante);
 		assertEquals(durabilidadDiamante,diamante.durabilidad());
 	}
 	
@@ -111,7 +111,7 @@ public class MaterialMineralTest {
 		MaterialMineral diamante = new Diamante();
 		int durabilidadDiamante=diamante.durabilidad();
 		
-		pico.golpear(diamante);
+		pico.usar(diamante);
 		assertEquals(durabilidadDiamante,diamante.durabilidad());
 	}
 	
@@ -122,7 +122,7 @@ public class MaterialMineralTest {
 		MaterialMineral diamante = new Diamante();
 		int durabilidadDiamante=diamante.durabilidad();
 		
-		pico.golpear(diamante);
+		pico.usar(diamante);
 		assertEquals(durabilidadDiamante,diamante.durabilidad());
 	}
 	
@@ -136,7 +136,7 @@ public class MaterialMineralTest {
 		int durabilidadDiamante=diamante.durabilidad();
 		int fuerzaPicoFino=picoFino.fuerza();
 		
-		picoFino.golpear(diamante);
+		picoFino.usar(diamante);
 		assertEquals(durabilidadDiamante-fuerzaPicoFino,diamante.durabilidad());
 	}
 	
@@ -148,7 +148,7 @@ public class MaterialMineralTest {
 		
 		int durabilidadMadera = madera.durabilidad();
 		
-		picoFino.golpear(madera);
+		picoFino.usar(madera);
 		assertEquals(durabilidadMadera,madera.durabilidad());
 	}
 	
@@ -161,7 +161,7 @@ public class MaterialMineralTest {
 		int durabilidadPiedra=piedra.durabilidad();
 		int fuerzaPicoFino=picoFino.fuerza();
 		
-		picoFino.golpear(piedra);
+		picoFino.usar(piedra);
 		assertEquals(durabilidadPiedra-fuerzaPicoFino,piedra.durabilidad());
 	}
 	
@@ -174,7 +174,7 @@ public class MaterialMineralTest {
 		int durabilidadMetal=metal.durabilidad();
 		int fuerzaPicoFino=picoFino.fuerza();
 		
-		picoFino.golpear(metal);
+		picoFino.usar(metal);
 		assertEquals(durabilidadMetal-fuerzaPicoFino,metal.durabilidad());
 	}
 	
@@ -188,7 +188,7 @@ public class MaterialMineralTest {
 		int durabilidadMadera=madera.durabilidad();
 		int fuerzaHacha=hacha.fuerza();
 		
-		hacha.golpear(madera);
+		hacha.usar(madera);
 		assertEquals(durabilidadMadera-fuerzaHacha,madera.durabilidad());
 	}
 	
@@ -201,7 +201,7 @@ public class MaterialMineralTest {
 		int durabilidadMadera=madera.durabilidad();
 		int fuerzaHacha=hacha.fuerza();
 		
-		hacha.golpear(madera);
+		hacha.usar(madera);
 		assertEquals(durabilidadMadera-fuerzaHacha,madera.durabilidad());
 	}
 	
@@ -214,7 +214,7 @@ public class MaterialMineralTest {
 		int durabilidadPiedra=piedra.durabilidad();
 		int fuerzaPico=pico.fuerza();
 		
-		pico.golpear(piedra);
+		pico.usar(piedra);
 		assertEquals(durabilidadPiedra-fuerzaPico,piedra.durabilidad());
 	}
 

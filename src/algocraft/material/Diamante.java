@@ -14,13 +14,16 @@ public class Diamante extends MaterialMineral {
 	}
 
 	@Override
-	public void serGolpeado(Hacha hacha) {}
+	public void serGolpeado(Hacha hacha) { hacha.golpear(this); }
 
 	@Override
-	public void serGolpeado(Pico pico) {
-		if(this.esDaniadoPor(pico.material())) {
-			durabilidad -= pico.fuerza();
-		}
+	public void serGolpeado(Pico pico) { pico.golpear(this); }
+
+	@Override
+	public void serGolpeado(PicoFino picoFino) {
+		durabilidad -= picoFino.fuerza();
+		picoFino.golpear(this);
+
 	}
 	
 	public void serGolpeado(PicoFino picoFino) {
@@ -45,11 +48,6 @@ public class Diamante extends MaterialMineral {
 	@Override
 	public boolean dania(Metal metal) {
 		return false;
-	}
-
-	@Override
-	public boolean dania(MetalYPiedra metalYPiedra) {
-		return true;
 	}
 
 	@Override

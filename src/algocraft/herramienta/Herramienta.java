@@ -9,16 +9,16 @@ public abstract class Herramienta implements Item {
 	final int DurabilidadHerramientaPiedra = 200;
 	final int DurabilidadHerramientaMetal = 400;
 	final int CantidadUsosPicoMetal = 10;
-	final int DurabilidadPicoMetalYPiedra = 1000;
+	final int DurabilidadPicoFino = 1000;
 	final int FuerzaHerramientaMadera = 2;
 	final int FuerzaHachaPiedra = 5;
 	final int FuerzaPicoPiedra = 4;
 	final int FuerzaHachaMetal = 10;
 	final int FuerzaPicoMetal = 12;
-	final int FuerzaPicoMetalYPiedra = 20;
+	final int FuerzaPicoFino = 20;
 	final double FactorDesgasteHachaMetal = 2;
 	final double FactorDesgastePicoPiedra = 1.5;
-	final double PorcentajeDesgastePicoMetalYPiedra = 0.1;
+	final double PorcentajeDesgastePicoFino = 0.1;
 	
 	protected Durabilidad durabilidad;
 	protected int fuerza;
@@ -31,16 +31,20 @@ public abstract class Herramienta implements Item {
 	public int fuerza() {
 		return fuerza;
 	}
-	
-	public abstract void golpear(MaterialMineral materialMineral);
 
 	public Herramienta comoHerramienta(){
 		return this;
 	}
 
-	public void usar(){
-		durabilidad.desgastar();
-	}
+	public abstract void usar(MaterialMineral materialMineral);
+
+	public abstract void golpear(Madera madera);
+
+	public abstract void golpear(Piedra piedra);
+
+	public abstract void golpear(Metal metal);
+
+	public abstract void golpear(Diamante diamante);
 
 	public MaterialDaniable material(){
 		return material;

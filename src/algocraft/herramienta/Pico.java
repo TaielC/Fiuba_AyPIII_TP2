@@ -22,11 +22,6 @@ public class Pico extends Herramienta {
 		material = metal.getComoDaniable();
 	}
 
-	public Pico(MetalYPiedra metalYPiedra){
-		fuerza = FuerzaPicoMetalYPiedra;
-		durabilidad = new DurabilidadPorcentual(DurabilidadPicoMetalYPiedra, PorcentajeDesgastePicoMetalYPiedra);
-		material = metalYPiedra.getComoDaniable();
-	}
 
 	@Override
 	public String toString(){
@@ -34,8 +29,21 @@ public class Pico extends Herramienta {
 	}
 
 	@Override
-	public void golpear(MaterialMineral materialMineral) {
-		if(material.esDaniadoPor(materialMineral)) { this.usar(); }
+	public void usar(MaterialMineral materialMineral) {
 		materialMineral.serGolpeado(this);
 	}
+
+	@Override
+	public void golpear(Madera madera) { }
+
+	@Override
+	public void golpear(Piedra piedra) { durabilidad.desgastar(); }
+
+	@Override
+	public void golpear(Metal metal) {
+		if(material.esDaniadoPor(metal)) { durabilidad.desgastar(); }
+	}
+
+	@Override
+	public void golpear(Diamante diamante) { }
 }

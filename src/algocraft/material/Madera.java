@@ -24,15 +24,15 @@ public class Madera extends MaterialMineral implements MaterialItem {
 
     @Override
     public void serGolpeado(Hacha hacha) {
-        if(this.esDaniadoPor(hacha.material())) {
-            durabilidad -= hacha.fuerza();
-        }
+        durabilidad -= hacha.fuerza();
+        hacha.golpear(this);
     }
 
     @Override
-    public void serGolpeado(Pico pico) {}
-    
-    public void serGolpeado(PicoFino picoFino) {}
+    public void serGolpeado(Pico pico) { pico.golpear(this); }
+
+    @Override
+    public void serGolpeado(PicoFino picoFino) { picoFino.golpear(this); }
 
     @Override
     public boolean esDaniadoPor(MaterialDaniable material) {
@@ -51,11 +51,6 @@ public class Madera extends MaterialMineral implements MaterialItem {
 
     @Override
     public boolean dania(Metal metal) {
-        return false;
-    }
-
-    @Override
-    public boolean dania(MetalYPiedra metalYPiedra) {
         return false;
     }
 

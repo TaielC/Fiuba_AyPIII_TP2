@@ -7,3 +7,4 @@ public interface Item {
     public String toString();
     public Herramienta comoHerramienta();
 }
+

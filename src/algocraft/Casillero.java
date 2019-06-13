@@ -1,11 +1,13 @@
 package algocraft;
 
+import algocraft.material.*;
 
 
 public class Casillero {
     private int x ;
     private int y;
-    private Item obtenido = null;
+    private ObjetoUbicable obtenido = null;
+    
 
 
     public Casillero(int x, int y){
@@ -13,18 +15,20 @@ public class Casillero {
         this.y = y;
     }
 
-    public void poner(Item item){
-        this.obtenido = item;
-
+    public void poner(ObjetoUbicable item){
+    	if (this.estaVacio()==true) {
+    		this.obtenido = item;
+       }
+    	
     }
 
     public boolean estaVacio(){
         if(obtenido != null){
-            return true;
+            return false;
 
         }
         else{
-            return false;
+            return true;
         }
     }
     public int posicionHorizontal(){
@@ -35,9 +39,10 @@ public class Casillero {
         return y;
     }
 
-    public Item obtenido(){
+    public ObjetoUbicable obtenido(){
         return obtenido;
     }
 
 
 }
+

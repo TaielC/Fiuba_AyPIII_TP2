@@ -1,6 +1,7 @@
 package algocraft;
 import java.util.HashMap;
 import java.util.Map;
+import java.lang.String;
 
 import java.util.Arrays;
 
@@ -32,7 +33,7 @@ public class Tablero {
         return tablero.get(clave);
     }
 
-    public Casillero modificarHaciaArriba(Casillero casillero){
+    public Casillero moverHaciaArriba(Casillero casillero){
         if(casillero.posicionVertical() + 1 > bordeVertical ){
             return casillero;
         }
@@ -42,6 +43,54 @@ public class Tablero {
         if(casilleroNuevo.estaVacio()){
             return casilleroNuevo;
         }
-        return casillero;
+        else {
+        	return casillero;
+        }
     }
+
+    public Casillero moverHaciaAbajo(Casillero casillero){
+        if(casillero.posicionVertical() - 1 < 0){
+            return casillero;
+        }
+        int[] pos = {casillero.posicionHorizontal(), casillero.posicionVertical() - 1};
+        Casillero casilleroNuevo = tablero.get(Arrays.toString(pos));
+
+        if(casilleroNuevo.estaVacio()){
+            return casilleroNuevo;
+        }
+        else {
+        	return casillero;
+        }
+    }
+    public Casillero moverHaciaIzquierda(Casillero casillero){
+        if(casillero.posicionHorizontal() - 1 < 0 ){
+            return casillero;
+        }
+        int[] pos = {casillero.posicionHorizontal() - 1 , casillero.posicionVertical()};
+        Casillero casilleroNuevo = tablero.get(Arrays.toString(pos));
+
+        if(casilleroNuevo.estaVacio()){
+            return casilleroNuevo;
+        }
+        else {
+        	return casillero;
+        }
+    }
+
+    public Casillero moverHaciaDerecha(Casillero casillero){
+        if(casillero.posicionHorizontal() + 1 > bordeHorizontal ){
+            return casillero;
+        }
+        int[] pos = {casillero.posicionHorizontal() + 1, casillero.posicionVertical() };
+        Casillero casilleroNuevo = tablero.get(Arrays.toString(pos));
+
+        if(casilleroNuevo.estaVacio()){
+            return casilleroNuevo;
+        }
+        else {
+        	return casillero;
+        }
+    
+    }
+    
 }

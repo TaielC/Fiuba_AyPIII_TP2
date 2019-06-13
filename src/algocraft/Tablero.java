@@ -3,17 +3,14 @@ import java.util.HashMap;
 import java.util.Map;
 import java.lang.String;
 
+import java.util.Arrays;
+
 public class Tablero {
 
     private Map<String,Casillero> tablero = new HashMap<>();
     private int bordeHorizontal;
     private int bordeVertical;
 
-    private String posAString(int x, int y){
-        String posVertical = String.valueOf(y);
-        String posHorizontal = String.valueOf(x);
-        return posHorizontal+','+posVertical;
-    }
 
     public Tablero(int x, int y){
 
@@ -23,12 +20,13 @@ public class Tablero {
             for (int j = 0; j < y; j++){
 
                 Casillero casillero = new Casillero(i, j);
+                int[] posicion = {i, j};
 
-                this.tablero.put(posAString(i, j), casillero);
+                this.tablero.put(Arrays.toString(posicion), casillero);
             }
-            }
-
         }
+
+    }
 
 
     public Casillero casillero(String clave){
@@ -38,22 +36,21 @@ public class Tablero {
     }
 
     public Casillero modificarHaciaArriba(Casillero casillero){
-        if(casillero.posicionVertical()+1 > bordeVertical ){
+        if(casillero.posicionVertical() + 1 > bordeVertical ){
             return casillero;
         }
 
-        String pos = posAString(casillero.posicionHorizontal(),casillero.posicionVertical()+1);
-        Casillero casilleroNuevo = tablero.get(pos);
+        int[] pos = {casillero.posicionHorizontal(), casillero.posicionVertical() + 1};
+        Casillero casilleroNuevo = tablero.get(Arrays.toString(pos));
 
         if(casilleroNuevo.estaVacio()){
             return casilleroNuevo;
         }
 
         return casillero;
-
-
-
     }
+
+
 
 
 

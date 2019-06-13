@@ -13,7 +13,7 @@ public class InventarioTest {
     public void test01SePuedeAgregarUnaHerramientaAlInventarioYObtenerlaDeSuPosicionLuego() {
         
     	Herramienta hacha = new Hacha(new Madera());
-        Inventario inventario = inventario.getInstance();
+        Inventario inventario = Inventario.getInstance();
         int posicion = inventario.agregar(hacha);
         
     	assertEquals(0, posicion);
@@ -23,7 +23,7 @@ public class InventarioTest {
     @Test
     public void test02AgregarUnaHerramientaEnUnaPosicionAEleccionSePuedeObtenerNuevamente() {
         Herramienta hacha = new Hacha(new Madera());
-        Inventario inventario = inventario.getInstance();
+        Inventario inventario = Inventario.getInstance();
         int posicion = 10;
 
         inventario.agregar(hacha, posicion);
@@ -33,31 +33,31 @@ public class InventarioTest {
     public void test03DeberiaEliminarUnaHerramientaEnUnaPosicionDeterminada() {
     	
     	Herramienta hacha = new Hacha(new Madera());
-    	Inventario inventario = inventario.getInstance();
+    	Inventario inventario = Inventario.getInstance();
     	int posicion=2;
     	
     	inventario.agregar(hacha,posicion);
     	
     	assertEquals(hacha , inventario.obtener(posicion));
     	
-    	inventario.eliminar(posicion);
-    	
-    	assertEquals(0,inventario.obtener(posicion)); //Tomo el 0 como vacio.
+    	inventario.obtener(posicion);
+
+        assertNull(inventario.obtener(posicion));
     }
     
     public void test04DeberiaVerificarQueElInventarioSePuedaVaciarCorrectamente() {
     	
     	Herramienta hacha = new Hacha(new Madera());
-    	Inventario inventario = inventario.getInstance();
+    	Inventario inventario = Inventario.getInstance();
     	int posicion=2;
     	
     	inventario.agregar(hacha,posicion);
+
+        assertFalse(inventario.estaVacio());
     	
-    	assertEquals(false,inventario.estaVacio());
-    	
-    	inventario.eliminar(posicion);
-    	
-    	assertEquals(true,inventario.estaVacio());
+    	inventario.obtener(posicion);
+
+        assertTrue(inventario.estaVacio());
     }
 
 

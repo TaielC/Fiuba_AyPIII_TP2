@@ -88,7 +88,7 @@ public class MaterialMineralTest {
 		MaterialMineral metal = new Metal();
 		int durabilidadMetal = metal.durabilidad();
 
-		pico.usar(metal);
+		hacha.usar(metal);
 		assertEquals(durabilidadMetal,metal.durabilidad());
 	}
 	

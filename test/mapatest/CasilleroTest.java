@@ -7,7 +7,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 
-class CasilleroTest {
+public class CasilleroTest {
 
 	@Test
 	public void test01VerificaQueUnCasilleroEstaVacio() {

@@ -2,7 +2,7 @@ package algocraft.herramienta;
 
 import algocraft.material.*;
 
-public class Pico extends Herramienta{
+public class Pico extends Herramienta {
 
 	public Pico(Madera madera) {
 		fuerza = FuerzaHerramientaMadera;

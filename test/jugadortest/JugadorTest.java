@@ -2,8 +2,8 @@ package jugadortest;
 
 import algocraft.*;
 import algocraft.herramienta.*;
+import algocraft.herramienta.Herramienta;
 import algocraft.material.*;
-import java.util.LinkedList;
 
 import org.junit.Test;
 import static org.junit.Assert.*;

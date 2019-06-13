@@ -1,6 +1,6 @@
 package algocraft.material;
 
-public interface MaterialDaniable {
+public interface MaterialDaniable  implements ObjectoUbicable{
 
     public boolean esDaniadoPor(MaterialDaniable material);
 

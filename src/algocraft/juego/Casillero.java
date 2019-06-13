@@ -1,11 +1,11 @@
-package algocraft;
+package juego;
 
 
 
 public class Casillero {
     private int x ;
     private int y;
-    private Item obtenido = null;
+    private ObjetoUbicable obtenido = null;
 
 
     public Casillero(int x, int y){
@@ -13,7 +13,7 @@ public class Casillero {
         this.y = y;
     }
 
-    public void poner(Item item){
+    public void poner(ObjetoUbicable item){
         this.obtenido = item;
 
     }
@@ -35,7 +35,7 @@ public class Casillero {
         return y;
     }
 
-    public Item obtenido(){
+    public ObjetoUbicable obtenido(){
         return obtenido;
     }
 

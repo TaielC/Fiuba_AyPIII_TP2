@@ -38,13 +38,13 @@ public abstract class Herramienta implements Item {
 
 	public abstract void usar(MaterialMineral materialMineral);
 
-	public abstract void golpear(Madera madera);
+	public void golpear(Madera madera){ durabilidad.desgastar(); }
 
-	public abstract void golpear(Piedra piedra);
+	public void golpear(Piedra piedra){ durabilidad.desgastar(); }
 
-	public abstract void golpear(Metal metal);
+	public void golpear(Metal metal){ durabilidad.desgastar(); }
 
-	public abstract void golpear(Diamante diamante);
+	public void golpear(Diamante diamante){ durabilidad.desgastar(); }
 
 	public MaterialDaniable material(){
 		return material;

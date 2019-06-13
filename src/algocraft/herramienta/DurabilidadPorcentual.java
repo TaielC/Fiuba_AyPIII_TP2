@@ -10,7 +10,7 @@ public class DurabilidadPorcentual extends Durabilidad {
     }
 
     @Override
-    protected void _desgastar() {
+    protected void desgastarProtected() {
         durabilidad -= durabilidad*porcentaje;
     }
 }

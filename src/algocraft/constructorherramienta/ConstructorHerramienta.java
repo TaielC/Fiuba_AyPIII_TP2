@@ -56,7 +56,7 @@ public class ConstructorHerramienta {
             "Vacio,Madera,Vacio";
 
     private TableroConstruccion tablero;
-    private static Hashtable<String, Supplier<Item>> hashConstructor;
+    private Hashtable<String, Supplier<Item>> hashConstructor;
     private Item itemConstruido;
 
     private static ConstructorHerramienta instanciaConstructor = new ConstructorHerramienta();
@@ -73,7 +73,7 @@ public class ConstructorHerramienta {
         hashConstructor = inicializarHash();
     }
 
-    private static Hashtable<String, Supplier<Item>> inicializarHash() {
+    private Hashtable<String, Supplier<Item>> inicializarHash() {
         Hashtable<String, Supplier<Item>> hashConstructor = new Hashtable<>();
         hashConstructor.put(StringConstruccionHachaMadera1, (()-> new Hacha(new Madera())));
         hashConstructor.put(StringConstruccionHachaMadera2, (()-> new Hacha(new Madera())));

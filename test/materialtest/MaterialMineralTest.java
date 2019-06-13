@@ -25,7 +25,6 @@ public class MaterialMineralTest {
 		MaterialMineral madera = new Madera();
 		Herramienta pico = new Pico(new Madera());
 		int durabilidadMadera = madera.durabilidad();
-		int fuerzaPico = pico.fuerza();
 
 		pico.usar(madera);
 		assertEquals(durabilidadMadera, madera.durabilidad());

@@ -14,13 +14,19 @@ public class PicoFino extends Herramienta {
     }
 
     @Override
-    public void golpear(Madera madera) { }
+    public void golpear(Madera madera) {
+        // El PicoFino no se desgasta contra Madera.
+    }
 
     @Override
-    public void golpear(Piedra piedra) { durabilidad.desgastar(); }
+    public void golpear(Piedra piedra) {
+        // El PicoFino no se desgasta contra Piedra.
+    }
 
     @Override
-    public void golpear(Metal metal) { durabilidad.desgastar(); }
+    public void golpear(Metal metal) {
+        // El PicoFino no se desgasta contra Metal.
+    }
 
     @Override
     public void golpear(Diamante diamante) { durabilidad.desgastar(); }

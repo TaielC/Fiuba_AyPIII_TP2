@@ -13,10 +13,10 @@ public class HerramientaTest {
         Herramienta hacha = new Hacha(new Madera());
 
         double durabilidadHacha = hacha.durabilidad();
-        assertEquals(durabilidadHacha, 100, 0.00005);
+        assertEquals(durabilidadHacha, 100, 0);
 
         int fuerzaHacha = hacha.fuerza();
-        assertEquals(fuerzaHacha, 2);
+        assertEquals(2, fuerzaHacha);
     }
 
     @Test
@@ -25,10 +25,10 @@ public class HerramientaTest {
         Herramienta pico = new Pico(new Madera());
 
         double durabilidadPico = pico.durabilidad();
-        assertEquals(durabilidadPico, 100, 0.00005);
+        assertEquals(durabilidadPico, 100, 0);
 
         int fuerzaPico = pico.fuerza();
-        assertEquals(fuerzaPico, 2);
+        assertEquals(2, fuerzaPico);
     }
 
     @Test
@@ -37,10 +37,10 @@ public class HerramientaTest {
         Herramienta hacha = new Hacha(new Metal());
 
         double durabilidadHacha = hacha.durabilidad();
-        assertEquals(durabilidadHacha, 400, 0.00005);
+        assertEquals(durabilidadHacha, 400, 0);
 
         int fuerzaHacha = hacha.fuerza();
-        assertEquals(fuerzaHacha, 10);
+        assertEquals(10,fuerzaHacha);
     }
 
     @Test
@@ -49,7 +49,7 @@ public class HerramientaTest {
         Herramienta pico = new Pico(new Metal());
 
         double durabilidadPico = pico.durabilidad();
-        assertEquals(durabilidadPico, 400, 0.00005);
+        assertEquals(durabilidadPico, 400, 0);
 
         int fuerzaPico = pico.fuerza();
         assertEquals(12, fuerzaPico);
@@ -61,10 +61,10 @@ public class HerramientaTest {
         Herramienta picoFino = new PicoFino();
 
         double durabilidadPicoFino = picoFino.durabilidad();
-        assertEquals(durabilidadPicoFino, 1000, 0.00005);
+        assertEquals(1000, durabilidadPicoFino, 0);
 
         int fuerzaPicoFino = picoFino.fuerza();
-        assertEquals(fuerzaPicoFino, 20);
+        assertEquals(20, fuerzaPicoFino);
     }
 
 
@@ -77,7 +77,7 @@ public class HerramientaTest {
         int fuerzaHacha = hacha.fuerza();
 
         hacha.golpear(madera);
-        assertEquals(durabilidadHacha - fuerzaHacha, 0.00005, hacha.durabilidad());
+        assertEquals(durabilidadHacha - fuerzaHacha, hacha.durabilidad(), 0);
     }
 
     @Test
@@ -89,7 +89,7 @@ public class HerramientaTest {
         int fuerzaHacha = hacha.fuerza();
 
         hacha.usar(piedra);
-        assertEquals(durabilidadHacha - fuerzaHacha, 0.00005, hacha.durabilidad());
+        assertEquals(durabilidadHacha - fuerzaHacha, hacha.durabilidad(), 0);
     }
 
     @Test
@@ -101,7 +101,7 @@ public class HerramientaTest {
         int fuerzaHacha = hacha.fuerza();
 
         hacha.usar(metal);
-        assertEquals(durabilidadHacha - fuerzaHacha, 0.00005, hacha.durabilidad());
+        assertEquals(durabilidadHacha - fuerzaHacha, hacha.durabilidad(), 0);
     }
 
     @Test
@@ -113,7 +113,7 @@ public class HerramientaTest {
         int fuerzaHacha = hacha.fuerza();
 
         hacha.usar(diamante);
-        assertEquals(durabilidadHacha - fuerzaHacha, 0.00005, hacha.durabilidad());
+        assertEquals(durabilidadHacha - fuerzaHacha, hacha.durabilidad(), 0);
     }
 
     @Test
@@ -125,7 +125,7 @@ public class HerramientaTest {
         int fuerzaHacha = hacha.fuerza();
 
         hacha.usar(madera);
-        assertEquals(durabilidadHacha - fuerzaHacha, 0.00005, hacha.durabilidad());
+        assertEquals(durabilidadHacha - fuerzaHacha, hacha.durabilidad(), 0);
     }
 
 
@@ -138,7 +138,7 @@ public class HerramientaTest {
         int fuerzaHacha = hacha.fuerza();
 
         hacha.usar(piedra);
-        assertEquals(durabilidadHacha - fuerzaHacha, 0.00005, hacha.durabilidad());
+        assertEquals(durabilidadHacha - fuerzaHacha, hacha.durabilidad(), 0);
     }
 
     @Test
@@ -150,7 +150,7 @@ public class HerramientaTest {
         int fuerzaHacha = hacha.fuerza();
 
         hacha.usar(metal);
-        assertEquals(durabilidadHacha - fuerzaHacha, 0.00005, hacha.durabilidad());
+        assertEquals(durabilidadHacha - fuerzaHacha, hacha.durabilidad(), 0);
     }
 
     @Test
@@ -162,7 +162,7 @@ public class HerramientaTest {
         int fuerzaHacha = hacha.fuerza();
 
         hacha.usar(diamante);
-        assertEquals(durabilidadHacha - fuerzaHacha, 0.00005, hacha.durabilidad());
+        assertEquals(durabilidadHacha - fuerzaHacha, hacha.durabilidad(), 0);
     }
 
     @Test
@@ -171,10 +171,10 @@ public class HerramientaTest {
         MaterialMineral madera = new Madera();
         Herramienta hacha = new Hacha(new Metal());
         double durabilidadHacha = hacha.durabilidad();
-        int fuerzaHacha = hacha.fuerza();
+        double fuerzaHacha = hacha.fuerza();
 
         hacha.usar(madera);
-        assertEquals(durabilidadHacha - fuerzaHacha, 0.00005 / 2, hacha.durabilidad());
+        assertEquals(durabilidadHacha - fuerzaHacha / 2, hacha.durabilidad(), 0);
     }
 
     @Test
@@ -183,10 +183,10 @@ public class HerramientaTest {
         MaterialMineral piedra = new Piedra();
         Herramienta hacha = new Hacha(new Metal());
         double durabilidadHacha = hacha.durabilidad();
-        int fuerzaHacha = hacha.fuerza();
+        double fuerzaHacha = hacha.fuerza();
 
         hacha.usar(piedra);
-        assertEquals(durabilidadHacha - fuerzaHacha, 0.00005 / 2, hacha.durabilidad());
+        assertEquals(durabilidadHacha - fuerzaHacha / 2, hacha.durabilidad(), 0);
     }
 
 
@@ -196,10 +196,10 @@ public class HerramientaTest {
         MaterialMineral metal = new Metal();
         Herramienta hacha = new Hacha(new Metal());
         double durabilidadHacha = hacha.durabilidad();
-        int fuerzaHacha = hacha.fuerza();
+        double fuerzaHacha = hacha.fuerza();
 
         hacha.usar(metal);
-        assertEquals(durabilidadHacha - fuerzaHacha, 0.00005 / 2, hacha.durabilidad());
+        assertEquals(durabilidadHacha - fuerzaHacha / 2, hacha.durabilidad(), 0);
     }
 
     @Test
@@ -208,58 +208,58 @@ public class HerramientaTest {
         MaterialMineral diamante = new Diamante();
         Herramienta hacha = new Hacha(new Metal());
         double durabilidadHacha = hacha.durabilidad();
-        int fuerzaHacha = hacha.fuerza();
+        double fuerzaHacha = hacha.fuerza();
 
         hacha.usar(diamante);
-        assertEquals(durabilidadHacha - fuerzaHacha, 0.00005 / 2, hacha.durabilidad());
+        assertEquals(durabilidadHacha - fuerzaHacha/2, hacha.durabilidad(), 0);
     }
 
     @Test
     public void test18UsarPicoDeMaderaContraMaderaSeDebeReducirLaDurabilidadDelHachaSegunSuFuerza() {
 
         MaterialMineral madera = new Madera();
-        Herramienta pico = new Pico(new Piedra());
+        Herramienta pico = new Pico(new Madera());
         double durabilidadPico = pico.durabilidad();
         int fuerzaPico = pico.fuerza();
 
         pico.usar(madera);
-        assertEquals(durabilidadPico - fuerzaPico, 0.00005, pico.durabilidad());
+        assertEquals(durabilidadPico - fuerzaPico, pico.durabilidad(), 0);
     }
 
     @Test
     public void test19UsarPicoDeMaderaContraPiedraSeDebeReducirLaDurabilidadDelHachaSegunSuFuerza() {
 
         MaterialMineral piedra = new Piedra();
-        Herramienta pico = new Pico(new Piedra());
+        Herramienta pico = new Pico(new Madera());
         double durabilidadPico = pico.durabilidad();
         int fuerzaPico = pico.fuerza();
 
         pico.usar(piedra);
-        assertEquals(durabilidadPico - fuerzaPico, 0.00005, pico.durabilidad());
+        assertEquals(durabilidadPico - fuerzaPico, pico.durabilidad(), 0);
     }
 
     @Test
     public void test20UsarPicoDeMaderaContraMetalSeDebeReducirLaDurabilidadDelHachaSegunSuFuerza() {
 
         MaterialMineral metal = new Metal();
-        Herramienta pico = new Pico(new Piedra());
+        Herramienta pico = new Pico(new Madera());
         double durabilidadPico = pico.durabilidad();
         int fuerzaPico = pico.fuerza();
 
         pico.usar(metal);
-        assertEquals(durabilidadPico - fuerzaPico, 0.00005, pico.durabilidad());
+        assertEquals(durabilidadPico - fuerzaPico, pico.durabilidad(), 0);
     }
 
     @Test
     public void test21UsarPicoDeMaderaContraDiamanteSeDebeReducirLaDurabilidadDelHachaSegunSuFuerza() {
 
         MaterialMineral diamante = new Diamante();
-        Herramienta pico = new Pico(new Piedra());
+        Herramienta pico = new Pico(new Madera());
         double durabilidadPico = pico.durabilidad();
         int fuerzaPico = pico.fuerza();
 
         pico.usar(diamante);
-        assertEquals(durabilidadPico - fuerzaPico, 0.00005, pico.durabilidad());
+        assertEquals(durabilidadPico - fuerzaPico, pico.durabilidad(), 0);
     }
 
     @Test
@@ -268,10 +268,10 @@ public class HerramientaTest {
         MaterialMineral madera = new Madera();
         Herramienta pico = new Pico(new Piedra());
         double durabilidadPico = pico.durabilidad();
-        int fuerzaPico = pico.fuerza();
+        double fuerzaPico = pico.fuerza();
 
         pico.usar(madera);
-        assertEquals(durabilidadPico - fuerzaPico, 0.00005 / 1.5, pico.durabilidad());
+        assertEquals(durabilidadPico - fuerzaPico / 1.5, pico.durabilidad(), 0);
     }
 
     @Test
@@ -280,10 +280,10 @@ public class HerramientaTest {
         MaterialMineral piedra = new Piedra();
         Herramienta pico = new Pico(new Piedra());
         double durabilidadPico = pico.durabilidad();
-        int fuerzaPico = pico.fuerza();
+        double fuerzaPico = pico.fuerza();
 
         pico.usar(piedra);
-        assertEquals(durabilidadPico - fuerzaPico, 0.00005 / 1.5, pico.durabilidad());
+        assertEquals(durabilidadPico - fuerzaPico / 1.5, pico.durabilidad(), 0);
     }
 
     @Test
@@ -292,10 +292,10 @@ public class HerramientaTest {
         MaterialMineral metal = new Metal();
         Herramienta pico = new Pico(new Piedra());
         double durabilidadPico = pico.durabilidad();
-        int fuerzaPico = pico.fuerza();
+        double fuerzaPico = pico.fuerza();
 
         pico.usar(metal);
-        assertEquals(durabilidadPico - fuerzaPico, 0.00005 / 1.5, pico.durabilidad());
+        assertEquals(durabilidadPico - fuerzaPico / 1.5, pico.durabilidad(), 0);
     }
 
     @Test
@@ -304,10 +304,10 @@ public class HerramientaTest {
         MaterialMineral diamante = new Diamante();
         Herramienta pico = new Pico(new Piedra());
         double durabilidadPico = pico.durabilidad();
-        int fuerzaPico = pico.fuerza();
+        double fuerzaPico = pico.fuerza();
 
         pico.usar(diamante);
-        assertEquals(durabilidadPico - fuerzaPico, 0.00005 / 1.5, pico.durabilidad());
+        assertEquals(durabilidadPico - fuerzaPico / 1.5, pico.durabilidad(), 0);
     }
 
     @Test
@@ -318,7 +318,7 @@ public class HerramientaTest {
         double durabilidadPico = pico.durabilidad();
 
         pico.usar(madera);
-        assertEquals(durabilidadPico, pico.durabilidad(), 0.00005);
+        assertEquals(durabilidadPico, pico.durabilidad(), 0);
     }
 
     @Test
@@ -329,7 +329,7 @@ public class HerramientaTest {
         double durabilidadPico = pico.durabilidad();
 
         pico.usar(piedra);
-        assertEquals(durabilidadPico, pico.durabilidad(), 0.00005);
+        assertEquals(durabilidadPico, pico.durabilidad(), 0);
     }
 
     @Test
@@ -340,7 +340,7 @@ public class HerramientaTest {
         double durabilidadPico = pico.durabilidad();
 
         pico.usar(metal);
-        assertEquals(durabilidadPico, pico.durabilidad(), 0.00005);
+        assertEquals(durabilidadPico, pico.durabilidad(), 0);
     }
 
 
@@ -352,7 +352,7 @@ public class HerramientaTest {
         double durabilidadPico = pico.durabilidad();
 
         pico.usar(diamante);
-        assertEquals(durabilidadPico, pico.durabilidad(), 0.00005);
+        assertEquals(durabilidadPico, pico.durabilidad(), 0);
     }
 
     @Test
@@ -363,7 +363,7 @@ public class HerramientaTest {
         double durabilidadPicoFino = picoFino.durabilidad();
 
         picoFino.usar(diamante);
-        assertEquals(durabilidadPicoFino - (durabilidadPicoFino * 0.1), picoFino.durabilidad(), 0.00005);
+        assertEquals(durabilidadPicoFino - (durabilidadPicoFino * 0.1), picoFino.durabilidad(), 0);
     }
 
 
@@ -375,33 +375,33 @@ public class HerramientaTest {
         double durabilidadPicoFino = picoFino.durabilidad();
 
         picoFino.usar(madera);
-        assertEquals(durabilidadPicoFino, picoFino.durabilidad(), 0.00005);
+        assertEquals(durabilidadPicoFino, picoFino.durabilidad(), 0);
     }
 
     @Test
-    public void test32UsarPicoFinoDePiedraYMetalContraPiedraDebeReducirLaDurabilidadDelPico() {
+    public void test32UsarPicoFinoDePiedraYMetalContraPiedraNoDebeReducirLaDurabilidadDelPico() {
 
         MaterialMineral piedra = new Piedra();
         Herramienta picoFino = new PicoFino();
         double durabilidadPicoFino = picoFino.durabilidad();
 
         picoFino.usar(piedra);
-        assertEquals(durabilidadPicoFino - (durabilidadPicoFino * 0.1), picoFino.durabilidad(), 0.00005);
+        assertEquals(durabilidadPicoFino, picoFino.durabilidad(), 0);
     }
 
     @Test
-    public void test33UsarPicoFinoDePiedraYMetalContraMetalDebeReducirLaDurabilidadDelPico() {
+    public void test33UsarPicoFinoDePiedraYMetalContraMetalNoDebeReducirLaDurabilidadDelPico() {
 
         MaterialMineral metal = new Metal();
         Herramienta picoFino = new PicoFino();
         double durabilidadPicoFino = picoFino.durabilidad();
 
         picoFino.usar(metal);
-        assertEquals(durabilidadPicoFino - (durabilidadPicoFino * 0.1), picoFino.durabilidad(), 0.00005);
+        assertEquals(durabilidadPicoFino, picoFino.durabilidad(), 0);
     }
 
     @Test
-    public void test34ElPicoDeberiaRomperseAlDecimoUso() {
+    public void test34ElPicoDeberiaTenerDurabilidadCeroAlDecimoUso() {
 
         MaterialMineral piedra = new Piedra();
 
@@ -413,10 +413,10 @@ public class HerramientaTest {
             pico.usar(piedra);
         }
 
-        assertEquals(durabilidadPico, pico.durabilidad(), 0.0005);
+        assertEquals(durabilidadPico, pico.durabilidad(), 0);
 
         pico.usar(piedra);
 
-        assertEquals(0, pico.durabilidad(), 0.00005);
+        assertEquals(0, pico.durabilidad(), 0);
     }
 }

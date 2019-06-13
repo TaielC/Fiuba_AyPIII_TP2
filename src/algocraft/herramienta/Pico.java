@@ -32,18 +32,4 @@ public class Pico extends Herramienta {
 	public void usar(MaterialMineral materialMineral) {
 		materialMineral.serGolpeado(this);
 	}
-
-	@Override
-	public void golpear(Madera madera) { }
-
-	@Override
-	public void golpear(Piedra piedra) { durabilidad.desgastar(); }
-
-	@Override
-	public void golpear(Metal metal) {
-		if(material.esDaniadoPor(metal)) { durabilidad.desgastar(); }
-	}
-
-	@Override
-	public void golpear(Diamante diamante) { }
 }

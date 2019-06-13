@@ -36,15 +36,4 @@ public class Hacha extends Herramienta {
 		materialMineral.serGolpeado(this);
 	}
 
-	@Override
-	public void golpear(Madera madera) { durabilidad.desgastar(); }
-
-	@Override
-	public void golpear(Piedra piedra) { }
-
-	@Override
-	public void golpear(Metal metal) { }
-
-	@Override
-	public void golpear(Diamante diamante) { }
 }

@@ -8,10 +8,10 @@ public abstract class Durabilidad {
 
     public void desgastar() throws DurabilidadEsCeroException {
         if(durabilidad <= 0) { throw new DurabilidadEsCeroException(); }
-        this._desgastar();
+        this.desgastarProtected();
     }
 
-    protected abstract void _desgastar();
+    protected abstract void desgastarProtected();
 
     public double getDurabilidad(){ return durabilidad; }
 }

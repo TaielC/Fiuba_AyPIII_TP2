@@ -5,6 +5,9 @@ import algocraft.material.*;
 public class PicoFino extends Herramienta {
 
     public PicoFino(){
+        final int DurabilidadPicoFino = 1000;
+        final int FuerzaPicoFino = 20;
+        final double PorcentajeDesgastePicoFino = 0.1;
         fuerza = FuerzaPicoFino;
         durabilidad = new DurabilidadPorcentual(DurabilidadPicoFino, PorcentajeDesgastePicoFino);
     }

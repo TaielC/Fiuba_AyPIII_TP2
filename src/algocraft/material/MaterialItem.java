@@ -1,6 +1,6 @@
 package algocraft.material;
 
-import algocraft.Item;
+import algocraft.juego.Item;
 
 public interface MaterialItem extends Item {
 

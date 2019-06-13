@@ -1,10 +1,9 @@
-package juego;
+package algocraft.juego;
 
-import algocraft.herramienta.Hacha;
-import algocraft.herramienta.Herramienta;
-import algocraft.material.Madera;
+import algocraft.herramienta.*;
+import algocraft.material.*;
 
-public class Jugador implements ObjectoUbicable{
+public class Jugador implements ObjetoUbicable{
 
     private Inventario inventario;
     private Tablero tablero;
@@ -34,16 +33,26 @@ public class Jugador implements ObjectoUbicable{
         return inventario.estaVacio();
     }
 
-    public void vincularTablero(Tablero tablero_){ tablero = tablero_; }
+    public void vincularTablero(Tablero tablero){ this.tablero = tablero; }
 
     public void vincularCasillero(Casillero casillero_){ casillero = casillero_; }
 
-    public void moverHaciaArriba(){ tablero.moverHaciaArriba(casillero); }
+    public void moverHaciaArriba(){ casillero=tablero.moverHaciaArriba(casillero); }
 
-    public void moverHaciaAbajo(){ tablero.moverHaciaAbajo(casillero); }
+    public void moverHaciaAbajo(){ casillero=tablero.moverHaciaAbajo(casillero); }
 
-    public void moverHaciaIzquierda(){ tablero.moverHaciaIzquierda(casillero); }
+    public void moverHaciaIzquierda(){ casillero=tablero.moverHaciaIzquierda(casillero); }
 
-    public void moverhaciaDerecha(){ tablero.moverHaciaDerecha(casillero) }
+    public void moverHaciaDerecha(){ casillero=tablero.moverHaciaDerecha(casillero); }
+
+    @Override
+    public int obtenerPosicionHorizontal() {
+        return casillero.posicionHorizontal();
+    }
+
+    @Override
+    public int obtenerPosicionVertical() {
+        return casillero.posicionVertical();
+    }
 }
 

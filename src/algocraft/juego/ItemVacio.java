@@ -1,4 +1,4 @@
-package algocraft;
+package algocraft.juego;
 
 import algocraft.herramienta.Herramienta;
 

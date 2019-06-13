@@ -1,6 +1,6 @@
 package algocraft.herramienta;
 
-import algocraft.Item;
+import algocraft.juego.Item;
 import algocraft.material.*;
 
 public abstract class Herramienta implements Item {

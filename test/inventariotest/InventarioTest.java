@@ -1,6 +1,6 @@
 package inventariotest;
 
-import algocraft.Inventario;
+import algocraft.juego.Inventario;
 import algocraft.herramienta.*;
 import algocraft.material.Madera;
 import org.junit.Test;

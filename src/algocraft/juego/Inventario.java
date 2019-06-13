@@ -1,4 +1,4 @@
-package juego;
+package algocraft.juego;
 
 import algocraft.excepciones.InventarioEstaLlenoException;
 import algocraft.herramienta.Herramienta;

@@ -50,4 +50,14 @@ public class Diamante extends MaterialMineral {
 	public boolean dania(Diamante diamante) {
 		return true;
 	}
+
+	@Override
+	public int obtenerPosicionHorizontal() {
+		return 0;
+	}
+
+	@Override
+	public int obtenerPosicionVertical() {
+		return 0;
+	}
 }

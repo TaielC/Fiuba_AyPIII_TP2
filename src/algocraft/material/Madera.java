@@ -17,7 +17,6 @@ public class Madera extends MaterialMineral implements MaterialItem {
         return "Madera";
     }
 
-    @Override
     public Herramienta comoHerramienta() {
         return null;
     }
@@ -62,5 +61,15 @@ public class Madera extends MaterialMineral implements MaterialItem {
     @Override
     public MaterialDaniable getComoDaniable() {
         return this;
+    }
+
+    @Override
+    public int obtenerPosicionHorizontal() {
+        return 0;
+    }
+
+    @Override
+    public int obtenerPosicionVertical() {
+        return 0;
     }
 }

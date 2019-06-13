@@ -1,4 +1,4 @@
-package juego;
+package algocraft.juego;
 
 public class Mapa {
     private Jugador jugador;

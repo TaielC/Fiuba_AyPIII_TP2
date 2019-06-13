@@ -1,9 +1,9 @@
 package algocraft.material;
 
-import algocraft.*;
 import algocraft.herramienta.*;
+import algocraft.juego.ObjetoUbicable;
 
-public abstract class MaterialMineral implements MaterialDaniable {
+public abstract class MaterialMineral implements MaterialDaniable, ObjetoUbicable {
 
     protected int durabilidad;
 

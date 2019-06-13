@@ -1,5 +1,7 @@
 package algocraft.juego;
 
+import algocraft.material.MaterialMineral;
+
 import java.util.HashMap;
 import java.lang.String;
 import java.util.Arrays;
@@ -85,4 +87,7 @@ public class Tablero {
     }
 
 
+    public void agregar(ObjetoUbicable objetoUbicable, String posicion) {
+        tablero.get(posicion).poner(objetoUbicable);
+    }
 }

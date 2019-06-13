@@ -65,4 +65,14 @@ public class Metal extends MaterialMineral implements MaterialItem{
     public MaterialDaniable getComoDaniable() {
         return this;
     }
+
+    @Override
+    public int obtenerPosicionHorizontal() {
+        return 0;
+    }
+
+    @Override
+    public int obtenerPosicionVertical() {
+        return 0;
+    }
 }

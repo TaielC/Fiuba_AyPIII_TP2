@@ -1,8 +1,8 @@
 package algocraft.juego;
 
 
-
 public class Casillero {
+
     private int x ;
     private int y;
     private ObjetoUbicable obtenido = null;
@@ -14,18 +14,13 @@ public class Casillero {
     }
 
     public void poner(ObjetoUbicable item){
-        this.obtenido = item;
-
+    	if (this.estaVacio()) {
+    		this.obtenido = item;
+       }
     }
 
     public boolean estaVacio(){
-        if(obtenido != null){
-            return true;
-
-        }
-        else{
-            return false;
-        }
+        return obtenido == null;
     }
     public int posicionHorizontal(){
         return x;
@@ -38,6 +33,5 @@ public class Casillero {
     public ObjetoUbicable obtenido(){
         return obtenido;
     }
-
-
 }
+

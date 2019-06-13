@@ -1,10 +1,9 @@
 package constructorherramientatest;
 
 import algocraft.constructorherramienta.TableroConstruccion;
-import algocraft.Item;
+import algocraft.juego.Item;
 import algocraft.material.*;
 
-//import static org.mockito.Mockito.*;
 import org.junit.Test;
 import static org.junit.Assert.*;
 

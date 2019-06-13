@@ -1,6 +1,7 @@
 package constructorherramientatest;
 
-import algocraft.*;
+import algocraft.juego.Item;
+import algocraft.juego.ItemVacio;
 import algocraft.constructorherramienta.ConstructorHerramienta;
 import algocraft.herramienta.*;
 import algocraft.material.*;
@@ -69,5 +70,143 @@ public class ConstructorHerramientaTest {
         Item item = constructorHerramienta.obtenerItemConstruido();
 
         assertEquals(Hacha.class, item.getClass());
+    }
+    
+    @Test
+    public void test05SiSeAgreganLosMaterialesEnLasPosicionesCorrectasParaUnHachaDeMetalSeConstruyeCorrectamente() {
+    	ConstructorHerramienta constructorHerramienta = ConstructorHerramienta.getInstance();
+    	constructorHerramienta = constructorHerramienta.reset();
+    	
+    	constructorHerramienta.agregar(new Metal(),0);
+    	constructorHerramienta.agregar(new Metal(),1);
+    	constructorHerramienta.agregar(new Metal(),3);
+    	constructorHerramienta.agregar(new Madera(),4);
+    	constructorHerramienta.agregar(new Madera(),7);
+    	Item item = constructorHerramienta.obtenerItemConstruido();
+    	
+    	assertEquals(Hacha.class,item.getClass());
+    }
+    
+    @Test
+    public void test06SiSeAgreganLosMaterialesEnLasPosicionesCorrectasParaUnPicoDeMaderaSeConstruyeCorrectamente() {
+    	ConstructorHerramienta constructorHerramienta = ConstructorHerramienta.getInstance();
+    	constructorHerramienta = constructorHerramienta.reset();
+    	
+    	constructorHerramienta.agregar(new Madera(),0);
+    	constructorHerramienta.agregar(new Madera(),1);
+    	constructorHerramienta.agregar(new Madera(),2);
+    	constructorHerramienta.agregar(new Madera(),4);
+    	constructorHerramienta.agregar(new Madera(),7);
+    	Item item = constructorHerramienta.obtenerItemConstruido();
+    	
+    	assertEquals(Pico.class,item.getClass());
+    }
+    
+    @Test
+    public void test07SiSeAgreganLosMaterialesEnLasPosicionesCorrectasParaUnPicoDePiedraSeConstruyeCorrectamente() {
+    	ConstructorHerramienta constructorHerramienta = ConstructorHerramienta.getInstance();
+    	constructorHerramienta = constructorHerramienta.reset();
+    	
+    	constructorHerramienta.agregar(new Piedra(),0);
+    	constructorHerramienta.agregar(new Piedra(),1);
+    	constructorHerramienta.agregar(new Piedra(),2);
+    	constructorHerramienta.agregar(new Madera(),4);
+    	constructorHerramienta.agregar(new Madera(),7);
+    	Item item = constructorHerramienta.obtenerItemConstruido();
+    	
+    	assertEquals(Pico.class,item.getClass());
+    }
+    
+    
+    @Test
+    public void test08SiSeAgreganLosMaterialesEnLasPosicionesCorrectasParaUnPicoDeMetalSeConstruyeCorrectamente() {
+    	ConstructorHerramienta constructorHerramienta = ConstructorHerramienta.getInstance();
+    	constructorHerramienta = constructorHerramienta.reset();
+    	
+    	constructorHerramienta.agregar(new Metal(),0);
+    	constructorHerramienta.agregar(new Metal(),1);
+    	constructorHerramienta.agregar(new Metal(),2);
+    	constructorHerramienta.agregar(new Madera(),4);
+    	constructorHerramienta.agregar(new Madera(),7);
+    	Item item = constructorHerramienta.obtenerItemConstruido();
+    	
+    	assertEquals(Pico.class,item.getClass());
+    }
+    
+    @Test
+    public void test09SiSeAgreganLosMaterialesEnLasPosicionesCorrectasParaUnPicoDeMetalYPiedraSeConstruyeCorrectamente() {
+    	ConstructorHerramienta constructorHerramienta = ConstructorHerramienta.getInstance();
+    	constructorHerramienta = constructorHerramienta.reset();
+    	
+    	constructorHerramienta.agregar(new Metal(),0);
+    	constructorHerramienta.agregar(new Metal(),1);
+    	constructorHerramienta.agregar(new Metal(),2);
+    	constructorHerramienta.agregar(new Piedra(),3);
+    	constructorHerramienta.agregar(new Madera(),4);
+    	constructorHerramienta.agregar(new Madera(),7);
+    	Item item = constructorHerramienta.obtenerItemConstruido();
+    	
+    	assertEquals(PicoFino.class,item.getClass());
+    }
+    
+    @Test
+    public void test10SiSeAgreganLosMaterialesEnLasPosicionesCorrectasParaUnHachaDeMaderaSeConstruyeCorrectamente() {
+    	ConstructorHerramienta constructorHerramienta = ConstructorHerramienta.getInstance();
+    	constructorHerramienta = constructorHerramienta.reset();
+    	
+    	constructorHerramienta.agregar(new Madera(),1);
+    	constructorHerramienta.agregar(new Madera(),2);
+    	constructorHerramienta.agregar(new Madera(),4);
+    	constructorHerramienta.agregar(new Madera(),5);
+    	constructorHerramienta.agregar(new Madera(),7);
+    	Item item = constructorHerramienta.obtenerItemConstruido();
+    	
+    	assertEquals(Hacha.class,item.getClass());
+    }
+    
+    @Test
+    public void test11SiSeAgreganLosMaterialesEnLasPosicionesCorrectasParaUnHachaDePiedraSeConstruyeCorrectamente() {
+    	ConstructorHerramienta constructorHerramienta = ConstructorHerramienta.getInstance();
+    	constructorHerramienta = constructorHerramienta.reset();
+    	
+    	constructorHerramienta.agregar(new Piedra(),1);
+    	constructorHerramienta.agregar(new Piedra(),2);
+    	constructorHerramienta.agregar(new Madera(),4);
+    	constructorHerramienta.agregar(new Piedra(),5);
+    	constructorHerramienta.agregar(new Madera(),7);
+    	Item item = constructorHerramienta.obtenerItemConstruido();
+    	
+    	assertEquals(Hacha.class,item.getClass());
+    }
+    
+    @Test
+    public void test12SiSeAgreganLosMaterialesEnLasPosicionesCorrectasParaUnHachaDeMetalSeConstruyeCorrectamente() {
+    	ConstructorHerramienta constructorHerramienta = ConstructorHerramienta.getInstance();
+    	constructorHerramienta = constructorHerramienta.reset();
+    	
+    	constructorHerramienta.agregar(new Metal(),1);
+    	constructorHerramienta.agregar(new Metal(),2);
+    	constructorHerramienta.agregar(new Metal(),5);
+    	constructorHerramienta.agregar(new Madera(),4);
+    	constructorHerramienta.agregar(new Madera(),7);
+    	Item item = constructorHerramienta.obtenerItemConstruido();
+    	
+    	assertEquals(Hacha.class,item.getClass());
+    }
+    
+    @Test
+    public void test13SiSeAgreganLosMaterialesEnLasPosicionesCorrectasParaUnPicoDeMetalYPiedraSeConstruyeCorrectamente() {
+    	ConstructorHerramienta constructorHerramienta = ConstructorHerramienta.getInstance();
+    	constructorHerramienta = constructorHerramienta.reset();
+    	
+    	constructorHerramienta.agregar(new Metal(),0);
+    	constructorHerramienta.agregar(new Metal(),1);
+    	constructorHerramienta.agregar(new Metal(),2);
+    	constructorHerramienta.agregar(new Piedra(),5);
+    	constructorHerramienta.agregar(new Madera(),4);
+    	constructorHerramienta.agregar(new Madera(),7);
+    	Item item = constructorHerramienta.obtenerItemConstruido();
+    	
+    	assertEquals(PicoFino.class,item.getClass());
     }
 }

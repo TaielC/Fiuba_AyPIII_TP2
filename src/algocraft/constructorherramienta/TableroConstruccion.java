@@ -1,7 +1,7 @@
 package algocraft.constructorherramienta;
 
-import algocraft.Item;
-import algocraft.ItemVacio;
+import algocraft.juego.Item;
+import algocraft.juego.ItemVacio;
 
 public class TableroConstruccion {
 

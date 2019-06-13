@@ -25,6 +25,10 @@ public class Diamante extends MaterialMineral {
 		picoFino.golpear(this);
 
 	}
+	
+	public void serGolpeado(PicoFino picoFino) {
+		durabilidad-=picoFino.fuerza();
+	}
 
 	@Override
 	public boolean esDaniadoPor(MaterialDaniable material) {

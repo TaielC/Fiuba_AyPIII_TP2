@@ -11,7 +11,7 @@ public class DurabilidadFactorFuerza extends Durabilidad {
     }
 
     @Override
-    protected void desgastarProtected() {
+    public void desgastar() {
         durabilidad -= desgaste;
     }
 }

@@ -1,10 +1,6 @@
 package durabilidadtest;
 
-import algocraft.excepciones.DurabilidadEsCeroException;
-import algocraft.herramienta.Durabilidad;
-import algocraft.herramienta.DurabilidadFactorFuerza;
-import algocraft.herramienta.DurabilidadPorUsos;
-import algocraft.herramienta.DurabilidadPorcentual;
+import algocraft.herramienta.*;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -24,23 +20,8 @@ public class DurabilidadTest {
 
     }
 
-    @Test (expected = DurabilidadEsCeroException.class)
-    public void test02DurabilidadFactorFuerzaAlLlegarACeroYQuererDesgastarLanzaExcepcionDurabilidadEsCero() {
-        double durabilidad = 10;
-        int factor = 1;
-        Durabilidad durabilidadFactorFuerza = new DurabilidadFactorFuerza(durabilidad, factor);
-
-        for (int i = 0; durabilidad - i > 0; i+=factor) {
-            assertEquals(durabilidad - i, durabilidadFactorFuerza.getDurabilidad(), 0);
-            durabilidadFactorFuerza.desgastar();
-        }
-        assertEquals(0, durabilidadFactorFuerza.getDurabilidad(), 0);
-        // Aquí lanza excepción.
-        durabilidadFactorFuerza.desgastar();
-    }
-
     @Test
-    public void test03DurabilidadPorUsosNoDecrementaHastaCumplirCantidadDeUsos() {
+    public void test02DurabilidadPorUsosNoDecrementaHastaCumplirCantidadDeUsos() {
         double durabilidad = 20;
         int usos = 10;
         Durabilidad durabilidadPorUsos = new DurabilidadPorUsos(durabilidad, usos);
@@ -53,7 +34,7 @@ public class DurabilidadTest {
     }
 
     @Test
-    public void test04DurabilidadPorcentualDecrementaPorcentualmente() {
+    public void test03DurabilidadPorcentualDecrementaPorcentualmente() {
         double durabilidad = 20;
         double porcentaje = 0.5;
         Durabilidad durabilidadPorcentual = new DurabilidadPorcentual(durabilidad, porcentaje);

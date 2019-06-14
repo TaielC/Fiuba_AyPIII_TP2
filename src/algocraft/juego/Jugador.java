@@ -13,8 +13,8 @@ public class Jugador implements ObjetoUbicable{
     public static Jugador getInstance() { return instanciaJugador; }
 
     private Jugador() {
-        inventario = Inventario.getInstance();
-        inventario.agregar(new Hacha(new Madera()));
+        inventario = new Inventario();
+        inventario.agregar(new Hacha(new MaderaMaterialHerramienta()));
     }
 
     public int agregarAInventario(Herramienta herramienta) {

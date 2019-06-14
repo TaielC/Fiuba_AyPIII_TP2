@@ -7,11 +7,6 @@ public class Diamante extends MaterialMineral {
 	public Diamante() {
 		durabilidad=100;
 	}
-	
-	@Override
-	public String toString(){
-		return "Diamante";
-	}
 
 	@Override
 	public void serGolpeado(Hacha hacha) { hacha.golpear(this); }
@@ -23,41 +18,10 @@ public class Diamante extends MaterialMineral {
 	public void serGolpeado(PicoFino picoFino) {
 		durabilidad -= picoFino.fuerza();
 		picoFino.golpear(this);
-
 	}
 
 	@Override
-	public boolean esDaniadoPor(MaterialDaniable material) {
+	public boolean esDaniadoPor(MaterialHerramienta material) {
 		return material.dania(this);
-	}
-
-	@Override
-	public boolean dania(Madera madera) {
-		return false;
-	}
-
-	@Override
-	public boolean dania(Piedra piedra) {
-		return false;
-	}
-
-	@Override
-	public boolean dania(Metal metal) {
-		return false;
-	}
-
-	@Override
-	public boolean dania(Diamante diamante) {
-		return true;
-	}
-
-	@Override
-	public int obtenerPosicionHorizontal() {
-		return 0;
-	}
-
-	@Override
-	public int obtenerPosicionVertical() {
-		return 0;
 	}
 }

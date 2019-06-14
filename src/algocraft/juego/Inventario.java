@@ -8,10 +8,7 @@ public class Inventario {
     private Herramienta[] herramientas;
     private int cantidadHerramientas;
 
-    private static Inventario instanciaInventario = new Inventario();
-    public static Inventario getInstance(){ return instanciaInventario; }
-
-    private Inventario(){
+    public Inventario(){
         herramientas = new Herramienta[30];
         for( int i = 0; i < herramientas.length; i++){
             herramientas[i] = null;

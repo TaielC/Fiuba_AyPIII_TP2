@@ -2,20 +2,10 @@ package algocraft.material;
 
 import algocraft.herramienta.*;
 
-public class Metal extends MaterialMineral implements MaterialItem{
+public class Metal extends MaterialMineral {
 
     public Metal(){
         durabilidad = 50;
-    }
-
-    @Override
-    public String toString(){
-        return "Metal";
-    }
-
-    @Override
-    public Herramienta comoHerramienta() {
-        return null;
     }
 
     @Override
@@ -37,42 +27,9 @@ public class Metal extends MaterialMineral implements MaterialItem{
     }
 
     @Override
-    public boolean esDaniadoPor(MaterialDaniable material) {
+    public boolean esDaniadoPor(MaterialHerramienta material) {
         return material.dania(this);
     }
 
-    @Override
-    public boolean dania(Madera madera) {
-        return true;
-    }
 
-    @Override
-    public boolean dania(Piedra piedra) {
-        return true;
-    }
-
-    @Override
-    public boolean dania(Metal metal) {
-        return false;
-    }
-
-    @Override
-    public boolean dania(Diamante diamante) {
-        return false;
-    }
-
-    @Override
-    public MaterialDaniable getComoDaniable() {
-        return this;
-    }
-
-    @Override
-    public int obtenerPosicionHorizontal() {
-        return 0;
-    }
-
-    @Override
-    public int obtenerPosicionVertical() {
-        return 0;
-    }
 }

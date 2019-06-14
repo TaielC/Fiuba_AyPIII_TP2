@@ -10,8 +10,8 @@ public class DurabilidadPorUsos extends Durabilidad {
     }
 
     @Override
-    protected void desgastarProtected() {
+    public void desgastar() {
         usos -=1;
-        if(usos == 0) durabilidad = 0;
+        if(usos <= 0) durabilidad = 0;
     }
 }

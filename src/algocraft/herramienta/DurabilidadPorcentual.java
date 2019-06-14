@@ -1,5 +1,6 @@
 package algocraft.herramienta;
 
+
 public class DurabilidadPorcentual extends Durabilidad {
 
     private double porcentaje;
@@ -10,7 +11,7 @@ public class DurabilidadPorcentual extends Durabilidad {
     }
 
     @Override
-    protected void desgastarProtected() {
+    public void desgastar(){
         durabilidad -= durabilidad*porcentaje;
     }
 }

@@ -1,8 +1,8 @@
 package algocraft.material;
 
-public interface MaterialDaniable {
+public interface MaterialHerramienta {
 
-    boolean esDaniadoPor(MaterialDaniable material);
+    boolean equals(MaterialHerramienta material);
 
     boolean dania(Madera madera);
     boolean dania(Piedra piedra);

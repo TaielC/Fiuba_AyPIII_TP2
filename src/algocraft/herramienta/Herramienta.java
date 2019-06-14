@@ -1,5 +1,6 @@
 package algocraft.herramienta;
 
+import algocraft.excepciones.HerramientaRotaException;
 import algocraft.juego.Item;
 import algocraft.material.*;
 
@@ -7,7 +8,7 @@ public abstract class Herramienta implements Item {
 	
 	protected Durabilidad durabilidad;
 	protected int fuerza;
-	protected MaterialDaniable material;
+	protected MaterialHerramienta material;
 
 	public double durabilidad() {
 		return durabilidad.getDurabilidad();
@@ -23,7 +24,7 @@ public abstract class Herramienta implements Item {
 
 	public abstract void usar(MaterialMineral materialMineral);
 
-	public void golpear(Madera madera){ durabilidad.desgastar(); }
+	public void golpear(Madera madera){	durabilidad.desgastar(); }
 
 	public void golpear(Piedra piedra){ durabilidad.desgastar(); }
 
@@ -31,7 +32,7 @@ public abstract class Herramienta implements Item {
 
 	public void golpear(Diamante diamante){ durabilidad.desgastar(); }
 
-	public MaterialDaniable material(){
+	public MaterialHerramienta material(){
 		return material;
 	}
 }

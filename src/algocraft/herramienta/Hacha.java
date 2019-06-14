@@ -1,14 +1,11 @@
 package algocraft.herramienta;
 
+import algocraft.excepciones.HerramientaRotaException;
 import algocraft.material.*;
 
 public class Hacha extends Herramienta {
 
-	public static Herramienta crear(Madera madera){
-		return new Hacha(madera);
-	}
-
-	public Hacha(Madera madera) {
+	public Hacha(MaderaMaterialHerramienta madera) {
 		final int DurabilidadHachaMadera = 100;
 		final int FuerzaHachaMadera = 2;
 		fuerza = FuerzaHachaMadera;
@@ -16,7 +13,7 @@ public class Hacha extends Herramienta {
 		material = madera;
 	}
 
-	public Hacha(Piedra piedra) {
+	public Hacha(PiedraMaterialHerramienta piedra) {
 		final int DurabilidadHachaPiedra = 200;
 		final int FuerzaHachaPiedra = 5;
 		fuerza = FuerzaHachaPiedra;
@@ -24,7 +21,7 @@ public class Hacha extends Herramienta {
 		material = piedra;
 	}
 
-	public Hacha(Metal metal) {
+	public Hacha(MetalMaterialHerramienta metal) {
 		final int DurabilidadHachaMetal = 400;
 		final int FuerzaHachaMetal = 10;
 		final double FactorDesgasteHachaMetal = 2;
@@ -40,6 +37,8 @@ public class Hacha extends Herramienta {
 
 	@Override
 	public void usar(MaterialMineral materialMineral) {
+		if(durabilidad.seDesgastoTotalmente())
+			throw new HerramientaRotaException();
 		materialMineral.serGolpeado(this);
 	}
 

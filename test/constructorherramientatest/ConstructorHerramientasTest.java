@@ -1,7 +1,7 @@
 package constructorherramientatest;
 
-import algocraft.constructorherramienta.ConstructorHerramientas;
-import algocraft.constructorherramienta.TableroConstruccionHerramienta;
+import algocraft.herramienta.constructor.ConstructorHerramientas;
+import algocraft.herramienta.constructor.TableroConstruccionHerramienta;
 import algocraft.herramienta.*;
 import algocraft.material.MaderaMaterialHerramienta;
 import algocraft.material.MetalMaterialHerramienta;

@@ -28,7 +28,7 @@ public class Metal extends MaterialMineral {
 
     @Override
     public boolean esDaniadoPor(MaterialHerramienta material) {
-        return material.dania(this);
+        return material.daniaA(this);
     }
 
 

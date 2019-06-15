@@ -1,6 +1,6 @@
 package constructorherramientatest;
 
-import algocraft.constructorherramienta.TableroConstruccionHerramienta;
+import algocraft.herramienta.constructor.TableroConstruccionHerramienta;
 import algocraft.material.*;
 
 import org.junit.Test;

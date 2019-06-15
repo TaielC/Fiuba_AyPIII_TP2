@@ -7,22 +7,22 @@ public class MetalMaterialHerramienta implements MaterialHerramienta {
     }
 
     @Override
-    public boolean dania(Madera madera) {
+    public boolean daniaA(Madera madera) {
         return true;
     }
 
     @Override
-    public boolean dania(Piedra piedra) {
+    public boolean daniaA(Piedra piedra) {
         return true;
     }
 
     @Override
-    public boolean dania(Metal metal) {
+    public boolean daniaA(Metal metal) {
         return false;
     }
 
     @Override
-    public boolean dania(Diamante diamante) {
+    public boolean daniaA(Diamante diamante) {
         return false;
     }
 }

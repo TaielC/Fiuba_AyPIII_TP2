@@ -1,6 +1,6 @@
-package algocraft.herramienta;
+package algocraft.herramienta.durabilidad;
 
-public abstract class Durabilidad {
+public abstract class DurabilidadHerramienta {
 
     protected double durabilidad;
 
@@ -8,7 +8,7 @@ public abstract class Durabilidad {
 
     public double getDurabilidad(){ return durabilidad; }
 
-    public boolean seDesgastoTotalmente() {
+    public boolean seDesgasto() {
         return durabilidad <= 0;
     }
 }

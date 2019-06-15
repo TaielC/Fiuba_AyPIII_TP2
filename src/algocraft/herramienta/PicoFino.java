@@ -1,6 +1,7 @@
 package algocraft.herramienta;
 
 import algocraft.excepciones.HerramientaRotaException;
+import algocraft.herramienta.durabilidad.DurabilidadHerramientaPorcentual;
 import algocraft.material.*;
 
 public class PicoFino extends Herramienta {
@@ -10,12 +11,12 @@ public class PicoFino extends Herramienta {
         final int FuerzaPicoFino = 20;
         final double PorcentajeDesgastePicoFino = 0.1;
         fuerza = FuerzaPicoFino;
-        durabilidad = new DurabilidadPorcentual(DurabilidadPicoFino, PorcentajeDesgastePicoFino);
+        durabilidadHerramienta = new DurabilidadHerramientaPorcentual(DurabilidadPicoFino, PorcentajeDesgastePicoFino);
         material = new MaterialHerramientaNada();
     }
     @Override
     public void usar(MaterialMineral materialMineral) {
-        if(durabilidad.seDesgastoTotalmente())
+        if(durabilidadHerramienta.seDesgasto())
             throw new HerramientaRotaException();
         materialMineral.serGolpeado(this);
     }

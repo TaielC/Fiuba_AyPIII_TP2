@@ -1,10 +1,10 @@
-package algocraft.herramienta;
+package algocraft.herramienta.durabilidad;
 
-public class DurabilidadPorUsos extends Durabilidad {
+public class DurabilidadHerramientaPorUsos extends DurabilidadHerramienta {
 
     private int usos;
 
-    public DurabilidadPorUsos(double durabilidadHerramienta, int cantUsos){
+    public DurabilidadHerramientaPorUsos(double durabilidadHerramienta, int cantUsos){
         durabilidad = durabilidadHerramienta;
         usos = cantUsos;
     }

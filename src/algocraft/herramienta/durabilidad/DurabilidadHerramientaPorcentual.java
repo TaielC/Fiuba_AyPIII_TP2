@@ -1,11 +1,11 @@
-package algocraft.herramienta;
+package algocraft.herramienta.durabilidad;
 
 
-public class DurabilidadPorcentual extends Durabilidad {
+public class DurabilidadHerramientaPorcentual extends DurabilidadHerramienta {
 
     private double porcentaje;
 
-    public DurabilidadPorcentual(double durabilidadHerrameinta, double porcentajeHerramienta) {
+    public DurabilidadHerramientaPorcentual(double durabilidadHerrameinta, double porcentajeHerramienta) {
         durabilidad = durabilidadHerrameinta;
         porcentaje = porcentajeHerramienta;
     }

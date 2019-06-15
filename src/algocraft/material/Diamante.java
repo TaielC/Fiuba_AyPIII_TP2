@@ -22,6 +22,6 @@ public class Diamante extends MaterialMineral {
 
 	@Override
 	public boolean esDaniadoPor(MaterialHerramienta material) {
-		return material.dania(this);
+		return material.daniaA(this);
 	}
 }

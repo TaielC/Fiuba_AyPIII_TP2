@@ -1,9 +1,8 @@
 package algocraft.material;
 
 import algocraft.herramienta.*;
-import algocraft.juego.ObjetoUbicable;
 
-public abstract class MaterialMineral implements ObjetoUbicable {
+public abstract class MaterialMineral {
 
     protected int durabilidad;
 
@@ -19,13 +18,4 @@ public abstract class MaterialMineral implements ObjetoUbicable {
         return durabilidad;
     }
 
-    @Override
-    public int obtenerPosicionHorizontal() {
-        return 0;
-    }
-
-    @Override
-    public int obtenerPosicionVertical() {
-        return 0;
-    }
 }

@@ -14,20 +14,20 @@ public class InventarioTest {
 
         Herramienta hacha = new Hacha(new MaderaMaterialHerramienta());
         Inventario inventario = new Inventario();
-        int posicion = inventario.agregar(hacha);
+        int posicion = inventario.agregarHerramienta(hacha);
 
         assertEquals(0, posicion);
-        assertEquals(hacha, inventario.obtener(posicion));
+        assertEquals(hacha, inventario.obtenerHerramienta(posicion));
     }
 
     @Test
     public void test02AgregarUnaHerramientaEnUnaPosicionAEleccionSePuedeObtenerNuevamente() {
         Herramienta hacha = new Hacha(new MaderaMaterialHerramienta());
         Inventario inventario = new Inventario();
-        int posicion = 10;
+        int posicion = 5;
 
-        inventario.agregar(hacha, posicion);
-        assertEquals(hacha, inventario.obtener(posicion));
+        inventario.agregarHerramienta(hacha, posicion);
+        assertEquals(hacha, inventario.obtenerHerramienta(posicion));
     }
 
     @Test
@@ -37,13 +37,13 @@ public class InventarioTest {
         Inventario inventario = new Inventario();
         int posicion=2;
 
-        inventario.agregar(hacha,posicion);
+        inventario.agregarHerramienta(hacha,posicion);
 
-        assertEquals(hacha , inventario.obtener(posicion));
+        assertEquals(hacha , inventario.obtenerHerramienta(posicion));
 
-        inventario.obtener(posicion);
+        inventario.obtenerHerramienta(posicion);
 
-        assertNull(inventario.obtener(posicion));
+        assertNull(inventario.obtenerHerramienta(posicion));
     }
 
     @Test
@@ -53,11 +53,11 @@ public class InventarioTest {
         Inventario inventario = new Inventario();
         int posicion=2;
 
-        inventario.agregar(hacha,posicion);
+        inventario.agregarHerramienta(hacha,posicion);
 
         assertFalse(inventario.estaVacio());
 
-        inventario.obtener(posicion);
+        inventario.obtenerHerramienta(posicion);
 
         assertTrue(inventario.estaVacio());
     }

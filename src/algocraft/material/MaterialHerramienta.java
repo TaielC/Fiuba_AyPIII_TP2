@@ -4,8 +4,8 @@ public interface MaterialHerramienta {
 
     boolean equals(MaterialHerramienta material);
 
-    boolean dania(Madera madera);
-    boolean dania(Piedra piedra);
-    boolean dania(Metal metal);
-    boolean dania(Diamante diamante);
+    boolean daniaA(Madera madera);
+    boolean daniaA(Piedra piedra);
+    boolean daniaA(Metal metal);
+    boolean daniaA(Diamante diamante);
 }

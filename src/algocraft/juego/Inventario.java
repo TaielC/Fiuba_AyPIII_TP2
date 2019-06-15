@@ -1,57 +1,28 @@
 package algocraft.juego;
 
-import algocraft.excepciones.InventarioEstaLlenoException;
 import algocraft.herramienta.Herramienta;
 
 public class Inventario {
 
-    private Herramienta[] herramientas;
-    private int cantidadHerramientas;
+    private InventarioMateriales inventarioMateriales;
+    private InventarioHerramientas inventarioHerramientas;
 
     public Inventario(){
-        herramientas = new Herramienta[30];
-        for( int i = 0; i < herramientas.length; i++){
-            herramientas[i] = null;
-        }
-        cantidadHerramientas = 0;
+        inventarioHerramientas = new InventarioHerramientas();
+        inventarioMateriales = new InventarioMateriales();
     }
 
-    private void comprobarEspacioDisponible() {
-        if(herramientas.length == cantidadHerramientas){
-            throw new InventarioEstaLlenoException();
-        }
+    public int agregarHerramienta(Herramienta herramienta) {
+        return inventarioHerramientas.agregarHerramienta(herramienta);
     }
 
-    public int agregar(Herramienta herramienta) {
-        this.comprobarEspacioDisponible();
-        int i;
-        for(i = 0; i <= cantidadHerramientas && i < herramientas.length ; i++) {
-            if (herramientas[i] == null) {
-                herramientas[i] = herramienta;
-                cantidadHerramientas++;
-                break;
-            }
-        }
-        return i;
+    public void agregarHerramienta(Herramienta herramienta, int posicion) {
+        inventarioHerramientas.agregarHerramienta(herramienta, posicion);
     }
 
-    public void agregar(Herramienta herramienta, int posicion) {
-        this.comprobarEspacioDisponible();
-        herramientas[posicion] = herramienta;
-        cantidadHerramientas++;
+    public Herramienta obtenerHerramienta(int posicion){
+        return inventarioHerramientas.obtenerHerramienta(posicion);
     }
 
-    public Herramienta obtener(int posicion){
-        if(herramientas[posicion] == null){
-            // Lanzar excepcion o devolver nada
-        }
-        Herramienta herramienta = herramientas[posicion];
-        herramientas[posicion] = null;
-        cantidadHerramientas--;
-        return herramienta;
-    }
-
-    public boolean estaVacio() {
-        return cantidadHerramientas == 0;
-    }
+    public boolean estaVacio() { return inventarioHerramientas.estaVacio(); }
 }

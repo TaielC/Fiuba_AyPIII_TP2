@@ -1,6 +1,7 @@
 package algocraft.herramienta;
 
 import algocraft.excepciones.HerramientaRotaException;
+import algocraft.herramienta.durabilidad.DurabilidadHerramientaFactorFuerza;
 import algocraft.material.*;
 
 public class Hacha extends Herramienta {
@@ -9,7 +10,7 @@ public class Hacha extends Herramienta {
 		final int DurabilidadHachaMadera = 100;
 		final int FuerzaHachaMadera = 2;
 		fuerza = FuerzaHachaMadera;
-		durabilidad = new DurabilidadFactorFuerza(DurabilidadHachaMadera, FuerzaHachaMadera);
+		durabilidadHerramienta = new DurabilidadHerramientaFactorFuerza(DurabilidadHachaMadera, FuerzaHachaMadera);
 		material = madera;
 	}
 
@@ -17,7 +18,7 @@ public class Hacha extends Herramienta {
 		final int DurabilidadHachaPiedra = 200;
 		final int FuerzaHachaPiedra = 5;
 		fuerza = FuerzaHachaPiedra;
-		durabilidad = new DurabilidadFactorFuerza(DurabilidadHachaPiedra, FuerzaHachaPiedra);
+		durabilidadHerramienta = new DurabilidadHerramientaFactorFuerza(DurabilidadHachaPiedra, FuerzaHachaPiedra);
 		material = piedra;
 	}
 
@@ -26,18 +27,13 @@ public class Hacha extends Herramienta {
 		final int FuerzaHachaMetal = 10;
 		final double FactorDesgasteHachaMetal = 2;
 		fuerza = FuerzaHachaMetal;
-		durabilidad = new DurabilidadFactorFuerza(DurabilidadHachaMetal, FuerzaHachaMetal/FactorDesgasteHachaMetal);
+		durabilidadHerramienta = new DurabilidadHerramientaFactorFuerza(DurabilidadHachaMetal, FuerzaHachaMetal/FactorDesgasteHachaMetal);
 		material = metal;
 	}
 
 	@Override
-	public String toString(){
-		return "HachaDe"+material.toString();
-	}
-
-	@Override
 	public void usar(MaterialMineral materialMineral) {
-		if(durabilidad.seDesgastoTotalmente())
+		if(durabilidadHerramienta.seDesgasto())
 			throw new HerramientaRotaException();
 		materialMineral.serGolpeado(this);
 	}

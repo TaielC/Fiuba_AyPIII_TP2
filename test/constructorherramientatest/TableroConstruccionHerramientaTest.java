@@ -2,7 +2,6 @@ package constructorherramientatest;
 
 import algocraft.constructorherramienta.TableroConstruccionHerramienta;
 import algocraft.material.*;
-import algocraft.tableroconstruccionherramientatemplates.*;
 
 import org.junit.Test;
 import static org.junit.Assert.*;
@@ -128,126 +127,21 @@ public class TableroConstruccionHerramientaTest {
     }
 
     @Test
-    public void test12SiSeAgreganLosMaterialesParaUnHachaDeMaderaAUnTableroNuevoEsIgualAlTemplate() {
-        TableroConstruccionHerramienta template = new TableroHachaMaderaTemplate();
-        TableroConstruccionHerramienta tablero = new TableroConstruccionHerramienta();
+    public void test12PonerLosMaterialesParaUnHachaDeMaderaEnDosTablerosVerifiCanIguales() {
+        TableroConstruccionHerramienta tablero1 = new TableroConstruccionHerramienta();
+        TableroConstruccionHerramienta tablero2 = new TableroConstruccionHerramienta();
 
-        tablero.putSuperiorIzquierda(new MaderaMaterialHerramienta());
-        tablero.putSuperior(new MaderaMaterialHerramienta());
-        tablero.putIzquierda(new MaderaMaterialHerramienta());
-        tablero.putCentro(new MaderaMaterialHerramienta());
-        tablero.putInferior(new MaderaMaterialHerramienta());
+        tablero1.putSuperiorIzquierda(new MaderaMaterialHerramienta());
+        tablero1.putSuperior(new MaderaMaterialHerramienta());
+        tablero1.putIzquierda(new MaderaMaterialHerramienta());
+        tablero1.putCentro(new MaderaMaterialHerramienta());
+        tablero1.putInferior(new MaderaMaterialHerramienta());
+        tablero2.putSuperiorIzquierda(new MaderaMaterialHerramienta());
+        tablero2.putSuperior(new MaderaMaterialHerramienta());
+        tablero2.putIzquierda(new MaderaMaterialHerramienta());
+        tablero2.putCentro(new MaderaMaterialHerramienta());
+        tablero2.putInferior(new MaderaMaterialHerramienta());
 
-        assertTrue(tablero.equals(template));
-    }
-    @Test
-    public void test13SiSeAgreganLosMaterialesParaUnHachaDeMaderaEspejadosAUnTableroNuevoEsIgualAlTemplate() {
-        TableroConstruccionHerramienta template = new TableroHachaMaderaEspejadoTemplate();
-        TableroConstruccionHerramienta tablero = new TableroConstruccionHerramienta();
-
-        tablero.putSuperior(new MaderaMaterialHerramienta());
-        tablero.putSuperiorDerecha(new MaderaMaterialHerramienta());
-        tablero.putCentro(new MaderaMaterialHerramienta());
-        tablero.putDerecha(new MaderaMaterialHerramienta());
-        tablero.putInferior(new MaderaMaterialHerramienta());
-
-        assertTrue(tablero.equals(template));
-    }
-
-    @Test
-    public void test14SiSeAgreganLosMaterialesParaUnPicoDeMaderaAUnTableroNuevoEsIgualAlTemplate() {
-        TableroConstruccionHerramienta template = new TableroPicoMaderaTemplate();
-        TableroConstruccionHerramienta tablero = new TableroConstruccionHerramienta();
-
-        tablero.putSuperiorIzquierda(new MaderaMaterialHerramienta());
-        tablero.putSuperior(new MaderaMaterialHerramienta());
-        tablero.putSuperiorDerecha(new MaderaMaterialHerramienta());
-        tablero.putCentro(new MaderaMaterialHerramienta());
-        tablero.putInferior(new MaderaMaterialHerramienta());
-
-        assertTrue(tablero.equals(template));
-    }
-
-    @Test
-    public void test15SiSeAgreganLosMaterialesParaUnHachaDePiedraAUnTableroNuevoEsIgualAlTemplate() {
-        TableroConstruccionHerramienta template = new TableroHachaPiedraTemplate();
-        TableroConstruccionHerramienta tablero = new TableroConstruccionHerramienta();
-
-        tablero.putSuperiorIzquierda(new PiedraMaterialHerramienta());
-        tablero.putSuperior(new PiedraMaterialHerramienta());
-        tablero.putIzquierda(new PiedraMaterialHerramienta());
-        tablero.putCentro(new MaderaMaterialHerramienta());
-        tablero.putInferior(new MaderaMaterialHerramienta());
-
-        assertTrue(tablero.equals(template));
-    }
-    @Test
-    public void test16SiSeAgreganLosMaterialesParaUnHachaDePiedraEspejadosAUnTableroNuevoEsIgualAlTemplate() {
-        TableroConstruccionHerramienta template = new TableroHachaPiedraEspejadoTemplate();
-        TableroConstruccionHerramienta tablero = new TableroConstruccionHerramienta();
-
-        tablero.putSuperior(new PiedraMaterialHerramienta());
-        tablero.putSuperiorDerecha(new PiedraMaterialHerramienta());
-        tablero.putCentro(new MaderaMaterialHerramienta());
-        tablero.putDerecha(new PiedraMaterialHerramienta());
-        tablero.putInferior(new MaderaMaterialHerramienta());
-
-        assertTrue(tablero.equals(template));
-    }
-
-    @Test
-    public void test17SiSeAgreganLosMaterialesParaUnPicoDePiedraAUnTableroNuevoEsIgualAlTemplate() {
-        TableroConstruccionHerramienta template = new TableroPicoPiedraTemplate();
-        TableroConstruccionHerramienta tablero = new TableroConstruccionHerramienta();
-
-        tablero.putSuperiorIzquierda(new PiedraMaterialHerramienta());
-        tablero.putSuperior(new PiedraMaterialHerramienta());
-        tablero.putSuperiorDerecha(new PiedraMaterialHerramienta());
-        tablero.putCentro(new MaderaMaterialHerramienta());
-        tablero.putInferior(new MaderaMaterialHerramienta());
-
-        assertTrue(tablero.equals(template));
-    }
-
-    @Test
-    public void test18SiSeAgreganLosMaterialesParaUnHachaDeMetalAUnTableroNuevoEsIgualAlTemplate() {
-        TableroConstruccionHerramienta template = new TableroHachaMetalTemplate();
-        TableroConstruccionHerramienta tablero = new TableroConstruccionHerramienta();
-
-        tablero.putSuperiorIzquierda(new MetalMaterialHerramienta());
-        tablero.putSuperior(new MetalMaterialHerramienta());
-        tablero.putIzquierda(new MetalMaterialHerramienta());
-        tablero.putCentro(new MaderaMaterialHerramienta());
-        tablero.putInferior(new MaderaMaterialHerramienta());
-
-        assertTrue(tablero.equals(template));
-    }
-
-    @Test
-    public void test19SiSeAgreganLosMaterialesParaUnHachaDeMetalEspejadosAUnTableroNuevoEsIgualAlTemplate() {
-        TableroConstruccionHerramienta template = new TableroHachaMetalEspejadoTemplate();
-        TableroConstruccionHerramienta tablero = new TableroConstruccionHerramienta();
-
-        tablero.putSuperior(new MetalMaterialHerramienta());
-        tablero.putSuperiorDerecha(new MetalMaterialHerramienta());
-        tablero.putCentro(new MaderaMaterialHerramienta());
-        tablero.putDerecha(new MetalMaterialHerramienta());
-        tablero.putInferior(new MaderaMaterialHerramienta());
-
-        assertTrue(tablero.equals(template));
-    }
-
-    @Test
-    public void test20SiSeAgreganLosMaterialesParaUnPicoDeMetalAUnTableroNuevoEsIgualAlTemplate() {
-        TableroConstruccionHerramienta template = new TableroPicoMetalTemplate();
-        TableroConstruccionHerramienta tablero = new TableroConstruccionHerramienta();
-
-        tablero.putSuperiorIzquierda(new MetalMaterialHerramienta());
-        tablero.putSuperior(new MetalMaterialHerramienta());
-        tablero.putSuperiorDerecha(new MetalMaterialHerramienta());
-        tablero.putCentro(new MaderaMaterialHerramienta());
-        tablero.putInferior(new MaderaMaterialHerramienta());
-
-        assertTrue(tablero.equals(template));
+        assertTrue(tablero1.equals(tablero2));
     }
 }

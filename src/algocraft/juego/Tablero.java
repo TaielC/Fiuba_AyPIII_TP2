@@ -7,7 +7,7 @@ import java.util.Map;
 
 public class Tablero {
 
-    private Map<String,Casillero> tablero = new HashMap<>();
+    private Map<String,ObjetoUbicable> tablero = new HashMap<>();
     private int bordeHorizontal;
     private int bordeVertical;
 
@@ -19,30 +19,39 @@ public class Tablero {
         for(int i = 0; i < x; i ++){
             for (int j = 0; j < y; j++){
 
-                //Posicion posicionCasillero = new Posicion(i,j);
-                Casillero casillero = new Casillero(new Posicion(i,j));
+                Posicion posicionCasillero = new Posicion(i,j);
+                ObjetoUbicable objeto = null;
                 int[] posicion = {i, j};
 
-                this.tablero.put(Arrays.toString(posicion), casillero);
+                this.tablero.put(Arrays.toString(posicion), objeto );
             }
         }
 
     }
 
 
-    public Casillero casillero(String clave){
-        return tablero.get(clave);
+    public ObjetoUbicable getObjetoUbicable(String posicion){
+        return tablero.get(posicion);
+    }
+
+    public ObjetoUbicable getObjetoUbicable(Posicion posicion){
+        String posicionString = posicion.getString();
+        return tablero.get(posicionString);
     }
 
     public void agregar(ObjetoUbicable objetoUbicable, Posicion posicion) {
-        Casillero casillero = tablero.get(posicion.getString());
-        casillero.agregar(objetoUbicable);
+        String posicionObjeto = posicion.getString();
+        if (this.tablero.get(posicionObjeto) == null) {
+            objetoUbicable.setPosicion(posicion);
+            tablero.put(posicionObjeto,objetoUbicable);
+        }
     }
 
-    public boolean estaEnElLimite(Posicion posicion){
-        boolean limiteX = posicion.getX() >= this.bordeHorizontal;
-        boolean limiteY = posicion.getY() >= this.bordeVertical;
-        return limiteX || limiteY;
+    public boolean sePuedeMover(Posicion posicion){
+        boolean limiteX = (posicion.getX() <= this.bordeHorizontal) || (posicion.getX() >= 0);
+        boolean limiteY = (posicion.getY() <= this.bordeVertical) || (posicion.getX() >= 0);
+        boolean estaVacio = (tablero.get(posicion.getString()) == null);
+        return limiteX && limiteY && estaVacio;
     }
 
 

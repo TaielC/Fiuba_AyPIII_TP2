@@ -37,13 +37,10 @@ public class Jugador implements ObjetoUbicable{
 
     public void moverHacia(Direccion direccion) {
         this.direccion = direccion;
-        if (!(this.tablero.estaEnElLimite(this.posicion))) {
-            Posicion siguientePosicion = this.posicion.obtenerSiguiente(direccion);
-            Casillero casilleroSiguiente = tablero.casillero(siguientePosicion.getString());
+        Posicion siguientePosicion = this.posicion.obtenerSiguiente(direccion);
 
-            if (casilleroSiguiente.estaVacio()) {
-                this.posicion = siguientePosicion;
-            }
+        if (this.tablero.sePuedeMover(siguientePosicion)) {
+            this.posicion = siguientePosicion;
             //Deberia lanzar una excepcion si esta en el borde
         }
     }

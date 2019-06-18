@@ -14,11 +14,11 @@ public class Mapa {
         this.tablero = new Tablero(100,100);
         this.posicionJugador = new Posicion(0,0);
         this.jugador = new Jugador(tablero, posicionJugador);
-        tablero.agregar(jugador, posicionJugador);
+        this.tablero.agregar(jugador, posicionJugador);
 
     }
 
-    public void moverJugador(Direccion direccion){
+    public void moverJugadorHacia(Direccion direccion){
         jugador.moverHacia(direccion);
     }
 

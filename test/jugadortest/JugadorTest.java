@@ -13,7 +13,10 @@ public class JugadorTest {
 
 	@Test
 	public void test01ElJugadorSeInicializaCorrectamenteConUnHachaDeMaderaEnSuInventario(){
-		Jugador jugador = Jugador.getInstance();
+
+		Tablero tablero = new Tablero(100,100);
+		Posicion posicionJugador = new Posicion(0,0);
+		Jugador jugador = new Jugador(tablero, posicionJugador);
 
 		Herramienta herramienta = jugador.obtenerDeInventario(0);
 
@@ -24,7 +27,10 @@ public class JugadorTest {
 
 	@Test
 	public void test02ElJugadorAgregaCorrectamenteUnaHerramientaAlInventario() {
-		Jugador jugador = Jugador.getInstance();
+
+		Tablero tablero = new Tablero(100,100);
+		Posicion posicionJugador = new Posicion(0,0);
+		Jugador jugador = new Jugador(tablero, posicionJugador);
 		Herramienta hacha = new Hacha(new PiedraMaterialHerramienta());
 
 		int posicion = jugador.agregarAInventario(hacha);
@@ -35,7 +41,10 @@ public class JugadorTest {
 
 	@Test
 	public void test03ElJugadorAgregaCorrectamenteUnaHerramientaAlInventarioSeleccionandoSuPosicionEnElMismo() {
-		Jugador jugador = Jugador.getInstance();
+
+		Tablero tablero = new Tablero(100,100);
+		Posicion posicionJugador = new Posicion(0,0);
+		Jugador jugador = new Jugador(tablero, posicionJugador);
 		Herramienta pico = new Pico(new PiedraMaterialHerramienta());
 
 		jugador.agregarAInventario(pico,2);
@@ -46,90 +55,84 @@ public class JugadorTest {
 
 	@Test
 	public void test04DeberiaVincularUnCasilleroDeFormaCorrectaAlJugadorDeLaPartida() {
-		Jugador jugador = Jugador.getInstance();
-		Casillero casillero = new Casillero(1,2);
 
-		jugador.vincularCasillero(casillero);
+		Tablero tablero = new Tablero(100,100);
+		Posicion posicionJugador = new Posicion(0,0);
+		Jugador jugador = new Jugador(tablero, posicionJugador);
 
-		assertEquals(1,jugador.obtenerPosicionHorizontal());
-		assertEquals(2,jugador.obtenerPosicionVertical());
+		assertTrue(posicionJugador.esIgualA(jugador.getPosicion()));
 
 	}
 
 	@Test
 	public void test05ElJugadorDeberiaMoverseCorrectamenteEnFormaVerticalHaciaArriba() {
-		Jugador jugador = Jugador.getInstance();
-		Tablero tablero = new Tablero(10,10);
-		Casillero casillero = new Casillero(1,2);
 
-		jugador.vincularTablero(tablero);
-		jugador.vincularCasillero(casillero);
+		Tablero tablero = new Tablero(100,100);
+		Posicion posicionJugador = new Posicion(0,0);
+		Jugador jugador = new Jugador(tablero, posicionJugador);
 
-		jugador.moverHaciaArriba();
+		jugador.moverHacia(Direccion.arriba());
+		Posicion nuevaPosicionJugador = jugador.getPosicion();
 
-		assertEquals(3,jugador.obtenerPosicionVertical());
+		assertTrue(nuevaPosicionJugador.esIgualA(new Posicion(0,1)));
 
 	}
 
 	@Test
 	public void test06ElJugadorDeberiaMoverseCorrectamenteEnFormaVerticalHaciaAbajo() {
-		Jugador jugador = Jugador.getInstance();
-		Tablero tablero = new Tablero(10,10);
-		Casillero casillero = new Casillero(1,2);
 
-		jugador.vincularTablero(tablero);
-		jugador.vincularCasillero(casillero);
+		Tablero tablero = new Tablero(100,100);
+		Posicion posicionJugador = new Posicion(0,1);
+		Jugador jugador = new Jugador(tablero, posicionJugador);
 
-		jugador.moverHaciaAbajo();
+		jugador.moverHacia(Direccion.abajo());
+		Posicion nuevaPosicionJugador = jugador.getPosicion();
 
-		assertEquals(1,jugador.obtenerPosicionVertical());
+		assertTrue(nuevaPosicionJugador.esIgualA(new Posicion(0,0)));
 
 	}
 
 	@Test
 	public void test07ElJugadorDeberiaMoverseCorrectamenteEnFormaHorizontalHaciaDerecha() {
-		Jugador jugador = Jugador.getInstance();
-		Tablero tablero = new Tablero(10,10);
-		Casillero casillero = new Casillero(1,2);
 
-		jugador.vincularTablero(tablero);
-		jugador.vincularCasillero(casillero);
+		Tablero tablero = new Tablero(100,100);
+		Posicion posicionJugador = new Posicion(0,0);
+		Jugador jugador = new Jugador(tablero, posicionJugador);
 
-		jugador.moverHaciaDerecha();
+		jugador.moverHacia(Direccion.derecha());
+		Posicion nuevaPosicionJugador = jugador.getPosicion();
 
-		assertEquals(2,jugador.obtenerPosicionHorizontal());
+		assertTrue(nuevaPosicionJugador.esIgualA(new Posicion(1,0)));
 	}
 
 	@Test
 	public void test08ElJugadorDeberiaMoverseCorrectamenteEnFormaHorizontalHaciaIzquierda() {
-		Jugador jugador = Jugador.getInstance();
-		Tablero tablero = new Tablero(10,10);
-		Casillero casillero = new Casillero(1,2);
 
-		jugador.vincularTablero(tablero);
-		jugador.vincularCasillero(casillero);
+		Tablero tablero = new Tablero(100,100);
+		Posicion posicionJugador = new Posicion(1,0);
+		Jugador jugador = new Jugador(tablero, posicionJugador);
 
-		jugador.moverHaciaIzquierda();
+		jugador.moverHacia(Direccion.izquierda());
+		Posicion nuevaPosicionJugador = jugador.getPosicion();
 
-		assertEquals(0,jugador.obtenerPosicionHorizontal());
+		assertTrue(nuevaPosicionJugador.esIgualA(new Posicion(0,0)));
 
 	}
 
-    /*
     @Test
     public void test09ElJugadorNoDeberiaMoverseDeCasilleroSiElMismoEstaOcupado() {
-        Jugador jugador = Jugador.getInstance();
-        MaterialMineral madera = new Madera();
-        Tablero tablero = new Tablero(10,10);
-        Casillero casillero = new Casillero(1,2);
 
-        tablero.agregar(madera, "0,2");
+		Tablero tablero = new Tablero(100,100);
+		Posicion posicionJugador = new Posicion(1,1);
+		Jugador jugador = new Jugador(tablero, posicionJugador);
+		MaterialMineral madera = new Madera(new Posicion(2,1));
+		tablero.agregar(madera, madera.getPosicion());
 
-        jugador.vincularTablero(tablero);
-        jugador.vincularCasillero(casillero);
-        jugador.moverHaciaIzquierda();
+		jugador.moverHacia(Direccion.derecha());
+		Posicion nuevaPosicionJugador = jugador.getPosicion();
 
-        assertEquals(1,jugador.obtenerPosicionHorizontal());
-    }*/
+		assertTrue(nuevaPosicionJugador.esIgualA(posicionJugador));
+    }
+
 
 }

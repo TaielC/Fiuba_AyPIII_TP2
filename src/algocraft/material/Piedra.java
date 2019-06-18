@@ -1,10 +1,15 @@
 package algocraft.material;
 
 import algocraft.herramienta.*;
+import algocraft.juego.Posicion;
+
 
 public class Piedra extends MaterialMineral {
 
-    public Piedra(){ durabilidad = 30; }
+    public Piedra(Posicion posicion){
+        durabilidad = 30;
+        posicionMaterial = posicion;
+    }
 
     @Override
     public void serGolpeado(Hacha hacha) { hacha.golpear(this); }

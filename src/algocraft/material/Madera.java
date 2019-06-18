@@ -1,11 +1,13 @@
 package algocraft.material;
 
 import algocraft.herramienta.*;
+import algocraft.juego.Posicion;
 
 public class Madera extends MaterialMineral  {
 
-    public Madera(){
+    public Madera(Posicion posicion){
         durabilidad = 10;
+        posicionMaterial = posicion;
     }
 
     @Override
@@ -24,4 +26,5 @@ public class Madera extends MaterialMineral  {
     public boolean esDaniadoPor(MaterialHerramienta material) {
         return material.dania(this);
     }
+
 }

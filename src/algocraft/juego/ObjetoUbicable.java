@@ -2,7 +2,8 @@ package algocraft.juego;
 
 public interface ObjetoUbicable {
 
-    int obtenerPosicionHorizontal();
+    Posicion getPosicion();
 
-    int obtenerPosicionVertical();
+    void setPosicion(Posicion posicion);
+
 }

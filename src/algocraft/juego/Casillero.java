@@ -3,31 +3,23 @@ package algocraft.juego;
 
 public class Casillero {
 
-    private int x ;
-    private int y;
+    private Posicion posicion;
     private ObjetoUbicable obtenido = null;
 
 
-    public Casillero(int x, int y){
-        this.x = x;
-        this.y = y;
+    public Casillero(Posicion posicion){
+        this.posicion = posicion;
     }
 
-    public void poner(ObjetoUbicable item){
+    public void agregar(ObjetoUbicable item){
     	if (this.estaVacio()) {
     		this.obtenido = item;
+    		item.setPosicion(this.posicion);
        }
     }
 
     public boolean estaVacio(){
         return obtenido == null;
-    }
-    public int posicionHorizontal(){
-        return x;
-    }
-
-    public int posicionVertical(){
-        return y;
     }
 
     public ObjetoUbicable obtenido(){

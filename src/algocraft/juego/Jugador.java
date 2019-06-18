@@ -7,14 +7,14 @@ public class Jugador implements ObjetoUbicable{
 
     private Inventario inventario;
     private Tablero tablero;
-    private Casillero casillero;
+    private Posicion posicion;
+    private Direccion direccion;
 
-    private static Jugador instanciaJugador = new Jugador();
-    public static Jugador getInstance() { return instanciaJugador; }
-
-    private Jugador() {
+    public Jugador(Tablero tablero, Posicion posicion) {
         inventario = new Inventario();
         inventario.agregar(new Hacha(new MaderaMaterialHerramienta()));
+        this.tablero = tablero;
+        this.posicion = posicion;
     }
 
     public int agregarAInventario(Herramienta herramienta) {
@@ -33,26 +33,29 @@ public class Jugador implements ObjetoUbicable{
         return inventario.estaVacio();
     }
 
-    public void vincularTablero(Tablero tablero){ this.tablero = tablero; }
+    public void moverHacia(Direccion direccion) {
+        this.direccion = direccion;
+        if (!(this.tablero.estaEnElLimite(this.posicion))) {
+            Posicion siguientePosicion = this.posicion.obtenerSiguiente(direccion);
+            Casillero casilleroSiguiente = tablero.casillero(siguientePosicion.getString());
 
-    public void vincularCasillero(Casillero casillero_){ casillero = casillero_; }
-
-    public void moverHaciaArriba(){ casillero=tablero.moverHaciaArriba(casillero); }
-
-    public void moverHaciaAbajo(){ casillero=tablero.moverHaciaAbajo(casillero); }
-
-    public void moverHaciaIzquierda(){ casillero=tablero.moverHaciaIzquierda(casillero); }
-
-    public void moverHaciaDerecha(){ casillero=tablero.moverHaciaDerecha(casillero); }
-
-    @Override
-    public int obtenerPosicionHorizontal() {
-        return casillero.posicionHorizontal();
+            if (casilleroSiguiente.estaVacio()) {
+                this.posicion = siguientePosicion;
+            }
+            //Deberia lanzar una excepcion si esta en el borde
+        }
     }
 
     @Override
-    public int obtenerPosicionVertical() {
-        return casillero.posicionVertical();
+    public Posicion getPosicion() {
+        return this.posicion;
     }
+
+    @Override
+    public void setPosicion(Posicion posicion) {
+        this.posicion = posicion;
+    }
+
+
 }
 

@@ -2,10 +2,12 @@ package algocraft.material;
 
 import algocraft.herramienta.*;
 import algocraft.juego.ObjetoUbicable;
+import algocraft.juego.Posicion;
 
 public abstract class MaterialMineral implements ObjetoUbicable {
 
     protected int durabilidad;
+    protected Posicion posicionMaterial;
 
     public abstract void serGolpeado(Hacha hacha);
 
@@ -20,12 +22,12 @@ public abstract class MaterialMineral implements ObjetoUbicable {
     }
 
     @Override
-    public int obtenerPosicionHorizontal() {
-        return 0;
+    public Posicion getPosicion() {
+        return this.posicionMaterial;
     }
 
     @Override
-    public int obtenerPosicionVertical() {
-        return 0;
+    public void setPosicion(Posicion posicion) {
+        posicionMaterial = posicion;
     }
 }

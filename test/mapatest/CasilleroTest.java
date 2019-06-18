@@ -11,109 +11,63 @@ public class CasilleroTest {
 
 	@Test
 	public void test01VerificaQueUnCasilleroEstaVacio() {
-		Casillero casillero = new Casillero(1,1);
-		assertTrue(casillero.estaVacio());
+
+		Tablero tablero = new Tablero(10,10);
+		Casillero casillero = tablero.casillero("[1, 1]");
+		assertNull(casillero.obtenido());
 	}
 
 	@Test
 	public void test02VerificaQueSePuedeOcuparUnCasilleroVacio() {
-		
-		Casillero casillero = new Casillero(1,1);
-		Jugador jugador = Jugador.getInstance();
-		
-		casillero.poner(jugador);
+
+		Mapa mapa = Mapa.getInstance();
+		Tablero tablero = mapa.getTablero();
+		Casillero casillero = tablero.casillero("[1, 1]");
+
+		assertTrue(casillero.estaVacio());
+
+		MaterialMineral madera = new Madera(new Posicion(1,1));
+		tablero.agregar(madera, madera.getPosicion());
 
 		assertFalse(casillero.estaVacio());
 	}
 	
 	@Test
 	public void test03VerificaQueNoSePuedeOcuparUnCasilleroOcupado() {
-		Casillero casillero = new Casillero(1,1);
-		Jugador jugador = Jugador.getInstance();
-		Jugador jugador2 = Jugador.getInstance(); //Tendria que ir un material pero me tira error
+
+		Mapa mapa = Mapa.getInstance();
+		Tablero tablero = mapa.getTablero();
+		Casillero casillero = tablero.casillero("[0, 0]");
+
+		MaterialMineral madera = new Madera(new Posicion(0,0));
+		tablero.agregar(madera, madera.getPosicion());
 		
-		casillero.poner(jugador);
-		casillero.poner(jugador2);
-		
-		assertEquals(casillero.obtenido(),jugador);
+		assertEquals(casillero.obtenido(),mapa.getJugador());
 		
 	}
 	
 	@Test
 	public void test04VerificaQueSePuedaOcuparUnCasilleroPorUnPersonaje() {
-		Casillero casillero = new Casillero(1,1);
-		Jugador jugador = Jugador.getInstance();
-		
-		casillero.poner(jugador);
+
+		Mapa mapa = Mapa.getInstance();
+		Tablero tablero = mapa.getTablero();
+		Casillero casillero = tablero.casillero("[0, 0]");
+
 		assertFalse(casillero.estaVacio());
 	}
 	
 	@Test
 	public void test05VerificaQueSePuedaOcuparUnCasilleroPorUnMaterial() {
-		Casillero casillero = new Casillero(1,1);
-		MaterialMineral madera = new Madera();
-		
-		casillero.poner(madera); // me tira error cuando pongo un material en un casillero
-		assertEquals(false,casillero.estaVacio());
+
+		Mapa mapa = Mapa.getInstance();
+		Tablero tablero = mapa.getTablero();
+		MaterialMineral madera = new Madera(new Posicion(1,1));
+
+		tablero.agregar(madera, madera.getPosicion());
+		Casillero casillero = tablero.casillero("[1, 1]");
+
+		assertFalse(casillero.estaVacio());
 	}
-	
-	@Test
-	public void test06VerificaLaCorrectaPosicionDelObjetoAgregadoAlCasilleroYQuePuedaSerDevuelto() {
-		
-		Casillero casillero = new Casillero(1,2);
-		Jugador jugador = Jugador.getInstance();
-		
-		
-		casillero.poner(jugador);
-		
-		assertEquals(1,casillero.posicionHorizontal());
-		assertEquals(2,casillero.posicionVertical());
-		assertEquals(jugador,casillero.obtenido());
-	}
-	
-	@Test
-	public void test07VerificaQueEnCasoDeMoverseHaciaArribaSeActualiceLaPosicionEnUnNuevoCasillero(){
-		Tablero tablero = new Tablero(10,10);
-		Casillero casillero = new Casillero(1,2);
-		
-		
-		Casillero casilleroNuevo = tablero.moverHaciaArriba(casillero);
-		
-		assertEquals(3,casilleroNuevo.posicionVertical());
-		
-}
-	@Test
-	public void test08VerificaQueEnCasoDeMoverseHaciaAbajoSeActualiceLaPosicionEnUnNuevoCasillero() {
-		Tablero tablero = new Tablero(10,10);
-		Casillero casillero = new Casillero(1,2);
-		
-		Casillero casilleroNuevo = tablero.moverHaciaAbajo(casillero);
-		
-		assertEquals(1,casilleroNuevo.posicionVertical());
-	}
-	
-	@Test
-	public void test09VerificaQueEnCasoDeMoverseHaciaLaDerechaSeActualiceLaPosicionEnUnNuevoCasillero() {
-		Tablero tablero = new Tablero(10,10);
-		Casillero casillero = new Casillero(1,2);
-		
-		Casillero casilleroNuevo = tablero.moverHaciaDerecha(casillero);
-		
-		assertEquals(2,casilleroNuevo.posicionHorizontal());
-	}
-	
-	@Test
-	public void test10VerificaQueEnCasoDeMoverseHaciaLaIzquierdaSeActualiceLaPosicionEnUnNuevoCasillero() {
-		Tablero tablero = new Tablero(10,10);
-		Casillero casillero = new Casillero(1,2);
-		
-		Casillero casilleroNuevo = tablero.moverHaciaIzquierda(casillero);
-		
-		assertEquals(0,casilleroNuevo.posicionHorizontal());
-	}
-	
-	
-	
 	
 	
 }

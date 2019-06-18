@@ -1,11 +1,14 @@
 package algocraft.material;
 
 import algocraft.herramienta.*;
+import algocraft.juego.Posicion;
+
 
 public class Metal extends MaterialMineral {
 
-    public Metal(){
+    public Metal(Posicion posicion){
         durabilidad = 50;
+        posicionMaterial = posicion;
     }
 
     @Override

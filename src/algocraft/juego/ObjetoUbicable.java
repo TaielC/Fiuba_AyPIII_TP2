@@ -1,4 +1,9 @@
 package algocraft.juego;
 
-public class ObjetoUbicable {
+public interface ObjetoUbicable {
+
+    Posicion getPosicion();
+
+    void setPosicion(Posicion posicion);
+
 }

@@ -3,8 +3,8 @@ package algocraft.herramienta.constructor.template;
 import algocraft.herramienta.constructor.TableroConstruccionHerramienta;
 import algocraft.herramienta.Herramienta;
 import algocraft.herramienta.Pico;
-import algocraft.material.MaderaMaterialHerramienta;
-import algocraft.material.PiedraMaterialHerramienta;
+import algocraft.herramienta.material.MaderaMaterialHerramienta;
+import algocraft.herramienta.material.PiedraMaterialHerramienta;
 
 public class PicoPiedraTemplateConstruccionHerramienta extends TemplateConstruccionHerramienta {
 

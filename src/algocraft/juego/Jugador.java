@@ -1,7 +1,8 @@
 package algocraft.juego;
 
+import algocraft.inventario.Inventario;
 import algocraft.herramienta.*;
-import algocraft.material.*;
+import algocraft.herramienta.material.MaderaMaterialHerramienta;
 
 public class Jugador {
 

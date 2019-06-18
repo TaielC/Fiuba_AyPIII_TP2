@@ -1,6 +1,7 @@
 package algocraft.material;
 
 import algocraft.herramienta.*;
+import algocraft.herramienta.material.MaterialHerramienta;
 
 public class Piedra extends MaterialMineral {
 

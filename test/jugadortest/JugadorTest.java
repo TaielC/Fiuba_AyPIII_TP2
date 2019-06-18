@@ -1,9 +1,10 @@
 package jugadortest;
 
+import algocraft.herramienta.material.MaderaMaterialHerramienta;
+import algocraft.herramienta.material.PiedraMaterialHerramienta;
 import algocraft.juego.*;
 import algocraft.herramienta.*;
 import algocraft.herramienta.Herramienta;
-import algocraft.material.*;
 
 import org.junit.Test;
 import static org.junit.Assert.*;

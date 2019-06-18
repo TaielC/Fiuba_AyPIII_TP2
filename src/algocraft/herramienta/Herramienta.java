@@ -1,6 +1,7 @@
 package algocraft.herramienta;
 
 import algocraft.herramienta.durabilidad.DurabilidadHerramienta;
+import algocraft.herramienta.material.MaterialHerramienta;
 import algocraft.material.*;
 
 public abstract class Herramienta {
@@ -11,13 +12,13 @@ public abstract class Herramienta {
 
 	public abstract void usar(MaterialMineral materialMineral);
 
-	public void golpear(Madera madera){	durabilidadHerramienta.desgastar(); }
+	public void golpear(MaderaMineral maderaMineral){	durabilidadHerramienta.desgastar(); }
 
 	public void golpear(Piedra piedra){ durabilidadHerramienta.desgastar(); }
 
-	public void golpear(Metal metal){ durabilidadHerramienta.desgastar(); }
+	public void golpear(MetalMineral metalMineral){ durabilidadHerramienta.desgastar(); }
 
-	public void golpear(Diamante diamante){ durabilidadHerramienta.desgastar(); }
+	public void golpear(DiamanteMineral diamanteMineral){ durabilidadHerramienta.desgastar(); }
 
 	// GETTERS
 	public double durabilidad() { return durabilidadHerramienta.getDurabilidad(); }

@@ -3,10 +3,10 @@ package constructorherramientatest;
 import algocraft.herramienta.constructor.ConstructorHerramientas;
 import algocraft.herramienta.constructor.TableroConstruccionHerramienta;
 import algocraft.herramienta.*;
-import algocraft.material.MaderaMaterialHerramienta;
-import algocraft.material.MetalMaterialHerramienta;
+import algocraft.herramienta.material.MaderaMaterialHerramienta;
+import algocraft.herramienta.material.MetalMaterialHerramienta;
 
-import algocraft.material.PiedraMaterialHerramienta;
+import algocraft.herramienta.material.PiedraMaterialHerramienta;
 import org.junit.Test;
 import static org.junit.Assert.*;
 

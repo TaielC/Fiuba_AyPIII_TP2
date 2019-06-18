@@ -2,8 +2,8 @@ package algocraft.herramienta.constructor;
 
 
 import algocraft.excepciones.PosicionDeTableroConstruccionHerramientaInvalidaException;
-import algocraft.material.MaterialHerramienta;
-import algocraft.material.MaterialHerramientaNada;
+import algocraft.herramienta.material.MaterialHerramienta;
+import algocraft.herramienta.material.MaterialHerramientaNada;
 
 public class TableroConstruccionHerramienta {
 

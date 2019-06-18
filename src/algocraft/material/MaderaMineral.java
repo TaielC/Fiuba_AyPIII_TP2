@@ -1,10 +1,11 @@
 package algocraft.material;
 
 import algocraft.herramienta.*;
+import algocraft.herramienta.material.MaterialHerramienta;
 
-public class Madera extends MaterialMineral  {
+public class MaderaMineral extends MaterialMineral  {
 
-    public Madera(){
+    public MaderaMineral(){
         durabilidad = 10;
     }
 

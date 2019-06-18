@@ -1,10 +1,11 @@
 package algocraft.material;
 
 import algocraft.herramienta.*;
+import algocraft.herramienta.material.MaterialHerramienta;
 
-public class Diamante extends MaterialMineral {
+public class DiamanteMineral extends MaterialMineral {
 
-	public Diamante() {
+	public DiamanteMineral() {
 		durabilidad=100;
 	}
 

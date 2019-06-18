@@ -1,4 +1,4 @@
 package algocraft.juego;
 
-public class Jugador {
+public class Tablero {
 }

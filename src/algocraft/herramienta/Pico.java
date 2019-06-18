@@ -3,6 +3,9 @@ package algocraft.herramienta;
 import algocraft.excepciones.HerramientaRotaException;
 import algocraft.herramienta.durabilidad.DurabilidadHerramientaFactorFuerza;
 import algocraft.herramienta.durabilidad.DurabilidadHerramientaPorUsos;
+import algocraft.herramienta.material.MaderaMaterialHerramienta;
+import algocraft.herramienta.material.MetalMaterialHerramienta;
+import algocraft.herramienta.material.PiedraMaterialHerramienta;
 import algocraft.material.*;
 
 public class Pico extends Herramienta {

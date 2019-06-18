@@ -2,8 +2,10 @@ package jugadortest;
 
 import algocraft.juego.*;
 import algocraft.herramienta.*;
-import algocraft.herramienta.Herramienta;
-import algocraft.material.*;
+import algocraft.herramienta.material.MaderaMaterialHerramienta;
+import algocraft.herramienta.material.PiedraMaterialHerramienta;
+import algocraft.material.MaderaMineral;
+import algocraft.material.MaterialMineral;
 
 import org.junit.Test;
 import static org.junit.Assert.*;
@@ -126,7 +128,7 @@ public class JugadorTest {
         Tablero tablero = new Tablero(100,100);
         Posicion posicionJugador = new Posicion(1,1);
         Jugador jugador = new Jugador(tablero, posicionJugador);
-        MaterialMineral madera = new Madera(new Posicion(2,1));
+        MaterialMineral madera = new MaderaMineral(new Posicion(2,1));
         tablero.agregar(madera, madera.getPosicion());
 
         jugador.moverHacia(Direccion.derecha());

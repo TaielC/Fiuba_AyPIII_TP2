@@ -2,10 +2,11 @@ package algocraft.material;
 
 import algocraft.herramienta.*;
 import algocraft.juego.Posicion;
+import algocraft.herramienta.material.MaterialHerramienta;
 
-public class Diamante extends MaterialMineral {
+public class DiamanteMineral extends MaterialMineral {
 
-	public Diamante(Posicion posicion) {
+	public DiamanteMineral(Posicion posicion) {
 		durabilidad = 100;
 		posicionMaterial = posicion;
 	}

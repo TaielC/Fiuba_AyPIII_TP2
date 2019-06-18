@@ -1,5 +1,9 @@
-package algocraft.juego;
+package algocraft.inventario;
 
+import algocraft.herramienta.material.MaderaMaterialHerramienta;
+import algocraft.herramienta.material.MetalMaterialHerramienta;
+import algocraft.herramienta.material.PiedraMaterialHerramienta;
+import algocraft.juego.Posicion;
 import algocraft.material.*;
 
 import java.util.Stack;
@@ -9,13 +13,13 @@ public class InventarioMateriales {
     private Stack<MaderaMaterialHerramienta> maderaStack;
     private Stack<PiedraMaterialHerramienta> piedraStack;
     private Stack<MetalMaterialHerramienta> metalStack;
-    private Stack<Diamante> diamanteStack;
+    private Stack<DiamanteMineral> diamanteMineralStack;
 
     public InventarioMateriales() {
         this.maderaStack = new Stack<>();
         this.piedraStack = new Stack<>();
         this.metalStack = new Stack<>();
-        this.diamanteStack = new Stack<>();
+        this.diamanteMineralStack = new Stack<>();
     }
 
     public void agregarMadera() {
@@ -28,19 +32,19 @@ public class InventarioMateriales {
         metalStack.push(new MetalMaterialHerramienta());
     }
     public void agregarDiamante() {
-        diamanteStack.push(new Diamante());
+        diamanteMineralStack.push(new DiamanteMineral(new Posicion(0,0)));
     }
 
-    public MaterialHerramienta getMadera(){
+    public MaderaMaterialHerramienta getMadera(){
         return maderaStack.pop();
     }
-    public MaterialHerramienta getPiedra(){
+    public PiedraMaterialHerramienta getPiedra(){
         return piedraStack.pop();
     }
-    public MaterialHerramienta getMetal(){
+    public MetalMaterialHerramienta getMetal(){
         return metalStack.pop();
     }
     public MaterialMineral getDiamante(){
-        return diamanteStack.pop();
+        return diamanteMineralStack.pop();
     }
 }

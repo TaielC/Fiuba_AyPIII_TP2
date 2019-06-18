@@ -2,6 +2,7 @@ package algocraft.herramienta;
 
 import algocraft.excepciones.HerramientaRotaException;
 import algocraft.herramienta.durabilidad.DurabilidadHerramientaPorcentual;
+import algocraft.herramienta.material.MaterialHerramientaNada;
 import algocraft.material.*;
 
 public class PicoFino extends Herramienta {
@@ -22,17 +23,17 @@ public class PicoFino extends Herramienta {
     }
 
     @Override
-    public void golpear(Madera madera) {
-        // El PicoFino no se desgasta contra Madera.
+    public void golpear(MaderaMineral maderaMineral) {
+        // El PicoFino no se desgasta contra MaderaMineral.
     }
 
     @Override
-    public void golpear(Piedra piedra) {
-        // El PicoFino no se desgasta contra Piedra.
+    public void golpear(PiedraMineral piedraMineral) {
+        // El PicoFino no se desgasta contra PiedraMineral.
     }
 
     @Override
-    public void golpear(Metal metal) {
-        // El PicoFino no se desgasta contra Metal.
+    public void golpear(MetalMineral metalMineral) {
+        // El PicoFino no se desgasta contra MetalMineral.
     }
 }

@@ -1,8 +1,8 @@
 package inventariotest;
 
-import algocraft.juego.Inventario;
+import algocraft.herramienta.material.MaderaMaterialHerramienta;
+import algocraft.inventario.Inventario;
 import algocraft.herramienta.*;
-import algocraft.material.*;
 import org.junit.Test;
 
 import static org.junit.Assert.*;

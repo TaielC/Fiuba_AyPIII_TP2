@@ -1,8 +1,9 @@
 package materialtest;
 
 import algocraft.herramienta.*;
-import algocraft.juego.Posicion;
+import algocraft.herramienta.material.*;
 import algocraft.material.*;
+import algocraft.juego.Posicion;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
@@ -11,9 +12,8 @@ public class MaterialMineralTest {
 
 	@Test
 	public void test01MaderaGolpeadaConHachaDeMaderaSeDebeReducirLaDurabilidadDelMaterialSegunLaFuerzaDelHacha(){
-
 		Posicion posicionMaterialMineral = new Posicion(0,1);
-		MaterialMineral madera = new Madera(posicionMaterialMineral);
+		MaterialMineral madera = new MaderaMineral(posicionMaterialMineral);
 		Herramienta hacha = new Hacha(new MaderaMaterialHerramienta());
 
 		int durabilidadMadera = madera.durabilidad();
@@ -25,9 +25,8 @@ public class MaterialMineralTest {
 
 	@Test
 	public void test02MaderaGolpeadaConPicoDeMaderaLaDurabilidadNoSeDebeReducir() {
-
 		Posicion posicionMaterialMineral = new Posicion(0,1);
-		MaterialMineral madera = new Madera(posicionMaterialMineral);
+		MaterialMineral madera = new MaderaMineral(posicionMaterialMineral);
 		Herramienta pico = new Pico(new MaderaMaterialHerramienta());
 		int durabilidadMadera = madera.durabilidad();
 
@@ -41,7 +40,7 @@ public class MaterialMineralTest {
 
 		Herramienta hacha = new Hacha(new PiedraMaterialHerramienta());
 		Posicion posicionMaterialMineral = new Posicion(0,1);
-		MaterialMineral piedra = new Piedra(posicionMaterialMineral);
+		MaterialMineral piedra = new PiedraMineral(posicionMaterialMineral);
 		int durabilidadPiedra = piedra.durabilidad();
 
 		hacha.usar(piedra);
@@ -53,7 +52,7 @@ public class MaterialMineralTest {
 
 		Herramienta pico = new Pico(new PiedraMaterialHerramienta());
 		Posicion posicionMaterialMineral = new Posicion(0,1);
-		MaterialMineral piedra = new Piedra(posicionMaterialMineral);
+		MaterialMineral piedra = new PiedraMineral(posicionMaterialMineral);
 		int durabilidadPiedra = piedra.durabilidad();
 		int fuerzaPico = pico.fuerza();
 
@@ -67,7 +66,7 @@ public class MaterialMineralTest {
 
 		Herramienta pico = new Pico(new MaderaMaterialHerramienta());
 		Posicion posicionMaterialMineral = new Posicion(0,1);
-		MaterialMineral metal = new Metal(posicionMaterialMineral);
+		MaterialMineral metal = new MetalMineral(posicionMaterialMineral);
 		int durabilidadMetal = metal.durabilidad();
 
 		pico.usar(metal);
@@ -80,7 +79,7 @@ public class MaterialMineralTest {
 
 		Herramienta pico = new Pico(new PiedraMaterialHerramienta());
 		Posicion posicionMaterialMineral = new Posicion(0,1);
-		MaterialMineral metal = new Metal(posicionMaterialMineral);
+		MaterialMineral metal = new MetalMineral(posicionMaterialMineral);
 		int durabilidadMetal = metal.durabilidad();
 		int fuerzaPico = pico.fuerza();
 
@@ -94,7 +93,7 @@ public class MaterialMineralTest {
 
 		Herramienta hacha = new Hacha(new MaderaMaterialHerramienta());
 		Posicion posicionMaterialMineral = new Posicion(0,1);
-		MaterialMineral metal = new Metal(posicionMaterialMineral);
+		MaterialMineral metal = new MetalMineral(posicionMaterialMineral);
 		int durabilidadMetal = metal.durabilidad();
 
 		hacha.usar(metal);
@@ -106,7 +105,7 @@ public class MaterialMineralTest {
 
 		Herramienta hacha = new Hacha(new MaderaMaterialHerramienta());
 		Posicion posicionMaterialMineral = new Posicion(0,1);
-		MaterialMineral diamante = new Diamante(posicionMaterialMineral);
+		MaterialMineral diamante = new DiamanteMineral(posicionMaterialMineral);
 		int durabilidadDiamante=diamante.durabilidad();
 
 		hacha.usar(diamante);
@@ -119,7 +118,7 @@ public class MaterialMineralTest {
 
 		Herramienta pico = new Pico(new MaderaMaterialHerramienta());
 		Posicion posicionMaterialMineral = new Posicion(0,1);
-		MaterialMineral diamante = new Diamante(posicionMaterialMineral);
+		MaterialMineral diamante = new DiamanteMineral(posicionMaterialMineral);
 		int durabilidadDiamante=diamante.durabilidad();
 
 		pico.usar(diamante);
@@ -131,7 +130,7 @@ public class MaterialMineralTest {
 
 		Herramienta pico = new Pico(new PiedraMaterialHerramienta());
 		Posicion posicionMaterialMineral = new Posicion(0,1);
-		MaterialMineral diamante = new Diamante(posicionMaterialMineral);
+		MaterialMineral diamante = new DiamanteMineral(posicionMaterialMineral);
 		int durabilidadDiamante=diamante.durabilidad();
 
 		pico.usar(diamante);
@@ -143,7 +142,7 @@ public class MaterialMineralTest {
 
 		Herramienta picoFino = new PicoFino();
 		Posicion posicionMaterialMineral = new Posicion(0,1);
-		MaterialMineral diamante = new Diamante(posicionMaterialMineral);
+		MaterialMineral diamante = new DiamanteMineral(posicionMaterialMineral);
 
 
 		int durabilidadDiamante=diamante.durabilidad();
@@ -158,7 +157,7 @@ public class MaterialMineralTest {
 
 		Herramienta picoFino = new PicoFino();
 		Posicion posicionMaterialMineral = new Posicion(0,1);
-		MaterialMineral madera = new Madera(posicionMaterialMineral);
+		MaterialMineral madera = new MaderaMineral(posicionMaterialMineral);
 
 		int durabilidadMadera = madera.durabilidad();
 
@@ -171,7 +170,7 @@ public class MaterialMineralTest {
 
 		Herramienta picoFino = new PicoFino();
 		Posicion posicionMaterialMineral = new Posicion(0,1);
-		MaterialMineral piedra = new Piedra(posicionMaterialMineral);
+		MaterialMineral piedra = new PiedraMineral(posicionMaterialMineral);
 
 		int durabilidadPiedra=piedra.durabilidad();
 		int fuerzaPicoFino=picoFino.fuerza();
@@ -185,7 +184,7 @@ public class MaterialMineralTest {
 
 		Herramienta picoFino = new PicoFino();
 		Posicion posicionMaterialMineral = new Posicion(0,1);
-		MaterialMineral metal = new Metal(posicionMaterialMineral);
+		MaterialMineral metal = new MetalMineral(posicionMaterialMineral);
 
 		int durabilidadMetal=metal.durabilidad();
 		int fuerzaPicoFino=picoFino.fuerza();
@@ -200,7 +199,7 @@ public class MaterialMineralTest {
 
 		Herramienta hacha = new Hacha(new PiedraMaterialHerramienta());
 		Posicion posicionMaterialMineral = new Posicion(0,1);
-		MaterialMineral madera = new Madera(posicionMaterialMineral);
+		MaterialMineral madera = new MaderaMineral(posicionMaterialMineral);
 
 		int durabilidadMadera=madera.durabilidad();
 		int fuerzaHacha=hacha.fuerza();
@@ -214,7 +213,7 @@ public class MaterialMineralTest {
 
 		Herramienta hacha = new Hacha(new MetalMaterialHerramienta());
 		Posicion posicionMaterialMineral = new Posicion(0,1);
-		MaterialMineral madera = new Madera(posicionMaterialMineral);
+		MaterialMineral madera = new MaderaMineral(posicionMaterialMineral);
 
 		int durabilidadMadera=madera.durabilidad();
 		int fuerzaHacha=hacha.fuerza();
@@ -228,7 +227,7 @@ public class MaterialMineralTest {
 
 		Herramienta pico = new Pico(new PiedraMaterialHerramienta());
 		Posicion posicionMaterialMineral = new Posicion(0,1);
-		MaterialMineral piedra = new Piedra(posicionMaterialMineral);
+		MaterialMineral piedra = new PiedraMineral(posicionMaterialMineral);
 
 		int durabilidadPiedra=piedra.durabilidad();
 		int fuerzaPico=pico.fuerza();

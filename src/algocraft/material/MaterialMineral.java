@@ -3,6 +3,7 @@ package algocraft.material;
 import algocraft.herramienta.*;
 import algocraft.juego.Posicion;
 import algocraft.juego.ObjetoUbicable;
+import algocraft.herramienta.material.MaterialHerramienta;
 
 public abstract class MaterialMineral implements ObjetoUbicable{
 

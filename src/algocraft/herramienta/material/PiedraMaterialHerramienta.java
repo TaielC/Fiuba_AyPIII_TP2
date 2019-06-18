@@ -1,4 +1,6 @@
-package algocraft.material;
+package algocraft.herramienta.material;
+
+import algocraft.material.*;
 
 public class PiedraMaterialHerramienta implements MaterialHerramienta {
 
@@ -8,22 +10,22 @@ public class PiedraMaterialHerramienta implements MaterialHerramienta {
     }
 
     @Override
-    public boolean daniaA(Madera madera) {
+    public boolean daniaA(MaderaMineral maderaMineral) {
         return true;
     }
 
     @Override
-    public boolean daniaA(Piedra piedra) {
+    public boolean daniaA(PiedraMineral piedraMineral) {
         return true;
     }
 
     @Override
-    public boolean daniaA(Metal metal) {
+    public boolean daniaA(MetalMineral metalMineral) {
         return true;
     }
 
     @Override
-    public boolean daniaA(Diamante diamante) {
+    public boolean daniaA(DiamanteMineral diamanteMineral) {
         return false;
     }
 }

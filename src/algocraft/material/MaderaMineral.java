@@ -2,10 +2,12 @@ package algocraft.material;
 
 import algocraft.herramienta.*;
 import algocraft.juego.Posicion;
+import algocraft.herramienta.material.MaterialHerramienta;
 
-public class Madera extends MaterialMineral  {
+public class MaderaMineral extends MaterialMineral  {
 
-    public Madera(Posicion posicion){
+
+    public MaderaMineral(Posicion posicion){
         durabilidad = 10;
         posicionMaterial = posicion;
     }

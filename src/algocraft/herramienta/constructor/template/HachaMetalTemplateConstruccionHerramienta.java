@@ -3,8 +3,8 @@ package algocraft.herramienta.constructor.template;
 import algocraft.herramienta.constructor.TableroConstruccionHerramienta;
 import algocraft.herramienta.Hacha;
 import algocraft.herramienta.Herramienta;
-import algocraft.material.MaderaMaterialHerramienta;
-import algocraft.material.MetalMaterialHerramienta;
+import algocraft.herramienta.material.MaderaMaterialHerramienta;
+import algocraft.herramienta.material.MetalMaterialHerramienta;
 
 public class HachaMetalTemplateConstruccionHerramienta extends TemplateConstruccionHerramienta {
 

@@ -2,12 +2,12 @@ package algocraft.material;
 
 import algocraft.herramienta.*;
 import algocraft.juego.Posicion;
+import algocraft.herramienta.material.MaterialHerramienta;
 
+public class MetalMineral extends MaterialMineral {
 
-public class Piedra extends MaterialMineral {
-
-    public Piedra(Posicion posicion){
-        durabilidad = 30;
+    public MetalMineral(Posicion posicion){
+        durabilidad = 50;
         posicionMaterial = posicion;
     }
 
@@ -16,7 +16,9 @@ public class Piedra extends MaterialMineral {
 
     @Override
     public void serGolpeado(Pico pico) {
-        durabilidad -= pico.fuerza();
+        if(this.esDaniadoPor(pico.material())) {
+            durabilidad -= pico.fuerza();
+        }
         pico.golpear(this);
     }
 
@@ -24,10 +26,13 @@ public class Piedra extends MaterialMineral {
     public void serGolpeado(PicoFino picoFino) {
         durabilidad -= picoFino.fuerza();
         picoFino.golpear(this);
+
     }
 
     @Override
     public boolean esDaniadoPor(MaterialHerramienta material) {
         return material.daniaA(this);
     }
+
+
 }

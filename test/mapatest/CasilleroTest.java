@@ -26,7 +26,7 @@ public class CasilleroTest {
 
         assertTrue(casillero.estaVacio());
 
-        MaterialMineral madera = new Madera(new Posicion(1,1));
+        MaterialMineral madera = new MaderaMineral(new Posicion(1,1));
         tablero.agregar(madera, madera.getPosicion());
 
         assertFalse(casillero.estaVacio());
@@ -39,7 +39,7 @@ public class CasilleroTest {
         Tablero tablero = mapa.getTablero();
         Casillero casillero = tablero.casillero("[0, 0]");
 
-        MaterialMineral madera = new Madera(new Posicion(0,0));
+        MaterialMineral madera = new MaderaMineral(new Posicion(0,0));
         tablero.agregar(madera, madera.getPosicion());
 
         assertEquals(casillero.obtenido(),mapa.getJugador());
@@ -61,7 +61,7 @@ public class CasilleroTest {
 
         Mapa mapa = Mapa.getInstance();
         Tablero tablero = mapa.getTablero();
-        MaterialMineral madera = new Madera(new Posicion(1,1));
+        MaterialMineral madera = new MaderaMineral(new Posicion(1,1));
 
         tablero.agregar(madera, madera.getPosicion());
         Casillero casillero = tablero.casillero("[1, 1]");

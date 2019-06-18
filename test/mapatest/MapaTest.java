@@ -13,8 +13,10 @@ public class CasilleroTest {
     public void test01VerificaQueUnCasilleroEstaVacio() {
 
         Tablero tablero = new Tablero(10,10);
-        Casillero casillero = tablero.casillero("[1, 1]");
-        assertNull(casillero.obtenido());
+
+        ObjetoUbicable objeto = tablero.getObjetoUbicable("[1, 1]");
+
+        assertNull(objeto);
     }
 
     @Test
@@ -22,14 +24,13 @@ public class CasilleroTest {
 
         Mapa mapa = Mapa.getInstance();
         Tablero tablero = mapa.getTablero();
-        Casillero casillero = tablero.casillero("[1, 1]");
 
-        assertTrue(casillero.estaVacio());
+        assertNull(tablero.getObjetoUbicable("[1, 1]"));
 
         MaterialMineral madera = new MaderaMineral(new Posicion(1,1));
         tablero.agregar(madera, madera.getPosicion());
 
-        assertFalse(casillero.estaVacio());
+        assertNotNull(tablero.getObjetoUbicable("[1, 1]"));
     }
 
     @Test
@@ -37,12 +38,11 @@ public class CasilleroTest {
 
         Mapa mapa = Mapa.getInstance();
         Tablero tablero = mapa.getTablero();
-        Casillero casillero = tablero.casillero("[0, 0]");
 
         MaterialMineral madera = new MaderaMineral(new Posicion(0,0));
         tablero.agregar(madera, madera.getPosicion());
 
-        assertEquals(casillero.obtenido(),mapa.getJugador());
+        assertEquals(tablero.getObjetoUbicable("[0, 0]"),mapa.getJugador());
 
     }
 
@@ -51,9 +51,8 @@ public class CasilleroTest {
 
         Mapa mapa = Mapa.getInstance();
         Tablero tablero = mapa.getTablero();
-        Casillero casillero = tablero.casillero("[0, 0]");
 
-        assertFalse(casillero.estaVacio());
+        assertEquals(tablero.getObjetoUbicable("[0, 0]"),mapa.getJugador());
     }
 
     @Test
@@ -64,9 +63,8 @@ public class CasilleroTest {
         MaterialMineral madera = new MaderaMineral(new Posicion(1,1));
 
         tablero.agregar(madera, madera.getPosicion());
-        Casillero casillero = tablero.casillero("[1, 1]");
 
-        assertFalse(casillero.estaVacio());
+        assertEquals(tablero.getObjetoUbicable("[1, 1]"),madera);
     }
 
 

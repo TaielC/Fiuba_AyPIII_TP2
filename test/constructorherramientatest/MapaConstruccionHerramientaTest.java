@@ -8,7 +8,7 @@ import algocraft.herramienta.material.MaterialHerramientaNada;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-public class TableroConstruccionHerramientaTest {
+public class MapaConstruccionHerramientaTest {
 
     @Test
     public void test01ElTableroIniciaConTodasLasPosicionesConUnMaterialHerramientaNada() {

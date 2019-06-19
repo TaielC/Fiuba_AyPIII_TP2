@@ -1,32 +1,68 @@
 package algocraft.juego;
 
+import java.util.HashMap;
+import java.lang.String;
+import java.util.Arrays;
+import java.util.Map;
+
 public class Mapa {
 
-    private Jugador jugador;
-    private Tablero tablero;
-    private Posicion posicionJugador;
-
-    private static Mapa instanciaMapa = new Mapa();
-    public static Mapa getInstance() { return instanciaMapa; }
+    private Map<String,ObjetoUbicable> tablero = new HashMap<>();
+    private int bordeHorizontal;
+    private int bordeVertical;
 
 
-    private Mapa(){
-        this.tablero = new Tablero(100,100);
-        this.posicionJugador = new Posicion(0,0);
-        this.jugador = new Jugador(tablero, posicionJugador);
-        this.tablero.agregar(jugador, posicionJugador);
+    public Mapa(int x, int y){
+
+        this.bordeHorizontal = x;
+        this.bordeVertical = y;
+        for(int i = 0; i < x; i ++){
+            for (int j = 0; j < y; j++){
+
+                Posicion posicionCasillero = new Posicion(i,j);
+                ObjetoUbicable objeto = null;
+                int[] posicion = {i, j};
+
+                this.tablero.put(Arrays.toString(posicion), objeto );
+            }
+        }
 
     }
 
-    public void moverJugadorHacia(Direccion direccion){
-        jugador.moverHacia(direccion);
+
+    public ObjetoUbicable getObjetoUbicable(String posicion){
+        return tablero.get(posicion);
     }
 
-    public Tablero getTablero(){
-        return this.tablero;
+    public ObjetoUbicable getObjetoUbicable(Posicion posicion){
+        String posicionString = posicion.getString();
+        return tablero.get(posicionString);
     }
 
-    public Jugador getJugador(){
-        return this.jugador;
+    public void agregar(ObjetoUbicable objetoUbicable, Posicion posicion) {
+        String posicionObjeto = posicion.getString();
+        if (this.tablero.get(posicionObjeto) == null) {
+            objetoUbicable.setPosicion(posicion);
+            tablero.put(posicionObjeto,objetoUbicable);
+        }
     }
-}
+
+    public boolean sePuedeMover(Posicion posicion){
+        boolean limiteX = (posicion.getX() <= this.bordeHorizontal) || (posicion.getX() >= 0);
+        boolean limiteY = (posicion.getY() <= this.bordeVertical) || (posicion.getX() >= 0);
+        boolean estaVacio = (tablero.get(posicion.getString()) == null);
+        return limiteX && limiteY && estaVacio;
+    }
+
+    public void moverJugadorHacia(Jugador jugador,Direccion direccion){
+        Posicion posicionJugador = jugador.getPosicion();
+        Posicion siguientePosicion = posicionJugador.obtenerSiguiente(direccion);
+
+        if (sePuedeMover(siguientePosicion)) {
+            tablero.put(posicionJugador.getString(), null);
+            tablero.put(siguientePosicion.getString(), jugador);
+            jugador.modificarPosicion(siguientePosicion);
+        }
+    }
+    }
+

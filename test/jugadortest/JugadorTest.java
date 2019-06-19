@@ -16,8 +16,8 @@ public class JugadorTest {
     @Test
     public void test01ElJugadorSeInicializaCorrectamenteConUnHachaDeMaderaEnSuInventario(){
 
-        Mapa mapa = Mapa.getInstance();
-        Jugador jugador = mapa.getJugador();
+        Juego juego = Juego.getInstance();
+        Jugador jugador = juego.getJugador();
 
         Herramienta herramienta = jugador.obtenerDeInventario(0);
 
@@ -29,8 +29,8 @@ public class JugadorTest {
     @Test
     public void test02ElJugadorAgregaCorrectamenteUnaHerramientaAlInventario() {
 
-        Mapa mapa = Mapa.getInstance();
-        Jugador jugador = mapa.getJugador();
+        Juego juego = Juego.getInstance();
+        Jugador jugador = juego.getJugador();
         Herramienta hacha = new Hacha(new PiedraMaterialHerramienta());
 
         int posicion = jugador.agregarAInventario(hacha);
@@ -42,8 +42,8 @@ public class JugadorTest {
     @Test
     public void test03ElJugadorAgregaCorrectamenteUnaHerramientaAlInventarioSeleccionandoSuPosicionEnElMismo() {
 
-        Mapa mapa = Mapa.getInstance();
-        Jugador jugador = mapa.getJugador();
+        Juego juego = Juego.getInstance();
+        Jugador jugador = juego.getJugador();
         Herramienta pico = new Pico(new PiedraMaterialHerramienta());
 
         jugador.agregarAInventario(pico,2);
@@ -55,8 +55,8 @@ public class JugadorTest {
     @Test
     public void test04DeberiaVincularUnCasilleroDeFormaCorrectaAlJugadorDeLaPartida() {
 
-        Mapa mapa = Mapa.getInstance();
-        Jugador jugador = mapa.getJugador();
+        Juego juego = Juego.getInstance();
+        Jugador jugador = juego.getJugador();
         Posicion posicionJugador = jugador.getPosicion();
 
         assertTrue(posicionJugador.esIgualA(jugador.getPosicion()));
@@ -66,37 +66,42 @@ public class JugadorTest {
     @Test
     public void test05ElJugadorDeberiaMoverseCorrectamenteEnFormaVerticalHaciaArriba() {
 
-        Mapa mapa = Mapa.getInstance();
-        Jugador jugador = mapa.getJugador();
+        Juego juego = Juego.getInstance();
+        Jugador jugador = juego.getJugador();
 
-        mapa.moverJugadorHacia(Direccion.arriba());
+        juego.moverJugadorHacia(Direccion.arriba());
         Posicion nuevaPosicionJugador = jugador.getPosicion();
+        Posicion posicion = new Posicion(0,1);
 
-        assertTrue(nuevaPosicionJugador.esIgualA(new Posicion(0,1)));
+
+
+        assertEquals(nuevaPosicionJugador.getString(), posicion.getString());
 
     }
 
     @Test
     public void test06ElJugadorDeberiaMoverseCorrectamenteEnFormaVerticalHaciaAbajo() {
 
-        Mapa mapa = Mapa.getInstance();
-        Jugador jugador = mapa.getJugador();
+        Juego juego = Juego.resetJuego();
 
-        mapa.moverJugadorHacia(Direccion.arriba());
-        mapa.moverJugadorHacia(Direccion.abajo());
+        Jugador jugador = juego.getJugador();
+
+        juego.moverJugadorHacia(Direccion.arriba());
+        juego.moverJugadorHacia(Direccion.abajo());
         Posicion nuevaPosicionJugador = jugador.getPosicion();
+        Posicion posicion = new Posicion(0,0);
 
-        assertTrue(nuevaPosicionJugador.esIgualA(new Posicion(0,0)));
+        assertEquals(nuevaPosicionJugador.getString(), posicion.getString());
 
     }
 
     @Test
     public void test07ElJugadorDeberiaMoverseCorrectamenteEnFormaHorizontalHaciaDerecha() {
 
-        Mapa mapa = Mapa.getInstance();
-        Jugador jugador = mapa.getJugador();
+        Juego juego = Juego.resetJuego();
+        Jugador jugador = juego.getJugador();
 
-        mapa.moverJugadorHacia(Direccion.derecha());
+        juego.moverJugadorHacia(Direccion.derecha());
         Posicion nuevaPosicionJugador = jugador.getPosicion();
 
         assertTrue(nuevaPosicionJugador.esIgualA(new Posicion(1,0)));
@@ -105,11 +110,11 @@ public class JugadorTest {
     @Test
     public void test08ElJugadorDeberiaMoverseCorrectamenteEnFormaHorizontalHaciaIzquierda() {
 
-        Mapa mapa = Mapa.getInstance();
-        Jugador jugador = mapa.getJugador();
+        Juego juego = Juego.resetJuego();
+        Jugador jugador = juego.getJugador();
 
-        mapa.moverJugadorHacia(Direccion.derecha());
-        mapa.moverJugadorHacia(Direccion.izquierda());
+        juego.moverJugadorHacia(Direccion.derecha());
+        juego.moverJugadorHacia(Direccion.izquierda());
         Posicion nuevaPosicionJugador = jugador.getPosicion();
         Posicion posicion = new Posicion(0,0);
 
@@ -120,14 +125,14 @@ public class JugadorTest {
     @Test
     public void test09ElJugadorNoDeberiaMoverseDeCasilleroSiElMismoEstaOcupado() {
 
-        Mapa mapa = Mapa.getInstance();
-        Tablero tablero = mapa.getTablero();
-        Jugador jugador = mapa.getJugador();
+        Juego juego = Juego.resetJuego();
+        Mapa mapa = juego.getMapa();
+        Jugador jugador = juego.getJugador();
         Posicion posicionJugador = jugador.getPosicion();
         MaterialMineral madera = new MaderaMineral(new Posicion(0,1));
-        tablero.agregar(madera, madera.getPosicion());
+        mapa.agregar(madera, madera.getPosicion());
 
-        jugador.moverHacia(Direccion.arriba());
+        juego.moverJugadorHacia(Direccion.arriba());
         Posicion nuevaPosicionJugador = jugador.getPosicion();
 
         assertTrue(nuevaPosicionJugador.esIgualA(posicionJugador));

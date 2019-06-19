@@ -21,7 +21,20 @@ public class Posicion {
         return coordenadaY;
     }
 
-    public boolean esIgualA(Object objeto){
+    public Posicion obtenerSiguiente (Direccion direccion){
+        return direccion.obtenerSiguiente(this);
+    }
+
+    @Override
+    public String toString(){
+        int posX = this.coordenadaX;
+        int posY = this.coordenadaY;
+        int[] posicion = {posX, posY};
+        return Arrays.toString(posicion);
+    }
+
+    @Override
+    public boolean equals(Object objeto){
         if (!(objeto instanceof Posicion)) {
             return false;
         }
@@ -31,17 +44,10 @@ public class Posicion {
         Posicion otro = (Posicion) objeto;
 
         return (this.getX() == otro.getX() && this.getY() == otro.getY());
-
     }
 
-    public Posicion obtenerSiguiente (Direccion direccion){
-        return direccion.obtenerSiguiente(this);
-    }
-
-    public String getString(){
-        int posX = this.coordenadaX;
-        int posY = this.coordenadaY;
-        int[] posicion = {posX, posY};
-        return Arrays.toString(posicion);
+    @Override
+    public int hashCode() {
+        return this.toString().hashCode();
     }
 }

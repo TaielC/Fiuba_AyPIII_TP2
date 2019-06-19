@@ -13,37 +13,36 @@ public class JuegoTest {
     public void test01VerificaQueUnCasilleroEstaVacio() {
 
         Mapa mapa = new Mapa(10,10);
+        Posicion posicion = new Posicion(1,1);
 
-        ObjetoUbicable objeto = mapa.getObjetoUbicable("[1, 1]");
+        ObjetoUbicable objeto = mapa.getObjetoUbicable(posicion);
 
-        assertNull(objeto);
+        assertTrue(objeto instanceof ObjetoAire);
     }
 
     @Test
     public void test02VerificaQueSePuedeOcuparUnCasilleroVacio() {
-
+        Juego.resetJuego();
         Juego juego = Juego.getInstance();
         Mapa mapa = juego.getMapa();
+        Posicion posicion = new Posicion(1,1);
 
-        assertNull(mapa.getObjetoUbicable("[1, 1]"));
+        assertTrue(mapa.getObjetoUbicable(posicion) instanceof ObjetoAire);
 
         MaterialMineral madera = new MaderaMineral(new Posicion(1,1));
         mapa.agregar(madera, madera.getPosicion());
 
-        assertNotNull(mapa.getObjetoUbicable("[1, 1]"));
+        assertNotNull(mapa.getObjetoUbicable(posicion));
     }
 
     @Test
     public void test03VerificaQueNoSePuedeOcuparUnCasilleroOcupado() {
-
-        Juego juego = Juego.getInstance();
-        Mapa mapa = juego.getMapa();
+        Mapa mapa = new Mapa(5, 5);
 
         MaterialMineral madera = new MaderaMineral(new Posicion(0,0));
         mapa.agregar(madera, madera.getPosicion());
 
-        assertEquals(mapa.getObjetoUbicable("[0, 0]"), juego.getJugador());
-
+        assertFalse(mapa.posicionEsValida(new Posicion(0,0)));
     }
 
     @Test
@@ -51,8 +50,9 @@ public class JuegoTest {
 
         Juego juego = Juego.getInstance();
         Mapa mapa = juego.getMapa();
+        Posicion posicion = new Posicion(0,0);
 
-        assertNotNull(mapa.getObjetoUbicable("[0, 0]"));
+        assertNotNull(mapa.getObjetoUbicable(posicion));
     }
 
     @Test
@@ -60,12 +60,11 @@ public class JuegoTest {
 
         Juego juego = Juego.getInstance();
         Mapa mapa = juego.getMapa();
-        MaterialMineral madera = new MaderaMineral(new Posicion(1,1));
+        Posicion posicion = new Posicion(1,1);
+        MaterialMineral madera = new MaderaMineral(posicion);
 
         mapa.agregar(madera, madera.getPosicion());
 
-        assertNotNull(mapa.getObjetoUbicable("[1, 1]"));
+        assertNotNull(mapa.getObjetoUbicable(posicion));
     }
-
-
 }

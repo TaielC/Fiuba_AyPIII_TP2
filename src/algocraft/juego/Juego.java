@@ -4,7 +4,6 @@ public class Juego {
 
     private Jugador jugador;
     private Mapa mapa;
-    private Posicion posicionJugador;
 
     private static Juego instanciaJuego = new Juego();
     public static Juego getInstance() { return instanciaJuego; }
@@ -12,12 +11,9 @@ public class Juego {
 
     private Juego(){
         this.mapa = new Mapa(100,100);
-        this.posicionJugador = new Posicion(0,0);
-        this.jugador = new Jugador(posicionJugador);
-        this.mapa.agregar(jugador, posicionJugador);
-
+        this.jugador = new Jugador(new Posicion(0,0));
+        this.mapa.agregar(jugador, jugador.getPosicion());
     }
-
 
     public Mapa getMapa(){
         return this.mapa;
@@ -28,7 +24,7 @@ public class Juego {
     }
 
     public void moverJugadorHacia(Direccion direccion) {
-        mapa.moverJugadorHacia(jugador, direccion);
+        mapa.moverObjetoHacia(jugador, direccion);
     }
 
     public static Juego resetJuego(){

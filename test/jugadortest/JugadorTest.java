@@ -59,7 +59,7 @@ public class JugadorTest {
         Jugador jugador = juego.getJugador();
         Posicion posicionJugador = jugador.getPosicion();
 
-        assertTrue(posicionJugador.esIgualA(jugador.getPosicion()));
+        assertEquals(posicionJugador, jugador.getPosicion());
 
     }
 
@@ -73,9 +73,7 @@ public class JugadorTest {
         Posicion nuevaPosicionJugador = jugador.getPosicion();
         Posicion posicion = new Posicion(0,1);
 
-
-
-        assertEquals(nuevaPosicionJugador.getString(), posicion.getString());
+        assertTrue(nuevaPosicionJugador.equals(posicion));
 
     }
 
@@ -91,7 +89,7 @@ public class JugadorTest {
         Posicion nuevaPosicionJugador = jugador.getPosicion();
         Posicion posicion = new Posicion(0,0);
 
-        assertEquals(nuevaPosicionJugador.getString(), posicion.getString());
+        assertTrue(nuevaPosicionJugador.equals(posicion));
 
     }
 
@@ -104,12 +102,11 @@ public class JugadorTest {
         juego.moverJugadorHacia(Direccion.derecha());
         Posicion nuevaPosicionJugador = jugador.getPosicion();
 
-        assertTrue(nuevaPosicionJugador.esIgualA(new Posicion(1,0)));
+        assertEquals(nuevaPosicionJugador, new Posicion(1, 0));
     }
 
     @Test
     public void test08ElJugadorDeberiaMoverseCorrectamenteEnFormaHorizontalHaciaIzquierda() {
-
         Juego juego = Juego.resetJuego();
         Jugador jugador = juego.getJugador();
 
@@ -118,13 +115,12 @@ public class JugadorTest {
         Posicion nuevaPosicionJugador = jugador.getPosicion();
         Posicion posicion = new Posicion(0,0);
 
-        assertEquals(nuevaPosicionJugador.getString(), posicion.getString() );
+        assertEquals(posicion, nuevaPosicionJugador);
 
     }
 
     @Test
     public void test09ElJugadorNoDeberiaMoverseDeCasilleroSiElMismoEstaOcupado() {
-
         Juego juego = Juego.resetJuego();
         Mapa mapa = juego.getMapa();
         Jugador jugador = juego.getJugador();
@@ -135,7 +131,7 @@ public class JugadorTest {
         juego.moverJugadorHacia(Direccion.arriba());
         Posicion nuevaPosicionJugador = jugador.getPosicion();
 
-        assertTrue(nuevaPosicionJugador.esIgualA(posicionJugador));
+        assertEquals(nuevaPosicionJugador, posicionJugador);
     }
 
 }

@@ -47,4 +47,10 @@ public class InventarioMateriales {
     public MaterialMineral getDiamante(){
         return diamanteMineralStack.pop();
     }
+
+    public int cantidadMader() {return maderaStack.size(); }
+    public int cantidadPiedra() {return piedraStack.size(); }
+    public int cantidadMetal() {return metalStack.size(); }
+    public int cantidadDiamante() {return diamanteMineralStack.size(); }
+
 }

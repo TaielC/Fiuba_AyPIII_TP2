@@ -5,11 +5,11 @@ import algocraft.material.MaderaMineral;
 import algocraft.material.MetalMineral;
 import algocraft.material.PiedraMineral;
 
-public class MaterialHerramientaNada implements MaterialHerramienta {
+public class NingunMaterialHerramienta implements MaterialHerramienta {
 
     @Override
     public boolean equals(MaterialHerramienta material) {
-        return material instanceof MaterialHerramientaNada;
+        return material instanceof NingunMaterialHerramienta;
     }
 
     @Override

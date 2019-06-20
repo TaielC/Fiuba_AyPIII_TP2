@@ -1,5 +1,6 @@
 package algocraft.herramienta.constructor.template;
 
+import algocraft.herramienta.NingunaHerramienta;
 import algocraft.herramienta.constructor.TableroConstruccionHerramienta;
 import algocraft.herramienta.Herramienta;
 

@@ -3,7 +3,7 @@ package constructorherramientatest;
 import algocraft.herramienta.constructor.TableroConstruccionHerramienta;
 import algocraft.herramienta.material.MaderaMaterialHerramienta;
 import algocraft.herramienta.material.MaterialHerramienta;
-import algocraft.herramienta.material.MaterialHerramientaNada;
+import algocraft.herramienta.material.NingunMaterialHerramienta;
 
 import org.junit.Test;
 import static org.junit.Assert.*;
@@ -13,7 +13,7 @@ public class MapaConstruccionHerramientaTest {
     @Test
     public void test01ElTableroIniciaConTodasLasPosicionesConUnMaterialHerramientaNada() {
         TableroConstruccionHerramienta tablero = new TableroConstruccionHerramienta();
-        MaterialHerramienta materialNada = new MaterialHerramientaNada();
+        MaterialHerramienta materialNada = new NingunMaterialHerramienta();
 
         assertTrue(materialNada.equals(tablero.getSuperiorIzquierda()));
         assertTrue(materialNada.equals(tablero.getSuperior()));

@@ -3,15 +3,15 @@ package algocraft.herramienta.durabilidad;
 
 public class DurabilidadHerramientaFactorFuerza extends DurabilidadHerramienta {
 
-    private double desgaste;
+    private double factorFuerza;
 
     public DurabilidadHerramientaFactorFuerza(double durabilidadHerramienta, double desgasteHerramienta) {
         durabilidad = durabilidadHerramienta;
-        desgaste = desgasteHerramienta;
+        factorFuerza = desgasteHerramienta;
     }
 
     @Override
     public void desgastar() {
-        durabilidad -= desgaste;
+        durabilidad -= factorFuerza;
     }
 }

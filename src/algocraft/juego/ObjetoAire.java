@@ -11,4 +11,9 @@ public class ObjetoAire implements ObjetoUbicable {
     public void setPosicion(Posicion posicion) {
         this.posicion = posicion;
     }
+
+    @Override
+    public String getString(){
+        return "Aire";
+    }
 }

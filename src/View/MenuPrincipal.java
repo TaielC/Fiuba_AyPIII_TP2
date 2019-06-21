@@ -42,6 +42,7 @@ public class MenuPrincipal extends VBox {
 
         Button botonJugar = nuevoBoton("Jugar");
         BotonJugarEventHandler botonJugarEventHandler = new BotonJugarEventHandler(stage, escenaJuego);
+        botonJugar.setOnAction(botonJugarEventHandler);
 
         Button botonAyuda = nuevoBoton("Ayuda");
         botonAyuda.setOnAction(new BotonAyudaEventHandler());

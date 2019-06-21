@@ -35,4 +35,8 @@ public class MetalMineral extends MaterialMineral {
     }
 
 
+    @Override
+    public String getString() {
+        return "Metal";
+    }
 }

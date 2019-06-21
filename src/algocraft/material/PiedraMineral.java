@@ -30,4 +30,9 @@ public class PiedraMineral extends MaterialMineral {
     public boolean esDaniadoPor(MaterialHerramienta material) {
         return material.daniaA(this);
     }
+
+    @Override
+    public String getString() {
+        return "Piedra";
+    }
 }

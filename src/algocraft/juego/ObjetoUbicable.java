@@ -6,4 +6,6 @@ public interface ObjetoUbicable {
 
     void setPosicion(Posicion posicion);
 
+    String getString();
+
 }

@@ -47,4 +47,9 @@ public class Jugador implements ObjetoUbicable{
         this.posicion = posicion;
     }
 
+    @Override
+    public String getString(){
+        return "Jugador";
+    }
+
 }

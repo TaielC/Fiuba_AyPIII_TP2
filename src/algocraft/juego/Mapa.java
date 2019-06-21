@@ -4,10 +4,11 @@ import java.util.HashMap;
 import java.lang.String;
 import java.util.Arrays;
 import java.util.Map;
+import algocraft.material.*;
 
 public class Mapa {
 
-    private Map<Posicion, ObjetoUbicable> tablero = new HashMap<>();
+    private Map<String, ObjetoUbicable> tablero = new HashMap<>();
     private int bordeHorizontal;
     private int bordeVertical;
 
@@ -20,27 +21,34 @@ public class Mapa {
                 Posicion posicion = new Posicion(i, j);
                 ObjetoUbicable objeto = new ObjetoAire();
 
-                this.tablero.put(posicion, objeto);
+                this.tablero.put(posicion.toString(), objeto);
             }
         }
 
     }
 
+    public void ponerMaterialRandom(){
+        for (int i = 0; i<10; i++){
+            Posicion posicion = new Posicion(i, 5);
+            ObjetoUbicable objeto = new MaderaMineral(posicion);
+        }
+    }
+
     public ObjetoUbicable getObjetoUbicable(Posicion posicion) {
-        return tablero.get(posicion);
+        return tablero.get(posicion.toString());
     }
 
     public void agregar(ObjetoUbicable objetoUbicable, Posicion posicion) {
         if (this.posicionEsValida(posicion)) {
             objetoUbicable.setPosicion(posicion);
-            tablero.put(posicion, objetoUbicable);
+            tablero.put(posicion.toString(), objetoUbicable);
         }
     }
 
     public boolean posicionEsValida(Posicion posicion) {
         boolean limiteX = (posicion.getX() < this.bordeHorizontal) || (posicion.getX() >= 0);
         boolean limiteY = (posicion.getY() < this.bordeVertical) || (posicion.getX() >= 0);
-        boolean estaVacio = (tablero.get(posicion) instanceof ObjetoAire);
+        boolean estaVacio = (tablero.get(posicion.toString()) instanceof ObjetoAire);
         return limiteX && limiteY && estaVacio;
     }
 
@@ -49,8 +57,8 @@ public class Mapa {
         Posicion posicionSiguiente = posicion.obtenerSiguiente(direccion);
 
         if (posicionEsValida(posicionSiguiente)) {
-            tablero.put(posicion, new ObjetoAire());
-            tablero.put(posicionSiguiente, objetoUbicable);
+            tablero.put(posicion.toString(), new ObjetoAire());
+            tablero.put(posicionSiguiente.toString(), objetoUbicable);
             objetoUbicable.setPosicion(posicionSiguiente);
         }
     }

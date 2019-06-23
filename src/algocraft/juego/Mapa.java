@@ -27,10 +27,11 @@ public class Mapa {
 
     }
 
-    public void ponerMaterialRandom(){
-        for (int i = 0; i<10; i++){
+    public void ponerMaterialRandom() {
+        for (int i = 0; i < 10; i++) {
             Posicion posicion = new Posicion(i, 5);
             ObjetoUbicable objeto = new MaderaMineral(posicion);
+            tablero.put(posicion.toString(), objeto);
         }
     }
 
@@ -62,5 +63,12 @@ public class Mapa {
             objetoUbicable.setPosicion(posicionSiguiente);
         }
     }
-}
 
+    public int getBordeHorizontal() {
+        return bordeHorizontal;
+    }
+
+    public int getBordeVertical() {
+        return bordeVertical;
+    }
+}

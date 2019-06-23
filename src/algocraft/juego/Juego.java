@@ -4,6 +4,7 @@ public class Juego {
 
     private Jugador jugador;
     private Mapa mapa;
+    private ConstructorMapa constructorMapa;
 
     private static Juego instanciaJuego = new Juego();
     public static Juego getInstance() { return instanciaJuego; }
@@ -11,7 +12,8 @@ public class Juego {
 
     private Juego(){
         this.mapa = new Mapa(10,10);
-        mapa.ponerMaterialRandom();
+        this.constructorMapa = new ConstructorMapa(mapa);
+        this.constructorMapa.contruirMapa(6);
         this.jugador = new Jugador(new Posicion(0,0));
         this.mapa.agregar(jugador, jugador.getPosicion());
     }

@@ -79,7 +79,7 @@ public class JugadorTest {
 
         Posicion nuevaPosicionJugador = jugador.getPosicion();
 
-        assertTrue(nuevaPosicionJugador.equals(posicion));
+        assertEquals(nuevaPosicionJugador,posicion);
 
     }
 
@@ -101,7 +101,7 @@ public class JugadorTest {
 
         Posicion posicion_ = new Posicion(0,0);
 
-        assertTrue(nuevaPosicionJugador.equals(posicion_));
+        assertEquals(nuevaPosicionJugador,posicion_);
 
     }
 
@@ -119,7 +119,7 @@ public class JugadorTest {
         juego.moverJugadorHacia(Direccion.derecha());
         Posicion nuevaPosicionJugador = jugador.getPosicion();
 
-        assertTrue(nuevaPosicionJugador.equals(posicion));
+        assertEquals(nuevaPosicionJugador,posicion);
     }
 
     @Test
@@ -137,7 +137,7 @@ public class JugadorTest {
         Posicion nuevaPosicionJugador = jugador.getPosicion();
         Posicion posicion_ = new Posicion(0,0);
 
-        assertTrue(nuevaPosicionJugador.equals(posicion_));
+        assertEquals(nuevaPosicionJugador,posicion_);
 
     }
 

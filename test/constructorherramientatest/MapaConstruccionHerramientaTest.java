@@ -1,9 +1,7 @@
 package constructorherramientatest;
 
-import algocraft.herramienta.constructor.TableroConstruccionHerramienta;
-import algocraft.herramienta.material.MaderaMaterialHerramienta;
-import algocraft.herramienta.material.MaterialHerramienta;
-import algocraft.herramienta.material.NingunMaterialHerramienta;
+import algocraft.constructorherramienta.TableroConstruccionHerramienta;
+import algocraft.materialinventario.*;
 
 import org.junit.Test;
 import static org.junit.Assert.*;
@@ -11,9 +9,9 @@ import static org.junit.Assert.*;
 public class MapaConstruccionHerramientaTest {
 
     @Test
-    public void test01ElTableroIniciaConTodasLasPosicionesConUnMaterialHerramientaNada() {
+    public void test01ElTableroIniciaConTodasLasPosicionesConUnMaterialInventarioNada() {
         TableroConstruccionHerramienta tablero = new TableroConstruccionHerramienta();
-        MaterialHerramienta materialNada = new NingunMaterialHerramienta();
+        MaterialInventario materialNada = new NingunMaterialInventario();
 
         assertTrue(materialNada.equals(tablero.getSuperiorIzquierda()));
         assertTrue(materialNada.equals(tablero.getSuperior()));
@@ -27,9 +25,9 @@ public class MapaConstruccionHerramientaTest {
     }
 
     @Test
-    public void test02AlPonerUnMaterialHerramientaEnLaPosicionSuperiorIzquierdaSeVerificaQueSePuedeObtenerDeLaMismaPosicion() {
+    public void test02AlPonerUnMaterialInventarioEnLaPosicionSuperiorIzquierdaSeVerificaQueSePuedeObtenerDeLaMismaPosicion() {
         TableroConstruccionHerramienta tablero = new TableroConstruccionHerramienta();
-        MaterialHerramienta material = new MaderaMaterialHerramienta();
+        MaterialInventario material = new MaderaMaterialInventario();
 
         tablero.putSuperiorIzquierda(material);
 
@@ -37,9 +35,9 @@ public class MapaConstruccionHerramientaTest {
     }
 
     @Test
-    public void test03AlPonerUnMaterialHerramientaEnLaPosicionSuperiorSeVerificaQueSePuedeObtenerDeLaMismaPosicion() {
+    public void test03AlPonerUnMaterialInventarioEnLaPosicionSuperiorSeVerificaQueSePuedeObtenerDeLaMismaPosicion() {
         TableroConstruccionHerramienta tablero = new TableroConstruccionHerramienta();
-        MaterialHerramienta material = new MaderaMaterialHerramienta();
+        MaterialInventario material = new MaderaMaterialInventario();
 
         tablero.putSuperior(material);
 
@@ -47,9 +45,9 @@ public class MapaConstruccionHerramientaTest {
     }
 
     @Test
-    public void test04AlPonerUnMaterialHerramientaEnLaPosicionSuperiorDerechaSeVerificaQueSePuedeObtenerDeLaMismaPosicion() {
+    public void test04AlPonerUnMaterialInventarioEnLaPosicionSuperiorDerechaSeVerificaQueSePuedeObtenerDeLaMismaPosicion() {
         TableroConstruccionHerramienta tablero = new TableroConstruccionHerramienta();
-        MaterialHerramienta material = new MaderaMaterialHerramienta();
+        MaterialInventario material = new MaderaMaterialInventario();
 
         tablero.putSuperiorDerecha(material);
 
@@ -57,9 +55,9 @@ public class MapaConstruccionHerramientaTest {
     }
 
     @Test
-    public void test05AlPonerUnMaterialHerramientaEnLaPosicionIzquierdaSeVerificaQueSePuedeObtenerDeLaMismaPosicion() {
+    public void test05AlPonerUnMaterialInventarioEnLaPosicionIzquierdaSeVerificaQueSePuedeObtenerDeLaMismaPosicion() {
         TableroConstruccionHerramienta tablero = new TableroConstruccionHerramienta();
-        MaterialHerramienta material = new MaderaMaterialHerramienta();
+        MaterialInventario material = new MaderaMaterialInventario();
 
         tablero.putIzquierda(material);
 
@@ -67,9 +65,9 @@ public class MapaConstruccionHerramientaTest {
     }
 
     @Test
-    public void test06AlPonerUnMaterialHerramientaEnLaPosicionCentroSeVerificaQueSePuedeObtenerDeLaMismaPosicion() {
+    public void test06AlPonerUnMaterialInventarioEnLaPosicionCentroSeVerificaQueSePuedeObtenerDeLaMismaPosicion() {
         TableroConstruccionHerramienta tablero = new TableroConstruccionHerramienta();
-        MaterialHerramienta material = new MaderaMaterialHerramienta();
+        MaterialInventario material = new MaderaMaterialInventario();
 
         tablero.putCentro(material);
 
@@ -77,9 +75,9 @@ public class MapaConstruccionHerramientaTest {
     }
 
     @Test
-    public void test07AlPonerUnMaterialHerramientaEnLaPosicionDerechaSeVerificaQueSePuedeObtenerDeLaMismaPosicion() {
+    public void test07AlPonerUnMaterialInventarioEnLaPosicionDerechaSeVerificaQueSePuedeObtenerDeLaMismaPosicion() {
         TableroConstruccionHerramienta tablero = new TableroConstruccionHerramienta();
-        MaterialHerramienta material = new MaderaMaterialHerramienta();
+        MaterialInventario material = new MaderaMaterialInventario();
 
         tablero.putDerecha(material);
 
@@ -87,9 +85,9 @@ public class MapaConstruccionHerramientaTest {
     }
 
     @Test
-    public void test08AlPonerUnMaterialHerramientaEnLaPosicionInferiorIzquierdaSeVerificaQueSePuedeObtenerDeLaMismaPosicion() {
+    public void test08AlPonerUnMaterialInventarioEnLaPosicionInferiorIzquierdaSeVerificaQueSePuedeObtenerDeLaMismaPosicion() {
         TableroConstruccionHerramienta tablero = new TableroConstruccionHerramienta();
-        MaterialHerramienta material = new MaderaMaterialHerramienta();
+        MaterialInventario material = new MaderaMaterialInventario();
 
         tablero.putInferiorIzquierda(material);
 
@@ -97,9 +95,9 @@ public class MapaConstruccionHerramientaTest {
     }
 
     @Test
-    public void test09AlPonerUnMaterialHerramientaEnLaPosicionInferiorSeVerificaQueSePuedeObtenerDeLaMismaPosicion() {
+    public void test09AlPonerUnMaterialInventarioEnLaPosicionInferiorSeVerificaQueSePuedeObtenerDeLaMismaPosicion() {
         TableroConstruccionHerramienta tablero = new TableroConstruccionHerramienta();
-        MaterialHerramienta material = new MaderaMaterialHerramienta();
+        MaterialInventario material = new MaderaMaterialInventario();
 
         tablero.putInferior(material);
 
@@ -107,9 +105,9 @@ public class MapaConstruccionHerramientaTest {
     }
 
     @Test
-    public void test10AlPonerUnMaterialHerramientaEnLaPosicionInferiorDerechaSeVerificaQueSePuedeObtenerDeLaMismaPosicion() {
+    public void test10AlPonerUnMaterialInventarioEnLaPosicionInferiorDerechaSeVerificaQueSePuedeObtenerDeLaMismaPosicion() {
         TableroConstruccionHerramienta tablero = new TableroConstruccionHerramienta();
-        MaterialHerramienta material = new MaderaMaterialHerramienta();
+        MaterialInventario material = new MaderaMaterialInventario();
 
         tablero.putInferiorDerecha(material);
 
@@ -119,10 +117,10 @@ public class MapaConstruccionHerramientaTest {
     @Test
     public void test11PonerLosMismosMaterialesEnDosTablerosSeVerificanIguales() {
         TableroConstruccionHerramienta tablero1 = new TableroConstruccionHerramienta();
-        MaterialHerramienta material = new MaderaMaterialHerramienta();
+        MaterialInventario material = new MaderaMaterialInventario();
         tablero1.putCentro(material);
         TableroConstruccionHerramienta tablero2 = new TableroConstruccionHerramienta();
-        material = new MaderaMaterialHerramienta();
+        material = new MaderaMaterialInventario();
         tablero2.putCentro(material);
 
         assertTrue(tablero1.equals(tablero2));
@@ -133,16 +131,16 @@ public class MapaConstruccionHerramientaTest {
         TableroConstruccionHerramienta tablero1 = new TableroConstruccionHerramienta();
         TableroConstruccionHerramienta tablero2 = new TableroConstruccionHerramienta();
 
-        tablero1.putSuperiorIzquierda(new MaderaMaterialHerramienta());
-        tablero1.putSuperior(new MaderaMaterialHerramienta());
-        tablero1.putIzquierda(new MaderaMaterialHerramienta());
-        tablero1.putCentro(new MaderaMaterialHerramienta());
-        tablero1.putInferior(new MaderaMaterialHerramienta());
-        tablero2.putSuperiorIzquierda(new MaderaMaterialHerramienta());
-        tablero2.putSuperior(new MaderaMaterialHerramienta());
-        tablero2.putIzquierda(new MaderaMaterialHerramienta());
-        tablero2.putCentro(new MaderaMaterialHerramienta());
-        tablero2.putInferior(new MaderaMaterialHerramienta());
+        tablero1.putSuperiorIzquierda(new MaderaMaterialInventario());
+        tablero1.putSuperior(new MaderaMaterialInventario());
+        tablero1.putIzquierda(new MaderaMaterialInventario());
+        tablero1.putCentro(new MaderaMaterialInventario());
+        tablero1.putInferior(new MaderaMaterialInventario());
+        tablero2.putSuperiorIzquierda(new MaderaMaterialInventario());
+        tablero2.putSuperior(new MaderaMaterialInventario());
+        tablero2.putIzquierda(new MaderaMaterialInventario());
+        tablero2.putCentro(new MaderaMaterialInventario());
+        tablero2.putInferior(new MaderaMaterialInventario());
 
         assertTrue(tablero1.equals(tablero2));
     }

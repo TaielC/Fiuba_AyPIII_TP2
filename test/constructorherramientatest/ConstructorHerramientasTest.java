@@ -1,12 +1,13 @@
 package constructorherramientatest;
 
-import algocraft.herramienta.constructor.ConstructorHerramientas;
-import algocraft.herramienta.constructor.TableroConstruccionHerramienta;
+import algocraft.constructorherramienta.ConstructorHerramientas;
+import algocraft.constructorherramienta.TableroConstruccionHerramienta;
 import algocraft.herramienta.*;
-import algocraft.herramienta.material.MaderaMaterialHerramienta;
-import algocraft.herramienta.material.MetalMaterialHerramienta;
+import algocraft.materialherramienta.MaderaMaterialHerramienta;
+import algocraft.materialherramienta.MetalMaterialHerramienta;
+import algocraft.materialherramienta.PiedraMaterialHerramienta;
+import algocraft.materialinventario.*;
 
-import algocraft.herramienta.material.PiedraMaterialHerramienta;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -16,21 +17,21 @@ public class ConstructorHerramientasTest {
     public void test01ElConstructorDevuelveNullAlPasarUnTableroQueNoConstruyeNingunaHerramienta() {
         TableroConstruccionHerramienta tablero = new TableroConstruccionHerramienta();
 
-        tablero.putSuperiorIzquierda(new MetalMaterialHerramienta());
-        tablero.putInferiorDerecha(new MaderaMaterialHerramienta());
+        tablero.putSuperiorIzquierda(new MetalMaterialInventario());
+        tablero.putInferiorDerecha(new MaderaMaterialInventario());
 
-        assertNull(ConstructorHerramientas.obtenerHerramienta(tablero));
+        assertTrue(ConstructorHerramientas.obtenerHerramienta(tablero) instanceof NingunaHerramienta);
     }
 
     @Test
     public void test02ConstructorHerramientasConstruyeUnHachaDeMaderaSiSeLeEnviaUnTableroConLaConfiguracionParaLaMisma() {
         TableroConstruccionHerramienta tablero = new TableroConstruccionHerramienta();
 
-        tablero.putSuperiorIzquierda(new MaderaMaterialHerramienta());
-        tablero.putSuperior(new MaderaMaterialHerramienta());
-        tablero.putIzquierda(new MaderaMaterialHerramienta());
-        tablero.putCentro(new MaderaMaterialHerramienta());
-        tablero.putInferior(new MaderaMaterialHerramienta());
+        tablero.putSuperiorIzquierda(new MaderaMaterialInventario());
+        tablero.putSuperior(new MaderaMaterialInventario());
+        tablero.putIzquierda(new MaderaMaterialInventario());
+        tablero.putCentro(new MaderaMaterialInventario());
+        tablero.putInferior(new MaderaMaterialInventario());
 
         Herramienta hacha = ConstructorHerramientas.obtenerHerramienta(tablero);
         assertNotNull(hacha);
@@ -42,11 +43,11 @@ public class ConstructorHerramientasTest {
     public void test03ConstructorHerramientasConstruyeUnPicoDeMaderaSiSeLeEnviaUnTableroConLaConfiguracionParaElMismo() {
         TableroConstruccionHerramienta tablero = new TableroConstruccionHerramienta();
 
-        tablero.putSuperiorIzquierda(new MaderaMaterialHerramienta());
-        tablero.putSuperior(new MaderaMaterialHerramienta());
-        tablero.putSuperiorDerecha(new MaderaMaterialHerramienta());
-        tablero.putCentro(new MaderaMaterialHerramienta());
-        tablero.putInferior(new MaderaMaterialHerramienta());
+        tablero.putSuperiorIzquierda(new MaderaMaterialInventario());
+        tablero.putSuperior(new MaderaMaterialInventario());
+        tablero.putSuperiorDerecha(new MaderaMaterialInventario());
+        tablero.putCentro(new MaderaMaterialInventario());
+        tablero.putInferior(new MaderaMaterialInventario());
 
         Herramienta pico = ConstructorHerramientas.obtenerHerramienta(tablero);
         assertNotNull(pico);
@@ -58,11 +59,11 @@ public class ConstructorHerramientasTest {
     public void test04ConstructorHerramientasConstruyeUnHachaDePiedraSiSeLeEnviaUnTableroConLaConfiguracionParaLaMisma() {
         TableroConstruccionHerramienta tablero = new TableroConstruccionHerramienta();
 
-        tablero.putSuperiorIzquierda(new PiedraMaterialHerramienta());
-        tablero.putSuperior(new PiedraMaterialHerramienta());
-        tablero.putIzquierda(new PiedraMaterialHerramienta());
-        tablero.putCentro(new MaderaMaterialHerramienta());
-        tablero.putInferior(new MaderaMaterialHerramienta());
+        tablero.putSuperiorIzquierda(new PiedraMaterialInventario());
+        tablero.putSuperior(new PiedraMaterialInventario());
+        tablero.putIzquierda(new PiedraMaterialInventario());
+        tablero.putCentro(new MaderaMaterialInventario());
+        tablero.putInferior(new MaderaMaterialInventario());
 
         Herramienta hacha = ConstructorHerramientas.obtenerHerramienta(tablero);
         assertNotNull(hacha);
@@ -74,11 +75,11 @@ public class ConstructorHerramientasTest {
     public void test05ConstructorHerramientasConstruyeUnPicoDePiedraSiSeLeEnviaUnTableroConLaConfiguracionParaElMismo() {
         TableroConstruccionHerramienta tablero = new TableroConstruccionHerramienta();
 
-        tablero.putSuperiorIzquierda(new PiedraMaterialHerramienta());
-        tablero.putSuperior(new PiedraMaterialHerramienta());
-        tablero.putSuperiorDerecha(new PiedraMaterialHerramienta());
-        tablero.putCentro(new MaderaMaterialHerramienta());
-        tablero.putInferior(new MaderaMaterialHerramienta());
+        tablero.putSuperiorIzquierda(new PiedraMaterialInventario());
+        tablero.putSuperior(new PiedraMaterialInventario());
+        tablero.putSuperiorDerecha(new PiedraMaterialInventario());
+        tablero.putCentro(new MaderaMaterialInventario());
+        tablero.putInferior(new MaderaMaterialInventario());
 
         Herramienta pico = ConstructorHerramientas.obtenerHerramienta(tablero);
         assertNotNull(pico);
@@ -90,11 +91,11 @@ public class ConstructorHerramientasTest {
     public void test06ConstructorHerramientasConstruyeUnHachaDeMetalSiSeLeEnviaUnTableroConLaConfiguracionParaLaMisma() {
         TableroConstruccionHerramienta tablero = new TableroConstruccionHerramienta();
 
-        tablero.putSuperiorIzquierda(new MetalMaterialHerramienta());
-        tablero.putSuperior(new MetalMaterialHerramienta());
-        tablero.putIzquierda(new MetalMaterialHerramienta());
-        tablero.putCentro(new MaderaMaterialHerramienta());
-        tablero.putInferior(new MaderaMaterialHerramienta());
+        tablero.putSuperiorIzquierda(new MetalMaterialInventario());
+        tablero.putSuperior(new MetalMaterialInventario());
+        tablero.putIzquierda(new MetalMaterialInventario());
+        tablero.putCentro(new MaderaMaterialInventario());
+        tablero.putInferior(new MaderaMaterialInventario());
 
         Herramienta hacha = ConstructorHerramientas.obtenerHerramienta(tablero);
         assertNotNull(hacha);
@@ -106,11 +107,11 @@ public class ConstructorHerramientasTest {
     public void test07ConstructorHerramientasConstruyeUnPicoDeMetalSiSeLeEnviaUnTableroConLaConfiguracionParaElMismo() {
         TableroConstruccionHerramienta tablero = new TableroConstruccionHerramienta();
 
-        tablero.putSuperiorIzquierda(new MetalMaterialHerramienta());
-        tablero.putSuperior(new MetalMaterialHerramienta());
-        tablero.putSuperiorDerecha(new MetalMaterialHerramienta());
-        tablero.putCentro(new MaderaMaterialHerramienta());
-        tablero.putInferior(new MaderaMaterialHerramienta());
+        tablero.putSuperiorIzquierda(new MetalMaterialInventario());
+        tablero.putSuperior(new MetalMaterialInventario());
+        tablero.putSuperiorDerecha(new MetalMaterialInventario());
+        tablero.putCentro(new MaderaMaterialInventario());
+        tablero.putInferior(new MaderaMaterialInventario());
 
         Herramienta pico = ConstructorHerramientas.obtenerHerramienta(tablero);
         assertNotNull(pico);
@@ -122,12 +123,12 @@ public class ConstructorHerramientasTest {
     public void test08ConstructorHerramientasConstruyeUnPicoFinoSiSeLeEnviaUnTableroConLaConfiguracionParaElMismo() {
         TableroConstruccionHerramienta tablero = new TableroConstruccionHerramienta();
 
-        tablero.putSuperiorIzquierda(new MetalMaterialHerramienta());
-        tablero.putSuperior(new MetalMaterialHerramienta());
-        tablero.putSuperiorDerecha(new MetalMaterialHerramienta());
-        tablero.putIzquierda(new PiedraMaterialHerramienta());
-        tablero.putCentro(new MaderaMaterialHerramienta());
-        tablero.putInferior(new MaderaMaterialHerramienta());
+        tablero.putSuperiorIzquierda(new MetalMaterialInventario());
+        tablero.putSuperior(new MetalMaterialInventario());
+        tablero.putSuperiorDerecha(new MetalMaterialInventario());
+        tablero.putIzquierda(new PiedraMaterialInventario());
+        tablero.putCentro(new MaderaMaterialInventario());
+        tablero.putInferior(new MaderaMaterialInventario());
 
         Herramienta picoFino = ConstructorHerramientas.obtenerHerramienta(tablero);
         assertNotNull(picoFino);

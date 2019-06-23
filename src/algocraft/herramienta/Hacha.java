@@ -2,10 +2,10 @@ package algocraft.herramienta;
 
 import algocraft.excepciones.HerramientaRotaException;
 import algocraft.herramienta.durabilidad.DurabilidadHerramientaFactorFuerza;
-import algocraft.herramienta.material.MaderaMaterialHerramienta;
-import algocraft.herramienta.material.MetalMaterialHerramienta;
-import algocraft.herramienta.material.PiedraMaterialHerramienta;
-import algocraft.material.*;
+import algocraft.materialherramienta.MaderaMaterialHerramienta;
+import algocraft.materialherramienta.MetalMaterialHerramienta;
+import algocraft.materialherramienta.PiedraMaterialHerramienta;
+import algocraft.materialmineral.*;
 
 public class Hacha extends Herramienta {
 

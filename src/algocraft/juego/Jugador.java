@@ -2,7 +2,7 @@ package algocraft.juego;
 
 import algocraft.herramienta.*;
 import algocraft.inventario.Inventario;
-import algocraft.herramienta.material.MaderaMaterialHerramienta;
+import algocraft.materialherramienta.MaderaMaterialHerramienta;
 
 public class Jugador implements ObjetoUbicable{
 

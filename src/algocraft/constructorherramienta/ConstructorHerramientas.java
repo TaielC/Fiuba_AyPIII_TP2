@@ -1,7 +1,7 @@
-package algocraft.herramienta.constructor;
+package algocraft.constructorherramienta;
 
 import algocraft.herramienta.*;
-import algocraft.herramienta.constructor.template.*;
+import algocraft.constructorherramienta.template.*;
 
 import java.util.LinkedList;
 

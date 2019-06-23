@@ -2,8 +2,8 @@ package herramientatest;
 
 import algocraft.juego.Posicion;
 import algocraft.herramienta.*;
-import algocraft.herramienta.material.*;
-import algocraft.material.*;
+import algocraft.materialherramienta.*;
+import algocraft.materialmineral.*;
 import org.junit.Test;
 import static org.junit.Assert.*;
 

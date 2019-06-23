@@ -1,6 +1,6 @@
 package algocraft.herramienta;
 
-import algocraft.material.MaterialMineral;
+import algocraft.materialmineral.MaterialMineral;
 
 public class NingunaHerramienta extends Herramienta {
     @Override

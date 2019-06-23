@@ -1,8 +1,8 @@
 package materialtest;
 
 import algocraft.herramienta.*;
-import algocraft.herramienta.material.*;
-import algocraft.material.*;
+import algocraft.materialherramienta.*;
+import algocraft.materialmineral.*;
 import algocraft.juego.Posicion;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;

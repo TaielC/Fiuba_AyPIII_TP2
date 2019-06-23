@@ -1,14 +1,10 @@
 package constructorherramientatest;
 
-import algocraft.herramienta.constructor.TableroConstruccionHerramienta;
-import algocraft.herramienta.constructor.template.*;
-import algocraft.herramienta.material.MaderaMaterialHerramienta;
-import algocraft.herramienta.material.MetalMaterialHerramienta;
-import algocraft.herramienta.material.PiedraMaterialHerramienta;
+import algocraft.constructorherramienta.TableroConstruccionHerramienta;
+import algocraft.constructorherramienta.template.*;
+import algocraft.materialinventario.*;
 
 import org.junit.Test;
-
-import java.util.LinkedList;
 
 import static org.junit.Assert.*;
 
@@ -40,18 +36,13 @@ public class TemplatesConstruccionHerramientaTest {
         TemplateConstruccionHerramienta template = new HachaMaderaTemplateConstruccionHerramienta();
         TableroConstruccionHerramienta tablero = new TableroConstruccionHerramienta();
 
-        tablero.putSuperiorIzquierda(new MaderaMaterialHerramienta());
-        tablero.putSuperior(new MaderaMaterialHerramienta());
-        tablero.putIzquierda(new MaderaMaterialHerramienta());
-        tablero.putCentro(new MaderaMaterialHerramienta());
-        tablero.putInferior(new MaderaMaterialHerramienta());
+        tablero.putSuperiorIzquierda(new MaderaMaterialInventario());
+        tablero.putSuperior(new MaderaMaterialInventario());
+        tablero.putIzquierda(new MaderaMaterialInventario());
+        tablero.putCentro(new MaderaMaterialInventario());
+        tablero.putInferior(new MaderaMaterialInventario());
 
-        boolean verificacion = false;
-        LinkedList<TableroConstruccionHerramienta> listaTemplates = template.templatesPosibles();
-        for(TableroConstruccionHerramienta tableroTemplate : listaTemplates){
-            verificacion |= tablero.equals(tableroTemplate);
-        }
-        assertTrue(verificacion);
+        assertTrue(tablero.equals(template.getTemplate()));
     }
 
     @Test
@@ -59,18 +50,13 @@ public class TemplatesConstruccionHerramientaTest {
         TemplateConstruccionHerramienta template = new PicoMaderaTemplateConstruccionHerramienta();
         TableroConstruccionHerramienta tablero = new TableroConstruccionHerramienta();
 
-        tablero.putSuperiorIzquierda(new MaderaMaterialHerramienta());
-        tablero.putSuperior(new MaderaMaterialHerramienta());
-        tablero.putSuperiorDerecha(new MaderaMaterialHerramienta());
-        tablero.putCentro(new MaderaMaterialHerramienta());
-        tablero.putInferior(new MaderaMaterialHerramienta());
+        tablero.putSuperiorIzquierda(new MaderaMaterialInventario());
+        tablero.putSuperior(new MaderaMaterialInventario());
+        tablero.putSuperiorDerecha(new MaderaMaterialInventario());
+        tablero.putCentro(new MaderaMaterialInventario());
+        tablero.putInferior(new MaderaMaterialInventario());
 
-        boolean verificacion = false;
-        LinkedList<TableroConstruccionHerramienta> listaTemplates = template.templatesPosibles();
-        for(TableroConstruccionHerramienta tableroTemplate : listaTemplates){
-            verificacion |= tablero.equals(tableroTemplate);
-        }
-        assertTrue(verificacion);
+        assertTrue(tablero.equals(template.getTemplate()));
     }
 
     @Test
@@ -78,18 +64,13 @@ public class TemplatesConstruccionHerramientaTest {
         TemplateConstruccionHerramienta template = new HachaPiedraTemplateConstruccionHerramienta();
         TableroConstruccionHerramienta tablero = new TableroConstruccionHerramienta();
 
-        tablero.putSuperiorIzquierda(new PiedraMaterialHerramienta());
-        tablero.putSuperior(new PiedraMaterialHerramienta());
-        tablero.putIzquierda(new PiedraMaterialHerramienta());
-        tablero.putCentro(new MaderaMaterialHerramienta());
-        tablero.putInferior(new MaderaMaterialHerramienta());
+        tablero.putSuperiorIzquierda(new PiedraMaterialInventario());
+        tablero.putSuperior(new PiedraMaterialInventario());
+        tablero.putIzquierda(new PiedraMaterialInventario());
+        tablero.putCentro(new MaderaMaterialInventario());
+        tablero.putInferior(new MaderaMaterialInventario());
 
-        boolean verificacion = false;
-        LinkedList<TableroConstruccionHerramienta> listaTemplates = template.templatesPosibles();
-        for(TableroConstruccionHerramienta tableroTemplate : listaTemplates){
-            verificacion |= tablero.equals(tableroTemplate);
-        }
-        assertTrue(verificacion);
+        assertTrue(tablero.equals(template.getTemplate()));
     }
 
     @Test
@@ -97,18 +78,13 @@ public class TemplatesConstruccionHerramientaTest {
         TemplateConstruccionHerramienta template = new PicoPiedraTemplateConstruccionHerramienta();
         TableroConstruccionHerramienta tablero = new TableroConstruccionHerramienta();
 
-        tablero.putSuperiorIzquierda(new PiedraMaterialHerramienta());
-        tablero.putSuperior(new PiedraMaterialHerramienta());
-        tablero.putSuperiorDerecha(new PiedraMaterialHerramienta());
-        tablero.putCentro(new MaderaMaterialHerramienta());
-        tablero.putInferior(new MaderaMaterialHerramienta());
+        tablero.putSuperiorIzquierda(new PiedraMaterialInventario());
+        tablero.putSuperior(new PiedraMaterialInventario());
+        tablero.putSuperiorDerecha(new PiedraMaterialInventario());
+        tablero.putCentro(new MaderaMaterialInventario());
+        tablero.putInferior(new MaderaMaterialInventario());
 
-        boolean verificacion = false;
-        LinkedList<TableroConstruccionHerramienta> listaTemplates = template.templatesPosibles();
-        for(TableroConstruccionHerramienta tableroTemplate : listaTemplates){
-            verificacion |= tablero.equals(tableroTemplate);
-        }
-        assertTrue(verificacion);
+        assertTrue(tablero.equals(template.getTemplate()));
     }
 
     @Test
@@ -116,18 +92,13 @@ public class TemplatesConstruccionHerramientaTest {
         TemplateConstruccionHerramienta template = new HachaMetalTemplateConstruccionHerramienta();
         TableroConstruccionHerramienta tablero = new TableroConstruccionHerramienta();
 
-        tablero.putSuperiorIzquierda(new MetalMaterialHerramienta());
-        tablero.putSuperior(new MetalMaterialHerramienta());
-        tablero.putIzquierda(new MetalMaterialHerramienta());
-        tablero.putCentro(new MaderaMaterialHerramienta());
-        tablero.putInferior(new MaderaMaterialHerramienta());
+        tablero.putSuperiorIzquierda(new MetalMaterialInventario());
+        tablero.putSuperior(new MetalMaterialInventario());
+        tablero.putIzquierda(new MetalMaterialInventario());
+        tablero.putCentro(new MaderaMaterialInventario());
+        tablero.putInferior(new MaderaMaterialInventario());
 
-        boolean verificacion = false;
-        LinkedList<TableroConstruccionHerramienta> listaTemplates = template.templatesPosibles();
-        for(TableroConstruccionHerramienta tableroTemplate : listaTemplates){
-            verificacion |= tablero.equals(tableroTemplate);
-        }
-        assertTrue(verificacion);
+        assertTrue(tablero.equals(template.getTemplate()));
     }
 
     @Test
@@ -135,18 +106,13 @@ public class TemplatesConstruccionHerramientaTest {
         TemplateConstruccionHerramienta template = new PicoMetalTemplateConstruccionHerramienta();
         TableroConstruccionHerramienta tablero = new TableroConstruccionHerramienta();
 
-        tablero.putSuperiorIzquierda(new MetalMaterialHerramienta());
-        tablero.putSuperior(new MetalMaterialHerramienta());
-        tablero.putSuperiorDerecha(new MetalMaterialHerramienta());
-        tablero.putCentro(new MaderaMaterialHerramienta());
-        tablero.putInferior(new MaderaMaterialHerramienta());
+        tablero.putSuperiorIzquierda(new MetalMaterialInventario());
+        tablero.putSuperior(new MetalMaterialInventario());
+        tablero.putSuperiorDerecha(new MetalMaterialInventario());
+        tablero.putCentro(new MaderaMaterialInventario());
+        tablero.putInferior(new MaderaMaterialInventario());
 
-        boolean verificacion = false;
-        LinkedList<TableroConstruccionHerramienta> listaTemplates = template.templatesPosibles();
-        for(TableroConstruccionHerramienta tableroTemplate : listaTemplates){
-            verificacion |= tablero.equals(tableroTemplate);
-        }
-        assertTrue(verificacion);
+        assertTrue(tablero.equals(template.getTemplate()));
     }
 
     @Test
@@ -154,19 +120,14 @@ public class TemplatesConstruccionHerramientaTest {
         TemplateConstruccionHerramienta template = new PicoFinoTemplateConstruccionHerramienta();
         TableroConstruccionHerramienta tablero = new TableroConstruccionHerramienta();
 
-        tablero.putSuperiorIzquierda(new MetalMaterialHerramienta());
-        tablero.putSuperior(new MetalMaterialHerramienta());
-        tablero.putSuperiorDerecha(new MetalMaterialHerramienta());
-        tablero.putIzquierda(new PiedraMaterialHerramienta());
-        tablero.putCentro(new MaderaMaterialHerramienta());
-        tablero.putInferior(new MaderaMaterialHerramienta());
+        tablero.putSuperiorIzquierda(new MetalMaterialInventario());
+        tablero.putSuperior(new MetalMaterialInventario());
+        tablero.putSuperiorDerecha(new MetalMaterialInventario());
+        tablero.putIzquierda(new PiedraMaterialInventario());
+        tablero.putCentro(new MaderaMaterialInventario());
+        tablero.putInferior(new MaderaMaterialInventario());
 
-        boolean verificacion = false;
-        LinkedList<TableroConstruccionHerramienta> listaTemplates = template.templatesPosibles();
-        for(TableroConstruccionHerramienta tableroTemplate : listaTemplates){
-            verificacion |= tablero.equals(tableroTemplate);
-        }
-        assertTrue(verificacion);
+        assertTrue(tablero.equals(template.getTemplate()));
     }
 
 }

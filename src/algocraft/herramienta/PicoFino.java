@@ -2,8 +2,8 @@ package algocraft.herramienta;
 
 import algocraft.excepciones.HerramientaRotaException;
 import algocraft.herramienta.durabilidad.DurabilidadHerramientaPorcentual;
-import algocraft.herramienta.material.NingunMaterialHerramienta;
-import algocraft.material.*;
+import algocraft.materialherramienta.NingunMaterialHerramienta;
+import algocraft.materialmineral.*;
 
 public class PicoFino extends Herramienta {
 

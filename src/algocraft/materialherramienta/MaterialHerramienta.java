@@ -1,10 +1,8 @@
-package algocraft.herramienta.material;
+package algocraft.materialherramienta;
 
-import algocraft.material.*;
+import algocraft.materialmineral.*;
 
 public interface MaterialHerramienta {
-
-    boolean equals(MaterialHerramienta material);
 
     boolean daniaA(MaderaMineral madera);
     boolean daniaA(PiedraMineral piedra);

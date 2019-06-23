@@ -1,56 +1,69 @@
 package algocraft.inventario;
 
-import algocraft.herramienta.material.MaderaMaterialHerramienta;
-import algocraft.herramienta.material.MetalMaterialHerramienta;
-import algocraft.herramienta.material.PiedraMaterialHerramienta;
-import algocraft.juego.Posicion;
-import algocraft.material.*;
-
-import java.util.Stack;
+import algocraft.excepciones.NoHaySuficienteMaterialExeption;
+import algocraft.materialinventario.*;
 
 public class InventarioMateriales {
 
-    private Stack<MaderaMaterialHerramienta> maderaStack;
-    private Stack<PiedraMaterialHerramienta> piedraStack;
-    private Stack<MetalMaterialHerramienta> metalStack;
-    private Stack<DiamanteMineral> diamanteMineralStack;
+    private int cantidadMadera;
+    private int cantidadPiedra;
+    private int cantidadMetal;
+    private int cantidadDiamante;
 
     public InventarioMateriales() {
-        this.maderaStack = new Stack<>();
-        this.piedraStack = new Stack<>();
-        this.metalStack = new Stack<>();
-        this.diamanteMineralStack = new Stack<>();
+        cantidadMadera = 0;
+        cantidadPiedra = 0;
+        cantidadPiedra = 0;
+        cantidadDiamante = 0;
     }
 
     public void agregarMadera() {
-        maderaStack.push(new MaderaMaterialHerramienta());
+        cantidadMadera += 1;
     }
     public void agregarPiedra() {
-        piedraStack.push(new PiedraMaterialHerramienta());
+        cantidadPiedra += 1;
     }
     public void agregarMetal() {
-        metalStack.push(new MetalMaterialHerramienta());
+        cantidadMetal += 1;
     }
     public void agregarDiamante() {
-        diamanteMineralStack.push(new DiamanteMineral(new Posicion(0,0)));
+        cantidadDiamante += 1;
     }
 
-    public MaderaMaterialHerramienta getMadera(){
-        return maderaStack.pop();
-    }
-    public PiedraMaterialHerramienta getPiedra(){
-        return piedraStack.pop();
-    }
-    public MetalMaterialHerramienta getMetal(){
-        return metalStack.pop();
-    }
-    public MaterialMineral getDiamante(){
-        return diamanteMineralStack.pop();
+    public MaterialInventario getMadera(){
+        if(cantidadMadera <= 0){
+            throw new NoHaySuficienteMaterialExeption("Madera");
+        }
+        cantidadMadera -= 1;
+        return new MaderaMaterialInventario();
     }
 
-    public int cantidadMader() {return maderaStack.size(); }
-    public int cantidadPiedra() {return piedraStack.size(); }
-    public int cantidadMetal() {return metalStack.size(); }
-    public int cantidadDiamante() {return diamanteMineralStack.size(); }
+    public MaterialInventario getPiedra(){
+        if(cantidadPiedra <= 0){
+            throw new NoHaySuficienteMaterialExeption("Piedra");
+        }
+        cantidadPiedra -= 1;
+        return new PiedraMaterialInventario();
+    }
 
+    public MaterialInventario getMetal(){
+        if(cantidadMetal <= 0){
+            throw new NoHaySuficienteMaterialExeption("Metal");
+        }
+        cantidadMetal -= 1;
+        return new PiedraMaterialInventario();
+    }
+
+    public MaterialInventario getDiamante(){
+        if(cantidadDiamante <= 0){
+            throw new NoHaySuficienteMaterialExeption("Diamante");
+        }
+        cantidadDiamante -= 1;
+        return new DiamanteMaterialInventario();
+    }
+
+    public int cantidadMadera() {return cantidadMadera; }
+    public int cantidadPiedra() {return cantidadPiedra; }
+    public int cantidadMetal() {return cantidadMetal; }
+    public int cantidadDiamante() {return cantidadDiamante; }
 }

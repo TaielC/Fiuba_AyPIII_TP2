@@ -2,9 +2,8 @@ package algocraft.juego;
 
 import java.util.HashMap;
 import java.lang.String;
-import java.util.Arrays;
 import java.util.Map;
-import algocraft.material.*;
+import algocraft.materialmineral.*;
 
 public class Mapa {
 

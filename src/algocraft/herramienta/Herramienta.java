@@ -1,8 +1,8 @@
 package algocraft.herramienta;
 
 import algocraft.herramienta.durabilidad.DurabilidadHerramienta;
-import algocraft.herramienta.material.MaterialHerramienta;
-import algocraft.material.*;
+import algocraft.materialherramienta.MaterialHerramienta;
+import algocraft.materialmineral.*;
 
 public abstract class Herramienta {
 	

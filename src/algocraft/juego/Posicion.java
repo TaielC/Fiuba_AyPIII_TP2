@@ -26,14 +26,6 @@ public class Posicion {
     }
 
     @Override
-    public String toString(){
-        int posX = this.coordenadaX;
-        int posY = this.coordenadaY;
-        int[] posicion = {posX, posY};
-        return Arrays.toString(posicion);
-    }
-
-    @Override
     public boolean equals(Object objeto){
         if (!(objeto instanceof Posicion)) {
             return false;
@@ -44,6 +36,14 @@ public class Posicion {
         Posicion otro = (Posicion) objeto;
 
         return (this.getX() == otro.getX() && this.getY() == otro.getY());
+    }
+
+    @Override
+    public String toString(){
+        int posX = this.coordenadaX;
+        int posY = this.coordenadaY;
+        int[] posicion = {posX, posY};
+        return Arrays.toString(posicion);
     }
 
     @Override

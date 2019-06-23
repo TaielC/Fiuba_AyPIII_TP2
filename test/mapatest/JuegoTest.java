@@ -1,7 +1,7 @@
 package mapatest;
 
 import algocraft.juego.*;
-import algocraft.material.*;
+import algocraft.materialmineral.*;
 
 import org.junit.Test;
 import static org.junit.Assert.*;

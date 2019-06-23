@@ -1,16 +1,11 @@
-package algocraft.herramienta.material;
+package algocraft.materialherramienta;
 
-import algocraft.material.DiamanteMineral;
-import algocraft.material.MaderaMineral;
-import algocraft.material.MetalMineral;
-import algocraft.material.PiedraMineral;
+import algocraft.materialmineral.DiamanteMineral;
+import algocraft.materialmineral.MaderaMineral;
+import algocraft.materialmineral.MetalMineral;
+import algocraft.materialmineral.PiedraMineral;
 
 public class NingunMaterialHerramienta implements MaterialHerramienta {
-
-    @Override
-    public boolean equals(MaterialHerramienta material) {
-        return material instanceof NingunMaterialHerramienta;
-    }
 
     @Override
     public boolean daniaA(MaderaMineral maderaMineral) {

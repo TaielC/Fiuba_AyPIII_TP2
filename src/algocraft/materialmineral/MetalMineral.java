@@ -1,8 +1,8 @@
-package algocraft.material;
+package algocraft.materialmineral;
 
 import algocraft.herramienta.*;
 import algocraft.juego.Posicion;
-import algocraft.herramienta.material.MaterialHerramienta;
+import algocraft.materialherramienta.MaterialHerramienta;
 
 public class MetalMineral extends MaterialMineral {
 

@@ -8,7 +8,6 @@ public class Jugador implements ObjetoUbicable{
 
     private Inventario inventario;
     private Posicion posicion;
-    private Direccion direccion;
 
     public Jugador(Posicion posicion) {
         inventario = new Inventario();
@@ -40,10 +39,6 @@ public class Jugador implements ObjetoUbicable{
 
     @Override
     public void setPosicion(Posicion posicion) {
-        this.posicion = posicion;
-    }
-
-    public void modificarPosicion(Posicion posicion){
         this.posicion = posicion;
     }
 

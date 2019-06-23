@@ -59,7 +59,7 @@ public class TableroConstruccionHerramienta {
     public boolean equals(TableroConstruccionHerramienta otroTablero){
         for(int i = 0; i < 9; i ++){
             if(!(tablero[i].equals(otroTablero.get(i)))) {
-                return false || equalsEspejado(otroTablero);
+                return equalsEspejado(otroTablero);
             }
         }
         return true;

@@ -14,6 +14,8 @@ public class JuegoTest {
 
         Mapa mapa = new Mapa(10,10);
         Posicion posicion = new Posicion(1,1);
+        ObjetoUbicable aire = new ObjetoAire();
+        mapa.agregar(aire, posicion);
 
         ObjetoUbicable objeto = mapa.getObjetoUbicable(posicion);
 
@@ -26,8 +28,6 @@ public class JuegoTest {
         Juego juego = Juego.getInstance();
         Mapa mapa = juego.getMapa();
         Posicion posicion = new Posicion(1,1);
-
-        assertTrue(mapa.getObjetoUbicable(posicion) instanceof ObjetoAire);
 
         MaterialMineral madera = new MaderaMineral(new Posicion(1,1));
         mapa.agregar(madera, madera.getPosicion());

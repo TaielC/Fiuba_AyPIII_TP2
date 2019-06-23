@@ -68,10 +68,16 @@ public class JugadorTest {
 
         Juego juego = Juego.getInstance();
         Jugador jugador = juego.getJugador();
+        Mapa mapa = juego.getMapa();
 
-        juego.moverJugadorHacia(Direccion.arriba());
-        Posicion nuevaPosicionJugador = jugador.getPosicion();
+
         Posicion posicion = new Posicion(0,1);
+        ObjetoUbicable aire = new ObjetoAire();
+        mapa.agregar(aire, posicion);
+        juego.moverJugadorHacia(Direccion.arriba());
+
+
+        Posicion nuevaPosicionJugador = jugador.getPosicion();
 
         assertTrue(nuevaPosicionJugador.equals(posicion));
 
@@ -84,12 +90,18 @@ public class JugadorTest {
 
         Jugador jugador = juego.getJugador();
 
+        Mapa mapa = juego.getMapa();
+        Posicion posicion = new Posicion(0,1);
+        ObjetoUbicable aire = new ObjetoAire();
+        mapa.agregar(aire, posicion);
         juego.moverJugadorHacia(Direccion.arriba());
+
         juego.moverJugadorHacia(Direccion.abajo());
         Posicion nuevaPosicionJugador = jugador.getPosicion();
-        Posicion posicion = new Posicion(0,0);
 
-        assertTrue(nuevaPosicionJugador.equals(posicion));
+        Posicion posicion_ = new Posicion(0,0);
+
+        assertTrue(nuevaPosicionJugador.equals(posicion_));
 
     }
 
@@ -98,24 +110,34 @@ public class JugadorTest {
 
         Juego juego = Juego.resetJuego();
         Jugador jugador = juego.getJugador();
+        Mapa mapa = juego.getMapa();
+
+        Posicion posicion = new Posicion(1,0);
+        ObjetoUbicable aire = new ObjetoAire();
+        mapa.agregar(aire, posicion);
 
         juego.moverJugadorHacia(Direccion.derecha());
         Posicion nuevaPosicionJugador = jugador.getPosicion();
 
-        assertEquals(nuevaPosicionJugador, new Posicion(1, 0));
+        assertTrue(nuevaPosicionJugador.equals(posicion));
     }
 
     @Test
     public void test08ElJugadorDeberiaMoverseCorrectamenteEnFormaHorizontalHaciaIzquierda() {
         Juego juego = Juego.resetJuego();
         Jugador jugador = juego.getJugador();
+        Mapa mapa = juego.getMapa();
+
+        Posicion posicion = new Posicion(1,0);
+        ObjetoUbicable aire = new ObjetoAire();
+        mapa.agregar(aire, posicion);
 
         juego.moverJugadorHacia(Direccion.derecha());
         juego.moverJugadorHacia(Direccion.izquierda());
         Posicion nuevaPosicionJugador = jugador.getPosicion();
-        Posicion posicion = new Posicion(0,0);
+        Posicion posicion_ = new Posicion(0,0);
 
-        assertEquals(posicion, nuevaPosicionJugador);
+        assertTrue(nuevaPosicionJugador.equals(posicion_));
 
     }
 

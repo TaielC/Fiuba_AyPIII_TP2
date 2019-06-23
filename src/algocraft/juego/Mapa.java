@@ -61,5 +61,13 @@ public class Mapa {
             objetoUbicable.setPosicion(posicionSiguiente);
         }
     }
+
+    public int getBordeHorizontal(){
+        return bordeHorizontal;
+    }
+
+    public int getBordeVertical(){
+        return bordeVertical;
+    }
 }
 

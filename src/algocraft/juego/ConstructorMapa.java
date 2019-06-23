@@ -1,6 +1,6 @@
 package algocraft.juego;
 
-import algocraft.material.*;
+import algocraft.materialmineral.*;
 import java.util.*;
 
 public class ConstructorMapa {

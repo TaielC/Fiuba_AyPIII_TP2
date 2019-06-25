@@ -11,13 +11,13 @@ public class Juego {
     private static Juego instanciaJuego = new Juego();
     public static Juego getInstance() { return instanciaJuego; }
 
-    public final int TAMANIOHORIZONTAL = 24;
-    public final int TAMANIOVERTICAL = 15;
+    public final int TAMANIOHORIZONTAL = 20;
+    public final int TAMANIOVERTICAL = 12;
 
     private Juego(){
         this.mapa = new Mapa(TAMANIOHORIZONTAL,TAMANIOVERTICAL);
         this.constructorMapa = new ConstructorMapa(mapa);
-        constructorMapa.contruirMapa(6);
+        constructorMapa.contruirMapa();
         this.jugador = new Jugador(new Posicion(0,0));
         this.mapa.agregar(jugador, jugador.getPosicion());
     }

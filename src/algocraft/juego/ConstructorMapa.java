@@ -13,16 +13,29 @@ public class ConstructorMapa {
     }
 
 
-    public void contruirMapa(int numero) {
-        for (int i = 0; i <= numero; i++) {
-            int factorMaterial = random.nextInt(4);
-            seleccionarMaterial(factorMaterial);
+    public void contruirMapa() {
+        for (int i = 0; i < 8; i++) {
+            int factorBloque = random.nextInt(4);
+            ponerMadera(factorBloque);
+        }
+        for (int i = 0; i < 5; i++) {
+            int factorBloque = random.nextInt(4);
+            ponerPiedra(factorBloque);
+        }
+        for (int i = 0; i < 3; i++) {
+            int factorBloque = random.nextInt(4);
+            ponerMetal(factorBloque);
+        }
 
+        for (int i = 0; i < 2; i++) {
+            int factorBloque = random.nextInt(4);
+            ponerDiamante(factorBloque);
         }
 
     }
 
     public void seleccionarMaterial(int factorMaterial) {
+
 
         int factorBloque = random.nextInt(5);
         switch (factorMaterial) {

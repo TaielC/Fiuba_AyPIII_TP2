@@ -1,68 +1,62 @@
-package View;
+package view;
 
-
-//import java.awt.*;
-import javax.swing.*;
 import algocraft.juego.*;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.image.Image;
 import javafx.scene.layout.*;
 
-import javax.swing.text.Element;
 import javafx.scene.image.ImageView;
 import javafx.scene.control.Button;
+import javafx.stage.Screen;
 
+public class Tablero extends TilePane {
 
+    private static final double TAMANIO = Screen.getPrimary().getVisualBounds().getHeight()/10;
 
-public class Tablero {
+    public Tablero() {
 
-    public static TilePane Tablero() {
-
-
-        TilePane PanelTablero = new TilePane();
+        this.setHgap(0);
+        this.setVgap(0);
+        this.setAlignment(Pos.CENTER);
+        this.setPrefColumns(16);
+        this.setPrefRows(9);
         Juego.resetJuego();
         Juego juego = Juego.getInstance();
         Mapa mapa = juego.getMapa();
-        PanelTablero.setHgap(0);
-        PanelTablero.setVgap(0);
-        Button[][] button = new Button[12][12];
+        this.setHgap(1);
+        this.setVgap(1);
+        Button[][] button = new Button[16][9];
 
-
-        for(int x=0; x < 12; x++) {
-            for (int y = 0; y < 12; y++) {
+        Image pasto = new Image("file:imagenes/ObjetoAire.png",TAMANIO,TAMANIO,false,false);
+        for(int x=0; x < 16; x++) {
+            for (int y = 0; y < 9; y++) {
                 button[x][y] = new Button();
-                button[x][y].setStyle("-fx-background-color: #000000 ");
+                button[x][y].setMinSize(TAMANIO, TAMANIO);
+                button[x][y].setPadding(new Insets(0,0,0,0));
                 Posicion posicion = new Posicion(x,y);
 
-                Image imagen = new Image("file:imagenes/TierraMenu1.png",60,60,false,false);
-                button[x][y].setGraphic(new ImageView(imagen));
-
+                Image imagen = pasto;
                 if(mapa.getObjetoUbicable(posicion) != null){
                     if(mapa.getObjetoUbicable(posicion).getString().equals( "Madera")){
-                        button[x][y].setGraphic(new ImageView(imagen));
-                        imagen = new Image("file:imagenes/Mineral/MaderaMineral.png");
+                        imagen = new Image("file:imagenes/Mineral/MaderaMineral.png",TAMANIO,TAMANIO,false,false);
                     }
                     if(mapa.getObjetoUbicable(posicion).getString().equals( "Metal")){
-                        button[x][y].setGraphic(new ImageView(imagen));
-                        imagen = new Image("file:imagenes/Mineral/MetalMineral.png");
+                        imagen = new Image("file:imagenes/Mineral/MetalMineral.png",TAMANIO,TAMANIO,false,false);
                     }
                     if(mapa.getObjetoUbicable(posicion).getString().equals( "Piedra")){
-                        button[x][y].setGraphic(new ImageView(imagen));
-                        imagen = new Image("file:imagenes/Mineral/PiedraMineral.png");
+                        imagen = new Image("file:imagenes/Mineral/PiedraMineral.png",TAMANIO,TAMANIO,false,false);
                     }
                     if (mapa.getObjetoUbicable(posicion).getString().equals( "Diamante")){
-                        button[x][y].setGraphic(new ImageView(imagen));
-                        imagen = new Image("file:imagenes/Mineral/DiamanteMineral.png");
+                        imagen = new Image("file:imagenes/Mineral/DiamanteMineral.png",TAMANIO,TAMANIO,false,false);
                     }
                 }
-                PanelTablero.setBackground(new Background(new BackgroundImage(imagen, BackgroundRepeat.REPEAT, BackgroundRepeat.REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT)));
-                //button[x][y].setGraphic(new ImageView(imagen));
-                PanelTablero.getChildren().add(button[x][y]);
+                button[x][y].setGraphic(new ImageView(imagen));
+                this.getChildren().add(button[x][y]);
             }
-
         }
-
-        //PanelTablero.setLayout(new GridLayout(8, 12));
-        return PanelTablero;
+        Image imagenFondo = new Image("file:imagenes/Borde.png", 100, 100, false, false);
+        BackgroundImage fondo = new BackgroundImage(imagenFondo, BackgroundRepeat.REPEAT, BackgroundRepeat.REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
+        this.setBackground(new Background(fondo));
     }
-
 }

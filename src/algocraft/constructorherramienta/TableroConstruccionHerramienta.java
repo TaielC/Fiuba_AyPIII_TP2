@@ -1,6 +1,5 @@
 package algocraft.constructorherramienta;
 
-import View.Tablero;
 import algocraft.excepciones.PosicionDeTableroConstruccionHerramientaInvalidaException;
 import algocraft.materialinventario.MaterialInventario;
 import algocraft.materialinventario.NingunMaterialInventario;

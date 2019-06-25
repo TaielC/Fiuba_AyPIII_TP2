@@ -1,12 +1,10 @@
-package Controller;
+package controller;
 
-import View.Tablero;
+import view.Tablero;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import javax.swing.*;
-import java.awt.*;
 
 public class BotonJugarEventHandler implements EventHandler<ActionEvent> {
 
@@ -18,7 +16,6 @@ public class BotonJugarEventHandler implements EventHandler<ActionEvent> {
         this.stage = stage;
         this.escenaJuego = escenaJuego;
         this.pantallaCompleta = true;
-
     }
 
     @Override

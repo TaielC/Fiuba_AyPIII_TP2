@@ -1,4 +1,4 @@
-package View;
+package view;
 
 import algocraft.juego.Juego;
 import javafx.geometry.Pos;
@@ -20,7 +20,7 @@ public class PantallaJuego extends BorderPane {
 
         this.tablero = new Tablero();
 
-        this.setCenter(tablero.Tablero());
+        this.setCenter(tablero);
 
     }
 

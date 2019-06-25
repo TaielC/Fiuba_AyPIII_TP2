@@ -1,9 +1,9 @@
-package View;
+package view;
 
-import Controller.BotonAyudaEventHandler;
-import Controller.BotonJugarEventHandler;
-import Controller.BotonSalirEventHandler;
-import Controller.CheckBoxEventHandler;
+import controller.BotonAyudaEventHandler;
+import controller.BotonJugarEventHandler;
+import controller.BotonSalirEventHandler;
+import controller.CheckBoxEventHandler;
 import javafx.geometry.Pos;
 
 import javafx.geometry.Rectangle2D;

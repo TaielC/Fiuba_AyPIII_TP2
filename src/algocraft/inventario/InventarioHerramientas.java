@@ -66,4 +66,16 @@ public class InventarioHerramientas {
     public boolean estaVacio() {
         return cantidadHerramientas == 0;
     }
+
+    public int getTamanio() {
+        return herramientas.length;
+    }
+
+    public Herramienta ver(int posicion) {
+        try{
+            return herramientas[posicion];
+        } catch (IndexOutOfBoundsException e) {
+            throw new PosicionDeInventarioHerramientasInvalidaException();
+        }
+    }
 }

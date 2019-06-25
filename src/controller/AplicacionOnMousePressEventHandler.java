@@ -7,6 +7,4 @@ public class AplicacionOnMousePressEventHandler extends MouseAdapter {
     public AplicacionOnMousePressEventHandler(){
 
     }
-
-
 }

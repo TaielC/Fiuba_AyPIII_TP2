@@ -23,7 +23,10 @@ public class PantallaJuego extends BorderPane {
     public PantallaJuego(Juego juego){
         this.juego = juego;
         this.tablero = new Tablero(juego.getMapa());
+
         this.setCenter(tablero);
+
+        this.setLeft(new ContenedorHerramientas(juego.getJugador()));
     }
 
     public void actualizar() {

@@ -29,4 +29,8 @@ public class Inventario {
     public Herramienta intercambiarHerramienta(Herramienta herramienta, int posicion){
         return inventarioHerramientas.intercambiarHerramienta(herramienta, posicion);
     }
+
+    public InventarioHerramientas getInventarioHerramientas() {
+        return inventarioHerramientas;
+    }
 }

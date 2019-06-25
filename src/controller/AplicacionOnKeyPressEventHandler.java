@@ -6,33 +6,42 @@ import algocraft.juego.Jugador;
 import javafx.event.EventHandler;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.KeyCode;
+import javafx.stage.Stage;
 import view.PantallaJuego;
 
 public class AplicacionOnKeyPressEventHandler implements EventHandler<KeyEvent> {
     private PantallaJuego pantallaJuego;
     private Juego juego;
     private Jugador jugador;
+    private Stage stage;
 
-    public AplicacionOnKeyPressEventHandler(PantallaJuego pantallaJuego, Juego juego){
+    public AplicacionOnKeyPressEventHandler(PantallaJuego pantallaJuego, Juego juego, Stage stage){
         this.pantallaJuego = pantallaJuego;
         this.juego = juego;
         this.jugador = juego.getJugador();
-
+        this.stage = stage;
     }
     @Override
     public void handle(KeyEvent keyEvent) {
         if (keyEvent.getCode() == KeyCode.S) {
             juego.moverJugadorHacia(Direccion.arriba());
+            pantallaJuego.actualizar();
         }
         if (keyEvent.getCode() == KeyCode.W) {
             juego.moverJugadorHacia(Direccion.abajo());
+            pantallaJuego.actualizar();
         }
         if (keyEvent.getCode() == KeyCode.A) {
             juego.moverJugadorHacia(Direccion.izquierda());
+            pantallaJuego.actualizar();
         }
         if (keyEvent.getCode() == KeyCode.D) {
             juego.moverJugadorHacia(Direccion.derecha());
+            pantallaJuego.actualizar();
         }
-        pantallaJuego.actualizar();
+        if (keyEvent.getCode() == KeyCode.F11) {
+            stage.setFullScreen(!stage.isFullScreen());
+        }
+
     }
 }

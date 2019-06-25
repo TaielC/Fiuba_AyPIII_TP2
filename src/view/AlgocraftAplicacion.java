@@ -27,7 +27,7 @@ public class AlgocraftAplicacion extends Application {
         PantallaJuego pantallaJuego = new PantallaJuego(juego);
         Scene escenaJuego = new Scene(pantallaJuego);
 
-        AplicacionOnKeyPressEventHandler AplicacionOnKeyPressEventHandler = new AplicacionOnKeyPressEventHandler(pantallaJuego, juego);
+        AplicacionOnKeyPressEventHandler AplicacionOnKeyPressEventHandler = new AplicacionOnKeyPressEventHandler(pantallaJuego, juego, stage);
         escenaJuego.setOnKeyPressed(AplicacionOnKeyPressEventHandler);
 
         MenuPrincipal menuPrincipal = new MenuPrincipal(stage, escenaJuego);

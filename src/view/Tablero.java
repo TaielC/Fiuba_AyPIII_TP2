@@ -16,8 +16,6 @@ public class Tablero extends GridPane {
 
     public Tablero(Mapa mapa) {
 
-        this.setHgap(0);
-        this.setVgap(0);
         this.setAlignment(Pos.CENTER);
         this.setPrefSize(16,9);
         this.setHgap(1);

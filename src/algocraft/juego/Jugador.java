@@ -3,6 +3,7 @@ package algocraft.juego;
 import algocraft.excepciones.HerramientaRotaException;
 import algocraft.herramienta.*;
 import algocraft.inventario.Inventario;
+import algocraft.inventario.InventarioHerramientas;
 import algocraft.materialherramienta.MaderaMaterialHerramienta;
 import algocraft.materialmineral.MaterialMineral;
 
@@ -17,6 +18,10 @@ public class Jugador implements ObjetoUbicable{
         inventario.agregarHerramienta(new Hacha(new MaderaMaterialHerramienta()));
         this.posicion = posicion;
         herramientaEquipada = new NingunaHerramienta();
+    }
+
+    public Herramienta getHerramientaEquipada() {
+        return herramientaEquipada;
     }
 
     public void usarHerramientaEquipada(MaterialMineral material){
@@ -56,5 +61,9 @@ public class Jugador implements ObjetoUbicable{
     @Override
     public void setPosicion(Posicion posicion) {
         this.posicion = posicion;
+    }
+
+    public InventarioHerramientas getInventarioHerramientas() {
+        return inventario.getInventarioHerramientas();
     }
 }

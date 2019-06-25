@@ -18,7 +18,7 @@ public class PantallaJuego extends BorderPane {
 
     public PantallaJuego(Juego juego){
 
-        this.tablero = new Tablero(juego.getMapa(), juego.getJugador());
+        this.tablero = new Tablero(juego.getMapa());
 
         this.setCenter(tablero);
 

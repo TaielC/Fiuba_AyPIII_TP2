@@ -34,9 +34,4 @@ public class MetalMineral extends MaterialMineral {
         return material.daniaA(this);
     }
 
-
-    @Override
-    public String getString() {
-        return "Metal";
-    }
 }

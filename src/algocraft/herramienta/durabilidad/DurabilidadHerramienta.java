@@ -8,7 +8,7 @@ public abstract class DurabilidadHerramienta {
 
     public double getDurabilidad(){ return durabilidad; }
 
-    public boolean seDesgasto() {
+    public boolean seDesgasto(){
         return durabilidad <= 0;
     }
 }

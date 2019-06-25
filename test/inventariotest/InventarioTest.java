@@ -43,7 +43,7 @@ public class InventarioTest {
 
         inventario.obtenerHerramienta(posicion);
 
-        assertNull(inventario.obtenerHerramienta(posicion));
+        assertEquals(inventario.obtenerHerramienta(posicion).getClass(), NingunaHerramienta.class);
     }
 
     @Test

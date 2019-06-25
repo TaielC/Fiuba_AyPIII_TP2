@@ -1,8 +1,10 @@
 package algocraft.juego;
 
+import algocraft.excepciones.HerramientaRotaException;
 import algocraft.herramienta.*;
 import algocraft.inventario.Inventario;
 import algocraft.materialherramienta.MaderaMaterialHerramienta;
+import algocraft.materialmineral.MaterialMineral;
 
 public class Jugador implements ObjetoUbicable{
 
@@ -17,12 +19,16 @@ public class Jugador implements ObjetoUbicable{
         herramientaEquipada = new NingunaHerramienta();
     }
 
-    public void usarHerramientaEquipada(ObjetoUbicable objetoUbicable){
-        herramientaEquipada.usar(objetoUbicable);
+    public void usarHerramientaEquipada(MaterialMineral material){
+        try{
+            herramientaEquipada.usar(material);
+        } catch (HerramientaRotaException e) {
+            herramientaEquipada = new NingunaHerramienta();
+        }
     }
 
     public void equiparDeInventario(int posicion){
-        Herramienta herramienta = inventario.intercambiarHerramienta(herramientaEquipada, posicion);
+        herramientaEquipada = inventario.intercambiarHerramienta(herramientaEquipada, posicion);
     }
 
     public int agregarAInventario(Herramienta herramienta) {

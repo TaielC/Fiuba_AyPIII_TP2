@@ -12,7 +12,7 @@ public abstract class Herramienta {
 
 	public abstract void usar(MaterialMineral materialMineral);
 
-	public void golpear(MaderaMineral maderaMineral){	durabilidadHerramienta.desgastar(); }
+	public void golpear(MaderaMineral maderaMineral){ durabilidadHerramienta.desgastar(); }
 
 	public void golpear(PiedraMineral piedraMineral){ durabilidadHerramienta.desgastar(); }
 

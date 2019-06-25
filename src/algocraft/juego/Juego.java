@@ -1,5 +1,7 @@
 package algocraft.juego;
 
+import algocraft.materialmineral.MaterialMineral;
+
 public class Juego {
 
     private Jugador jugador;
@@ -33,7 +35,8 @@ public class Juego {
     }
 
     public void usarHerramientaEquipada(Posicion posicion) {
-        Jugador.usarHerramientaEquipada(mapa.getObjetoUbicable(posicion));
+        if(!posicion.esAdyacente(jugador.getPosicion())) return;
+        jugador.usarHerramientaEquipada((MaterialMineral) mapa.getObjetoUbicable(posicion));
 
     }
 
@@ -41,5 +44,4 @@ public class Juego {
         instanciaJuego = new Juego();
         return instanciaJuego;
     }
-
 }

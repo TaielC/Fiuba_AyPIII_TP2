@@ -12,7 +12,7 @@ import javafx.stage.Screen;
 
 public class Tablero extends GridPane {
 
-    private static final double TAMANIO = Screen.getPrimary().getVisualBounds().getHeight()/20;
+    private static final double TAMANIO = Screen.getPrimary().getVisualBounds().getHeight()/17;
 
     public Tablero(Mapa mapa) {
 

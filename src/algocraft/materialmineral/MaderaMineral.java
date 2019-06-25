@@ -29,8 +29,4 @@ public class MaderaMineral extends MaterialMineral  {
         return material.daniaA(this);
     }
 
-    @Override
-    public String getString() {
-        return "Madera";
-    }
 }

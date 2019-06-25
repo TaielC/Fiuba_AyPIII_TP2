@@ -1,36 +1,33 @@
 package view;
 
 import algocraft.juego.Juego;
-import controller.AplicacionOnMousePressEventHandler;
 
-import javafx.geometry.Pos;
-import javafx.scene.Node;
-import javafx.scene.canvas.Canvas;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.VBox;
-
-import javax.swing.*;
-import java.awt.*;
-import javafx.embed.swing.SwingNode;
-
 
 
 public class PantallaJuego extends BorderPane {
 
-    private Tablero tablero;
+    private ContenedorJuego contenedorJuego;
     private Juego juego;
+    private ContenedorMateriales contenedorMateriales;
 
     public PantallaJuego(Juego juego){
         this.juego = juego;
-        this.tablero = new Tablero(juego.getMapa());
+        this.contenedorJuego = new ContenedorJuego(juego.getMapa());
 
-        this.setCenter(tablero);
+        this.setCenter(contenedorJuego);
 
         this.setLeft(new ContenedorHerramientas(juego.getJugador()));
+
+        this.contenedorMateriales =  new ContenedorMateriales();
+        this.setRight(contenedorMateriales);
     }
 
     public void actualizar() {
-        this.tablero = new Tablero(juego.getMapa());
-        this.setCenter(tablero);
+        this.contenedorJuego = new ContenedorJuego(juego.getMapa());
+        this.setCenter(contenedorJuego);
+        this.contenedorMateriales =  new ContenedorMateriales();
+        this.setRight(contenedorMateriales);
+
     }
 }

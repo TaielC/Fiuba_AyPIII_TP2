@@ -10,11 +10,11 @@ import javafx.scene.image.ImageView;
 import javafx.scene.control.Button;
 import javafx.stage.Screen;
 
-public class Tablero extends GridPane {
+public class ContenedorJuego extends GridPane {
 
     private static final double TAMANIO = Screen.getPrimary().getVisualBounds().getHeight()/17;
 
-    public Tablero(Mapa mapa) {
+    public ContenedorJuego(Mapa mapa) {
 
         this.setAlignment(Pos.CENTER);
         this.setPrefSize(16,9);
@@ -43,5 +43,4 @@ public class Tablero extends GridPane {
         BackgroundImage fondo = new BackgroundImage(imagenFondo, BackgroundRepeat.REPEAT, BackgroundRepeat.REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
         this.setBackground(new Background(fondo));
     }
-
 }

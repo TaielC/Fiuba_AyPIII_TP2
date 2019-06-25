@@ -11,8 +11,11 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
+import javafx.stage.Screen;
 
 public class ContenedorHerramientas extends VBox {
+
+    private static final double TAMANIO = Screen.getPrimary().getVisualBounds().getHeight()/17;
 
     public ContenedorHerramientas(Jugador jugador){
 
@@ -23,6 +26,7 @@ public class ContenedorHerramientas extends VBox {
 
         for(int i = 0; i < inventarioHerramientas.getTamanio(); i++){
             Button boton = new Button();
+            boton.setMinSize(TAMANIO, TAMANIO);
             boton.setPadding(new Insets(1,1,1,1));
             Herramienta herramienta = inventarioHerramientas.ver(i);
             MaterialHerramienta material = herramienta.material();
@@ -37,7 +41,7 @@ public class ContenedorHerramientas extends VBox {
         ImageView vistaHerramienta = new ImageView(imagen);
 
         this.setAlignment(Pos.CENTER);
-//        this.setPadding(new Insets(3,3,3,3));
+        this.setPadding(new Insets(3,3,3,3));
         this.setSpacing(50);
         this.getChildren().addAll(gridInventario, vistaHerramienta);
     }

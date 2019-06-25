@@ -20,6 +20,10 @@ public class Imagenes {
         imagenes.put("algocraft.materialmineral.MetalMineral", new Image("file:imagenes/Minerales/Metal.png",TAMANIO,TAMANIO,false,false));
         imagenes.put("algocraft.materialmineral.DiamanteMineral", new Image("file:imagenes/Minerales/Diamante.png",TAMANIO,TAMANIO,false,false));
         imagenes.put("algocraft.materialmineral.NingunMaterialMineral", new Image("file:imagenes/Minerales/Ningun.png", TAMANIO, TAMANIO, false, false));
+        imagenes.put("MaderaItem", new Image("file:imagenes/Item/MaderaItem.png", TAMANIO, TAMANIO, false, false));
+        imagenes.put("MetalItem", new Image("file:imagenes/Item/MetalItem.png", TAMANIO, TAMANIO, false, false));
+        imagenes.put("PiedraItem", new Image("file:imagenes/Item/PiedraItem.png", TAMANIO, TAMANIO, false, false));
+        imagenes.put("DiamanteItem", new Image("file:imagenes/Item/DiamanteItem.png", TAMANIO, TAMANIO, false, false));
     }
 
     public static Image get(String string) {

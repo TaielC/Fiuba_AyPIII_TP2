@@ -19,15 +19,22 @@ public class PantallaJuego extends BorderPane {
 
     private Tablero tablero;
     private Juego juego;
+    private TableroMaterial tableroMaterial;
 
     public PantallaJuego(Juego juego){
         this.juego = juego;
         this.tablero = new Tablero(juego.getMapa());
         this.setCenter(tablero);
+        this.tableroMaterial =  new TableroMaterial();
+        this.setRight(tableroMaterial);
+
     }
 
     public void actualizar() {
         this.tablero = new Tablero(juego.getMapa());
         this.setCenter(tablero);
+        this.tableroMaterial =  new TableroMaterial();
+        this.setRight(tableroMaterial);
+
     }
 }

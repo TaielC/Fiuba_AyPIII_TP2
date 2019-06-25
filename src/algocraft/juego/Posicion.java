@@ -50,4 +50,14 @@ public class Posicion {
     public int hashCode() {
         return this.toString().hashCode();
     }
+
+    public boolean esAdyacente(Posicion posicion) {
+        if(coordenadaX == posicion.getX()){
+            return coordenadaY == posicion.getY()+1 || coordenadaY == posicion.getY()-1;
+        }
+        if(coordenadaY == posicion.getY()){
+            return coordenadaX == posicion.getX() + 1 || coordenadaX == posicion.getX() - 1;
+        }
+        return false;
+    }
 }

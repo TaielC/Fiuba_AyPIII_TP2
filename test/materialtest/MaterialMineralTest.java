@@ -235,7 +235,6 @@ public class MaterialMineralTest {
 		pico.usar(piedra);
 		assertEquals(durabilidadPiedra-fuerzaPico,piedra.durabilidad());
 	}
-
 }
 
 

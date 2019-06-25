@@ -9,9 +9,11 @@ public class Juego {
     private static Juego instanciaJuego = new Juego();
     public static Juego getInstance() { return instanciaJuego; }
 
+    public final int TAMANIOHORIZONTAL = 24;
+    public final int TAMANIOVERTICAL = 15;
 
     private Juego(){
-        this.mapa = new Mapa(10,10);
+        this.mapa = new Mapa(TAMANIOHORIZONTAL,TAMANIOVERTICAL);
         this.constructorMapa = new ConstructorMapa(mapa);
         constructorMapa.contruirMapa(6);
         this.jugador = new Jugador(new Posicion(0,0));

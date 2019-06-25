@@ -2,6 +2,7 @@ package view;
 
 import algocraft.juego.Juego;
 
+import controller.AplicacionOnKeyPressEventHandler;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Screen;
@@ -25,6 +26,9 @@ public class AlgocraftAplicacion extends Application {
         Juego juego = Juego.getInstance();
         PantallaJuego pantallaJuego = new PantallaJuego(juego);
         Scene escenaJuego = new Scene(pantallaJuego);
+
+        AplicacionOnKeyPressEventHandler AplicacionOnKeyPressEventHandler = new AplicacionOnKeyPressEventHandler(pantallaJuego, juego);
+        escenaJuego.setOnKeyPressed(AplicacionOnKeyPressEventHandler);
 
         MenuPrincipal menuPrincipal = new MenuPrincipal(stage, escenaJuego);
         Scene escenaMenuPrincipal = new Scene(menuPrincipal, width, height);

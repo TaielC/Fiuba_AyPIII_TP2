@@ -1,4 +1,12 @@
 package controller;
 
-public class AplicacionOnMousePressEventHandler {
+import java.awt.event.MouseAdapter;
+
+public class AplicacionOnMousePressEventHandler extends MouseAdapter {
+
+    public AplicacionOnMousePressEventHandler(){
+
+    }
+
+
 }

@@ -10,19 +10,19 @@ import javafx.scene.image.ImageView;
 import javafx.scene.control.Button;
 import javafx.stage.Screen;
 
-public class Tablero extends TilePane {
+public class Tablero extends GridPane {
 
     private static final double TAMANIO = Screen.getPrimary().getVisualBounds().getHeight()/10;
+    private Juego juego;
 
     public Tablero() {
 
         this.setHgap(0);
         this.setVgap(0);
         this.setAlignment(Pos.CENTER);
-        this.setPrefColumns(16);
-        this.setPrefRows(9);
-        Juego.resetJuego();
-        Juego juego = Juego.getInstance();
+        this.setPrefSize(16,9);
+        //Juego.resetJuego();
+        this.juego = Juego.getInstance();
         Mapa mapa = juego.getMapa();
         this.setHgap(1);
         this.setVgap(1);
@@ -50,13 +50,17 @@ public class Tablero extends TilePane {
                     if (mapa.getObjetoUbicable(posicion).getString().equals( "Diamante")){
                         imagen = new Image("file:imagenes/Mineral/DiamanteMineral.png",TAMANIO,TAMANIO,false,false);
                     }
+                    if (mapa.getObjetoUbicable(posicion).getString().equals( "Jugador")){
+                        imagen = new Image("file:imagenes/steve.png",TAMANIO,TAMANIO,false,false);
+                    }
                 }
                 button[x][y].setGraphic(new ImageView(imagen));
-                this.getChildren().add(button[x][y]);
+                this.add(button[x][y],x,y);
             }
         }
         Image imagenFondo = new Image("file:imagenes/Borde.png", 100, 100, false, false);
         BackgroundImage fondo = new BackgroundImage(imagenFondo, BackgroundRepeat.REPEAT, BackgroundRepeat.REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
         this.setBackground(new Background(fondo));
     }
+
 }

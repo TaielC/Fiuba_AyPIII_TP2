@@ -1,6 +1,8 @@
 package view;
 
 import algocraft.juego.Juego;
+import controller.AplicacionOnMousePressEventHandler;
+
 import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.canvas.Canvas;
@@ -12,16 +14,19 @@ import java.awt.*;
 import javafx.embed.swing.SwingNode;
 
 
+
 public class PantallaJuego extends BorderPane {
 
     private Tablero tablero;
 
     public PantallaJuego(Juego juego){
-
         this.tablero = new Tablero();
-
         this.setCenter(tablero);
 
     }
 
+    public void actualizar() {
+        this.tablero = new Tablero();
+        this.setCenter(tablero);
+    }
 }

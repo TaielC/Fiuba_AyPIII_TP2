@@ -24,22 +24,29 @@ public class ConstructorMapa {
 
     public void seleccionarMaterial(int factorMaterial) {
 
-        int factorBloque = random.nextInt(4);
+        int factorBloque = random.nextInt(5);
         switch (factorMaterial) {
             case 0:
                 ponerMadera(factorBloque);
+                ponerPiedra(factorBloque);
+                ponerDiamante(factorBloque);
                 break;
 
             case 1:
-                ponerPiedra(factorBloque);
+                ponerMadera(factorBloque);
+                ponerDiamante(factorBloque);
+
                 break;
 
             case 2:
-                ponerMetal(factorBloque);
+                ponerPiedra(factorBloque);
+                ponerMadera(factorBloque);
+
                 break;
 
             case 3:
-                ponerDiamante(factorBloque);
+                ponerMadera(factorBloque);
+                ponerMetal(factorBloque);
                 break;
 
             default:

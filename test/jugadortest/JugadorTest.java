@@ -7,6 +7,7 @@ import algocraft.materialherramienta.PiedraMaterialHerramienta;
 import algocraft.materialmineral.MaderaMineral;
 import algocraft.materialmineral.MaterialMineral;
 
+import algocraft.materialmineral.NingunMaterialMineral;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -72,7 +73,7 @@ public class JugadorTest {
 
 
         Posicion posicion = new Posicion(0,1);
-        ObjetoUbicable aire = new ObjetoAire();
+        ObjetoUbicable aire = new NingunMaterialMineral();
         mapa.agregar(aire, posicion);
         juego.moverJugadorHacia(Direccion.arriba());
 
@@ -92,7 +93,7 @@ public class JugadorTest {
 
         Mapa mapa = juego.getMapa();
         Posicion posicion = new Posicion(0,1);
-        ObjetoUbicable aire = new ObjetoAire();
+        ObjetoUbicable aire = new NingunMaterialMineral();
         mapa.agregar(aire, posicion);
         juego.moverJugadorHacia(Direccion.arriba());
 
@@ -113,7 +114,7 @@ public class JugadorTest {
         Mapa mapa = juego.getMapa();
 
         Posicion posicion = new Posicion(1,0);
-        ObjetoUbicable aire = new ObjetoAire();
+        ObjetoUbicable aire = new NingunMaterialMineral();
         mapa.agregar(aire, posicion);
 
         juego.moverJugadorHacia(Direccion.derecha());
@@ -129,7 +130,7 @@ public class JugadorTest {
         Mapa mapa = juego.getMapa();
 
         Posicion posicion = new Posicion(1,0);
-        ObjetoUbicable aire = new ObjetoAire();
+        ObjetoUbicable aire = new NingunMaterialMineral();
         mapa.agregar(aire, posicion);
 
         juego.moverJugadorHacia(Direccion.derecha());

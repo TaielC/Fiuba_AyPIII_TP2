@@ -18,7 +18,7 @@ public class Mapa {
             for (int j = 0; j < y; j++) {
 
                 Posicion posicion = new Posicion(i, j);
-                ObjetoUbicable objeto = new ObjetoAire();
+                ObjetoUbicable objeto = new NingunMaterialMineral();
 
                 this.tablero.put(posicion.toString(), objeto);
             }
@@ -47,7 +47,7 @@ public class Mapa {
     public boolean posicionEsValida(Posicion posicion) {
         boolean limiteX = (posicion.getX() < this.bordeHorizontal) || (posicion.getX() >= 0);
         boolean limiteY = (posicion.getY() < this.bordeVertical) || (posicion.getX() >= 0);
-        boolean estaVacio = (tablero.get(posicion.toString()) instanceof ObjetoAire);
+        boolean estaVacio = (tablero.get(posicion.toString()) instanceof NingunMaterialMineral);
         return limiteX && limiteY && estaVacio;
     }
 
@@ -56,7 +56,7 @@ public class Mapa {
         Posicion posicionSiguiente = posicion.obtenerSiguiente(direccion);
 
         if (posicionEsValida(posicionSiguiente)) {
-            tablero.put(posicion.toString(), new ObjetoAire());
+            tablero.put(posicion.toString(), new NingunMaterialMineral());
             tablero.put(posicionSiguiente.toString(), objetoUbicable);
             objetoUbicable.setPosicion(posicionSiguiente);
         }

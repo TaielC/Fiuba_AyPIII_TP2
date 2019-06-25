@@ -10,24 +10,24 @@ import javafx.scene.image.ImageView;
 import javafx.scene.control.Button;
 import javafx.stage.Screen;
 
-public class Tablero extends TilePane {
+public class Tablero extends GridPane {
 
     private static final double TAMANIO = Screen.getPrimary().getVisualBounds().getHeight()/20;
 
-    public Tablero(Mapa mapa, Jugador jugador) {
+    public Tablero(Mapa mapa) {
 
         this.setHgap(0);
         this.setVgap(0);
         this.setAlignment(Pos.CENTER);
-        this.setPrefColumns(16);
-        this.setPrefRows(9);
         this.setHgap(1);
         this.setVgap(1);
-        Button[][] button = new Button[16][9];
+        int tamanioHorizontal = mapa.getBordeHorizontal();
+        int tamanioVertical = mapa.getBordeVertical();
+        this.setPrefSize(tamanioHorizontal, tamanioVertical);
+        Button[][] button = new Button[tamanioHorizontal][tamanioVertical];
 
-        Posicion posicionJugador = jugador.getPosicion();
-        for(int x=0; x < 16; x++) {
-            for (int y = 0; y < 9; y++) {
+        for(int x=0; x < tamanioHorizontal; x++) {
+            for (int y = 0; y < tamanioVertical; y++) {
                 button[x][y] = new Button();
                 button[x][y].setMinSize(TAMANIO, TAMANIO);
                 button[x][y].setPadding(new Insets(0,0,0,0));
@@ -37,7 +37,7 @@ public class Tablero extends TilePane {
                 Image imagen = new Image("file:imagenes/"+objetoUbicable.getClass().getName()+".png",TAMANIO,TAMANIO,false,false);
 
                 button[x][y].setGraphic(new ImageView(imagen));
-                this.getChildren().add(button[x][y]);
+                this.add(button[x][y],x,y);
             }
         }
         Image imagenFondo = new Image("file:imagenes/Borde.png", 100, 100, false, false);

@@ -8,11 +8,21 @@ public class Jugador implements ObjetoUbicable{
 
     private Inventario inventario;
     private Posicion posicion;
+    private Herramienta herramientaEquipada;
 
     public Jugador(Posicion posicion) {
         inventario = new Inventario();
         inventario.agregarHerramienta(new Hacha(new MaderaMaterialHerramienta()));
         this.posicion = posicion;
+        herramientaEquipada = new NingunaHerramienta();
+    }
+
+    public void usarHerramientaEquipada(ObjetoUbicable objetoUbicable){
+        herramientaEquipada.usar(objetoUbicable);
+    }
+
+    public void equiparDeInventario(int posicion){
+        Herramienta herramienta = inventario.intercambiarHerramienta(herramientaEquipada, posicion);
     }
 
     public int agregarAInventario(Herramienta herramienta) {
@@ -41,10 +51,4 @@ public class Jugador implements ObjetoUbicable{
     public void setPosicion(Posicion posicion) {
         this.posicion = posicion;
     }
-
-    @Override
-    public String getString(){
-        return "Jugador";
-    }
-
 }

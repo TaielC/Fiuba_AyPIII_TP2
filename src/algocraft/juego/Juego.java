@@ -15,7 +15,7 @@ public class Juego {
     private Juego(){
         this.mapa = new Mapa(TAMANIOHORIZONTAL,TAMANIOVERTICAL);
         this.constructorMapa = new ConstructorMapa(mapa);
-        constructorMapa.contruirMapa(6);
+        constructorMapa.contruirMapa(15);
         this.jugador = new Jugador(new Posicion(0,0));
         this.mapa.agregar(jugador, jugador.getPosicion());
     }
@@ -30,6 +30,11 @@ public class Juego {
 
     public void moverJugadorHacia(Direccion direccion) {
         mapa.moverObjetoHacia(jugador, direccion);
+    }
+
+    public void usarHerramientaEquipada(Posicion posicion) {
+        Jugador.usarHerramientaEquipada(mapa.getObjetoUbicable(posicion));
+
     }
 
     public static Juego resetJuego(){

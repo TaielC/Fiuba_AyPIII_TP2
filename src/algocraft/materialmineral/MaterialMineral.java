@@ -31,5 +31,4 @@ public abstract class MaterialMineral implements ObjetoUbicable{
     public void setPosicion(Posicion posicion) {
         posicionMaterial = posicion;
     }
-
 }

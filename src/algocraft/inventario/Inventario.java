@@ -25,4 +25,8 @@ public class Inventario {
     }
 
     public boolean estaVacio() { return inventarioHerramientas.estaVacio(); }
+
+    public Herramienta intercambiarHerramienta(Herramienta herramienta, int posicion){
+        return inventarioHerramientas.intercambiarHerramienta(herramienta, posicion);
+    }
 }

@@ -15,7 +15,7 @@ public class ConstructorMapa {
 
     public void contruirMapa(int numero) {
         for (int i = 0; i <= numero; i++) {
-            int factorMaterial = random.nextInt(3);
+            int factorMaterial = random.nextInt(4);
             seleccionarMaterial(factorMaterial);
 
         }
@@ -24,7 +24,7 @@ public class ConstructorMapa {
 
     public void seleccionarMaterial(int factorMaterial) {
 
-        int factorBloque = random.nextInt(3);
+        int factorBloque = random.nextInt(4);
         switch (factorMaterial) {
             case 0:
                 ponerMadera(factorBloque);

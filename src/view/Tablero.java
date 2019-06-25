@@ -10,7 +10,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.control.Button;
 import javafx.stage.Screen;
 
-public class Tablero extends TilePane {
+public class Tablero extends GridPane {
 
     private static final double TAMANIO = Screen.getPrimary().getVisualBounds().getHeight()/10;
 
@@ -19,13 +19,12 @@ public class Tablero extends TilePane {
         this.setHgap(0);
         this.setVgap(0);
         this.setAlignment(Pos.CENTER);
-        this.setPrefColumns(16);
-        this.setPrefRows(9);
         Juego.resetJuego();
         Juego juego = Juego.getInstance();
         Mapa mapa = juego.getMapa();
         this.setHgap(1);
         this.setVgap(1);
+        this.setPrefSize(16,9);
         Button[][] button = new Button[16][9];
 
         Image pasto = new Image("file:imagenes/ObjetoAire.png",TAMANIO,TAMANIO,false,false);
@@ -52,7 +51,7 @@ public class Tablero extends TilePane {
                     }
                 }
                 button[x][y].setGraphic(new ImageView(imagen));
-                this.getChildren().add(button[x][y]);
+                this.add(button[x][y],x,y);
             }
         }
         Image imagenFondo = new Image("file:imagenes/Borde.png", 100, 100, false, false);

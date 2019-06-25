@@ -19,6 +19,7 @@ public class Tablero extends GridPane {
         this.setHgap(0);
         this.setVgap(0);
         this.setAlignment(Pos.CENTER);
+        this.setPrefSize(16,9);
         this.setHgap(1);
         this.setVgap(1);
         int tamanioHorizontal = mapa.getBordeHorizontal();
@@ -34,14 +35,15 @@ public class Tablero extends GridPane {
                 Posicion posicion = new Posicion(x,y);
 
                 ObjetoUbicable objetoUbicable = mapa.getObjetoUbicable(posicion);
-                Image imagen = new Image("file:imagenes/"+objetoUbicable.getClass().getName()+".png",TAMANIO,TAMANIO,false,false);
+                Image imagen = Imagenes.get(objetoUbicable.getClass().getName());
 
                 button[x][y].setGraphic(new ImageView(imagen));
                 this.add(button[x][y],x,y);
             }
         }
-        Image imagenFondo = new Image("file:imagenes/Borde.png", 100, 100, false, false);
+        Image imagenFondo = Imagenes.get("FondoJuego");
         BackgroundImage fondo = new BackgroundImage(imagenFondo, BackgroundRepeat.REPEAT, BackgroundRepeat.REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
         this.setBackground(new Background(fondo));
     }
+
 }

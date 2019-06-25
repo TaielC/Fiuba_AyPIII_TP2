@@ -6,8 +6,6 @@ import controller.BotonSalirEventHandler;
 import controller.CheckBoxEventHandler;
 import javafx.geometry.Pos;
 
-import javafx.geometry.Rectangle2D;
-import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
@@ -33,7 +31,7 @@ public class MenuPrincipal extends VBox {
         this.setAlignment(Pos.CENTER);
         this.setSpacing(15);
 
-        Image imagenTitulo = new Image("file:imagenes/LogoInicio1.png");
+        Image imagenTitulo = Imagenes.get("LogoInicio");
         ImageView vistaImagenTitulo = new ImageView(imagenTitulo);
 
         Label subTitulo = new Label("Algoritmos y Programación III");
@@ -56,7 +54,7 @@ public class MenuPrincipal extends VBox {
         pantallaCompleta.setSelected(true);
         pantallaCompleta.setOnAction(new CheckBoxEventHandler(pantallaCompleta, botonJugarEventHandler));
 
-        Image imagen = new Image("file:imagenes/TierraMenu.png", 100, 100, false, false);
+        Image imagen = Imagenes.get("FondoMenu");
         BackgroundImage imagenDeFondo = new BackgroundImage(imagen, BackgroundRepeat.REPEAT, BackgroundRepeat.REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
         this.setBackground(new Background(imagenDeFondo));
 

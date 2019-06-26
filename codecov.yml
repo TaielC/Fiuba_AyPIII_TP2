@@ -7,8 +7,8 @@ coverage:
   round: down
   range: "70...100"
   ignore:
-    - "src/controlador"
-    - "src/vista"
+    - "src/controlador/.*"
+    - "src/vista/.*"
 
   status:
     project: yes

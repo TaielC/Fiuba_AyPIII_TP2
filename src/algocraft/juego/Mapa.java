@@ -45,7 +45,7 @@ public class Mapa {
         Posicion posicionSiguiente = posicion.obtenerSiguiente(direccion);
 
         if(!posicionEsValida(posicionSiguiente)) {
-            throw new RuntimeException(tablero.get(posicionSiguiente).toString());
+            return;
         }
         tablero.put(posicion, new NingunMaterialMineral());
         tablero.put(posicionSiguiente, objetoUbicable);

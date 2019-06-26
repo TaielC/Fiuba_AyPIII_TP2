@@ -37,7 +37,6 @@ public class Juego {
     public void usarHerramientaEquipada(Posicion posicion) {
         if(!posicion.esAdyacente(jugador.getPosicion())) return;
         jugador.usarHerramientaEquipada((MaterialMineral) mapa.getObjetoUbicable(posicion));
-
     }
 
     public static Juego resetJuego(){

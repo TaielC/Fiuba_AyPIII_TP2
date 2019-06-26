@@ -132,7 +132,6 @@ public class JugadorTest {
         Posicion posicion_ = new Posicion(0,0);
 
         assertEquals(nuevaPosicionJugador,posicion_);
-
     }
 
     @Test

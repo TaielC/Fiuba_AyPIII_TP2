@@ -9,6 +9,7 @@ coverage:
   ignore:
     - "src/controller/.*"
     - "src/view/.*"
+    - "src/algocraft/excepciones/.*"
 
   status:
     project: yes

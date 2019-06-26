@@ -17,8 +17,6 @@ public class PicoFino extends Herramienta {
     }
     @Override
     public void usar(MaterialMineral materialMineral) {
-        if(durabilidadHerramienta.seDesgasto())
-            throw new HerramientaRotaException();
         materialMineral.serGolpeado(this);
     }
 

@@ -1,5 +1,6 @@
 package herramientatest;
 
+import algocraft.excepciones.HerramientaRotaException;
 import algocraft.juego.Posicion;
 import algocraft.herramienta.*;
 import algocraft.materialherramienta.*;
@@ -408,8 +409,8 @@ public class HerramientaTest {
         assertEquals(durabilidadPicoFino, picoFino.durabilidad(), 0);
     }
 
-    @Test
-    public void test34ElPicoDeberiaTenerDurabilidadCeroAlDecimoUso() {
+    @Test (expected = HerramientaRotaException.class)
+    public void test34ElPicoDeberiaTenerDurabilidadCeroAlDecimoUsoDebeRomperse() {
 
         Posicion posicionMaterialMineral = new Posicion(0,1);
         MaterialMineral piedra = new PiedraMineral(posicionMaterialMineral);
@@ -420,11 +421,43 @@ public class HerramientaTest {
         for (int i = 0; i < 9; i++) {
             pico.usar(piedra);
         }
-
         assertEquals(durabilidadPico, pico.durabilidad(), 0);
-
         pico.usar(piedra);
+    }
 
-        assertEquals(0, pico.durabilidad(), 0);
+    @Test (expected = HerramientaRotaException.class)
+    public void test35UnHachaDeMaderaDeberiaRomperseCuandoSuDurabilidadLlegaACero() {
+        Herramienta hacha = new Hacha(new MaderaMaterialHerramienta());
+        MaterialMineral madera = new MaderaMineral(new Posicion(0,0));
+
+        while (hacha.durabilidad() - hacha.fuerza() > 0){
+            hacha.usar(madera);
+        }
+        // Aquí se debería romper
+        hacha.usar(madera);
+    }
+
+    @Test (expected = HerramientaRotaException.class)
+    public void test36UnPicoDeMaderaDeberiaRomperseCuandoSuDurabilidadLlegaACero() {
+        Herramienta pico = new Pico(new MaderaMaterialHerramienta());
+        MaterialMineral diamante = new DiamanteMineral(new Posicion(0,0));
+
+        while (pico.durabilidad() - pico.fuerza() > 0){
+            pico.usar(diamante);
+        }
+        // Aquí se debería romper
+        pico.usar(diamante);
+    }
+
+    @Test (expected = HerramientaRotaException.class)
+    public void test37UnPicoDePiedraDeberiaRomperseCuandoSuDurabilidadLlegaACero() {
+        Herramienta pico = new Pico(new PiedraMaterialHerramienta());
+        MaterialMineral metal = new MetalMineral(new Posicion(0,0));
+
+        while (pico.durabilidad() - pico.fuerza()/1.5 > 0){
+            pico.usar(metal);
+        }
+        // Aquí se debería romper
+        pico.usar(metal);
     }
 }

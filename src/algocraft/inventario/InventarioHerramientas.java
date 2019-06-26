@@ -4,15 +4,14 @@ import algocraft.excepciones.InventarioEstaLlenoException;
 import algocraft.excepciones.PosicionDeInventarioHerramientasInvalidaException;
 import algocraft.herramienta.Herramienta;
 import algocraft.herramienta.NingunaHerramienta;
-import algocraft.materialinventario.NingunMaterialInventario;
 
 public class InventarioHerramientas {
 
     private Herramienta[] herramientas;
     private int cantidadHerramientas;
 
-    public InventarioHerramientas(){
-        herramientas = new Herramienta[10];
+    public InventarioHerramientas(int tamanio){
+        herramientas = new Herramienta[tamanio];
         for( int i = 0; i < herramientas.length; i++){
             herramientas[i] = new NingunaHerramienta();
         }

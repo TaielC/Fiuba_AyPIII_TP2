@@ -1,4 +1,4 @@
-package durabilidadtest;
+package herramientatest;
 
 import algocraft.herramienta.durabilidad.DurabilidadHerramienta;
 import algocraft.herramienta.durabilidad.DurabilidadHerramientaFactorFuerza;

@@ -2,14 +2,18 @@ package algocraft.inventario;
 
 import algocraft.herramienta.Herramienta;
 
-public class Inventario {
+public class InventarioJugador {
 
     private InventarioMateriales inventarioMateriales;
     private InventarioHerramientas inventarioHerramientas;
 
-    public Inventario(){
-        inventarioHerramientas = new InventarioHerramientas();
+    public InventarioJugador(){
+        inventarioHerramientas = new InventarioHerramientas(10);
         inventarioMateriales = new InventarioMateriales();
+    }
+
+    public InventarioHerramientas getInventarioHerramientas() {
+        return inventarioHerramientas;
     }
 
     public int agregarHerramienta(Herramienta herramienta) {
@@ -24,13 +28,8 @@ public class Inventario {
         return inventarioHerramientas.obtenerHerramienta(posicion);
     }
 
-    public boolean estaVacio() { return inventarioHerramientas.estaVacio(); }
-
     public Herramienta intercambiarHerramienta(Herramienta herramienta, int posicion){
         return inventarioHerramientas.intercambiarHerramienta(herramienta, posicion);
     }
 
-    public InventarioHerramientas getInventarioHerramientas() {
-        return inventarioHerramientas;
-    }
 }

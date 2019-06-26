@@ -51,7 +51,7 @@ public class InventarioMateriales {
             throw new NoHaySuficienteMaterialExeption("Metal");
         }
         cantidadMetal -= 1;
-        return new PiedraMaterialInventario();
+        return new MetalMaterialInventario();
     }
 
     public MaterialInventario getDiamante(){

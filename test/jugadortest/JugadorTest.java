@@ -24,7 +24,6 @@ public class JugadorTest {
 
         assertEquals(Hacha.class, herramienta.getClass());
         assertEquals(MaderaMaterialHerramienta.class, herramienta.material().getClass());
-        assertTrue(jugador.inventarioEstaVacio());
     }
 
     @Test

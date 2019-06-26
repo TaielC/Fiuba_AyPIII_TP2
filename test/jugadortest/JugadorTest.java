@@ -67,6 +67,7 @@ public class JugadorTest {
     @Test
     public void test05ElJugadorDeberiaMoverseCorrectamenteEnFormaVerticalHaciaArriba() {
 
+        Juego.resetJuego();
         Juego juego = Juego.getInstance();
         Jugador jugador = juego.getJugador();
         Mapa mapa = juego.getMapa();

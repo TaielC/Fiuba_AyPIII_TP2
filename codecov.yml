@@ -2,14 +2,13 @@ codecov:
   notify:
     require_ci_to_pass: yes
 
-ignore:
-  - "src/controlador/.*"
-  - "src/vista/.*"
-
 coverage:
   precision: 2
   round: down
   range: "70...100"
+  ignore:
+    - "src/controlador/.*"
+    - "src/vista/.*"
 
   status:
     project: yes

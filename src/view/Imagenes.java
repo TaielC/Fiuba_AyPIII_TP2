@@ -26,21 +26,21 @@ public class Imagenes {
 
         // ContenedorHerramientas
         imagenes.put("algocraft.herramienta.Picoalgocraft.materialherramienta.MaderaMaterialHerramienta",
-                new Image("file:imagenes/Herramientas/PicoDeMadera", TAMANIO, TAMANIO, false, false));
+                new Image("file:imagenes/Herramientas/PicoDeMadera.png", TAMANIO, TAMANIO, false, false));
         imagenes.put("algocraft.herramienta.Picoalgocraft.materialherramienta.PiedraMaterialHerramienta",
-                new Image("file:imagenes/Herramientas/PicoDePiedra", TAMANIO, TAMANIO, false, false));
+                new Image("file:imagenes/Herramientas/PicoDePiedra.png", TAMANIO, TAMANIO, false, false));
         imagenes.put("algocraft.herramienta.Picoalgocraft.materialherramienta.MetalMaterialHerramienta",
-                new Image("file:imagenes/Herramientas/PicoDeMetal", TAMANIO, TAMANIO, false, false));
+                new Image("file:imagenes/Herramientas/PicoDeMetal.png", TAMANIO, TAMANIO, false, false));
         imagenes.put("algocraft.herramienta.Hachaalgocraft.materialherramienta.MaderaMaterialHerramienta",
-                new Image("file:imagenes/Herramientas/HachaDeMadera", TAMANIO, TAMANIO, false, false));
+                new Image("file:imagenes/Herramientas/HachaDeMadera.png", TAMANIO, TAMANIO, false, false));
         imagenes.put("algocraft.herramienta.Hachaalgocraft.materialherramienta.PiedraMaterialHerramienta",
-                new Image("file:imagenes/Herramientas/HachaDePiedra", TAMANIO, TAMANIO, false, false));
+                new Image("file:imagenes/Herramientas/HachaDePiedra.png", TAMANIO, TAMANIO, false, false));
         imagenes.put("algocraft.herramienta.Hachaalgocraft.materialherramienta.MetalMaterialHerramienta",
-                new Image("file:imagenes/Herramientas/HachaDeMetal", TAMANIO, TAMANIO, false, false));
+                new Image("file:imagenes/Herramientas/HachaDeMeta.pngl", TAMANIO, TAMANIO, false, false));
         imagenes.put("algocraft.herramienta.PicoFinoalgocraft.materialherramienta.NingunMaterialHerramienta",
-                new Image("file:imagenes/Herramientas/PicoFino", TAMANIO, TAMANIO, false, false));
+                new Image("file:imagenes/Herramientas/PicoFino.png", TAMANIO, TAMANIO, false, false));
         imagenes.put("algocraft.herramienta.NingunaHerramientaalgocraft.materialherramienta.NingunMaterialHerramienta",
-                new Image("file:imagenes/Herramientas/NingunaHerramienta", TAMANIO, TAMANIO, false, false));
+                new Image("file:imagenes/Herramientas/NingunaHerramienta.png", TAMANIO, TAMANIO, false, false));
         imagenes.put("ConstructorHerramientas", new Image("file:imagenes/Herramientas/Constructor.png", TAMANIO, TAMANIO, false, false));
 
         imagenes.put("MaderaItem", new Image("file:imagenes/Item/MaderaItem.png", TAMANIO, TAMANIO, false, false));

@@ -3,6 +3,8 @@ package algocraft.materialmineral;
 import algocraft.herramienta.*;
 import algocraft.juego.Posicion;
 import algocraft.materialherramienta.MaterialHerramienta;
+import algocraft.materialinventario.MaterialInventario;
+import algocraft.materialinventario.MetalMaterialInventario;
 
 public class MetalMineral extends MaterialMineral {
 
@@ -26,12 +28,16 @@ public class MetalMineral extends MaterialMineral {
     public void serGolpeado(PicoFino picoFino) {
         durabilidad -= picoFino.fuerza();
         picoFino.golpear(this);
-
     }
 
     @Override
     public boolean esDaniadoPor(MaterialHerramienta material) {
         return material.daniaA(this);
+    }
+
+    @Override
+    public MaterialInventario obtenerMaterialInventario() {
+        return new MetalMaterialInventario();
     }
 
 }

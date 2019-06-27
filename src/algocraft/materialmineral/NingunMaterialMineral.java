@@ -6,6 +6,8 @@ import algocraft.herramienta.PicoFino;
 import algocraft.juego.ObjetoUbicable;
 import algocraft.juego.Posicion;
 import algocraft.materialherramienta.MaterialHerramienta;
+import algocraft.materialinventario.MaterialInventario;
+import algocraft.materialinventario.NingunMaterialInventario;
 
 public class NingunMaterialMineral extends MaterialMineral {
 
@@ -36,5 +38,15 @@ public class NingunMaterialMineral extends MaterialMineral {
     @Override
     public void setPosicion(Posicion posicion) {
         this.posicionMaterial = posicion;
+    }
+
+    @Override
+    public boolean seRompio() {
+        return false;
+    }
+
+    @Override
+    public MaterialInventario obtenerMaterialInventario() {
+        return new NingunMaterialInventario();
     }
 }

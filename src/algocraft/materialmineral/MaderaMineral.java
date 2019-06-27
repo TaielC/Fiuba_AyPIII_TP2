@@ -3,9 +3,10 @@ package algocraft.materialmineral;
 import algocraft.herramienta.*;
 import algocraft.juego.Posicion;
 import algocraft.materialherramienta.MaterialHerramienta;
+import algocraft.materialinventario.MaderaMaterialInventario;
+import algocraft.materialinventario.MaterialInventario;
 
 public class MaderaMineral extends MaterialMineral  {
-
 
     public MaderaMineral(Posicion posicion){
         durabilidad = 10;
@@ -27,6 +28,11 @@ public class MaderaMineral extends MaterialMineral  {
     @Override
     public boolean esDaniadoPor(MaterialHerramienta material) {
         return material.daniaA(this);
+    }
+
+    @Override
+    public MaterialInventario obtenerMaterialInventario() {
+        return new MaderaMaterialInventario();
     }
 
 }

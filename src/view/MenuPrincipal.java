@@ -1,9 +1,9 @@
 package view;
 
-import controller.BotonAyudaEventHandler;
-import controller.BotonJugarEventHandler;
-import controller.BotonSalirEventHandler;
-import controller.CheckBoxEventHandler;
+import controller.menuprincipal.BotonAyudaEventHandler;
+import controller.menuprincipal.BotonJugarEventHandler;
+import controller.menuprincipal.BotonSalirEventHandler;
+import controller.menuprincipal.CheckBoxPantallaCompletaEventHandler;
 import javafx.geometry.Pos;
 
 import javafx.scene.Scene;
@@ -52,7 +52,7 @@ public class MenuPrincipal extends VBox {
         pantallaCompleta.setFont(FUENTE_BOTONES);
         pantallaCompleta.setTextFill(Color.LIGHTGRAY);
         pantallaCompleta.setSelected(true);
-        pantallaCompleta.setOnAction(new CheckBoxEventHandler(pantallaCompleta, botonJugarEventHandler));
+        pantallaCompleta.setOnAction(new CheckBoxPantallaCompletaEventHandler(pantallaCompleta, botonJugarEventHandler));
 
         Image imagen = Imagenes.get("FondoMenu");
         BackgroundImage imagenDeFondo = new BackgroundImage(imagen, BackgroundRepeat.REPEAT, BackgroundRepeat.REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);

@@ -7,4 +7,7 @@ public interface MaterialInventario {
     boolean equals(PiedraMaterialInventario materialInventario);
     boolean equals(MetalMaterialInventario materialInventario);
     boolean equals(DiamanteMaterialInventario materialInventario);
+
+    @Override
+    int hashCode();
 }

@@ -20,7 +20,7 @@ public class JugadorTest {
         Juego juego = Juego.getInstance();
         Jugador jugador = juego.getJugador();
 
-        Herramienta herramienta = jugador.obtenerDeInventario(0);
+        Herramienta herramienta = jugador.obtenerHerramientaDeInventario(0);
 
         assertEquals(Hacha.class, herramienta.getClass());
         assertEquals(MaderaMaterialHerramienta.class, herramienta.material().getClass());
@@ -35,7 +35,7 @@ public class JugadorTest {
 
         int posicion = jugador.agregarAInventario(hacha);
 
-        assertEquals(hacha,jugador.obtenerDeInventario(posicion));
+        assertEquals(hacha,jugador.obtenerHerramientaDeInventario(posicion));
     }
 
 
@@ -48,7 +48,7 @@ public class JugadorTest {
 
         jugador.agregarAInventario(pico);
 
-        assertEquals(pico,jugador.obtenerDeInventario(1));
+        assertEquals(pico,jugador.obtenerHerramientaDeInventario(1));
     }
 
 

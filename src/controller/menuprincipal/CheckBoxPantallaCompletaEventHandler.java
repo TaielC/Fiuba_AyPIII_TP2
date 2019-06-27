@@ -1,15 +1,15 @@
-package controller;
+package controller.menuprincipal;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.CheckBox;
 
-public class CheckBoxEventHandler implements EventHandler<ActionEvent> {
+public class CheckBoxPantallaCompletaEventHandler implements EventHandler<ActionEvent> {
 
     private CheckBox pantallaCompleta;
     private BotonJugarEventHandler botonJugarEventHandler;
 
-    public CheckBoxEventHandler(CheckBox pantallaCompleta, BotonJugarEventHandler botonJugarEventHandler) {
+    public CheckBoxPantallaCompletaEventHandler(CheckBox pantallaCompleta, BotonJugarEventHandler botonJugarEventHandler) {
         this.pantallaCompleta = pantallaCompleta;
         this.botonJugarEventHandler = botonJugarEventHandler;
     }

@@ -1,4 +1,4 @@
-package controller;
+package controller.juego;
 
 import algocraft.juego.Juego;
 import javafx.event.ActionEvent;

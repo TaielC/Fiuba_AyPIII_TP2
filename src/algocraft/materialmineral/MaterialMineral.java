@@ -4,6 +4,7 @@ import algocraft.herramienta.*;
 import algocraft.juego.Posicion;
 import algocraft.juego.ObjetoUbicable;
 import algocraft.materialherramienta.MaterialHerramienta;
+import algocraft.materialinventario.MaterialInventario;
 
 public abstract class MaterialMineral implements ObjetoUbicable{
 
@@ -31,4 +32,10 @@ public abstract class MaterialMineral implements ObjetoUbicable{
     public void setPosicion(Posicion posicion) {
         posicionMaterial = posicion;
     }
+
+    public boolean seRompio(){
+        return durabilidad <= 0;
+    }
+
+    public abstract MaterialInventario obtenerMaterialInventario();
 }

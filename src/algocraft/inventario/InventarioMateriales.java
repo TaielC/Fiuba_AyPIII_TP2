@@ -3,67 +3,40 @@ package algocraft.inventario;
 import algocraft.excepciones.NoHaySuficienteMaterialExeption;
 import algocraft.materialinventario.*;
 
+import java.util.Hashtable;
+
 public class InventarioMateriales {
 
-    private int cantidadMadera;
-    private int cantidadPiedra;
-    private int cantidadMetal;
-    private int cantidadDiamante;
+    private Hashtable<Integer, Integer> materiales;
 
     public InventarioMateriales() {
-        cantidadMadera = 0;
-        cantidadPiedra = 0;
-        cantidadPiedra = 0;
-        cantidadDiamante = 0;
+        materiales = new Hashtable<>();
+        MaterialInventario madera = new MaderaMaterialInventario();
+        materiales.put(madera.hashCode(), 0);
+        materiales.put((new PiedraMaterialInventario()).hashCode(), 0);
+        materiales.put((new MetalMaterialInventario()).hashCode(), 0);
+        materiales.put((new DiamanteMaterialInventario()).hashCode(), 0);
     }
 
-    public void agregarMadera() {
-        cantidadMadera += 1;
-    }
-    public void agregarPiedra() {
-        cantidadPiedra += 1;
-    }
-    public void agregarMetal() {
-        cantidadMetal += 1;
-    }
-    public void agregarDiamante() {
-        cantidadDiamante += 1;
+    public void agregar(MaterialInventario materialInventario) {
+        materiales.put(materialInventario.hashCode(), materiales.get(materialInventario.hashCode())+1);
     }
 
-    public MaterialInventario getMadera(){
-        if(cantidadMadera <= 0){
-            throw new NoHaySuficienteMaterialExeption("Madera");
+    public MaterialInventario getMadera(){ return getMaterial(new MaderaMaterialInventario()); }
+    public MaterialInventario getPiedra(){ return getMaterial(new PiedraMaterialInventario()); }
+    public MaterialInventario getMetal(){ return getMaterial(new MetalMaterialInventario()); }
+    public MaterialInventario getDiamante(){ return getMaterial(new DiamanteMaterialInventario()); }
+
+    private MaterialInventario getMaterial(MaterialInventario materialInventario){
+        if(materiales.get(materialInventario.hashCode()) <= 0){
+            throw new NoHaySuficienteMaterialExeption(materialInventario);
         }
-        cantidadMadera -= 1;
-        return new MaderaMaterialInventario();
+        materiales.put(materialInventario.hashCode(), materiales.get(materialInventario.hashCode())-1);
+        return materialInventario;
     }
 
-    public MaterialInventario getPiedra(){
-        if(cantidadPiedra <= 0){
-            throw new NoHaySuficienteMaterialExeption("Piedra");
-        }
-        cantidadPiedra -= 1;
-        return new PiedraMaterialInventario();
-    }
-
-    public MaterialInventario getMetal(){
-        if(cantidadMetal <= 0){
-            throw new NoHaySuficienteMaterialExeption("Metal");
-        }
-        cantidadMetal -= 1;
-        return new MetalMaterialInventario();
-    }
-
-    public MaterialInventario getDiamante(){
-        if(cantidadDiamante <= 0){
-            throw new NoHaySuficienteMaterialExeption("Diamante");
-        }
-        cantidadDiamante -= 1;
-        return new DiamanteMaterialInventario();
-    }
-
-    public int cantidadMadera() {return cantidadMadera; }
-    public int cantidadPiedra() {return cantidadPiedra; }
-    public int cantidadMetal() {return cantidadMetal; }
-    public int cantidadDiamante() {return cantidadDiamante; }
+    public Integer cantidadMadera() {return materiales.getOrDefault((new MaderaMaterialInventario()).hashCode(), -1); }
+    public Integer cantidadPiedra() {return materiales.get((new PiedraMaterialInventario()).hashCode()); }
+    public Integer cantidadMetal() {return materiales.get((new MetalMaterialInventario()).hashCode()); }
+    public Integer cantidadDiamante() {return materiales.get((new DiamanteMaterialInventario()).hashCode()); }
 }

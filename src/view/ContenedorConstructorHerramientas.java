@@ -5,23 +5,13 @@ import algocraft.inventario.InventarioMateriales;
 import algocraft.juego.Juego;
 import algocraft.juego.Jugador;
 import algocraft.juego.Posicion;
-import controller.BotonConstructorHerramientaEventHandler;
-import controller.AplicacionOnMousePressEventHandler;
 
-import controller.BotonSalirEventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
-import javafx.scene.Node;
-import javafx.scene.canvas.Canvas;
 import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.VBox;
 
-import javax.swing.*;
-import java.awt.*;
-import javafx.embed.swing.SwingNode;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Screen;

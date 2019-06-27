@@ -27,4 +27,7 @@ public class DiamanteMaterialInventario implements MaterialInventario {
     public boolean equals(DiamanteMaterialInventario material) {
         return true;
     }
+
+    @Override
+    public int hashCode(){ return "diamante".hashCode(); }
 }

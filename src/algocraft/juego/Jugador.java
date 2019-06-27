@@ -2,21 +2,23 @@ package algocraft.juego;
 
 import algocraft.excepciones.HerramientaRotaException;
 import algocraft.herramienta.*;
-import algocraft.inventario.InventarioJugador;
 import algocraft.inventario.InventarioHerramientas;
 import algocraft.inventario.InventarioMateriales;
 import algocraft.materialherramienta.MaderaMaterialHerramienta;
+import algocraft.materialinventario.MaterialInventario;
 import algocraft.materialmineral.MaterialMineral;
 
 public class Jugador implements ObjetoUbicable{
 
-    private InventarioJugador inventarioJugador;
+    private InventarioHerramientas inventarioHerramientas;
+    private InventarioMateriales inventarioMateriales;
     private Posicion posicion;
     private Herramienta herramientaEquipada;
 
     public Jugador(Posicion posicion) {
-        inventarioJugador = new InventarioJugador();
-        inventarioJugador.agregarHerramienta(new Hacha(new MaderaMaterialHerramienta()));
+        inventarioHerramientas = new InventarioHerramientas(10);
+        inventarioHerramientas.agregarHerramienta(new Hacha(new MaderaMaterialHerramienta()));
+        inventarioMateriales = new InventarioMateriales();
         this.posicion = posicion;
         herramientaEquipada = new NingunaHerramienta();
     }
@@ -34,15 +36,19 @@ public class Jugador implements ObjetoUbicable{
     }
 
     public void equiparDeInventario(int posicion){
-        herramientaEquipada = inventarioJugador.intercambiarHerramienta(herramientaEquipada, posicion);
+        herramientaEquipada = inventarioHerramientas.intercambiarHerramienta(herramientaEquipada, posicion);
     }
 
     public int agregarAInventario(Herramienta herramienta) {
-        return inventarioJugador.agregarHerramienta(herramienta);
+        return inventarioHerramientas.agregarHerramienta(herramienta);
     }
 
-    public Herramienta obtenerDeInventario(int posicion) {
-        return inventarioJugador.obtenerHerramienta(posicion);
+    public void agregarAInventario(MaterialInventario materialInventario) {
+        inventarioMateriales.agregar(materialInventario);
+    }
+
+    public Herramienta obtenerHerramientaDeInventario(int posicion) {
+        return inventarioHerramientas.obtenerHerramienta(posicion);
     }
 
     @Override
@@ -56,10 +62,10 @@ public class Jugador implements ObjetoUbicable{
     }
 
     public InventarioHerramientas getInventarioHerramientas() {
-        return inventarioJugador.getInventarioHerramientas();
+        return inventarioHerramientas;
     }
 
     public InventarioMateriales getInventarioMateriales() {
-        return inventarioJugador.getInventarioMateriales();
+        return inventarioMateriales;
     }
 }

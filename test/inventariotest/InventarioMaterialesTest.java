@@ -16,10 +16,10 @@ public class InventarioMaterialesTest {
     @Test
     public void test01ElInventarioMaterialesComienzaConTodoEnCero() {
         InventarioMateriales inventarioMateriales = new InventarioMateriales();
-        assertEquals(0, inventarioMateriales.cantidadMadera());
-        assertEquals(0, inventarioMateriales.cantidadPiedra());
-        assertEquals(0, inventarioMateriales.cantidadMetal());
-        assertEquals(0, inventarioMateriales.cantidadDiamante());
+        assertEquals((Integer) 0, inventarioMateriales.cantidadMadera());
+        assertEquals(0,(long) inventarioMateriales.cantidadPiedra());
+        assertEquals(0,(long) inventarioMateriales.cantidadMetal());
+        assertEquals(0,(long) inventarioMateriales.cantidadDiamante());
     }
 
     @Test
@@ -52,7 +52,7 @@ public class InventarioMaterialesTest {
         int cantidad = 12;
 
         for(int i = 0; i < cantidad; i++) {
-            inventarioMateriales.agregarMadera();
+            inventarioMateriales.agregar(new MaderaMaterialInventario());
         }
         for(int i = 0; i < cantidad; i++) {
             assertTrue(inventarioMateriales.getMadera().equals(new MaderaMaterialInventario()));
@@ -65,7 +65,7 @@ public class InventarioMaterialesTest {
         int cantidad = 46;
 
         for(int i = 0; i < cantidad; i++) {
-            inventarioMateriales.agregarDiamante();
+            inventarioMateriales.agregar(new DiamanteMaterialInventario());
         }
         for(int i = 0; i < cantidad; i++) {
             assertTrue(inventarioMateriales.getDiamante().equals(new DiamanteMaterialInventario()));
@@ -78,7 +78,7 @@ public class InventarioMaterialesTest {
         int cantidad = 26;
 
         for(int i = 0; i < cantidad; i++) {
-            inventarioMateriales.agregarMetal();
+            inventarioMateriales.agregar(new MetalMaterialInventario());
         }
         for(int i = 0; i < cantidad; i++) {
             assertTrue(inventarioMateriales.getMetal().equals(new MetalMaterialInventario()));
@@ -91,7 +91,7 @@ public class InventarioMaterialesTest {
         int cantidad = 62;
 
         for(int i = 0; i < cantidad; i++) {
-            inventarioMateriales.agregarPiedra();
+            inventarioMateriales.agregar(new PiedraMaterialInventario());
         }
         for(int i = 0; i < cantidad; i++) {
             assertTrue(inventarioMateriales.getPiedra().equals(new PiedraMaterialInventario()));

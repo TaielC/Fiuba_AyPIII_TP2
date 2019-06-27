@@ -1,4 +1,4 @@
-package controller;
+package controller.menuprincipal;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -21,7 +21,7 @@ public class BotonJugarEventHandler implements EventHandler<ActionEvent> {
     public void handle(ActionEvent actionEvent) {
         stage.setScene(escenaJuego);
         if(pantallaCompleta){
-//            stage.setFullScreenExitHint("");
+            stage.setFullScreenExitHint("");
             stage.setFullScreen(true);
         }
 

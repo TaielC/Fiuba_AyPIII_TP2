@@ -60,15 +60,8 @@ public class Mapa {
         return bordeVertical;
     }
 
-    public void actualizar() {
-
-        for (int i = 0; i < bordeHorizontal; i++) {
-            for (int j = 0; j < bordeVertical; j++) {
-                Posicion posicion = new Posicion(i, j);
-                //if(tablero.get(posicion).durabilid)
-
-            }
-        }
+    public void eliminarObjeto(Posicion posicion) {
+        tablero.put(posicion, new NingunMaterialMineral());
     }
 }
 

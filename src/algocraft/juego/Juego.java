@@ -34,15 +34,16 @@ public class Juego {
 
     public void jugadorUsarHerramientaEquipada(Posicion posicion) {
         if(!posicion.esAdyacente(jugador.getPosicion())) return;
-        jugador.usarHerramientaEquipada((MaterialMineral) mapa.getObjetoUbicable(posicion));
+        MaterialMineral materialMineral = (MaterialMineral) mapa.getObjetoUbicable(posicion);
+        jugador.usarHerramientaEquipada(materialMineral);
+        if(materialMineral.seRompio()){
+            mapa.eliminarObjeto(materialMineral.getPosicion());
+            jugador.agregarAInventario(materialMineral.obtenerMaterialInventario());
+        }
     }
 
     public static Juego resetJuego(){
         instanciaJuego = new Juego();
         return instanciaJuego;
-    }
-
-    public void actualizarMapa(){
-        mapa.actualizar();
     }
 }

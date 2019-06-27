@@ -2,23 +2,26 @@ package view;
 
 import algocraft.herramienta.Herramienta;
 import algocraft.inventario.InventarioHerramientas;
+import algocraft.juego.Juego;
 import algocraft.juego.Jugador;
 import algocraft.materialherramienta.MaterialHerramienta;
+import controller.juego.BotonInventarioHerramientasEventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.*;
+import javafx.scene.paint.Color;
 import javafx.stage.Screen;
 
 public class ContenedorHerramientas extends VBox {
 
     private static final double TAMANIO = Screen.getPrimary().getVisualBounds().getHeight()/17;
 
-    public ContenedorHerramientas(Jugador jugador){
+    public ContenedorHerramientas(PantallaJuego pantallaJuego, Juego juego){
 
+        Jugador jugador = juego.getJugador();
         InventarioHerramientas inventarioHerramientas = jugador.getInventarioHerramientas();
         GridPane gridInventario = new GridPane();
         gridInventario.setAlignment(Pos.CENTER);
@@ -28,10 +31,16 @@ public class ContenedorHerramientas extends VBox {
             Button boton = new Button();
             boton.setMinSize(TAMANIO, TAMANIO);
             boton.setPadding(new Insets(1,1,1,1));
+
             Herramienta herramienta = inventarioHerramientas.ver(i);
             MaterialHerramienta material = herramienta.material();
+
             Image imagen = Imagenes.get( herramienta.getClass().getName() + material.getClass().getName());
             boton.setGraphic(new ImageView(imagen));
+
+            BotonInventarioHerramientasEventHandler botonEventHandler = new BotonInventarioHerramientasEventHandler(pantallaJuego, jugador, i);
+            boton.setOnAction(botonEventHandler);
+
             gridInventario.add(boton, 0, i);
         }
 

@@ -3,6 +3,8 @@ package algocraft.materialmineral;
 import algocraft.herramienta.*;
 import algocraft.juego.Posicion;
 import algocraft.materialherramienta.MaterialHerramienta;
+import algocraft.materialinventario.MaterialInventario;
+import algocraft.materialinventario.PiedraMaterialInventario;
 
 public class PiedraMineral extends MaterialMineral {
 
@@ -29,6 +31,11 @@ public class PiedraMineral extends MaterialMineral {
     @Override
     public boolean esDaniadoPor(MaterialHerramienta material) {
         return material.daniaA(this);
+    }
+
+    @Override
+    public MaterialInventario obtenerMaterialInventario() {
+        return new PiedraMaterialInventario();
     }
 
 }

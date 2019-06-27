@@ -41,6 +41,7 @@ public class Imagenes {
                 new Image("file:imagenes/Herramientas/PicoFino", TAMANIO, TAMANIO, false, false));
         imagenes.put("algocraft.herramienta.NingunaHerramientaalgocraft.materialherramienta.NingunMaterialHerramienta",
                 new Image("file:imagenes/Herramientas/NingunaHerramienta", TAMANIO, TAMANIO, false, false));
+        imagenes.put("ConstructorHerramientas", new Image("file:imagenes/Herramientas/Constructor.png", TAMANIO, TAMANIO, false, false));
 
         imagenes.put("MaderaItem", new Image("file:imagenes/Item/MaderaItem.png", TAMANIO, TAMANIO, false, false));
         imagenes.put("MetalItem", new Image("file:imagenes/Item/MetalItem.png", TAMANIO, TAMANIO, false, false));

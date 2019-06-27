@@ -1,6 +1,7 @@
 package view;
 
 import algocraft.juego.*;
+//import controller.BotonMaterialMineralEventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.image.Image;
@@ -14,7 +15,8 @@ public class ContenedorJuego extends GridPane {
 
     private static final double TAMANIO = Screen.getPrimary().getVisualBounds().getHeight()/17;
 
-    public ContenedorJuego(Mapa mapa) {
+    public ContenedorJuego(Juego juego) {
+        Mapa mapa = juego.getMapa();
 
         this.setAlignment(Pos.CENTER);
         this.setPrefSize(16,9);
@@ -37,6 +39,8 @@ public class ContenedorJuego extends GridPane {
 
                 button[x][y].setGraphic(new ImageView(imagen));
                 this.add(button[x][y],x,y);
+                //BotonMaterialMineralEventHandler botonMaterialMineralEventHandler = new BotonMaterialMineralEventHandler(juego,posicion);
+                //button[x][y].setOnAction(botonMaterialMineralEventHandler);
             }
         }
         Image imagenFondo = Imagenes.get("FondoJuego");

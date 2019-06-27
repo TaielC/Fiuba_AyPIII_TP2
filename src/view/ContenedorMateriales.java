@@ -1,14 +1,18 @@
 package view;
 
 
+import controller.BotonConstructorHerramientaEventHandler;
+import controller.BotonJugarEventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.layout.*;
 
 import javafx.scene.image.ImageView;
 import javafx.scene.control.Button;
 import javafx.stage.Screen;
+import javafx.stage.Stage;
 
 public class ContenedorMateriales extends VBox {
 
@@ -32,6 +36,8 @@ public class ContenedorMateriales extends VBox {
         botonConstructorHerramienta.setPadding(new Insets(1,1,1,1));
         Image imagen = Imagenes.get("ConstructorHerramientas");
         botonConstructorHerramienta.setGraphic(new ImageView(imagen));
+        BotonConstructorHerramientaEventHandler botonConstructorHerramientaEventHandler = new BotonConstructorHerramientaEventHandler();
+        botonConstructorHerramienta.setOnAction(botonConstructorHerramientaEventHandler);
 
         Image imagenFondo = Imagenes.get("FondoMenu");
         BackgroundImage fondo = new BackgroundImage(imagenFondo, BackgroundRepeat.REPEAT, BackgroundRepeat.REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);

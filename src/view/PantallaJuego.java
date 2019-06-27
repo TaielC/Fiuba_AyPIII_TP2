@@ -2,6 +2,7 @@ package view;
 
 import algocraft.juego.Juego;
 
+import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 
 
@@ -13,7 +14,7 @@ public class PantallaJuego extends BorderPane {
 
     public PantallaJuego(Juego juego){
         this.juego = juego;
-        this.contenedorJuego = new ContenedorJuego(juego.getMapa());
+        this.contenedorJuego = new ContenedorJuego(juego);
 
         this.setCenter(contenedorJuego);
 
@@ -24,7 +25,7 @@ public class PantallaJuego extends BorderPane {
     }
 
     public void actualizar() {
-        this.contenedorJuego = new ContenedorJuego(juego.getMapa());
+        this.contenedorJuego = new ContenedorJuego(juego);
         this.setCenter(contenedorJuego);
         this.contenedorMateriales =  new ContenedorMateriales();
         this.setRight(contenedorMateriales);

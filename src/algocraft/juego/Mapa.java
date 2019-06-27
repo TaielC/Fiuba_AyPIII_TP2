@@ -40,15 +40,15 @@ public class Mapa {
         return limiteX && limiteY && estaVacio;
     }
 
-    public void moverObjetoHacia(ObjetoUbicable objetoUbicable, Direccion direccion) {
-        Posicion posicion = objetoUbicable.getPosicion();
+    public void mover(Posicion posicion, Direccion direccion) {
         Posicion posicionSiguiente = posicion.obtenerSiguiente(direccion);
 
         if(!posicionEsValida(posicionSiguiente)) {
             return;
         }
-        tablero.put(posicion, new NingunMaterialMineral());
+        ObjetoUbicable objetoUbicable= tablero.get(posicion);
         tablero.put(posicionSiguiente, objetoUbicable);
+        tablero.put(posicion, new NingunMaterialMineral());
         objetoUbicable.setPosicion(posicionSiguiente);
     }
 

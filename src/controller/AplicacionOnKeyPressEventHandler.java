@@ -24,19 +24,19 @@ public class AplicacionOnKeyPressEventHandler implements EventHandler<KeyEvent> 
     @Override
     public void handle(KeyEvent keyEvent) {
         if (keyEvent.getCode() == KeyCode.S) {
-            juego.moverJugadorHacia(Direccion.arriba());
+            juego.moverJugadorHacia(Direccion.ARRIBA);
             pantallaJuego.actualizar();
         }
         if (keyEvent.getCode() == KeyCode.W) {
-            juego.moverJugadorHacia(Direccion.abajo());
+            juego.moverJugadorHacia(Direccion.ABAJO);
             pantallaJuego.actualizar();
         }
         if (keyEvent.getCode() == KeyCode.A) {
-            juego.moverJugadorHacia(Direccion.izquierda());
+            juego.moverJugadorHacia(Direccion.IZQUIERDA);
             pantallaJuego.actualizar();
         }
         if (keyEvent.getCode() == KeyCode.D) {
-            juego.moverJugadorHacia(Direccion.derecha());
+            juego.moverJugadorHacia(Direccion.DERECHA);
             pantallaJuego.actualizar();
         }
         if (keyEvent.getCode() == KeyCode.F11) {

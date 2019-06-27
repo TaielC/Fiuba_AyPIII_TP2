@@ -4,16 +4,13 @@ import algocraft.materialmineral.*;
 import java.util.*;
 
 public class ConstructorMapa {
-    private Mapa mapa;
-    private Random random;
 
-    public ConstructorMapa(Mapa mapa) {
-        this.mapa = mapa;
-        this.random = new Random();
-    }
+    private static Mapa mapa;
+    private static Random random = new Random();
 
+    public static void contruirMapa(Mapa mapaConstruir) {
+        mapa = mapaConstruir;
 
-    public void contruirMapa() {
         for (int i = 0; i < 8; i++) {
             int factorBloque = random.nextInt(4);
             ponerMadera(factorBloque);
@@ -34,55 +31,22 @@ public class ConstructorMapa {
 
     }
 
-    public void seleccionarMaterial(int factorMaterial) {
-
-
-        int factorBloque = random.nextInt(5);
-        switch (factorMaterial) {
-            case 0:
-                ponerMadera(factorBloque);
-                ponerPiedra(factorBloque);
-                ponerDiamante(factorBloque);
-                break;
-
-            case 1:
-                ponerMadera(factorBloque);
-                ponerDiamante(factorBloque);
-
-                break;
-
-            case 2:
-                ponerPiedra(factorBloque);
-                ponerMadera(factorBloque);
-
-                break;
-
-            case 3:
-                ponerMadera(factorBloque);
-                ponerMetal(factorBloque);
-                break;
-
-            default:
-                break;
-
-        }
-
-    }
-
-    public void ponerMadera(int factorBloque) {
+    public static void ponerMadera(int factorBloque) {
         int posHorizontal = random.nextInt(mapa.getBordeHorizontal());
         int posVertical = random.nextInt(mapa.getBordeVertical());
+        Posicion posicion;
+        MaderaMineral madera;
         switch (factorBloque) {
             case 0:
-                Posicion posicion0 = new Posicion(posHorizontal, posVertical);
-                MaderaMineral madera0 = new MaderaMineral(posicion0);
-                mapa.agregar(madera0, posicion0);
+                posicion = new Posicion(posHorizontal, posVertical);
+                madera = new MaderaMineral(posicion);
+                mapa.agregar(madera, posicion);
                 break;
 
             case 1:
                 for (int i = posHorizontal; i <= posHorizontal + 1; i++) {
-                    Posicion posicion = new Posicion(i, posVertical);
-                    MaderaMineral madera = new MaderaMineral(posicion);
+                    posicion = new Posicion(i, posVertical);
+                    madera = new MaderaMineral(posicion);
                     mapa.agregar(madera, posicion);
                 }
                 break;
@@ -90,19 +54,18 @@ public class ConstructorMapa {
             case 2:
                 for (int i = posHorizontal; i <= posHorizontal + 1; i++) {
                     for (int j = posVertical; j <= posVertical + 1; j++) {
-                        Posicion posicion = new Posicion(i, j);
-                        MaderaMineral madera = new MaderaMineral(posicion);
+                        posicion = new Posicion(i, j);
+                        madera = new MaderaMineral(posicion);
                         mapa.agregar(madera, posicion);
                     }
                 }
                 break;
 
-
             case 3:
                 for (int i = posHorizontal; i <= posHorizontal + 2; i++) {
                     for (int j = posVertical; j <= posVertical + 2; j++) {
-                        Posicion posicion = new Posicion(i, j);
-                        MaderaMineral madera = new MaderaMineral(posicion);
+                        posicion = new Posicion(i, j);
+                        madera = new MaderaMineral(posicion);
                         mapa.agregar(madera, posicion);
                     }
                 }
@@ -110,72 +73,70 @@ public class ConstructorMapa {
 
             default:
                 break;
-
-
         }
     }
 
-
-    public void ponerPiedra(int factorBloque) {
+    public static void ponerPiedra(int factorBloque) {
         int posHorizontal = random.nextInt(mapa.getBordeHorizontal());
         int posVertical = random.nextInt(mapa.getBordeVertical());
+        Posicion posicion;
+        PiedraMineral piedra;
         switch (factorBloque) {
             case 0:
-                Posicion posicion0 = new Posicion(posHorizontal, posVertical);
-                PiedraMineral pidera0 = new PiedraMineral(posicion0);
-                mapa.agregar(pidera0, posicion0);
+                posicion = new Posicion(posHorizontal, posVertical);
+                piedra = new PiedraMineral(posicion);
+                mapa.agregar(piedra, posicion);
                 break;
 
             case 1:
                 for (int i = posHorizontal; i <= posHorizontal + 1; i++) {
-                    Posicion posicion = new Posicion(i, posVertical);
-                    PiedraMineral pidera = new PiedraMineral(posicion);
-                    mapa.agregar(pidera, posicion);
+                    posicion = new Posicion(i, posVertical);
+                    piedra = new PiedraMineral(posicion);
+                    mapa.agregar(piedra, posicion);
                 }
                 break;
 
             case 2:
                 for (int i = posHorizontal; i <= posHorizontal + 1; i++) {
                     for (int j = posVertical; j <= posVertical + 1; j++) {
-                        Posicion posicion = new Posicion(i, j);
-                        PiedraMineral pidera = new PiedraMineral(posicion);
-                        mapa.agregar(pidera, posicion);
+                        posicion = new Posicion(i, j);
+                        piedra = new PiedraMineral(posicion);
+                        mapa.agregar(piedra, posicion);
                     }
                 }
                 break;
 
-
             case 3:
                 for (int i = posHorizontal; i <= posHorizontal + 2; i++) {
                     for (int j = posVertical; j <= posVertical + 2; j++) {
-                        Posicion posicion = new Posicion(i, j);
-                        PiedraMineral pidera = new PiedraMineral(posicion);
-                        mapa.agregar(pidera, posicion);
+                        posicion = new Posicion(i, j);
+                        piedra = new PiedraMineral(posicion);
+                        mapa.agregar(piedra, posicion);
                     }
                 }
                 break;
 
             default:
                 break;
-
-
         }
     }
 
-    public void ponerMetal(int factorBloque) {
+    public static void ponerMetal(int factorBloque) {
         int posHorizontal = random.nextInt(mapa.getBordeHorizontal());
         int posVertical = random.nextInt(mapa.getBordeVertical());
+        Posicion posicion;
+        MetalMineral metal;
         switch (factorBloque) {
             case 0:
-                Posicion posicion0 = new Posicion(posHorizontal, posVertical);
-                MetalMineral metal0 = new MetalMineral(posicion0);
-                mapa.agregar(metal0, posicion0);
+                posicion = new Posicion(posHorizontal, posVertical);
+                metal = new MetalMineral(posicion);
+                mapa.agregar(metal, posicion);
                 break;
 
             case 1:
                 for (int i = posHorizontal; i <= posHorizontal + 1; i++) {
-                    Posicion posicion = new Posicion(i, posVertical);
-                    MetalMineral metal = new MetalMineral(posicion);
+                    posicion = new Posicion(i, posVertical);
+                    metal = new MetalMineral(posicion);
                     mapa.agregar(metal, posicion);
                 }
                 break;
@@ -183,19 +144,18 @@ public class ConstructorMapa {
             case 2:
                 for (int i = posHorizontal; i <= posHorizontal + 1; i++) {
                     for (int j = posVertical; j <= posVertical + 1; j++) {
-                        Posicion posicion = new Posicion(i, j);
-                        MetalMineral metal = new MetalMineral(posicion);
+                        posicion = new Posicion(i, j);
+                        metal = new MetalMineral(posicion);
                         mapa.agregar(metal, posicion);
                     }
                 }
                 break;
 
-
             case 3:
                 for (int i = posHorizontal; i <= posHorizontal + 2; i++) {
                     for (int j = posVertical; j <= posVertical + 2; j++) {
-                        Posicion posicion = new Posicion(i, j);
-                        MetalMineral metal = new MetalMineral(posicion);
+                        posicion = new Posicion(i, j);
+                        metal = new MetalMineral(posicion);
                         mapa.agregar(metal, posicion);
                     }
                 }
@@ -203,23 +163,24 @@ public class ConstructorMapa {
 
             default:
                 break;
-
         }
     }
-    public void ponerDiamante(int factorBloque) {
+    public static void ponerDiamante(int factorBloque) {
         int posHorizontal = random.nextInt(mapa.getBordeHorizontal());
         int posVertical = random.nextInt(mapa.getBordeVertical());
+        Posicion posicion;
+        DiamanteMineral diamante;
         switch (factorBloque) {
             case 0:
-                Posicion posicion0 = new Posicion(posHorizontal, posVertical);
-                DiamanteMineral diamante0 = new DiamanteMineral(posicion0);
-                mapa.agregar(diamante0, posicion0);
+                posicion = new Posicion(posHorizontal, posVertical);
+                diamante = new DiamanteMineral(posicion);
+                mapa.agregar(diamante, posicion);
                 break;
 
             case 1:
                 for (int i = posHorizontal; i <= posHorizontal + 1; i++) {
-                    Posicion posicion = new Posicion(i, posVertical);
-                    DiamanteMineral diamante = new DiamanteMineral(posicion);
+                    posicion = new Posicion(i, posVertical);
+                    diamante = new DiamanteMineral(posicion);
                     mapa.agregar(diamante, posicion);
                 }
                 break;
@@ -227,19 +188,18 @@ public class ConstructorMapa {
             case 2:
                 for (int i = posHorizontal; i <= posHorizontal + 1; i++) {
                     for (int j = posVertical; j <= posVertical + 1; j++) {
-                        Posicion posicion = new Posicion(i, j);
-                        DiamanteMineral diamante = new DiamanteMineral(posicion);
+                        posicion = new Posicion(i, j);
+                        diamante = new DiamanteMineral(posicion);
                         mapa.agregar(diamante, posicion);
                     }
                 }
                 break;
 
-
             case 3:
                 for (int i = posHorizontal; i <= posHorizontal + 2; i++) {
                     for (int j = posVertical; j <= posVertical + 2; j++) {
-                        Posicion posicion = new Posicion(i, j);
-                        DiamanteMineral diamante = new DiamanteMineral(posicion);
+                        posicion = new Posicion(i, j);
+                        diamante = new DiamanteMineral(posicion);
                         mapa.agregar(diamante, posicion);
                     }
                 }
@@ -247,7 +207,6 @@ public class ConstructorMapa {
 
             default:
                 break;
-
         }
     }
 

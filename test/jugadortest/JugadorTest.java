@@ -46,9 +46,9 @@ public class JugadorTest {
         Jugador jugador = juego.getJugador();
         Herramienta pico = new Pico(new PiedraMaterialHerramienta());
 
-        jugador.agregarAInventario(pico,2);
+        jugador.agregarAInventario(pico);
 
-        assertEquals(pico,jugador.obtenerDeInventario(2));
+        assertEquals(pico,jugador.obtenerDeInventario(1));
     }
 
 
@@ -72,7 +72,7 @@ public class JugadorTest {
         Mapa mapa = juego.getMapa();
         ObjetoUbicable aire = new NingunMaterialMineral();
         mapa.agregar(aire, posicion);
-        juego.moverJugadorHacia(Direccion.arriba());
+        juego.moverJugadorHacia(Direccion.ARRIBA);
 
         Posicion nuevaPosicionJugador = jugador.getPosicion();
 
@@ -88,9 +88,9 @@ public class JugadorTest {
         Posicion posicion = new Posicion(0,1);
         ObjetoUbicable aire = new NingunMaterialMineral();
         mapa.agregar(aire, posicion);
-        juego.moverJugadorHacia(Direccion.arriba());
+        juego.moverJugadorHacia(Direccion.ARRIBA);
 
-        juego.moverJugadorHacia(Direccion.abajo());
+        juego.moverJugadorHacia(Direccion.ABAJO);
         Posicion nuevaPosicionJugador = jugador.getPosicion();
 
         Posicion posicion_ = new Posicion(0,0);
@@ -109,7 +109,7 @@ public class JugadorTest {
         ObjetoUbicable aire = new NingunMaterialMineral();
         mapa.agregar(aire, posicion);
 
-        juego.moverJugadorHacia(Direccion.derecha());
+        juego.moverJugadorHacia(Direccion.DERECHA);
         Posicion nuevaPosicionJugador = jugador.getPosicion();
 
         assertEquals(posicion, nuevaPosicionJugador);
@@ -125,8 +125,8 @@ public class JugadorTest {
         ObjetoUbicable aire = new NingunMaterialMineral();
         mapa.agregar(aire, posicion);
 
-        juego.moverJugadorHacia(Direccion.derecha());
-        juego.moverJugadorHacia(Direccion.izquierda());
+        juego.moverJugadorHacia(Direccion.DERECHA);
+        juego.moverJugadorHacia(Direccion.IZQUIERDA);
         Posicion nuevaPosicionJugador = jugador.getPosicion();
         Posicion posicion_ = new Posicion(0,0);
 
@@ -142,7 +142,7 @@ public class JugadorTest {
         MaterialMineral madera = new MaderaMineral(new Posicion(0,1));
         mapa.agregar(madera, madera.getPosicion());
 
-        juego.moverJugadorHacia(Direccion.arriba());
+        juego.moverJugadorHacia(Direccion.ARRIBA);
         Posicion nuevaPosicionJugador = jugador.getPosicion();
 
         assertEquals(nuevaPosicionJugador, posicionJugador);

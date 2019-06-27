@@ -27,28 +27,16 @@ public class Posicion {
 
     @Override
     public boolean equals(Object objeto){
-        if (!(objeto instanceof Posicion)) {
-            return false;
-        }
-        if (objeto == this) {
-            return true;
-        }
-        Posicion otro = (Posicion) objeto;
-
-        return (this.getX() == otro.getX() && this.getY() == otro.getY());
-    }
-
-    @Override
-    public String toString(){
-        int posX = this.coordenadaX;
-        int posY = this.coordenadaY;
-        int[] posicion = {posX, posY};
-        return Arrays.toString(posicion);
+        return this.hashCode() == objeto.hashCode();
     }
 
     @Override
     public int hashCode() {
-        return this.toString().hashCode();
+        int posX = this.coordenadaX;
+        int posY = this.coordenadaY;
+        int[] posicion = {posX, posY};
+        String string = Arrays.toString(posicion);
+        return string.hashCode();
     }
 
     public boolean esAdyacente(Posicion posicion) {

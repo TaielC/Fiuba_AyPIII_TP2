@@ -1,6 +1,9 @@
 package view;
 
+import algocraft.constructorherramienta.TableroConstruccionHerramienta;
+import algocraft.inventario.InventarioMateriales;
 import algocraft.juego.Juego;
+import algocraft.juego.Jugador;
 import algocraft.juego.Posicion;
 import controller.BotonConstructorHerramientaEventHandler;
 import controller.AplicacionOnMousePressEventHandler;
@@ -29,7 +32,12 @@ public class ContenedorConstructorHerramientas extends GridPane {
 
     private static final double TAMANIO = Screen.getPrimary().getVisualBounds().getHeight()/17;
 
-    public ContenedorConstructorHerramientas() {
+    public ContenedorConstructorHerramientas(Juego juego) {
+        TableroConstruccionHerramienta tablero = new TableroConstruccionHerramienta();
+        tablero.getTablero();
+        Jugador jugador = juego.getJugador();
+        InventarioMateriales inventarioMateriales = jugador.getInventarioMateriales();
+
         this.setAlignment(Pos.CENTER);
         this.setPrefSize(4,3);
         this.setHgap(1);

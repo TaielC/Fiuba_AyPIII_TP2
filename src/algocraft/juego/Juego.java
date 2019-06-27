@@ -43,4 +43,8 @@ public class Juego {
         instanciaJuego = new Juego();
         return instanciaJuego;
     }
+
+    public void actualizarMapa(){
+        mapa.actualizar();
+    }
 }

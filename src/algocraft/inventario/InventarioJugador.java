@@ -16,6 +16,8 @@ public class InventarioJugador {
         return inventarioHerramientas;
     }
 
+    public InventarioMateriales getInventarioMateriales(){return inventarioMateriales;}
+
     public int agregarHerramienta(Herramienta herramienta) {
         return inventarioHerramientas.agregarHerramienta(herramienta);
     }

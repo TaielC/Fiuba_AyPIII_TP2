@@ -9,6 +9,10 @@ import algocraft.materialherramienta.MaterialHerramienta;
 
 public class NingunMaterialMineral extends MaterialMineral {
 
+    public NingunMaterialMineral(){
+        durabilidad = 0;
+    }
+
     @Override
     public void serGolpeado(Hacha hacha) {
         // No ocurre nada.

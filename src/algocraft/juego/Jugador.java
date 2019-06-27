@@ -4,6 +4,7 @@ import algocraft.excepciones.HerramientaRotaException;
 import algocraft.herramienta.*;
 import algocraft.inventario.InventarioJugador;
 import algocraft.inventario.InventarioHerramientas;
+import algocraft.inventario.InventarioMateriales;
 import algocraft.materialherramienta.MaderaMaterialHerramienta;
 import algocraft.materialmineral.MaterialMineral;
 
@@ -60,5 +61,9 @@ public class Jugador implements ObjetoUbicable{
 
     public InventarioHerramientas getInventarioHerramientas() {
         return inventarioJugador.getInventarioHerramientas();
+    }
+
+    public InventarioMateriales getInventarioMateriales() {
+        return inventarioJugador.getInventarioMateriales();
     }
 }

@@ -1,6 +1,7 @@
 package view;
 
 
+import algocraft.juego.Juego;
 import controller.BotonConstructorHerramientaEventHandler;
 import controller.BotonJugarEventHandler;
 import javafx.geometry.Insets;
@@ -18,7 +19,7 @@ public class ContenedorMateriales extends VBox {
 
     private static final double TAMANIO = Screen.getPrimary().getVisualBounds().getHeight()/15;
 
-    public ContenedorMateriales(){
+    public ContenedorMateriales(Juego juego){
 
         GridPane gridMateriales = new GridPane();
 
@@ -36,7 +37,7 @@ public class ContenedorMateriales extends VBox {
         botonConstructorHerramienta.setPadding(new Insets(1,1,1,1));
         Image imagen = Imagenes.get("ConstructorHerramientas");
         botonConstructorHerramienta.setGraphic(new ImageView(imagen));
-        BotonConstructorHerramientaEventHandler botonConstructorHerramientaEventHandler = new BotonConstructorHerramientaEventHandler();
+        BotonConstructorHerramientaEventHandler botonConstructorHerramientaEventHandler = new BotonConstructorHerramientaEventHandler(juego);
         botonConstructorHerramienta.setOnAction(botonConstructorHerramientaEventHandler);
 
         Image imagenFondo = Imagenes.get("FondoMenu");

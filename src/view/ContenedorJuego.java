@@ -1,7 +1,7 @@
 package view;
 
 import algocraft.juego.*;
-//import controller.BotonMaterialMineralEventHandler;
+import controller.BotonMaterialMineralEventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.image.Image;
@@ -39,8 +39,8 @@ public class ContenedorJuego extends GridPane {
 
                 button[x][y].setGraphic(new ImageView(imagen));
                 this.add(button[x][y],x,y);
-                //BotonMaterialMineralEventHandler botonMaterialMineralEventHandler = new BotonMaterialMineralEventHandler(juego,posicion);
-                //button[x][y].setOnAction(botonMaterialMineralEventHandler);
+                /*BotonMaterialMineralEventHandler botonMaterialMineralEventHandler = new BotonMaterialMineralEventHandler(this,juego,posicion);
+                button[x][y].setOnAction(botonMaterialMineralEventHandler);*/
             }
         }
         Image imagenFondo = Imagenes.get("FondoJuego");

@@ -20,15 +20,19 @@ public class PantallaJuego extends BorderPane {
 
         this.setLeft(new ContenedorHerramientas(juego.getJugador()));
 
-        this.contenedorMateriales =  new ContenedorMateriales();
+        this.contenedorMateriales =  new ContenedorMateriales(juego);
         this.setRight(contenedorMateriales);
     }
 
     public void actualizar() {
         this.contenedorJuego = new ContenedorJuego(juego);
         this.setCenter(contenedorJuego);
-        this.contenedorMateriales =  new ContenedorMateriales();
+        this.contenedorMateriales =  new ContenedorMateriales(this.juego);
         this.setRight(contenedorMateriales);
 
+    }
+
+    public ContenedorJuego getContenedorJuego() {
+        return contenedorJuego;
     }
 }

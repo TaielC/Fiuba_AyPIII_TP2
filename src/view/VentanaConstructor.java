@@ -1,5 +1,6 @@
 package view;
 
+import algocraft.juego.Juego;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.GridPane;
@@ -13,9 +14,9 @@ import java.awt.*;
 
 public class VentanaConstructor extends Stage {
 
-    public VentanaConstructor(){
+    public VentanaConstructor(Juego juego){
 
-        GridPane constructorHerramienta = new ContenedorConstructorHerramientas();
+        GridPane constructorHerramienta = new ContenedorConstructorHerramientas(juego);
 
         Scene segundaEscena = new Scene(constructorHerramienta, 300, 300);
 

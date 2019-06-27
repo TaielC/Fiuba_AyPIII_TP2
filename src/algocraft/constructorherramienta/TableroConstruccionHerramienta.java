@@ -63,4 +63,7 @@ public class TableroConstruccionHerramienta {
         }
         return true;
     }
+    public MaterialInventario[] getTablero(){
+        return this.tablero;
+    }
 }

@@ -2,16 +2,16 @@ package algocraft.juego;
 
 public class Direccion {
 
-    private static Direccion arriba;
-    private static Direccion abajo;
-    private static Direccion izquierda;
-    private static Direccion derecha;
+    public static Direccion ARRIBA;
+    public static Direccion ABAJO;
+    public static Direccion IZQUIERDA;
+    public static Direccion DERECHA;
 
     static {
-        arriba = new Direccion(0, 1);
-        abajo = new Direccion(0, -1);
-        izquierda = new Direccion(-1, 0);
-        derecha = new Direccion(1, 0);
+        ARRIBA = new Direccion(0, 1);
+        ABAJO = new Direccion(0, -1);
+        IZQUIERDA = new Direccion(-1, 0);
+        DERECHA = new Direccion(1, 0);
     }
 
     private int coordenadaX;
@@ -27,21 +27,5 @@ public class Direccion {
         int siguienteY = posicion.getY() + this.coordenadaY;
 
         return new Posicion(siguienteX, siguienteY);
-    }
-
-    public static Direccion arriba(){
-        return arriba;
-    }
-
-    public static Direccion abajo(){
-        return abajo;
-    }
-
-    public static Direccion izquierda(){
-        return izquierda;
-    }
-
-    public static Direccion derecha(){
-        return derecha;
     }
 }

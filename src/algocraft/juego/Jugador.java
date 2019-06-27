@@ -41,10 +41,6 @@ public class Jugador implements ObjetoUbicable{
         return inventarioJugador.agregarHerramienta(herramienta);
     }
 
-    public void agregarAInventario(Herramienta herramienta, int posicion) {
-        inventarioJugador.agregarHerramienta(herramienta, posicion);
-    }
-
     public Herramienta obtenerDeInventario(int posicion) {
         return inventarioJugador.obtenerHerramienta(posicion);
     }

@@ -25,7 +25,7 @@ public class BotonMaterialMineralEventHandler implements EventHandler<MouseEvent
     @Override
     public void handle(MouseEvent mouseEvent) {
         Posicion posicion = new Posicion((int)mouseEvent.getX(),(int)mouseEvent.getY());
-        this.juego.usarHerramientaEquipada(posicion);
+        this.juego.jugadorUsarHerramientaEquipada(posicion);
         juego.actualizarMapa();
         pantallaJuego.actualizar();
 

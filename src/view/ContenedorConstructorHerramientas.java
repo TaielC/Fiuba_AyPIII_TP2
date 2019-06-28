@@ -30,9 +30,7 @@ public class ContenedorConstructorHerramientas extends GridPane {
 
     private static final double TAMANIO = Screen.getPrimary().getVisualBounds().getHeight()/17;
 
-    public ContenedorConstructorHerramientas(PantallaJuego pantallaJuego,Juego juego) {
-        TableroConstruccionHerramienta tablero = new TableroConstruccionHerramienta();
-        tablero.getTablero();
+    public ContenedorConstructorHerramientas(PantallaConstructor pantallaConstructor,Juego juego, TableroConstruccionHerramienta tablero) {
         Jugador jugador = juego.getJugador();
         InventarioMateriales inventarioMateriales = jugador.getInventarioMateriales();
 
@@ -52,7 +50,9 @@ public class ContenedorConstructorHerramientas extends GridPane {
             for(int y=0; y<3; y++) {
                 Button button = new Button();
                 button.setMinSize(TAMANIO, TAMANIO);
-                BotonPonerMaterialEventHandler botonEventHandler = new BotonPonerMaterialEventHandler(this,inventarioMateriales,tablero,x*3+y);
+                int posicion = x*3+y;
+                button.setGraphic(new ImageView(Imagenes.get(tablero.get(posicion).getClass().getName())));
+                BotonPonerMaterialEventHandler botonEventHandler = new BotonPonerMaterialEventHandler(pantallaConstructor,inventarioMateriales,tablero,posicion);
                 button.setOnAction(botonEventHandler);
                 paneTablero.add(button,x,y);
             }

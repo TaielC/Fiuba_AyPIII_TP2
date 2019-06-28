@@ -33,12 +33,16 @@ public class TableroConstruccionHerramienta {
     public MaterialInventario getInferior(){ return tablero[7]; }
     public MaterialInventario getInferiorDerecha(){ return tablero[8]; }
 
-    protected MaterialInventario get(int posicion){
+    public MaterialInventario get(int posicion){
         try {
             return tablero[posicion];
         } catch (IndexOutOfBoundsException e){
             throw new PosicionDeTableroConstruccionHerramientaInvalidaException();
         }
+    }
+
+    public void ponerMaterial(int posicion, MaterialInventario materialInventario){
+        tablero[posicion]  = materialInventario;
     }
 
     private boolean equalsEspejado(TableroConstruccionHerramienta otroTablero){

@@ -41,7 +41,7 @@ public class ContenedorMateriales extends VBox {
         botonConstructorHerramienta.setPadding(new Insets(1,1,1,1));
         Image imagen = Imagenes.get("ConstructorHerramientas");
         botonConstructorHerramienta.setGraphic(new ImageView(imagen));
-        BotonConstructorHerramientaEventHandler botonConstructorHerramientaEventHandler = new BotonConstructorHerramientaEventHandler(juego);
+        BotonConstructorHerramientaEventHandler botonConstructorHerramientaEventHandler = new BotonConstructorHerramientaEventHandler(pantallaJuego,juego);
         botonConstructorHerramienta.setOnAction(botonConstructorHerramientaEventHandler);
 
         Image imagenFondo = Imagenes.get("FondoMenu");

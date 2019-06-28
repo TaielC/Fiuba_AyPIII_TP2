@@ -18,13 +18,13 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 
-public class MenuPrincipal extends VBox {
+public class PantallaMenuPrincipal extends VBox {
 
     private Stage stage;
 
     private static final Font FUENTE_BOTONES = Font.font("Monospace", FontWeight.EXTRA_BOLD, 30);
 
-    public MenuPrincipal(Stage stage, Scene escenaJuego) {
+    public PantallaMenuPrincipal(Stage stage, Scene escenaJuego) {
         super();
         this.stage = stage;
 

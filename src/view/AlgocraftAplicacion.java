@@ -30,7 +30,7 @@ public class AlgocraftAplicacion extends Application {
         AplicacionOnKeyPressEventHandler AplicacionOnKeyPressEventHandler = new AplicacionOnKeyPressEventHandler(pantallaJuego, juego, stage);
         escenaJuego.setOnKeyPressed(AplicacionOnKeyPressEventHandler);
 
-        MenuPrincipal menuPrincipal = new MenuPrincipal(stage, escenaJuego);
+        PantallaMenuPrincipal menuPrincipal = new PantallaMenuPrincipal(stage, escenaJuego);
         Scene escenaMenuPrincipal = new Scene(menuPrincipal, width, height);
 
         stage.setScene(escenaMenuPrincipal);

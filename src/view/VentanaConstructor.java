@@ -14,16 +14,16 @@ import java.awt.*;
 
 public class VentanaConstructor extends Stage {
 
-    public VentanaConstructor(Juego juego){
+    public VentanaConstructor(PantallaJuego pantallaJuego,Juego juego){
 
-        GridPane constructorHerramienta = new ContenedorConstructorHerramientas(juego);
+        PantallaConstructor pantallaConstructor = new PantallaConstructor(pantallaJuego, juego);
 
-        Scene segundaEscena = new Scene(constructorHerramienta, 300, 300);
+        Scene escenaConstructor = new Scene(pantallaConstructor);
 
-        Stage nuevoStage = new Stage();
-        nuevoStage.setTitle("Constructor Herramientas");
-        nuevoStage.setScene(segundaEscena);
+        this.setTitle("Constructor Herramientas");
+        this.setScene(escenaConstructor);
 
-        nuevoStage.show();
+        this.show();
+
     }
 }

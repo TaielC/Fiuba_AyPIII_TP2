@@ -51,7 +51,8 @@ public class ContenedorConstructorHerramientas extends GridPane {
                 Button button = new Button();
                 button.setMinSize(TAMANIO, TAMANIO);
                 int posicion = x*3+y;
-                button.setGraphic(new ImageView(Imagenes.get(tablero.get(posicion).getClass().getName())));
+                Image imagen = Imagenes.get(tablero.get(posicion).getClass().getName());
+                button.setGraphic(new ImageView(imagen));
                 BotonPonerMaterialEventHandler botonEventHandler = new BotonPonerMaterialEventHandler(pantallaConstructor,inventarioMateriales,tablero,posicion);
                 button.setOnAction(botonEventHandler);
                 paneTablero.add(button,x,y);
@@ -60,9 +61,8 @@ public class ContenedorConstructorHerramientas extends GridPane {
         this.add(paneTablero,0, 0);
 
         Button botonConstruir = new Button();
-        Image imagenHerramienta = Imagenes.get("algocraft.herramienta.NingunaHerramientaalgocraft.materialherramienta.NingunMaterialHerramienta");
+        Image imagenHerramienta = Imagenes.get("NingunaHerramienta");
         botonConstruir.setGraphic(new ImageView(imagenHerramienta));
-
         this.add(botonConstruir, 2, 0);
     }
 }

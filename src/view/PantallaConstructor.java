@@ -34,6 +34,7 @@ public class PantallaConstructor extends BorderPane{
 
     public void setMaterialInventario(MaterialInventario materialInventario) {
         this.materialInventario = materialInventario;
+        this.actualizar();
     }
 
     public void actualizar(){

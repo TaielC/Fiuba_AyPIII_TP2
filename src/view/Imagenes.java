@@ -49,9 +49,9 @@ public class Imagenes {
         imagenes.put("DiamanteItem", new Image("file:imagenes/Item/DiamanteItem.png", TAMANIO, TAMANIO, false, false));
 
         //inventario
-        imagenes.put("algocraft.materialinventario.MaderaMaterialInventario", new Image("file:imagenes/Minerales/Madera.png", TAMANIO, TAMANIO, false, false));
-        imagenes.put("algocraft.materialmineral.PiedraMaterialInventario", new Image("file:imagenes/Minerales/Piedra.png", TAMANIO, TAMANIO, false, false));
-        imagenes.put("algocraft.materialinventario.MetMaalterialInventario", new Image("file:imagenes/Minerales/Metal.png", TAMANIO, TAMANIO, false, false));
+        imagenes.put("algocraft.materialinventario.MaderaMaterialInventario", new Image("file:imagenes/Item/MaderaItem.png", TAMANIO, TAMANIO, false, false));
+        imagenes.put("algocraft.materialinventario.PiedraMaterialInventario", new Image("file:imagenes/Item/PiedraItem.png", TAMANIO, TAMANIO, false, false));
+        imagenes.put("algocraft.materialinventario.MetalMaterialInventario", new Image("file:imagenes/Item/MetalItem.png", TAMANIO, TAMANIO, false, false));
     }
 
 

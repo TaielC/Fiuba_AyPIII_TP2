@@ -9,16 +9,19 @@ import algocraft.materialinventario.MaterialInventarioNulo;
 import javafx.scene.layout.BorderPane;
 
 public class PantallaConstructor extends BorderPane{
+
     private MaterialInventario materialElegido;
     private Juego juego;
-    private ContenedorConstructorHerramientas constructorHerramientas;
-    private ContenedorMaterialesConstructor contenedorMaterialesConstructor;
     private TableroConstruccionHerramienta tablero;
+    private InventarioMateriales inventarioCopiado;
+    private PantallaJuego pantallaJuego;
 
     public PantallaConstructor(PantallaJuego pantallaJuego, Juego juego){
         this.tablero = new TableroConstruccionHerramienta();
         this.juego = juego;
         this.materialElegido = new MaterialInventarioNulo();
+        this.inventarioCopiado = juego.getJugador().getInventarioMateriales().copy();
+        this.pantallaJuego = pantallaJuego;
 
         this.actualizar();
     }
@@ -30,7 +33,6 @@ public class PantallaConstructor extends BorderPane{
 
     public void setMaterialElegido(MaterialInventario materialElegido) {
         this.materialElegido = materialElegido;
-        this.actualizar();
     }
 
     public void actualizar(){
@@ -40,10 +42,18 @@ public class PantallaConstructor extends BorderPane{
         } catch (NoHaySuficienteMaterialExeption e) {
             materialElegido = new MaterialInventarioNulo();
         }
-        this.constructorHerramientas = new ContenedorConstructorHerramientas(this, juego, tablero);
+        ContenedorConstructorHerramientas constructorHerramientas = new ContenedorConstructorHerramientas(this, juego, tablero);
         this.setCenter(constructorHerramientas);
 
-        this.contenedorMaterialesConstructor = new ContenedorMaterialesConstructor(this,juego.getJugador().getInventarioMateriales());
+        ContenedorMaterialesConstructor contenedorMaterialesConstructor = new ContenedorMaterialesConstructor(this, juego.getJugador().getInventarioMateriales());
         this.setBottom(contenedorMaterialesConstructor);
     }
+
+    public Juego getJuego() { return juego; }
+
+    public InventarioMateriales getInventarioCopiado() {
+        return inventarioCopiado;
+    }
+
+    public PantallaJuego getPantallaJuego() { return pantallaJuego; }
 }

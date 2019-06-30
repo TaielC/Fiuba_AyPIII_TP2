@@ -1,6 +1,6 @@
 package algocraft.inventario;
 
-import algocraft.excepciones.InventarioEstaLlenoException;
+import algocraft.excepciones.InventarioHerramientasEstaLlenoException;
 import algocraft.excepciones.PosicionDeInventarioHerramientasInvalidaException;
 import algocraft.herramienta.Herramienta;
 import algocraft.herramienta.HerramientaNula;
@@ -20,7 +20,7 @@ public class InventarioHerramientas {
 
     private void comprobarEspacioLibreDisponible() {
         if(herramientas.length == cantidadHerramientas){
-            throw new InventarioEstaLlenoException();
+            throw new InventarioHerramientasEstaLlenoException();
         }
     }
 

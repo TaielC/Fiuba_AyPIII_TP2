@@ -35,6 +35,8 @@ public class Jugador implements ObjetoUbicable{
         }
     }
 
+    public void actualizarInventarioMateriales(InventarioMateriales nuevoInventario){ inventarioMateriales = nuevoInventario; }
+
     public void equiparDeInventario(int posicion){
         herramientaEquipada = inventarioHerramientas.intercambiarHerramienta(herramientaEquipada, posicion);
     }

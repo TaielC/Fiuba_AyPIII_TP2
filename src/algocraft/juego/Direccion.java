@@ -8,8 +8,8 @@ public class Direccion {
     public static Direccion DERECHA;
 
     static {
-        ARRIBA = new Direccion(0, 1);
-        ABAJO = new Direccion(0, -1);
+        ARRIBA = new Direccion(0, -1);
+        ABAJO = new Direccion(0, 1);
         IZQUIERDA = new Direccion(-1, 0);
         DERECHA = new Direccion(1, 0);
     }

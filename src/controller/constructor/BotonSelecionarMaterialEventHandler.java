@@ -1,4 +1,4 @@
-package controller.juego;
+package controller.constructor;
 
 import algocraft.excepciones.NoHaySuficienteMaterialExeption;
 import algocraft.inventario.InventarioMateriales;

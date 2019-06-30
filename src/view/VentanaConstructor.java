@@ -13,7 +13,7 @@ public class VentanaConstructor extends Stage {
     public VentanaConstructor(PantallaJuego pantallaJuego, Juego juego){
         super(StageStyle.UNDECORATED);
 
-        PantallaConstructor pantallaConstructor = new PantallaConstructor(pantallaJuego, juego);
+        PantallaConstructor pantallaConstructor = new PantallaConstructor(this, pantallaJuego, juego);
 
         Scene escenaConstructor = new Scene(pantallaConstructor);
         Effect efectoAnterior = pantallaJuego.getEffect();

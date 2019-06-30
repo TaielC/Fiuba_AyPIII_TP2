@@ -44,6 +44,8 @@ public class InventarioHerramientas {
         } catch (IndexOutOfBoundsException e) {
             throw new PosicionDeInventarioHerramientasInvalidaException();
         }
+        if(herramienta instanceof HerramientaNula) cantidadHerramientas--;
+        if(herramientas[posicion] instanceof HerramientaNula) cantidadHerramientas++;
         herramientas[posicion] = herramienta;
         return herramientaDevolver;
     }

@@ -2,14 +2,11 @@ package view;
 
 import algocraft.constructorherramienta.ConstructorHerramientas;
 import algocraft.constructorherramienta.TableroConstruccionHerramienta;
-import algocraft.constructorherramienta.template.PicoMaderaTemplateConstruccionHerramienta;
 import algocraft.herramienta.Herramienta;
-import algocraft.herramienta.HerramientaNula;
-import algocraft.inventario.InventarioMateriales;
-import algocraft.juego.Juego;
-import algocraft.juego.Jugador;
 
-import controller.juego.BotonPonerMaterialEventHandler;
+import algocraft.herramienta.HerramientaNula;
+import controller.constructor.BotonConstruirHerramientaEventHandler;
+import controller.constructor.BotonPonerMaterialEventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
@@ -29,9 +26,9 @@ public class ContenedorConstructorHerramientas extends GridPane {
 
     private static final double TAMANIO = Screen.getPrimary().getVisualBounds().getHeight()/17;
 
-    public ContenedorConstructorHerramientas(PantallaConstructor pantallaConstructor,Juego juego, TableroConstruccionHerramienta tablero) {
-        Jugador jugador = juego.getJugador();
-        InventarioMateriales inventarioMateriales = jugador.getInventarioMateriales();
+    public ContenedorConstructorHerramientas(PantallaConstructor pantallaConstructor) {
+
+        TableroConstruccionHerramienta tablero = pantallaConstructor.getTablero();
 
         this.setAlignment(Pos.CENTER);
         this.setPadding(new Insets(50, 50, 50, 50));
@@ -52,7 +49,7 @@ public class ContenedorConstructorHerramientas extends GridPane {
                 int posicion = y*3+x;
                 Image imagen = Imagenes.get(tablero.get(posicion).getClass().getName());
                 button.setGraphic(new ImageView(imagen));
-                BotonPonerMaterialEventHandler botonEventHandler = new BotonPonerMaterialEventHandler(pantallaConstructor,inventarioMateriales,tablero,posicion);
+                BotonPonerMaterialEventHandler botonEventHandler = new BotonPonerMaterialEventHandler(pantallaConstructor,pantallaConstructor.getInventarioCopiado(),tablero,posicion);
                 button.setOnAction(botonEventHandler);
                 paneTablero.add(button,x,y);
             }
@@ -61,12 +58,25 @@ public class ContenedorConstructorHerramientas extends GridPane {
 
         this.add(new ImageView(Imagenes.get("FlechaConstructor")), 1, 0);
 
+        GridPane gridContruir = new GridPane();
+        gridContruir.setAlignment(Pos.CENTER);
+        gridContruir.setVgap(30);
+
         Button botonConstruir = new Button();
         botonConstruir.setMinSize(TAMANIO, TAMANIO);
         Herramienta herramienta = ConstructorHerramientas.obtenerHerramienta(tablero);
-//        if(!(herramienta instanceof HerramientaNula)) throw new RuntimeException("hello");
         Image imagenHerramienta = Imagenes.get(herramienta.getClass().getName()+herramienta.material().getClass().getName());
         botonConstruir.setGraphic(new ImageView(imagenHerramienta));
-        this.add(botonConstruir, 2, 0);
+        botonConstruir.setOnAction(new BotonConstruirHerramientaEventHandler(pantallaConstructor, herramienta));
+
+        gridContruir.add(botonConstruir, 0,0);
+        Image imagenContruccion = Imagenes.get("ConstruccionCorrecta");
+        if(herramienta instanceof HerramientaNula){
+            botonConstruir.setDisable(true);
+            imagenContruccion = Imagenes.get("ConstruccionIncorrecta");
+        }
+        gridContruir.add(new ImageView(imagenContruccion), 0, 1);
+
+        this.add(gridContruir, 2, 0);
     }
 }

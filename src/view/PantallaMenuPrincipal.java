@@ -54,7 +54,7 @@ public class PantallaMenuPrincipal extends VBox {
         pantallaCompleta.setSelected(true);
         pantallaCompleta.setOnAction(new CheckBoxPantallaCompletaEventHandler(pantallaCompleta, botonJugarEventHandler));
 
-        Image imagen = Imagenes.get("FondoMenu");
+        Image imagen = Imagenes.get("FondoMenuPrincipal");
         BackgroundImage imagenDeFondo = new BackgroundImage(imagen, BackgroundRepeat.REPEAT, BackgroundRepeat.REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
         this.setBackground(new Background(imagenDeFondo));
 
@@ -63,9 +63,12 @@ public class PantallaMenuPrincipal extends VBox {
 
     private Button nuevoBoton(String texto) {
         Button boton = new Button();
+
         boton.setText(texto);
         boton.setFont(FUENTE_BOTONES);
-        boton.setMinSize(400, 50);
+        boton.setMinSize(400, 100);
+        boton.setBackground(new Background(new BackgroundImage(Imagenes.get("BotonMenuPrincipal"), BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, new BackgroundSize(400, 100, false, false, false, false))));
+
         return boton;
     }
 }

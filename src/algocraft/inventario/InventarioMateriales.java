@@ -18,6 +18,10 @@ public class InventarioMateriales {
         materiales.put((new DiamanteMaterialInventario()).hashCode(), 0);
     }
 
+    private InventarioMateriales(Hashtable<Integer, Integer> materiales){
+        this.materiales = materiales;
+    }
+
     public void agregar(MaterialInventario materialInventario) {
         if(materialInventario.equals(new MaterialInventarioNulo())) return;
         materiales.put(materialInventario.hashCode(), materiales.get(materialInventario.hashCode())+1);
@@ -43,7 +47,7 @@ public class InventarioMateriales {
     public Integer cantidadMetal() {return materiales.get((new MetalMaterialInventario()).hashCode()); }
     public Integer cantidadDiamante() {return materiales.get((new DiamanteMaterialInventario()).hashCode()); }
 
-    public int cantidad(MaterialInventario material) {
-        return materiales.getOrDefault(material.hashCode(), 0);
+    public InventarioMateriales copy() {
+        return new InventarioMateriales((Hashtable<Integer, Integer>) materiales.clone());
     }
 }

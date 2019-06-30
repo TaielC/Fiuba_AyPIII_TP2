@@ -68,10 +68,10 @@ public class JugadorTest {
         Juego juego = Juego.getInstance();
         Jugador jugador = juego.getJugador();
 
-        Posicion posicion = new Posicion(0,1);
+        Posicion posicion = new Posicion(0,-1);
         Mapa mapa = juego.getMapa();
-        ObjetoUbicable aire = new MaterialMineralNulo();
-        mapa.agregar(aire, posicion);
+        ObjetoUbicable materialMineralNulo = new MaterialMineralNulo();
+        mapa.agregar(materialMineralNulo, posicion);
         juego.moverJugadorHacia(Direccion.ARRIBA);
 
         Posicion nuevaPosicionJugador = jugador.getPosicion();
@@ -93,9 +93,9 @@ public class JugadorTest {
         juego.moverJugadorHacia(Direccion.ABAJO);
         Posicion nuevaPosicionJugador = jugador.getPosicion();
 
-        Posicion posicion_ = new Posicion(0,0);
+        Posicion posicionEsperada = new Posicion(0,1);
 
-        assertEquals(nuevaPosicionJugador,posicion_);
+        assertEquals(nuevaPosicionJugador,posicionEsperada);
     }
 
     @Test

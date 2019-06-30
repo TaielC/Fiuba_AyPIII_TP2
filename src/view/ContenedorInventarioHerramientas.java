@@ -12,6 +12,7 @@ import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
+import javafx.scene.paint.Color;
 import javafx.stage.Screen;
 
 public class ContenedorInventarioHerramientas extends VBox {
@@ -48,6 +49,7 @@ public class ContenedorInventarioHerramientas extends VBox {
         Image imagen = Imagenes.get( herramientaEquipada.getClass().getName() + material.getClass().getName());
         ImageView vistaHerramienta = new ImageView(imagen);
 
+        this.setBackground(new Background(new BackgroundFill(Color.valueOf("#c6c6c6"), CornerRadii.EMPTY, Insets.EMPTY)));
         this.setAlignment(Pos.CENTER);
         this.setPadding(new Insets(3,3,3,3));
         this.setSpacing(50);

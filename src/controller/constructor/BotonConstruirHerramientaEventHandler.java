@@ -1,4 +1,4 @@
-package controller.juego;
+package controller.constructor;
 
 import algocraft.excepciones.InventarioHerramientasEstaLlenoException;
 import algocraft.herramienta.Herramienta;
@@ -34,5 +34,6 @@ public class BotonConstruirHerramientaEventHandler implements EventHandler<Actio
         }
         jugador.actualizarInventarioMateriales(pantallaConstructor.getInventarioCopiado().copy());
         pantallaConstructor.getPantallaJuego().actualizar();
+        pantallaConstructor.reiniciar();
     }
 }

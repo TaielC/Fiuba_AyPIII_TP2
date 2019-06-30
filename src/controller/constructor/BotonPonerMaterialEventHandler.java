@@ -1,4 +1,4 @@
-package controller.juego;
+package controller.constructor;
 
 import algocraft.constructorherramienta.TableroConstruccionHerramienta;
 import algocraft.inventario.InventarioMateriales;
@@ -22,7 +22,7 @@ public class BotonPonerMaterialEventHandler implements EventHandler<ActionEvent>
 
     @Override
     public void handle(ActionEvent actionEvent) {
-        MaterialInventario material = inventarioMateriales.getMaterial(pantallaConstructor.materialElegido());
+        MaterialInventario material = inventarioMateriales.getMaterial(pantallaConstructor.getMaterialElegido());
         inventarioMateriales.agregar(tablero.get(posicion));
         tablero.ponerMaterial(posicion, material);
 

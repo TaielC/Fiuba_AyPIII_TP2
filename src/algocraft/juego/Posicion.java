@@ -2,8 +2,6 @@ package algocraft.juego;
 
 import java.util.Arrays;
 
-import static java.lang.Math.abs;
-
 public class Posicion {
 
     private int coordenadaX;
@@ -45,7 +43,13 @@ public class Posicion {
 
 
     public boolean esAdyacente(Posicion posicion) {
-        boolean sonDiferentes = coordenadaX != posicion.getX() && coordenadaY != posicion.getY();
-        return sonDiferentes && (abs(coordenadaX - posicion.getX()) <= 1) && (abs(coordenadaY - posicion.getY()) <= 1);
+        for(int x=-1 ;x<=1 ;x++) {
+            for (int y = -1; y <= 1; y++) {
+                if (x == 0 && y == 0) continue;
+                if(coordenadaX+x == posicion.getX() && coordenadaY+y == posicion.getY())
+                    return true;
+            }
+        }
+        return false;
     }
 }

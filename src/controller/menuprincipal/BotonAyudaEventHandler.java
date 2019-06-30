@@ -12,6 +12,8 @@ public class BotonAyudaEventHandler implements EventHandler<ActionEvent> {
         alert.setTitle("Algocraft Ayuda");
         alert.setHeaderText("Controles");
         String mensaje = "75.07 Algoritmos y  programación III.";
+        alert.setContentText("Los controles pra desplazar ");
+        //alert.setGraphic();
         alert.setContentText(mensaje);
         alert.show();
     }

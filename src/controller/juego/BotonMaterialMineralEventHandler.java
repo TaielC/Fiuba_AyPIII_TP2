@@ -1,9 +1,12 @@
 package controller.juego;
 
+import algocraft.herramienta.NingunaHerramienta;
+import algocraft.herramienta.durabilidad.DurabilidadHerramienta;
 import algocraft.juego.Juego;
 import algocraft.juego.Posicion;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import view.Nombres;
 import view.PantallaJuego;
 
 
@@ -12,6 +15,7 @@ public class BotonMaterialMineralEventHandler implements EventHandler<ActionEven
     private Juego juego;
     private Posicion posicion;
     private PantallaJuego pantallaJuego;
+    private String texto;
 
     public BotonMaterialMineralEventHandler(PantallaJuego pantallaJuego, Juego juego, Posicion posicion){
         this.juego = juego;
@@ -22,6 +26,12 @@ public class BotonMaterialMineralEventHandler implements EventHandler<ActionEven
     @Override
     public void handle(ActionEvent actionEvent) {
         juego.jugadorUsarHerramientaEquipada(posicion);
-        pantallaJuego.actualizar();
+        String nombreHerramienta = Nombres.get(juego.getJugador().getHerramientaEquipada().getClass().getName() + juego.getJugador().getHerramientaEquipada().material().getClass().getName());
+        texto = ("Golpeaste un material, tu herramienta ahora esta rota!");
+        if (nombreHerramienta.contentEquals("ninguna herramienta")) {
+            double durabilidad = juego.getJugador().getHerramientaEquipada().durabilidad();
+            texto = ("Golpeaste un material, tu herramienta ahora tiene una durabilidad igual a:  " + durabilidad);
+        }
+        pantallaJuego.actualizar(texto);
     }
 }

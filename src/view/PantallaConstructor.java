@@ -3,6 +3,7 @@ package view;
 import algocraft.constructorherramienta.TableroConstruccionHerramienta;
 import algocraft.juego.Juego;
 import algocraft.materialinventario.MaterialInventario;
+import algocraft.materialinventario.NingunMaterialInventario;
 import javafx.geometry.Insets;
 import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
@@ -12,7 +13,7 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 
 public class PantallaConstructor extends BorderPane{
-    MaterialInventario materialInventario;
+    private MaterialInventario materialInventario;
     private Juego juego;
     private ContenedorConstructorHerramientas constructorHerramientas;
     private MaterialesConstructor materialesConstructor;
@@ -20,12 +21,10 @@ public class PantallaConstructor extends BorderPane{
 
     public PantallaConstructor(PantallaJuego pantallaJuego, Juego juego){
         this.tablero = new TableroConstruccionHerramienta();
-        tablero.getTablero();
-        this.juego =juego;
+        this.juego = juego;
+        this.materialInventario = new NingunMaterialInventario();
 
         this.actualizar();
-
-
     }
 
     public MaterialInventario materialActual(){

@@ -6,7 +6,7 @@ import algocraft.materialinventario.*;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-public class MapaConstruccionHerramientaTest {
+public class TableroConstruccionHerramientaTest {
 
     @Test
     public void test01ElTableroIniciaConTodasLasPosicionesConUnMaterialInventarioNada() {

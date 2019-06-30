@@ -4,6 +4,7 @@ import algocraft.constructorherramienta.ConstructorHerramientas;
 import algocraft.constructorherramienta.TableroConstruccionHerramienta;
 import algocraft.constructorherramienta.template.PicoMaderaTemplateConstruccionHerramienta;
 import algocraft.herramienta.Herramienta;
+import algocraft.herramienta.HerramientaNula;
 import algocraft.inventario.InventarioMateriales;
 import algocraft.juego.Juego;
 import algocraft.juego.Jugador;
@@ -48,7 +49,7 @@ public class ContenedorConstructorHerramientas extends GridPane {
             for(int y=0; y<3; y++) {
                 Button button = new Button();
                 button.setMinSize(TAMANIO, TAMANIO);
-                int posicion = x*3+y;
+                int posicion = y*3+x;
                 Image imagen = Imagenes.get(tablero.get(posicion).getClass().getName());
                 button.setGraphic(new ImageView(imagen));
                 BotonPonerMaterialEventHandler botonEventHandler = new BotonPonerMaterialEventHandler(pantallaConstructor,inventarioMateriales,tablero,posicion);
@@ -63,10 +64,8 @@ public class ContenedorConstructorHerramientas extends GridPane {
         Button botonConstruir = new Button();
         botonConstruir.setMinSize(TAMANIO, TAMANIO);
         Herramienta herramienta = ConstructorHerramientas.obtenerHerramienta(tablero);
-        if(tablero.equals((new PicoMaderaTemplateConstruccionHerramienta()).getTemplate())){
-            throw new RuntimeException("hello");
-        }
-        Image imagenHerramienta = Imagenes.get(herramienta.getClass().getName());
+//        if(!(herramienta instanceof HerramientaNula)) throw new RuntimeException("hello");
+        Image imagenHerramienta = Imagenes.get(herramienta.getClass().getName()+herramienta.material().getClass().getName());
         botonConstruir.setGraphic(new ImageView(imagenHerramienta));
         this.add(botonConstruir, 2, 0);
     }

@@ -20,7 +20,7 @@ public class Jugador implements ObjetoUbicable{
         inventarioHerramientas.agregarHerramienta(new Hacha(new MaderaMaterialHerramienta()));
         inventarioMateriales = new InventarioMateriales();
         this.posicion = posicion;
-        herramientaEquipada = new NingunaHerramienta();
+        herramientaEquipada = new HerramientaNula();
     }
 
     public Herramienta getHerramientaEquipada() {
@@ -31,9 +31,11 @@ public class Jugador implements ObjetoUbicable{
         try{
             herramientaEquipada.usar(material);
         } catch (HerramientaRotaException e) {
-            herramientaEquipada = new NingunaHerramienta();
+            herramientaEquipada = new HerramientaNula();
         }
     }
+
+    public void actualizarInventarioMateriales(InventarioMateriales nuevoInventario){ inventarioMateriales = nuevoInventario; }
 
     public void equiparDeInventario(int posicion){
         herramientaEquipada = inventarioHerramientas.intercambiarHerramienta(herramientaEquipada, posicion);
@@ -68,4 +70,5 @@ public class Jugador implements ObjetoUbicable{
     public InventarioMateriales getInventarioMateriales() {
         return inventarioMateriales;
     }
+
 }

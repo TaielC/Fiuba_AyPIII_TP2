@@ -14,7 +14,7 @@ public class MaterialHerramientaTest {
 
     @Test
     public void test01NingunMaterialHerramientaNoDesgastaNingunMaterialMineral() {
-        MaterialHerramienta ningunMaterial = new NingunMaterialHerramienta();
+        MaterialHerramienta ningunMaterial = new MaterialHerramientaNulo();
         assertFalse(ningunMaterial.daniaA(new MaderaMineral(new Posicion(0,0))));
         assertFalse(ningunMaterial.daniaA(new PiedraMineral(new Posicion(0,0))));
         assertFalse(ningunMaterial.daniaA(new MetalMineral(new Posicion(0,0))));

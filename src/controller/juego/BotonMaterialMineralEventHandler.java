@@ -1,6 +1,5 @@
 package controller.juego;
 
-import algocraft.herramienta.NingunaHerramienta;
 import algocraft.herramienta.durabilidad.DurabilidadHerramienta;
 import algocraft.juego.Juego;
 import algocraft.juego.Posicion;

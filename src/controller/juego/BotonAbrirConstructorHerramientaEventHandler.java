@@ -7,13 +7,12 @@ import javafx.stage.Stage;
 import view.PantallaJuego;
 import view.VentanaConstructor;
 
-public class BotonConstructorHerramientaEventHandler implements EventHandler<ActionEvent> {
-    private Stage stagePrincipal;
+public class BotonAbrirConstructorHerramientaEventHandler implements EventHandler<ActionEvent> {
     private Juego juego;
     private PantallaJuego pantallaJuego;
 
 
-    public BotonConstructorHerramientaEventHandler(PantallaJuego pantallaJuego, Juego juego) {
+    public BotonAbrirConstructorHerramientaEventHandler(PantallaJuego pantallaJuego, Juego juego) {
         this.juego = juego;
         this.pantallaJuego = pantallaJuego;
     }

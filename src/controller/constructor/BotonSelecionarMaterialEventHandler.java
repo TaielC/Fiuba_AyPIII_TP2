@@ -1,39 +1,36 @@
-package controller.juego;
+package controller.constructor;
 
-import algocraft.constructorherramienta.TableroConstruccionHerramienta;
 import algocraft.excepciones.NoHaySuficienteMaterialExeption;
 import algocraft.inventario.InventarioMateriales;
+import algocraft.materialinventario.MaterialInventario;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Alert;
-import javafx.stage.StageStyle;
 import view.PantallaConstructor;
 
-public class BotonPonerMaterialEventHandler implements EventHandler<ActionEvent> {
+public class BotonSelecionarMaterialEventHandler implements EventHandler<ActionEvent>{
+    private MaterialInventario materialInventario;
     private PantallaConstructor pantallaConstructor;
-    private int posicion;
-    private TableroConstruccionHerramienta tablero;
     private InventarioMateriales inventarioMateriales;
 
-    public BotonPonerMaterialEventHandler(PantallaConstructor pantallaConstructor, InventarioMateriales inventarioMateriales, TableroConstruccionHerramienta tablero, int posicion){
+    public BotonSelecionarMaterialEventHandler(PantallaConstructor pantallaConstructor, InventarioMateriales inventarioMateriales, MaterialInventario materialInventario){
+        this.materialInventario = materialInventario;
         this.pantallaConstructor = pantallaConstructor;
-        this.posicion = posicion;
-        this.tablero = tablero;
         this.inventarioMateriales = inventarioMateriales;
     }
 
     @Override
     public void handle(ActionEvent actionEvent) {
         try {
-            tablero.ponerMaterial(posicion, inventarioMateriales.getMaterial(pantallaConstructor.materialElegido()));
+            inventarioMateriales.agregar(inventarioMateriales.getMaterial(materialInventario));
         } catch (NoHaySuficienteMaterialExeption e) {
             Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.setTitle("");
             alert.setHeaderText("No se pudo Insertar el material");
             alert.setContentText("No hay suficiente material seleccionado");
             alert.show();
+            return;
         }
-
-        pantallaConstructor.actualizar();
+        pantallaConstructor.setMaterialElegido(materialInventario);
     }
 }

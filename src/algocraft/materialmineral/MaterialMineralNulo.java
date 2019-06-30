@@ -3,15 +3,14 @@ package algocraft.materialmineral;
 import algocraft.herramienta.Hacha;
 import algocraft.herramienta.Pico;
 import algocraft.herramienta.PicoFino;
-import algocraft.juego.ObjetoUbicable;
 import algocraft.juego.Posicion;
 import algocraft.materialherramienta.MaterialHerramienta;
 import algocraft.materialinventario.MaterialInventario;
-import algocraft.materialinventario.NingunMaterialInventario;
+import algocraft.materialinventario.MaterialInventarioNulo;
 
-public class NingunMaterialMineral extends MaterialMineral {
+public class MaterialMineralNulo extends MaterialMineral {
 
-    public NingunMaterialMineral(){
+    public MaterialMineralNulo(){
         durabilidad = 0;
     }
 
@@ -47,6 +46,6 @@ public class NingunMaterialMineral extends MaterialMineral {
 
     @Override
     public MaterialInventario obtenerMaterialInventario() {
-        return new NingunMaterialInventario();
+        return new MaterialInventarioNulo();
     }
 }

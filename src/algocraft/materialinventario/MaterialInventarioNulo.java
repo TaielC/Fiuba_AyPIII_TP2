@@ -1,10 +1,10 @@
 package algocraft.materialinventario;
 
-public class NingunMaterialInventario implements MaterialInventario{
+public class MaterialInventarioNulo implements MaterialInventario{
 
     @Override
     public boolean equals(MaterialInventario materialInventario) {
-        return materialInventario instanceof NingunMaterialInventario;
+        return materialInventario instanceof MaterialInventarioNulo;
     }
 
     @Override

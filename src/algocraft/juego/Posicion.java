@@ -25,10 +25,12 @@ public class Posicion {
         return direccion.obtenerSiguiente(this);
     }
 
+
     @Override
     public boolean equals(Object objeto){
         return this.hashCode() == objeto.hashCode();
     }
+
 
     @Override
     public int hashCode() {
@@ -39,12 +41,14 @@ public class Posicion {
         return string.hashCode();
     }
 
+
     public boolean esAdyacente(Posicion posicion) {
-        if(coordenadaX == posicion.getX()){
-            return coordenadaY == posicion.getY()+1 || coordenadaY == posicion.getY()-1;
-        }
-        if(coordenadaY == posicion.getY()){
-            return coordenadaX == posicion.getX() + 1 || coordenadaX == posicion.getX() - 1;
+        for(int x=-1 ;x<=1 ;x++) {
+            for (int y = -1; y <= 1; y++) {
+                if (x == 0 && y == 0) continue;
+                if(coordenadaX+x == posicion.getX() && coordenadaY+y == posicion.getY())
+                    return true;
+            }
         }
         return false;
     }

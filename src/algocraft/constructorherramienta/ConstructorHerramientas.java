@@ -25,7 +25,7 @@ public class ConstructorHerramientas {
             Herramienta herramientaConstruida = template.construirSiEsIgual(tablero);
             if(herramientaConstruida != null) return herramientaConstruida;
         }
-        return new NingunaHerramienta();
+        return new HerramientaNula();
     }
 
 }

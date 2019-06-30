@@ -7,7 +7,7 @@ import algocraft.materialherramienta.PiedraMaterialHerramienta;
 import algocraft.materialmineral.MaderaMineral;
 import algocraft.materialmineral.MaterialMineral;
 
-import algocraft.materialmineral.NingunMaterialMineral;
+import algocraft.materialmineral.MaterialMineralNulo;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -68,10 +68,10 @@ public class JugadorTest {
         Juego juego = Juego.getInstance();
         Jugador jugador = juego.getJugador();
 
-        Posicion posicion = new Posicion(0,1);
+        Posicion posicion = new Posicion(0,-1);
         Mapa mapa = juego.getMapa();
-        ObjetoUbicable aire = new NingunMaterialMineral();
-        mapa.agregar(aire, posicion);
+        ObjetoUbicable materialMineralNulo = new MaterialMineralNulo();
+        mapa.agregar(materialMineralNulo, posicion);
         juego.moverJugadorHacia(Direccion.ARRIBA);
 
         Posicion nuevaPosicionJugador = jugador.getPosicion();
@@ -86,16 +86,16 @@ public class JugadorTest {
         Jugador jugador = juego.getJugador();
         Mapa mapa = juego.getMapa();
         Posicion posicion = new Posicion(0,1);
-        ObjetoUbicable aire = new NingunMaterialMineral();
+        ObjetoUbicable aire = new MaterialMineralNulo();
         mapa.agregar(aire, posicion);
         juego.moverJugadorHacia(Direccion.ARRIBA);
 
         juego.moverJugadorHacia(Direccion.ABAJO);
         Posicion nuevaPosicionJugador = jugador.getPosicion();
 
-        Posicion posicion_ = new Posicion(0,0);
+        Posicion posicionEsperada = new Posicion(0,1);
 
-        assertEquals(nuevaPosicionJugador,posicion_);
+        assertEquals(nuevaPosicionJugador,posicionEsperada);
     }
 
     @Test
@@ -106,7 +106,7 @@ public class JugadorTest {
 
         Posicion posicion = new Posicion(1,0);
         Mapa mapa = juego.getMapa();
-        ObjetoUbicable aire = new NingunMaterialMineral();
+        ObjetoUbicable aire = new MaterialMineralNulo();
         mapa.agregar(aire, posicion);
 
         juego.moverJugadorHacia(Direccion.DERECHA);
@@ -122,7 +122,7 @@ public class JugadorTest {
         Mapa mapa = juego.getMapa();
 
         Posicion posicion = new Posicion(1,0);
-        ObjetoUbicable aire = new NingunMaterialMineral();
+        ObjetoUbicable aire = new MaterialMineralNulo();
         mapa.agregar(aire, posicion);
 
         juego.moverJugadorHacia(Direccion.DERECHA);

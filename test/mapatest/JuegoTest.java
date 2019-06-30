@@ -14,12 +14,12 @@ public class JuegoTest {
 
         Mapa mapa = new Mapa(10,10);
         Posicion posicion = new Posicion(1,1);
-        ObjetoUbicable aire = new NingunMaterialMineral();
+        ObjetoUbicable aire = new MaterialMineralNulo();
         mapa.agregar(aire, posicion);
 
         ObjetoUbicable objeto = mapa.getObjetoUbicable(posicion);
 
-        assertTrue(objeto instanceof NingunMaterialMineral);
+        assertTrue(objeto instanceof MaterialMineralNulo);
     }
 
     @Test

@@ -49,6 +49,7 @@ public class ContenedorInventarioHerramientas extends VBox {
         Image imagen = Imagenes.get( herramientaEquipada.getClass().getName() + material.getClass().getName());
         ImageView vistaHerramienta = new ImageView(imagen);
 
+        this.setBackground(new Background(new BackgroundFill(Color.valueOf("#c6c6c6"), CornerRadii.EMPTY, Insets.EMPTY)));
         this.setAlignment(Pos.CENTER);
         this.setPadding(new Insets(3,3,3,3));
         this.setSpacing(50);

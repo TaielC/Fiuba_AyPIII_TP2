@@ -23,27 +23,27 @@ public class AplicacionOnKeyPressEventHandler implements EventHandler<KeyEvent> 
         this.stage = stage;
         this.texto = (" ");
     }
+
     @Override
     public void handle(KeyEvent keyEvent) {
-        if (keyEvent.getCode() == KeyCode.S) {
+        if (keyEvent.getCode() == KeyCode.W || keyEvent.getCode() == KeyCode.UP) {
             juego.moverJugadorHacia(Direccion.ARRIBA);
             pantallaJuego.actualizar(texto);
         }
-        if (keyEvent.getCode() == KeyCode.W) {
-            juego.moverJugadorHacia(Direccion.ABAJO);
-            pantallaJuego.actualizar(texto);
-        }
-        if (keyEvent.getCode() == KeyCode.A) {
+        if (keyEvent.getCode() == KeyCode.A || keyEvent.getCode() == KeyCode.LEFT) {
             juego.moverJugadorHacia(Direccion.IZQUIERDA);
             pantallaJuego.actualizar(texto);
         }
-        if (keyEvent.getCode() == KeyCode.D) {
+        if (keyEvent.getCode() == KeyCode.S || keyEvent.getCode() == KeyCode.DOWN) {
+            juego.moverJugadorHacia(Direccion.ABAJO);
+            pantallaJuego.actualizar(texto);
+        }
+        if (keyEvent.getCode() == KeyCode.D || keyEvent.getCode() == KeyCode.RIGHT) {
             juego.moverJugadorHacia(Direccion.DERECHA);
             pantallaJuego.actualizar(texto);
         }
         if (keyEvent.getCode() == KeyCode.F11) {
             stage.setFullScreen(!stage.isFullScreen());
         }
-
     }
 }

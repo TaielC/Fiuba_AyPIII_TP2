@@ -70,4 +70,5 @@ public class Jugador implements ObjetoUbicable{
     public InventarioMateriales getInventarioMateriales() {
         return inventarioMateriales;
     }
+
 }

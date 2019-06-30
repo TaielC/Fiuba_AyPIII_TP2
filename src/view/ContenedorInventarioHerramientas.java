@@ -15,11 +15,11 @@ import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.stage.Screen;
 
-public class ContenedorHerramientas extends VBox {
+public class ContenedorInventarioHerramientas extends VBox {
 
     private static final double TAMANIO = Screen.getPrimary().getVisualBounds().getHeight()/17;
 
-    public ContenedorHerramientas(PantallaJuego pantallaJuego, Juego juego){
+    public ContenedorInventarioHerramientas(PantallaJuego pantallaJuego, Juego juego){
 
         Jugador jugador = juego.getJugador();
         InventarioHerramientas inventarioHerramientas = jugador.getInventarioHerramientas();

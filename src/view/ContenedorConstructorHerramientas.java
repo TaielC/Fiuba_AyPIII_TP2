@@ -1,6 +1,8 @@
 package view;
 
+import algocraft.constructorherramienta.ConstructorHerramientas;
 import algocraft.constructorherramienta.TableroConstruccionHerramienta;
+import algocraft.herramienta.Herramienta;
 import algocraft.herramienta.NingunaHerramienta;
 import algocraft.inventario.InventarioMateriales;
 import algocraft.juego.Juego;
@@ -60,8 +62,12 @@ public class ContenedorConstructorHerramientas extends GridPane {
         }
         this.add(paneTablero,0, 0);
 
+        this.add(new ImageView(Imagenes.get("FlechaConstructor")), 1, 0);
+
         Button botonConstruir = new Button();
-        Image imagenHerramienta = Imagenes.get("NingunaHerramienta");
+        botonConstruir.setMinSize(TAMANIO, TAMANIO);
+        Herramienta herramienta = ConstructorHerramientas.obtenerHerramienta(tablero);
+        Image imagenHerramienta = Imagenes.get(herramienta.getClass().getName());
         botonConstruir.setGraphic(new ImageView(imagenHerramienta));
         this.add(botonConstruir, 2, 0);
     }

@@ -1,38 +1,35 @@
 package view;
 
 import algocraft.constructorherramienta.TableroConstruccionHerramienta;
+import algocraft.herramienta.Herramienta;
+import algocraft.herramienta.NingunaHerramienta;
 import algocraft.juego.Juego;
 import algocraft.materialinventario.MaterialInventario;
 import algocraft.materialinventario.NingunMaterialInventario;
-import javafx.geometry.Insets;
-import javafx.scene.control.Button;
-import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.GridPane;
-import javafx.scene.text.Font;
-import javafx.scene.text.FontWeight;
 
 public class PantallaConstructor extends BorderPane{
-    private MaterialInventario materialInventario;
+    private MaterialInventario materialElegido;
     private Juego juego;
     private ContenedorConstructorHerramientas constructorHerramientas;
-    private MaterialesConstructor materialesConstructor;
+    private ContenedorMaterialesConstructor contenedorMaterialesConstructor;
     private TableroConstruccionHerramienta tablero;
 
     public PantallaConstructor(PantallaJuego pantallaJuego, Juego juego){
         this.tablero = new TableroConstruccionHerramienta();
         this.juego = juego;
-        this.materialInventario = new NingunMaterialInventario();
+        this.materialElegido = new NingunMaterialInventario();
 
         this.actualizar();
     }
 
-    public MaterialInventario materialActual(){
-        return materialInventario;
+    public MaterialInventario materialElegido(){
+        return materialElegido;
     }
 
-    public void setMaterialInventario(MaterialInventario materialInventario) {
-        this.materialInventario = materialInventario;
+
+    public void setMaterialElegido(MaterialInventario materialElegido) {
+        this.materialElegido = materialElegido;
         this.actualizar();
     }
 
@@ -40,7 +37,7 @@ public class PantallaConstructor extends BorderPane{
         this.constructorHerramientas = new ContenedorConstructorHerramientas(this, juego, tablero);
         this.setCenter(constructorHerramientas);
 
-        this.materialesConstructor = new MaterialesConstructor(this,juego.getJugador().getInventarioMateriales());
-        this.setBottom(materialesConstructor);
+        this.contenedorMaterialesConstructor = new ContenedorMaterialesConstructor(this,juego.getJugador().getInventarioMateriales());
+        this.setBottom(contenedorMaterialesConstructor);
     }
 }

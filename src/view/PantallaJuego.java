@@ -17,10 +17,10 @@ public class PantallaJuego extends BorderPane {
         ContenedorJuego contenedorJuego = new ContenedorJuego(this, juego);
         this.setCenter(contenedorJuego);
 
-        ContenedorHerramientas contenedorHerramientas = new ContenedorHerramientas(this, juego);
-        this.setRight(contenedorHerramientas);
+        ContenedorInventarioHerramientas contenedorInventarioHerramientas = new ContenedorInventarioHerramientas(this, juego);
+        this.setRight(contenedorInventarioHerramientas);
 
-        ContenedorMateriales contenedorMateriales = new ContenedorMateriales(this, juego);
-        this.setLeft(contenedorMateriales);
+        ContenedorInventarioMateriales contenedorInventarioMateriales = new ContenedorInventarioMateriales(this, juego);
+        this.setLeft(contenedorInventarioMateriales);
     }
 }

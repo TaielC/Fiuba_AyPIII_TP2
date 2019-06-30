@@ -17,8 +17,6 @@ public class BotonSelecionarMaterialEventHandler implements EventHandler<ActionE
 
     @Override
     public void handle(ActionEvent actionEvent) {
-        pantallaConstructor.setMaterialInventario(this.materialInventario);
-
+        pantallaConstructor.setMaterialElegido(this.materialInventario);
     }
-
 }

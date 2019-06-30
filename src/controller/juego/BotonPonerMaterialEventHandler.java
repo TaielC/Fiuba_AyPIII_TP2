@@ -1,13 +1,13 @@
 package controller.juego;
 
 import algocraft.constructorherramienta.TableroConstruccionHerramienta;
+import algocraft.excepciones.NoHaySuficienteMaterialExeption;
 import algocraft.inventario.InventarioMateriales;
-import algocraft.juego.Juego;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
-import view.ContenedorConstructorHerramientas;
+import javafx.scene.control.Alert;
+import javafx.stage.StageStyle;
 import view.PantallaConstructor;
-import view.VentanaConstructor;
 
 public class BotonPonerMaterialEventHandler implements EventHandler<ActionEvent> {
     private PantallaConstructor pantallaConstructor;
@@ -24,10 +24,16 @@ public class BotonPonerMaterialEventHandler implements EventHandler<ActionEvent>
 
     @Override
     public void handle(ActionEvent actionEvent) {
-        tablero.ponerMaterial(posicion,pantallaConstructor.materialActual());
+        try {
+            tablero.ponerMaterial(posicion, inventarioMateriales.getMaterial(pantallaConstructor.materialElegido()));
+        } catch (NoHaySuficienteMaterialExeption e) {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("");
+            alert.setHeaderText("No se pudo Insertar el material");
+            alert.setContentText("No hay suficiente material seleccionado");
+            alert.show();
+        }
+
         pantallaConstructor.actualizar();
-
-
-
     }
 }

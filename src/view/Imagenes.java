@@ -24,7 +24,7 @@ public class Imagenes {
         imagenes.put("algocraft.materialmineral.DiamanteMineral", new Image("file:imagenes/Minerales/Diamante.png", TAMANIO, TAMANIO, false, false));
         imagenes.put("algocraft.materialmineral.NingunMaterialMineral", new Image("file:imagenes/Minerales/Ningun.png", TAMANIO, TAMANIO, false, false));
 
-        // ContenedorHerramientas
+        // ContenedorInventarioHerramientas
         imagenes.put("algocraft.herramienta.Picoalgocraft.materialherramienta.MaderaMaterialHerramienta",
                 new Image("file:imagenes/Herramientas/PicoDeMadera.png", TAMANIO, TAMANIO, false, false));
         imagenes.put("algocraft.herramienta.Picoalgocraft.materialherramienta.PiedraMaterialHerramienta",
@@ -40,18 +40,22 @@ public class Imagenes {
         imagenes.put("algocraft.herramienta.PicoFinoalgocraft.materialherramienta.NingunMaterialHerramienta",
                 new Image("file:imagenes/Herramientas/PicoFino.png", TAMANIO, TAMANIO, false, false));
         imagenes.put("algocraft.herramienta.NingunaHerramientaalgocraft.materialherramienta.NingunMaterialHerramienta",
-                new Image("file:imagenes/Herramientas/NingunaHerramienta.png", TAMANIO, TAMANIO, false, false));
-        imagenes.put("ConstructorHerramientas", new Image("file:imagenes/Herramientas/Constructor.png", TAMANIO, TAMANIO, false, false));
+                new Image("file:imagenes/Null.png", TAMANIO, TAMANIO, false, false));
 
+        // Constructor
+        imagenes.put("ConstructorHerramientas", new Image("file:imagenes/Herramientas/Constructor.png", TAMANIO, TAMANIO, false, false));
+        imagenes.put("FlechaConstructor", new Image("file:imagenes/FlechaConstructor.png", TAMANIO, TAMANIO, false, false));
+
+        //inventario
         imagenes.put("MaderaItem", new Image("file:imagenes/Item/MaderaItem.png", TAMANIO, TAMANIO, false, false));
         imagenes.put("MetalItem", new Image("file:imagenes/Item/MetalItem.png", TAMANIO, TAMANIO, false, false));
         imagenes.put("PiedraItem", new Image("file:imagenes/Item/PiedraItem.png", TAMANIO, TAMANIO, false, false));
         imagenes.put("DiamanteItem", new Image("file:imagenes/Item/DiamanteItem.png", TAMANIO, TAMANIO, false, false));
 
-        //inventario
         imagenes.put("algocraft.materialinventario.MaderaMaterialInventario", new Image("file:imagenes/Item/MaderaItem.png", TAMANIO, TAMANIO, false, false));
         imagenes.put("algocraft.materialinventario.PiedraMaterialInventario", new Image("file:imagenes/Item/PiedraItem.png", TAMANIO, TAMANIO, false, false));
         imagenes.put("algocraft.materialinventario.MetalMaterialInventario", new Image("file:imagenes/Item/MetalItem.png", TAMANIO, TAMANIO, false, false));
+        imagenes.put("algocraft.materialinventario.NingunMaterialInventario", new Image("file:imagenes/Null.png", TAMANIO, TAMANIO, false, false));
     }
 
 

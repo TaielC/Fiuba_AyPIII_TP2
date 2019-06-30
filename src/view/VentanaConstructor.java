@@ -24,7 +24,6 @@ public class VentanaConstructor extends Stage {
         this.initOwner(pantallaJuego.getScene().getWindow());
         this.setScene(escenaConstructor);
         this.initModality(Modality.APPLICATION_MODAL);
-        this.setAlwaysOnTop(true);
 
         this.showAndWait();
         this.setX((pantallaJuego.getWidth() - this.getWidth())/2);

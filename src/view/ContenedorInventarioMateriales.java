@@ -14,13 +14,12 @@ import javafx.scene.control.Button;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.stage.Screen;
-import javafx.stage.Stage;
 
-public class ContenedorMateriales extends VBox {
+public class ContenedorInventarioMateriales extends VBox {
 
     private static final double TAMANIO = Screen.getPrimary().getVisualBounds().getHeight()/15;
 
-    public ContenedorMateriales(PantallaJuego pantallaJuego, Juego juego){
+    public ContenedorInventarioMateriales(PantallaJuego pantallaJuego, Juego juego){
 
         InventarioMateriales inventarioMateriales = juego.getJugador().getInventarioMateriales();
 
@@ -52,7 +51,7 @@ public class ContenedorMateriales extends VBox {
 
     private void agregarMaterial(GridPane gridMateriales, String stringMaterial, Integer cantidadMaterial, int posicion) {
         ImageView vistaImagen = new ImageView(Imagenes.get(stringMaterial));
-        String formaLetra = "-fx-font-size: 30;-fx-font-weight: bold; -fx-text-fill: #050505";
+        String formaLetra = "-fx-font-size: "+TAMANIO/3+";-fx-font-weight: bold; -fx-text-fill: #050505";
         Text stringCantidadMaterial = new Text(cantidadMaterial.toString());
         stringCantidadMaterial.setFont(Font.font("monospace"));
         stringCantidadMaterial.setStyle(formaLetra);

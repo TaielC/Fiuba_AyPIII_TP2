@@ -1,7 +1,6 @@
 package algocraft.juego;
 
 import java.util.HashMap;
-import java.lang.String;
 import java.util.Map;
 import algocraft.materialmineral.*;
 
@@ -17,7 +16,7 @@ public class Mapa {
         for (int i = 0; i < x; i++) {
             for (int j = 0; j < y; j++) {
                 Posicion posicion = new Posicion(i, j);
-                ObjetoUbicable objeto = new NingunMaterialMineral();
+                ObjetoUbicable objeto = new MaterialMineralNulo();
                 this.tablero.put(posicion, objeto);
             }
         }
@@ -36,7 +35,7 @@ public class Mapa {
     public boolean posicionEsValida(Posicion posicion) {
         boolean limiteX = (posicion.getX() < this.bordeHorizontal) || (posicion.getX() >= 0);
         boolean limiteY = (posicion.getY() < this.bordeVertical) || (posicion.getX() >= 0);
-        boolean estaVacio = (tablero.get(posicion) instanceof NingunMaterialMineral);
+        boolean estaVacio = (tablero.get(posicion) instanceof MaterialMineralNulo);
         return limiteX && limiteY && estaVacio;
     }
 
@@ -48,7 +47,7 @@ public class Mapa {
         }
         ObjetoUbicable objetoUbicable= tablero.get(posicion);
         tablero.put(posicionSiguiente, objetoUbicable);
-        tablero.put(posicion, new NingunMaterialMineral());
+        tablero.put(posicion, new MaterialMineralNulo());
         objetoUbicable.setPosicion(posicionSiguiente);
     }
 
@@ -61,7 +60,7 @@ public class Mapa {
     }
 
     public void eliminarObjeto(Posicion posicion) {
-        tablero.put(posicion, new NingunMaterialMineral());
+        tablero.put(posicion, new MaterialMineralNulo());
     }
 }
 

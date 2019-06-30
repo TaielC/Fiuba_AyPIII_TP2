@@ -2,14 +2,12 @@ package view;
 
 import algocraft.constructorherramienta.ConstructorHerramientas;
 import algocraft.constructorherramienta.TableroConstruccionHerramienta;
+import algocraft.constructorherramienta.template.PicoMaderaTemplateConstruccionHerramienta;
 import algocraft.herramienta.Herramienta;
-import algocraft.herramienta.NingunaHerramienta;
 import algocraft.inventario.InventarioMateriales;
 import algocraft.juego.Juego;
 import algocraft.juego.Jugador;
-import algocraft.juego.Posicion;
 
-import controller.juego.BotonConstructorHerramientaEventHandler;
 import controller.juego.BotonPonerMaterialEventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -22,8 +20,6 @@ import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.GridPane;
 
 import javafx.scene.paint.Color;
-import javafx.scene.text.Font;
-import javafx.scene.text.FontWeight;
 import javafx.stage.Screen;
 
 
@@ -67,6 +63,9 @@ public class ContenedorConstructorHerramientas extends GridPane {
         Button botonConstruir = new Button();
         botonConstruir.setMinSize(TAMANIO, TAMANIO);
         Herramienta herramienta = ConstructorHerramientas.obtenerHerramienta(tablero);
+        if(tablero.equals((new PicoMaderaTemplateConstruccionHerramienta()).getTemplate())){
+            throw new RuntimeException("hello");
+        }
         Image imagenHerramienta = Imagenes.get(herramienta.getClass().getName());
         botonConstruir.setGraphic(new ImageView(imagenHerramienta));
         this.add(botonConstruir, 2, 0);

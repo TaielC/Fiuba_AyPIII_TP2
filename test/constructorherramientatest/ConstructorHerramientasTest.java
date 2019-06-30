@@ -20,7 +20,7 @@ public class ConstructorHerramientasTest {
         tablero.putSuperiorIzquierda(new MetalMaterialInventario());
         tablero.putInferiorDerecha(new MaderaMaterialInventario());
 
-        assertTrue(ConstructorHerramientas.obtenerHerramienta(tablero) instanceof NingunaHerramienta);
+        assertTrue(ConstructorHerramientas.obtenerHerramienta(tablero) instanceof HerramientaNula);
     }
 
     @Test

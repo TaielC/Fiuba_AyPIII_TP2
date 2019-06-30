@@ -2,7 +2,7 @@ package algocraft.constructorherramienta;
 
 import algocraft.excepciones.PosicionDeTableroConstruccionHerramientaInvalidaException;
 import algocraft.materialinventario.MaterialInventario;
-import algocraft.materialinventario.NingunMaterialInventario;
+import algocraft.materialinventario.MaterialInventarioNulo;
 
 public class TableroConstruccionHerramienta {
 
@@ -10,7 +10,7 @@ public class TableroConstruccionHerramienta {
 
     public TableroConstruccionHerramienta() {
         tablero = new MaterialInventario[9];
-        for(int i = 0; i < tablero.length; i++){ tablero[i] = new NingunMaterialInventario(); }
+        for(int i = 0; i < tablero.length; i++){ tablero[i] = new MaterialInventarioNulo(); }
     }
 
     public void putSuperiorIzquierda(MaterialInventario material){ tablero[0] = material; }

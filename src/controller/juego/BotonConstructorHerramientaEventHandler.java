@@ -8,7 +8,6 @@ import view.PantallaJuego;
 import view.VentanaConstructor;
 
 public class BotonConstructorHerramientaEventHandler implements EventHandler<ActionEvent> {
-    private Stage stagePrincipal;
     private Juego juego;
     private PantallaJuego pantallaJuego;
 

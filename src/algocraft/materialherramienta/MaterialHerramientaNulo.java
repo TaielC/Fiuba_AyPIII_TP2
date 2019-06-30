@@ -5,7 +5,7 @@ import algocraft.materialmineral.MaderaMineral;
 import algocraft.materialmineral.MetalMineral;
 import algocraft.materialmineral.PiedraMineral;
 
-public class NingunMaterialHerramienta implements MaterialHerramienta {
+public class MaterialHerramientaNulo implements MaterialHerramienta {
 
     @Override
     public boolean daniaA(MaderaMineral maderaMineral) {

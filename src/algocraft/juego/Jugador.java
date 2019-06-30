@@ -20,7 +20,7 @@ public class Jugador implements ObjetoUbicable{
         inventarioHerramientas.agregarHerramienta(new Hacha(new MaderaMaterialHerramienta()));
         inventarioMateriales = new InventarioMateriales();
         this.posicion = posicion;
-        herramientaEquipada = new NingunaHerramienta();
+        herramientaEquipada = new HerramientaNula();
     }
 
     public Herramienta getHerramientaEquipada() {
@@ -31,7 +31,7 @@ public class Jugador implements ObjetoUbicable{
         try{
             herramientaEquipada.usar(material);
         } catch (HerramientaRotaException e) {
-            herramientaEquipada = new NingunaHerramienta();
+            herramientaEquipada = new HerramientaNula();
         }
     }
 

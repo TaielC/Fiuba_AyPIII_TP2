@@ -3,7 +3,7 @@ package algocraft.inventario;
 import algocraft.excepciones.InventarioEstaLlenoException;
 import algocraft.excepciones.PosicionDeInventarioHerramientasInvalidaException;
 import algocraft.herramienta.Herramienta;
-import algocraft.herramienta.NingunaHerramienta;
+import algocraft.herramienta.HerramientaNula;
 
 public class InventarioHerramientas {
 
@@ -13,7 +13,7 @@ public class InventarioHerramientas {
     public InventarioHerramientas(int tamanio){
         herramientas = new Herramienta[tamanio];
         for( int i = 0; i < herramientas.length; i++){
-            herramientas[i] = new NingunaHerramienta();
+            herramientas[i] = new HerramientaNula();
         }
         cantidadHerramientas = 0;
     }
@@ -28,7 +28,7 @@ public class InventarioHerramientas {
         this.comprobarEspacioLibreDisponible();
         int i;
         for(i = 0; i <= cantidadHerramientas || i < herramientas.length ; i++) {
-            if (herramientas[i] instanceof NingunaHerramienta) {
+            if (herramientas[i] instanceof HerramientaNula) {
                 herramientas[i] = herramienta;
                 cantidadHerramientas++;
                 break;
@@ -55,8 +55,8 @@ public class InventarioHerramientas {
     }
 
     public Herramienta obtenerHerramienta(int posicion){
-        Herramienta herramienta = intercambiarHerramienta(new NingunaHerramienta(), posicion);
-        if(!(herramienta instanceof NingunaHerramienta)){
+        Herramienta herramienta = intercambiarHerramienta(new HerramientaNula(), posicion);
+        if(!(herramienta instanceof HerramientaNula)){
             cantidadHerramientas--;
         }
         return herramienta;

@@ -2,7 +2,6 @@ package view;
 
 import algocraft.inventario.InventarioMateriales;
 import algocraft.materialinventario.*;
-import controller.juego.BotonPonerMaterialEventHandler;
 import controller.juego.BotonSelecionarMaterialEventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -17,11 +16,13 @@ import javafx.stage.Screen;
 public class ContenedorMaterialesConstructor extends GridPane {
 
     private PantallaConstructor pantallaConstructor;
+    private InventarioMateriales inventarioMateriales;
     private static final double TAMANIO = Screen.getPrimary().getVisualBounds().getHeight()/15;
 
     public ContenedorMaterialesConstructor(PantallaConstructor pantallaConstructor, InventarioMateriales inventarioMateriales) {
 
         this.pantallaConstructor = pantallaConstructor;
+        this.inventarioMateriales = inventarioMateriales;
         this.setAlignment(Pos.CENTER);
         this.setPadding(new Insets(50, 50, 50, 50));
         this.setPrefSize(3,1);
@@ -54,7 +55,7 @@ public class ContenedorMaterialesConstructor extends GridPane {
         botonItem.setGraphic(stackPane);
         botonItem.setPadding(new Insets(0,0,0,0));
 
-        BotonSelecionarMaterialEventHandler botonEventHandler = new BotonSelecionarMaterialEventHandler(this.pantallaConstructor, materialInventario);
+        BotonSelecionarMaterialEventHandler botonEventHandler = new BotonSelecionarMaterialEventHandler(pantallaConstructor, inventarioMateriales, materialInventario);
         botonItem.setOnAction(botonEventHandler);
 
         return botonItem;

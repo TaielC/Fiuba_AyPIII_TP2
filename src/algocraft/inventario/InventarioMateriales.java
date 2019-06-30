@@ -19,6 +19,7 @@ public class InventarioMateriales {
     }
 
     public void agregar(MaterialInventario materialInventario) {
+        if(materialInventario.equals(new MaterialInventarioNulo())) return;
         materiales.put(materialInventario.hashCode(), materiales.get(materialInventario.hashCode())+1);
     }
 
@@ -28,7 +29,7 @@ public class InventarioMateriales {
     public MaterialInventario getDiamante(){ return getMaterial(new DiamanteMaterialInventario()); }
 
     public MaterialInventario getMaterial(MaterialInventario materialInventario){
-        NingunMaterialInventario materialNulo = new NingunMaterialInventario();
+        MaterialInventarioNulo materialNulo = new MaterialInventarioNulo();
         if(materialInventario.equals(materialNulo)) return materialNulo;
         if(materiales.get(materialInventario.hashCode()) <= 0){
             throw new NoHaySuficienteMaterialExeption(materialInventario);
@@ -41,4 +42,8 @@ public class InventarioMateriales {
     public Integer cantidadPiedra() {return materiales.get((new PiedraMaterialInventario()).hashCode()); }
     public Integer cantidadMetal() {return materiales.get((new MetalMaterialInventario()).hashCode()); }
     public Integer cantidadDiamante() {return materiales.get((new DiamanteMaterialInventario()).hashCode()); }
+
+    public int cantidad(MaterialInventario material) {
+        return materiales.getOrDefault(material.hashCode(), 0);
+    }
 }

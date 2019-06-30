@@ -9,7 +9,7 @@ public class MaterialInventarioTest {
 
     @Test
     public void test01NingunMaterialInventarioEsDiferenteAlRestoDeLosMaterialesInventarioExceptoSiMismo() {
-        MaterialInventario ningunMaterial = new NingunMaterialInventario();
+        MaterialInventario ningunMaterial = new MaterialInventarioNulo();
         MaterialInventario madera = new MaderaMaterialInventario();
         MaterialInventario piedra = new PiedraMaterialInventario();
         MaterialInventario metal = new MetalMaterialInventario();
@@ -19,12 +19,12 @@ public class MaterialInventarioTest {
         assertFalse(ningunMaterial.equals(piedra));
         assertFalse(ningunMaterial.equals(metal));
         assertFalse(ningunMaterial.equals(diamante));
-        assertTrue(ningunMaterial.equals(new NingunMaterialInventario()));
+        assertTrue(ningunMaterial.equals(new MaterialInventarioNulo()));
     }
 
     @Test
     public void test02MaderaMaterialInventarioEsSolamenteIgualAOtraMaderaMaterialInventario() {
-        MaterialInventario ningunMaterial = new NingunMaterialInventario();
+        MaterialInventario ningunMaterial = new MaterialInventarioNulo();
         MaterialInventario madera = new MaderaMaterialInventario();
         MaterialInventario piedra = new PiedraMaterialInventario();
         MaterialInventario metal = new MetalMaterialInventario();
@@ -39,7 +39,7 @@ public class MaterialInventarioTest {
 
     @Test
     public void test02PiedraMaterialInventarioEsSolamenteIgualAOtraPiedraMaterialInventario() {
-        MaterialInventario ningunMaterial = new NingunMaterialInventario();
+        MaterialInventario ningunMaterial = new MaterialInventarioNulo();
         MaterialInventario madera = new MaderaMaterialInventario();
         MaterialInventario piedra = new PiedraMaterialInventario();
         MaterialInventario metal = new MetalMaterialInventario();
@@ -54,7 +54,7 @@ public class MaterialInventarioTest {
 
     @Test
     public void test02MetalMaterialInventarioEsSolamenteIgualAOtraMetalMaterialInventario() {
-        MaterialInventario ningunMaterial = new NingunMaterialInventario();
+        MaterialInventario ningunMaterial = new MaterialInventarioNulo();
         MaterialInventario madera = new MaderaMaterialInventario();
         MaterialInventario piedra = new PiedraMaterialInventario();
         MaterialInventario metal = new MetalMaterialInventario();
@@ -69,7 +69,7 @@ public class MaterialInventarioTest {
 
     @Test
     public void test02DiamanteMaterialInventarioEsSolamenteIgualAOtraDiamanteMaterialInventario() {
-        MaterialInventario ningunMaterial = new NingunMaterialInventario();
+        MaterialInventario ningunMaterial = new MaterialInventarioNulo();
         MaterialInventario madera = new MaderaMaterialInventario();
         MaterialInventario piedra = new PiedraMaterialInventario();
         MaterialInventario metal = new MetalMaterialInventario();

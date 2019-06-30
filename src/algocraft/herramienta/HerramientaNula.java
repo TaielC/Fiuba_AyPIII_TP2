@@ -1,14 +1,14 @@
 package algocraft.herramienta;
 
-import algocraft.materialherramienta.NingunMaterialHerramienta;
+import algocraft.materialherramienta.MaterialHerramientaNulo;
 import algocraft.materialmineral.MaterialMineral;
 
-public class NingunaHerramienta extends Herramienta {
+public class HerramientaNula extends Herramienta {
 
-    public NingunaHerramienta(){
+    public HerramientaNula(){
         durabilidadHerramienta = null;
         fuerza = 0;
-        material = new NingunMaterialHerramienta();
+        material = new MaterialHerramientaNulo();
     }
 
     @Override

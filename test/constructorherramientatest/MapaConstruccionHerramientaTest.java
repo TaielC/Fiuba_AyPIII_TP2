@@ -11,7 +11,7 @@ public class MapaConstruccionHerramientaTest {
     @Test
     public void test01ElTableroIniciaConTodasLasPosicionesConUnMaterialInventarioNada() {
         TableroConstruccionHerramienta tablero = new TableroConstruccionHerramienta();
-        MaterialInventario materialNada = new NingunMaterialInventario();
+        MaterialInventario materialNada = new MaterialInventarioNulo();
 
         assertTrue(materialNada.equals(tablero.getSuperiorIzquierda()));
         assertTrue(materialNada.equals(tablero.getSuperior()));

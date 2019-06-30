@@ -1,11 +1,11 @@
 package view;
 
 import algocraft.constructorherramienta.TableroConstruccionHerramienta;
-import algocraft.herramienta.Herramienta;
-import algocraft.herramienta.NingunaHerramienta;
+import algocraft.excepciones.NoHaySuficienteMaterialExeption;
+import algocraft.inventario.InventarioMateriales;
 import algocraft.juego.Juego;
 import algocraft.materialinventario.MaterialInventario;
-import algocraft.materialinventario.NingunMaterialInventario;
+import algocraft.materialinventario.MaterialInventarioNulo;
 import javafx.scene.layout.BorderPane;
 
 public class PantallaConstructor extends BorderPane{
@@ -18,7 +18,7 @@ public class PantallaConstructor extends BorderPane{
     public PantallaConstructor(PantallaJuego pantallaJuego, Juego juego){
         this.tablero = new TableroConstruccionHerramienta();
         this.juego = juego;
-        this.materialElegido = new NingunMaterialInventario();
+        this.materialElegido = new MaterialInventarioNulo();
 
         this.actualizar();
     }
@@ -34,6 +34,12 @@ public class PantallaConstructor extends BorderPane{
     }
 
     public void actualizar(){
+        try {
+            InventarioMateriales inventario = juego.getJugador().getInventarioMateriales();
+            inventario.agregar(inventario.getMaterial(materialElegido));
+        } catch (NoHaySuficienteMaterialExeption e) {
+            materialElegido = new MaterialInventarioNulo();
+        }
         this.constructorHerramientas = new ContenedorConstructorHerramientas(this, juego, tablero);
         this.setCenter(constructorHerramientas);
 

@@ -27,7 +27,7 @@ public class BotonMaterialMineralEventHandler implements EventHandler<ActionEven
         juego.jugadorUsarHerramientaEquipada(posicion);
         String nombreHerramienta = Nombres.get(juego.getJugador().getHerramientaEquipada().getClass().getName() + juego.getJugador().getHerramientaEquipada().material().getClass().getName());
         texto = ("Golpeaste un material, tu herramienta ahora esta rota!");
-        if (nombreHerramienta.contentEquals("ninguna herramienta")) {
+        if (!(nombreHerramienta.equals("ninguna herramienta"))) {
             double durabilidad = juego.getJugador().getHerramientaEquipada().durabilidad();
             texto = ("Golpeaste un material, tu herramienta ahora tiene una durabilidad igual a:  " + durabilidad);
         }

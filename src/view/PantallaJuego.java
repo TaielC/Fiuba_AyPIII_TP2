@@ -10,8 +10,8 @@ public class PantallaJuego extends BorderPane {
 
     public PantallaJuego(Juego juego){
         this.juego = juego;
-        String textoInicial = ("Bienvenido a AlgoCraft! En este momento no tiene ninguna herramienta equipada. " +
-                " Para equipar una herramienta seleccione alguna del inventario que se encuentra a la derecha");
+        String textoInicial = ("Bienvenido a AlgoCraft! \nEn este momento no tienes ninguna herramienta equipada. " +
+                "Para equipar una herramienta seleccione una del inventario que se encuentra a la derecha.");
         actualizar(textoInicial);
     }
 

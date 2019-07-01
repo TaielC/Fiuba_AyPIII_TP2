@@ -13,7 +13,7 @@ public class Nombres {
         nombres.put("algocraft.herramienta.Hachaalgocraft.materialherramienta.PiedraMaterialHerramienta","hacha de piedra");
         nombres.put("algocraft.herramienta.Hachaalgocraft.materialherramienta.MetalMaterialHerramienta","hacha de meta");
         nombres.put("algocraft.herramienta.PicoFinoalgocraft.materialherramienta.NingunMaterialHerramienta","pico fino");
-        nombres.put("algocraft.herramienta.NingunaHerramientaalgocraft.materialherramienta.NingunMaterialHerramienta","ninguna herramienta");
+        nombres.put("algocraft.herramienta.HerramientaNulaalgocraft.materialherramienta.MaterialHerramientaNulo","ninguna herramienta");
     }
 
     public static String get(String string) {

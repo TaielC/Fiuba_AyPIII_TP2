@@ -20,10 +20,10 @@ public class ContenedorTexto extends HBox {
 
         //this.setBackground(new Background(new BackgroundFill(Color.GRAY, CornerRadii.EMPTY, new Insets(5, 5, 5, 5))));
         this.setAlignment(Pos.CENTER);
-        this.setPrefSize(50,50);
+        //this.setPrefSize(50,50);
         this.setSpacing(10);
 
-        cajaDeTexto.setPrefSize(925,925);
+        cajaDeTexto.setPrefSize(1500, 50);
         cajaDeTexto.setPadding(new Insets(5, 5, 5, 5));
         cajaDeTexto.setBackground(new Background(new BackgroundFill(Color.GRAY, CornerRadii.EMPTY, new Insets(5, 5, 5, 5))));
         cajaDeTexto.setText(texto);

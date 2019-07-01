@@ -6,6 +6,7 @@ import algocraft.juego.Juego;
 import controller.juego.BotonAbrirConstructorHerramientaEventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.layout.*;
 
@@ -44,9 +45,35 @@ public class ContenedorInventarioMateriales extends VBox {
         BotonAbrirConstructorHerramientaEventHandler botonAbrirConstructorHerramientaEventHandler = new BotonAbrirConstructorHerramientaEventHandler(pantallaJuego,juego);
         botonConstructorHerramienta.setOnAction(botonAbrirConstructorHerramientaEventHandler);
 
+        Label etiqueta1 = new Label();
+        etiqueta1.setText("Constructor de");
+        etiqueta1.setStyle("-fx-font-size: 10;-fx-font-weight: bold; -fx-text-fill: #000000");
+
+        Label etiqueta2 = new Label();
+        etiqueta2.setText("herramientas");
+        etiqueta2.setStyle("-fx-font-size: 10;-fx-font-weight: bold; -fx-text-fill: #000000");
+
+        VBox contenedorConstructor = new VBox();
+        contenedorConstructor.setAlignment(Pos.CENTER);
+        contenedorConstructor.setSpacing(0);
+        contenedorConstructor.getChildren().addAll(etiqueta1, etiqueta2, botonConstructorHerramienta);
+
+        Label etiqueta3 = new Label();
+        etiqueta3.setText("Inventario");
+        etiqueta3.setStyle("-fx-font-size: 10;-fx-font-weight: bold; -fx-text-fill: #000000");
+
+        Label etiqueta4 = new Label();
+        etiqueta4.setText("de materiales");
+        etiqueta4.setStyle("-fx-font-size: 10;-fx-font-weight: bold; -fx-text-fill: #000000");
+
+        VBox contenedorGridMateriales = new VBox();
+        contenedorGridMateriales.setAlignment(Pos.CENTER);
+        contenedorGridMateriales.setSpacing(0);
+        contenedorGridMateriales.getChildren().addAll(etiqueta3, etiqueta4, gridMateriales);
+
         this.setBackground(new Background(new BackgroundImage(Imagenes.get("FondoMenuIzquierda"), BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
         this.setSpacing(50);
-        this.getChildren().addAll(gridMateriales, botonConstructorHerramienta);
+        this.getChildren().addAll(contenedorGridMateriales,contenedorConstructor);
     }
 
     private void agregarMaterial(GridPane gridMateriales, String stringMaterial, Integer cantidadMaterial, int posicion) {

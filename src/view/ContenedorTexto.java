@@ -18,9 +18,7 @@ public class ContenedorTexto extends HBox {
         TextArea cajaDeTexto = new TextArea();
         this.cajaDeTexto = cajaDeTexto;
 
-        //this.setBackground(new Background(new BackgroundFill(Color.GRAY, CornerRadii.EMPTY, new Insets(5, 5, 5, 5))));
         this.setAlignment(Pos.CENTER);
-        //this.setPrefSize(50,50);
         this.setSpacing(10);
 
         cajaDeTexto.setPrefSize(1500, 50);

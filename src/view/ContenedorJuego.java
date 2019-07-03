@@ -9,7 +9,11 @@ import javafx.scene.layout.*;
 
 import javafx.scene.image.ImageView;
 import javafx.scene.control.Button;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.stage.Screen;
+
+import java.io.File;
 
 public class ContenedorJuego extends GridPane {
 
@@ -36,8 +40,12 @@ public class ContenedorJuego extends GridPane {
                 ObjetoUbicable objetoUbicable = mapa.getObjetoUbicable(posicion);
                 Image imagen = Imagenes.get(objetoUbicable.getClass().getName());
 
+                String musicFile = "file:sonidos/golpe.mp3";
+                Media sound = new Media(new File(musicFile).toURI().toString());
+                MediaPlayer sonido = new MediaPlayer(sound);
+
                 boton.setGraphic(new ImageView(imagen));
-                BotonMaterialMineralEventHandler botonEventHandler = new BotonMaterialMineralEventHandler(pantallaJuego, juego, posicion);
+                BotonMaterialMineralEventHandler botonEventHandler = new BotonMaterialMineralEventHandler(pantallaJuego, juego, posicion, sonido);
                 boton.setOnAction(botonEventHandler);
                 this.add(boton,x,y);
             }

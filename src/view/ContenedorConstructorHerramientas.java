@@ -17,8 +17,12 @@ import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.GridPane;
 
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.scene.paint.Color;
 import javafx.stage.Screen;
+
+import java.io.File;
 
 
 public class ContenedorConstructorHerramientas extends GridPane {
@@ -66,8 +70,13 @@ public class ContenedorConstructorHerramientas extends GridPane {
         botonConstruir.setMinSize(TAMANIO, TAMANIO);
         Herramienta herramienta = ConstructorHerramientas.obtenerHerramienta(tablero);
         Image imagenHerramienta = Imagenes.get(herramienta.getClass().getName()+herramienta.material().getClass().getName());
+
+        String musicFile = "sonidos/nuevaHerramienta.mp3";
+        Media sound = new Media(new File(musicFile).toURI().toString());
+        MediaPlayer sonido = new MediaPlayer(sound);
+
         botonConstruir.setGraphic(new ImageView(imagenHerramienta));
-        botonConstruir.setOnAction(new BotonConstruirHerramientaEventHandler(pantallaConstructor, herramienta));
+        botonConstruir.setOnAction(new BotonConstruirHerramientaEventHandler(pantallaConstructor, herramienta, sonido));
 
         gridContruir.add(botonConstruir, 0,0);
         Image imagenContruccion = Imagenes.get("ConstruccionCorrecta");

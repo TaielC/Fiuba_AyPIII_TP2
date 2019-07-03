@@ -7,12 +7,12 @@ public class Nombres {
 
     static {
         nombres.put("algocraft.herramienta.Picoalgocraft.materialherramienta.MaderaMaterialHerramienta","pico de madera");
-        nombres.put("algocraft.herramienta.Picoalgocraft.materialherramienta.PiedraMaterialHerramienta","pico de piedra.png");
+        nombres.put("algocraft.herramienta.Picoalgocraft.materialherramienta.PiedraMaterialHerramienta","pico de piedra");
         nombres.put("algocraft.herramienta.Picoalgocraft.materialherramienta.MetalMaterialHerramienta","pico de metal");
         nombres.put("algocraft.herramienta.Hachaalgocraft.materialherramienta.MaderaMaterialHerramienta","hacha de madera");
         nombres.put("algocraft.herramienta.Hachaalgocraft.materialherramienta.PiedraMaterialHerramienta","hacha de piedra");
-        nombres.put("algocraft.herramienta.Hachaalgocraft.materialherramienta.MetalMaterialHerramienta","hacha de meta");
-        nombres.put("algocraft.herramienta.PicoFinoalgocraft.materialherramienta.NingunMaterialHerramienta","pico fino");
+        nombres.put("algocraft.herramienta.Hachaalgocraft.materialherramienta.MetalMaterialHerramienta","hacha de metal");
+        nombres.put("algocraft.herramienta.PicoFinoalgocraft.materialherramienta.MaterialHerramientaNulo","pico fino");
         nombres.put("algocraft.herramienta.HerramientaNulaalgocraft.materialherramienta.MaterialHerramientaNulo","ninguna herramienta");
     }
 

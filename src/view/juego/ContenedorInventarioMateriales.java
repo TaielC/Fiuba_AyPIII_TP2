@@ -4,6 +4,7 @@ package view.juego;
 import algocraft.inventario.InventarioMateriales;
 import algocraft.juego.Juego;
 import controller.juego.BotonAbrirConstructorHerramientaEventHandler;
+import controller.juego.BotonAbrirMenuEventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Label;
@@ -44,6 +45,15 @@ public class ContenedorInventarioMateriales extends VBox {
         botonConstructorHerramienta.setGraphic(new StackPane(new ImageView(Imagenes.get("FondoCasillero")), new ImageView(imagen)));
         BotonAbrirConstructorHerramientaEventHandler botonAbrirConstructorHerramientaEventHandler = new BotonAbrirConstructorHerramientaEventHandler(pantallaJuego,juego);
         botonConstructorHerramienta.setOnAction(botonAbrirConstructorHerramientaEventHandler);
+
+
+        Button botonMenu = new Button("menu");
+        botonConstructorHerramienta.setMinSize(TAMANIO*1.2, TAMANIO*1.2);
+        botonConstructorHerramienta.setPadding(new Insets(1,1,1,1));
+        BotonAbrirMenuEventHandler botonAbrirMenuEventHandler = new BotonAbrirMenuEventHandler();
+        botonMenu.setOnAction(botonAbrirMenuEventHandler);
+
+
 
         Label etiqueta1 = new Label();
         etiqueta1.setText("Constructor de");

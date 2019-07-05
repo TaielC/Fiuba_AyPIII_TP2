@@ -23,20 +23,6 @@ public class PantallaJuego extends BorderPane {
         String textoInicial = ("Bienvenido a AlgoCraft! \nEn este momento no tienes ninguna herramienta equipada. " +
                 "Para equipar una herramienta seleccione una del inventario que se encuentra a la derecha.");
         actualizar(textoInicial);
-        bottomPane = new GridPane();
-        Button botonSalir = new Button();
-        botonSalir.setText("Cerrar");
-        botonSalir.setFont(Font.font("Monospace", FontWeight.EXTRA_BOLD, 30));
-        botonSalir.setMinSize(400, 100);
-        botonSalir.setBackground(new Background(new BackgroundImage(Imagenes.get("BotonMenuPrincipal"), BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, new BackgroundSize(400, 100, false, false, false, false))));
-        botonSalir.setOnAction(new BotonSalirEventHandler());
-        botonSalir.setAlignment(Pos.BOTTOM_LEFT);
-
-        bottomPane.add(botonSalir, 0,1);
-        bottomPane.setAlignment(Pos.CENTER);
-        bottomPane.setVgap(30);
-        bottomPane.setPadding(new Insets(40, 40, 30, 30));
-        bottomPane.setBackground(new Background(new BackgroundFill(Color.GRAY, CornerRadii.EMPTY, new Insets(5, 5, 5, 5))));
     }
 
     public void actualizar(String texto) {

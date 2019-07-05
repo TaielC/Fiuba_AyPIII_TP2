@@ -4,7 +4,7 @@ import algocraft.juego.Jugador;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import view.Nombres;
-import view.PantallaJuego;
+import view.juego.PantallaJuego;
 
 public class BotonInventarioHerramientasEventHandler implements EventHandler<ActionEvent> {
 

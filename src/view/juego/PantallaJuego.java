@@ -1,4 +1,4 @@
-package view;
+package view.juego;
 
 import algocraft.juego.Juego;
 

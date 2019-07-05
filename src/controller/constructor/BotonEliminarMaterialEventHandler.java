@@ -3,7 +3,7 @@ package controller.constructor;
 import algocraft.materialinventario.MaterialInventarioNulo;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
-import view.PantallaConstructor;
+import view.constructor.PantallaConstructor;
 
 public class BotonEliminarMaterialEventHandler implements EventHandler<ActionEvent> {
 

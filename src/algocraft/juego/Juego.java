@@ -16,7 +16,7 @@ public class Juego {
     private Juego(){
         this.mapa = new Mapa(TAMANIOHORIZONTAL,TAMANIOVERTICAL);
         ConstructorMapa.contruirMapa(mapa);
-        this.jugador = new Jugador(new Posicion(0,0));
+        this.jugador = new Jugador(new Posicion(mapa.getBordeHorizontal()/2,mapa.getBordeVertical()/2));
         this.mapa.agregar(jugador, jugador.getPosicion());
     }
 

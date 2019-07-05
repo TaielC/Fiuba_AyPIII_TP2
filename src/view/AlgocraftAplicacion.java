@@ -8,6 +8,8 @@ import javafx.scene.Scene;
 import javafx.scene.input.KeyCombination;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
+import view.juego.PantallaJuego;
+import view.menuprincipal.PantallaMenuPrincipal;
 
 public class AlgocraftAplicacion extends Application {
 
@@ -35,8 +37,8 @@ public class AlgocraftAplicacion extends Application {
         PantallaMenuPrincipal menuPrincipal = new PantallaMenuPrincipal(stage, escenaJuego);
         Scene escenaMenuPrincipal = new Scene(menuPrincipal, width, height);
 
-        stage.setScene(escenaMenuPrincipal);
         stage.setFullScreen(false);
+        stage.setScene(escenaMenuPrincipal);
         stage.show();
     }
 }

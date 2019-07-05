@@ -5,7 +5,7 @@ import algocraft.inventario.InventarioMateriales;
 import algocraft.materialinventario.MaterialInventario;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
-import view.PantallaConstructor;
+import view.constructor.PantallaConstructor;
 
 public class BotonPonerMaterialEventHandler implements EventHandler<ActionEvent> {
     private PantallaConstructor pantallaConstructor;

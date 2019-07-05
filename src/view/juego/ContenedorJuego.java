@@ -1,4 +1,4 @@
-package view;
+package view.juego;
 
 import algocraft.juego.*;
 import controller.juego.BotonMaterialMineralEventHandler;
@@ -10,6 +10,7 @@ import javafx.scene.layout.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.control.Button;
 import javafx.stage.Screen;
+import view.Imagenes;
 
 public class ContenedorJuego extends GridPane {
 

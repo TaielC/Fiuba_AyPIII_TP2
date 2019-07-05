@@ -1,4 +1,4 @@
-package view;
+package view.menuprincipal;
 
 import controller.menuprincipal.BotonAyudaEventHandler;
 import controller.menuprincipal.BotonJugarEventHandler;
@@ -17,16 +17,14 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
+import view.Imagenes;
 
 public class PantallaMenuPrincipal extends VBox {
-
-    private Stage stage;
 
     private static final Font FUENTE_BOTONES = Font.font("Monospace", FontWeight.EXTRA_BOLD, 30);
 
     public PantallaMenuPrincipal(Stage stage, Scene escenaJuego) {
         super();
-        this.stage = stage;
 
         this.setAlignment(Pos.CENTER);
         this.setSpacing(15);

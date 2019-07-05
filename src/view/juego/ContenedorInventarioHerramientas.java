@@ -1,4 +1,4 @@
-package view;
+package view.juego;
 
 import algocraft.herramienta.Herramienta;
 import algocraft.inventario.InventarioHerramientas;
@@ -15,6 +15,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.stage.Screen;
+import view.Imagenes;
 
 public class ContenedorInventarioHerramientas extends VBox {
 

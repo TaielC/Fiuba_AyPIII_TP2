@@ -1,4 +1,4 @@
-package view;
+package view.constructor;
 
 import algocraft.constructorherramienta.TableroConstruccionHerramienta;
 import algocraft.excepciones.NoHaySuficienteMaterialExeption;
@@ -17,6 +17,8 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
+import view.Imagenes;
+import view.juego.PantallaJuego;
 
 public class PantallaConstructor extends BorderPane{
 
@@ -53,7 +55,8 @@ public class PantallaConstructor extends BorderPane{
         Button botonCerrar = new Button();
         botonCerrar.setText("Cerrar");
         botonCerrar.setFont(Font.font("Monospace", FontWeight.EXTRA_BOLD, 30));
-        botonCerrar.setMinSize(200, 40);
+        botonCerrar.setMinSize(400, 100);
+        botonCerrar.setBackground(new Background(new BackgroundImage(Imagenes.get("BotonMenuPrincipal"), BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, new BackgroundSize(400, 100, false, false, false, false))));
         botonCerrar.setOnAction(new BotonCerrarEventHandler(ventanaConstructor));
         botonCerrar.setAlignment(Pos.CENTER);
 

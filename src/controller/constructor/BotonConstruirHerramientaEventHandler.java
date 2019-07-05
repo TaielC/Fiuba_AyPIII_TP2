@@ -7,7 +7,7 @@ import algocraft.juego.Jugador;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Alert;
-import view.PantallaConstructor;
+import view.constructor.PantallaConstructor;
 
 public class BotonConstruirHerramientaEventHandler implements EventHandler<ActionEvent>  {
 

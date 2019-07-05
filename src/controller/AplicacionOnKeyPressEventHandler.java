@@ -7,7 +7,7 @@ import javafx.event.EventHandler;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.KeyCode;
 import javafx.stage.Stage;
-import view.PantallaJuego;
+import view.juego.PantallaJuego;
 
 public class AplicacionOnKeyPressEventHandler implements EventHandler<KeyEvent> {
     private PantallaJuego pantallaJuego;

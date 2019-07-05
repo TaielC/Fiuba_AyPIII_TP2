@@ -1,4 +1,4 @@
-package view;
+package view.constructor;
 
 import algocraft.constructorherramienta.ConstructorHerramientas;
 import algocraft.constructorherramienta.TableroConstruccionHerramienta;
@@ -19,6 +19,7 @@ import javafx.scene.layout.GridPane;
 
 import javafx.scene.paint.Color;
 import javafx.stage.Screen;
+import view.Imagenes;
 
 
 public class ContenedorConstructorHerramientas extends GridPane {
@@ -65,6 +66,9 @@ public class ContenedorConstructorHerramientas extends GridPane {
         Button botonConstruir = new Button();
         botonConstruir.setMinSize(TAMANIO, TAMANIO);
         Herramienta herramienta = ConstructorHerramientas.obtenerHerramienta(tablero);
+        if(herramienta.getClass().getName()+herramienta.material().getClass().getName() == "algocraft.herramienta.Picoalgocraft.materialherramienta.MetalMaterialHerramienta"){
+            throw new RuntimeException();
+        }
         Image imagenHerramienta = Imagenes.get(herramienta.getClass().getName()+herramienta.material().getClass().getName());
         botonConstruir.setGraphic(new ImageView(imagenHerramienta));
         botonConstruir.setOnAction(new BotonConstruirHerramientaEventHandler(pantallaConstructor, herramienta));

@@ -1,4 +1,4 @@
-package view;
+package view.juego;
 
 
 import algocraft.inventario.InventarioMateriales;
@@ -13,10 +13,10 @@ import javafx.scene.layout.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.control.Button;
 import javafx.scene.text.Font;
-import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextAlignment;
 import javafx.stage.Screen;
+import view.Imagenes;
 
 public class ContenedorInventarioMateriales extends VBox {
 

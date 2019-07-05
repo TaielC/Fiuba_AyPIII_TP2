@@ -3,9 +3,10 @@ package controller.juego;
 import algocraft.juego.Juego;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
-import javafx.stage.Stage;
-import view.PantallaJuego;
-import view.VentanaConstructor;
+import javafx.scene.control.Button;
+import javafx.scene.effect.ColorAdjust;
+import view.juego.PantallaJuego;
+import view.constructor.VentanaConstructor;
 
 public class BotonAbrirConstructorHerramientaEventHandler implements EventHandler<ActionEvent> {
     private Juego juego;
@@ -20,6 +21,10 @@ public class BotonAbrirConstructorHerramientaEventHandler implements EventHandle
 
     @Override
     public void handle(ActionEvent actionEvent) {
-        new VentanaConstructor(this.pantallaJuego, this.juego);
+        Button boton = (Button) actionEvent.getSource();
+        ColorAdjust colorAdjust = new ColorAdjust();
+        colorAdjust.setBrightness(-0.5);
+        boton.setEffect(colorAdjust);
+        new VentanaConstructor(this.pantallaJuego, this.juego, boton);
     }
 }

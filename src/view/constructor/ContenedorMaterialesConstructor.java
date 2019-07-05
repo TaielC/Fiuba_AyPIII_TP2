@@ -1,4 +1,4 @@
-package view;
+package view.constructor;
 
 import algocraft.inventario.InventarioMateriales;
 import algocraft.materialinventario.*;
@@ -8,10 +8,10 @@ import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
-import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.stage.Screen;
+import view.Imagenes;
 
 public class ContenedorMaterialesConstructor extends GridPane {
 

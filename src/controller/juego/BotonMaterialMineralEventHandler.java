@@ -1,12 +1,11 @@
 package controller.juego;
 
-import algocraft.herramienta.durabilidad.DurabilidadHerramienta;
 import algocraft.juego.Juego;
 import algocraft.juego.Posicion;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import view.Nombres;
-import view.PantallaJuego;
+import view.juego.PantallaJuego;
 
 
 public class BotonMaterialMineralEventHandler implements EventHandler<ActionEvent> {

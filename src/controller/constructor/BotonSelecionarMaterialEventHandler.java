@@ -6,7 +6,7 @@ import algocraft.materialinventario.MaterialInventario;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Alert;
-import view.PantallaConstructor;
+import view.constructor.PantallaConstructor;
 
 public class BotonSelecionarMaterialEventHandler implements EventHandler<ActionEvent>{
     private MaterialInventario materialInventario;

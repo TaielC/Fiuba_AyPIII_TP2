@@ -44,7 +44,7 @@ public class ContenedorInventarioMateriales extends BorderPane {
         Button botonConstructorHerramienta = new Button();
         botonConstructorHerramienta.setMinSize(TAMANIO*1.2, TAMANIO*1.2);
         botonConstructorHerramienta.setPadding(new Insets(1,1,1,1));
-        Image imagen = Imagenes.get("ConstructorHerramientas");
+        Image imagen = Imagenes.get("HerramientaFactory");
         botonConstructorHerramienta.setGraphic(new StackPane(new ImageView(Imagenes.get("FondoCasillero")), new ImageView(imagen)));
         BotonAbrirConstructorHerramientaEventHandler botonAbrirConstructorHerramientaEventHandler = new BotonAbrirConstructorHerramientaEventHandler(pantallaJuego,juego);
         botonConstructorHerramienta.setOnAction(botonAbrirConstructorHerramientaEventHandler);

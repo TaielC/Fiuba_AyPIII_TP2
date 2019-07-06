@@ -1,27 +1,27 @@
-package algocraft.constructorherramienta.template;
+package algocraft.herramientafactory.template;
 
-import algocraft.constructorherramienta.TableroConstruccionHerramienta;
-import algocraft.herramienta.Hacha;
+import algocraft.herramientafactory.TableroConstruccionHerramienta;
 import algocraft.herramienta.Herramienta;
-import algocraft.materialherramienta.MetalMaterialHerramienta;
+import algocraft.herramienta.PicoFino;
 import algocraft.materialinventario.MaderaMaterialInventario;
 import algocraft.materialinventario.MetalMaterialInventario;
+import algocraft.materialinventario.PiedraMaterialInventario;
 
-public class HachaMetalTemplateConstruccionHerramienta extends TemplateConstruccionHerramienta {
+public class PicoFinoTemplateConstruccionHerramienta extends TemplateConstruccionHerramienta {
 
-    public HachaMetalTemplateConstruccionHerramienta(){
+    public PicoFinoTemplateConstruccionHerramienta(){
         template = new TableroConstruccionHerramienta();
 
         template.putSuperiorIzquierda(new MetalMaterialInventario());
         template.putSuperior(new MetalMaterialInventario());
-        template.putIzquierda(new MetalMaterialInventario());
+        template.putSuperiorDerecha(new MetalMaterialInventario());
+        template.putIzquierda(new PiedraMaterialInventario());
         template.putCentro(new MaderaMaterialInventario());
         template.putInferior(new MaderaMaterialInventario());
     }
 
     @Override
     protected Herramienta construir() {
-        return new Hacha(new MetalMaterialHerramienta());
+        return new PicoFino();
     }
 }
-

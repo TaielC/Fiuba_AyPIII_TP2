@@ -1,11 +1,11 @@
-package algocraft.constructorherramienta;
+package algocraft.herramientafactory;
 
 import algocraft.herramienta.*;
-import algocraft.constructorherramienta.template.*;
+import algocraft.herramientafactory.template.*;
 
 import java.util.LinkedList;
 
-public class ConstructorHerramientas {
+public class HerramientaFactory {
 
     static private LinkedList<TemplateConstruccionHerramienta> herramientaTemplates;
 

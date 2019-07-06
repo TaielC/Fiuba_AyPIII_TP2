@@ -3,13 +3,13 @@ package algocraft.juego;
 import algocraft.materialmineral.*;
 import java.util.*;
 
-public class ConstructorMapa {
+public class MapaFactory {
 
     private static Mapa mapa;
     private static Random random = new Random();
 
-    public static void contruirMapa(Mapa mapaConstruir) {
-        mapa = mapaConstruir;
+    public static Mapa contruirMapa(int x, int y) {
+        mapa = new Mapa(x, y);
 
         for (int i = 0; i < 8; i++) {
             int factorBloque = random.nextInt(4);
@@ -23,15 +23,14 @@ public class ConstructorMapa {
             int factorBloque = random.nextInt(4);
             ponerMetal(factorBloque);
         }
-
         for (int i = 0; i < 2; i++) {
             int factorBloque = random.nextInt(4);
             ponerDiamante(factorBloque);
         }
-
+        return mapa;
     }
 
-    public static void ponerMadera(int factorBloque) {
+    private static void ponerMadera(int factorBloque) {
         int posHorizontal = random.nextInt(mapa.getBordeHorizontal());
         int posVertical = random.nextInt(mapa.getBordeVertical());
         Posicion posicion;
@@ -76,7 +75,7 @@ public class ConstructorMapa {
         }
     }
 
-    public static void ponerPiedra(int factorBloque) {
+    private static void ponerPiedra(int factorBloque) {
         int posHorizontal = random.nextInt(mapa.getBordeHorizontal());
         int posVertical = random.nextInt(mapa.getBordeVertical());
         Posicion posicion;
@@ -121,7 +120,7 @@ public class ConstructorMapa {
         }
     }
 
-    public static void ponerMetal(int factorBloque) {
+    private static void ponerMetal(int factorBloque) {
         int posHorizontal = random.nextInt(mapa.getBordeHorizontal());
         int posVertical = random.nextInt(mapa.getBordeVertical());
         Posicion posicion;
@@ -165,7 +164,8 @@ public class ConstructorMapa {
                 break;
         }
     }
-    public static void ponerDiamante(int factorBloque) {
+
+    private static void ponerDiamante(int factorBloque) {
         int posHorizontal = random.nextInt(mapa.getBordeHorizontal());
         int posVertical = random.nextInt(mapa.getBordeVertical());
         Posicion posicion;
@@ -209,5 +209,4 @@ public class ConstructorMapa {
                 break;
         }
     }
-
 }

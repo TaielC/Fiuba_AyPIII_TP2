@@ -54,7 +54,7 @@ public class Imagenes {
                 new Image("file:imagenes/Null.png", TAMANIO, TAMANIO, false, false));
 
         // Constructor
-        imagenes.put("ConstructorHerramientas", new Image("file:imagenes/Constructor.png", TAMANIO, TAMANIO, false, false));
+        imagenes.put("HerramientaFactory", new Image("file:imagenes/Constructor.png", TAMANIO, TAMANIO, false, false));
         imagenes.put("FlechaConstructor", new Image("file:imagenes/FlechaConstructor.png", TAMANIO, TAMANIO, false, false));
         imagenes.put("EliminarMaterial", new Image("file:imagenes/EliminarMaterial.png", TAMANIO, TAMANIO, false, false));
         imagenes.put("ConstruccionCorrecta", new Image("file:imagenes/ConstruccionCorrecta.png", TAMANIO, TAMANIO/1.5, false, true));

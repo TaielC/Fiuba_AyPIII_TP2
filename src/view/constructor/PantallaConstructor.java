@@ -1,6 +1,6 @@
 package view.constructor;
 
-import algocraft.constructorherramienta.TableroConstruccionHerramienta;
+import algocraft.herramientafactory.TableroConstruccionHerramienta;
 import algocraft.excepciones.NoHaySuficienteMaterialExeption;
 import algocraft.inventario.InventarioMateriales;
 import algocraft.juego.Juego;

@@ -19,7 +19,7 @@ import view.Imagenes;
 
 public class ContenedorInventarioHerramientas extends VBox {
 
-    private static final double TAMANIO = Screen.getPrimary().getVisualBounds().getHeight()/17;
+    private static final double TAMANIO = Screen.getPrimary().getVisualBounds().getHeight()/15;
 
     public ContenedorInventarioHerramientas(PantallaJuego pantallaJuego, Juego juego){
 
@@ -31,14 +31,17 @@ public class ContenedorInventarioHerramientas extends VBox {
 
         for(int i = 0; i < inventarioHerramientas.getTamanio(); i++){
             Button boton = new Button();
-            boton.setMinSize(TAMANIO, TAMANIO);
-            boton.setPadding(new Insets(1,1,1,1));
+            boton.setMinSize(TAMANIO*1.2, TAMANIO*1.2);
+            boton.setPadding(new Insets(0,0,0,0));
 
             Herramienta herramienta = inventarioHerramientas.ver(i);
             MaterialHerramienta material = herramienta.material();
 
             Image imagen = Imagenes.get( herramienta.getClass().getName() + material.getClass().getName());
-            boton.setGraphic(new ImageView(imagen));
+            StackPane stackPane = new StackPane();
+            stackPane.setPrefSize(TAMANIO*1.2, TAMANIO*1.2);
+            stackPane.getChildren().addAll(new ImageView(Imagenes.get("FondoCasillero")), new ImageView(imagen));
+            boton.setGraphic(stackPane);
 
             BotonInventarioHerramientasEventHandler botonEventHandler = new BotonInventarioHerramientasEventHandler(pantallaJuego, jugador, i);
             boton.setOnAction(botonEventHandler);
@@ -55,29 +58,28 @@ public class ContenedorInventarioHerramientas extends VBox {
         contenedorVistaImagen.setPrefSize(TAMANIO*1.3, TAMANIO*1.3);
         contenedorVistaImagen.getChildren().addAll(new ImageView(Imagenes.get("FondoHerramientaEquipada")), vistaHerramienta);
         contenedorVistaImagen.setAlignment(Pos.CENTER);
-        //vistaHerramienta.setBackground(new Background(new BackgroundImage(Imagenes.get("FondoHerramientaEquipada"), BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
-
 
         Label etiqueta1 = new Label();
         etiqueta1.setText("Inventario");
-        etiqueta1.setStyle("-fx-font-size: 10;-fx-font-weight: bold; -fx-text-fill: #000000");
+        etiqueta1.setStyle("-fx-font-size:"+TAMANIO/5+";-fx-font-weight: bold; -fx-text-fill: #000000");
 
         Label etiqueta2 = new Label();
         etiqueta2.setText("de herramientas");
-        etiqueta2.setStyle("-fx-font-size: 10;-fx-font-weight: bold; -fx-text-fill: #000000");
+        etiqueta2.setPadding(new Insets(0,0,10,0));
+        etiqueta2.setStyle("-fx-font-size:"+TAMANIO/5+";-fx-font-weight: bold; -fx-text-fill: #000000");
 
         VBox contenedorInventarioHerramientas = new VBox();
         contenedorInventarioHerramientas.setAlignment(Pos.CENTER);
-        contenedorInventarioHerramientas.setSpacing(0);
+        contenedorInventarioHerramientas.setSpacing(2);
         contenedorInventarioHerramientas.getChildren().addAll(etiqueta1, etiqueta2, gridInventario);
 
         Label etiqueta3 = new Label();
         etiqueta3.setText("Herramienta");
-        etiqueta3.setStyle("-fx-font-size: 10;-fx-font-weight: bold; -fx-text-fill: #000000");
+        etiqueta3.setStyle("-fx-font-size:"+TAMANIO/5+";-fx-font-weight: bold; -fx-text-fill: #000000");
 
         Label etiqueta4 = new Label();
         etiqueta4.setText("equipada:");
-        etiqueta4.setStyle("-fx-font-size: 10;-fx-font-weight: bold; -fx-text-fill: #000000");
+        etiqueta4.setStyle("-fx-font-size:"+TAMANIO/5+";-fx-font-weight: bold; -fx-text-fill: #000000");
 
         VBox contenedorVistaHerramienta = new VBox();
         contenedorVistaHerramienta.setAlignment(Pos.CENTER);

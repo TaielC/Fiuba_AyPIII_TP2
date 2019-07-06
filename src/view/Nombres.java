@@ -12,11 +12,11 @@ public class Nombres {
         nombres.put("algocraft.herramienta.Hachaalgocraft.materialherramienta.MaderaMaterialHerramienta","hacha de madera");
         nombres.put("algocraft.herramienta.Hachaalgocraft.materialherramienta.PiedraMaterialHerramienta","hacha de piedra");
         nombres.put("algocraft.herramienta.Hachaalgocraft.materialherramienta.MetalMaterialHerramienta","hacha de meta");
-        nombres.put("algocraft.herramienta.PicoFinoalgocraft.materialherramienta.NingunMaterialHerramienta","pico fino");
+        nombres.put("algocraft.herramienta.PicoFinoalgocraft.materialherramienta.MaterialHerramientaNulo","pico fino");
         nombres.put("algocraft.herramienta.HerramientaNulaalgocraft.materialherramienta.MaterialHerramientaNulo","ninguna herramienta");
     }
 
     public static String get(String string) {
-        return nombres.getOrDefault(string, null);
+        return nombres.getOrDefault(string, "ninguna herramienta");
     }
 }

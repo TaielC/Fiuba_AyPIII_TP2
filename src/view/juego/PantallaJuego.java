@@ -2,21 +2,14 @@ package view.juego;
 
 import algocraft.juego.Juego;
 
-
-import controller.juego.BotonSalirEventHandler;
-import javafx.geometry.Insets;
-import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.layout.*;
-import javafx.scene.paint.Color;
-import javafx.scene.text.Font;
-import javafx.scene.text.FontWeight;
-import view.Imagenes;
+import view.menupausajuego.VentanaMenuPausa;
 
 public class PantallaJuego extends BorderPane {
 
     private Juego juego;
-    private GridPane bottomPane;
+    private Button botonPausa;
 
     public PantallaJuego(Juego juego){
         this.juego = juego;
@@ -34,9 +27,14 @@ public class PantallaJuego extends BorderPane {
         this.setRight(contenedorInventarioHerramientas);
 
         ContenedorInventarioMateriales contenedorInventarioMateriales = new ContenedorInventarioMateriales(this, juego);
+        botonPausa = contenedorInventarioMateriales.getBotonPausa();
         this.setLeft(contenedorInventarioMateriales);
 
         ContenedorTexto contenedorTexto = new ContenedorTexto(texto);
         this.setBottom(contenedorTexto);
+    }
+
+    public void pausar() {
+        new VentanaMenuPausa(this, botonPausa);
     }
 }

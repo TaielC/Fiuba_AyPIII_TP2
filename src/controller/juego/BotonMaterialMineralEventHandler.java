@@ -13,7 +13,6 @@ public class BotonMaterialMineralEventHandler implements EventHandler<ActionEven
     private Juego juego;
     private Posicion posicion;
     private PantallaJuego pantallaJuego;
-    private String texto;
 
     public BotonMaterialMineralEventHandler(PantallaJuego pantallaJuego, Juego juego, Posicion posicion){
         this.juego = juego;
@@ -25,7 +24,7 @@ public class BotonMaterialMineralEventHandler implements EventHandler<ActionEven
     public void handle(ActionEvent actionEvent) {
         juego.jugadorUsarHerramientaEquipada(posicion);
         String nombreHerramienta = Nombres.get(juego.getJugador().getHerramientaEquipada().getClass().getName() + juego.getJugador().getHerramientaEquipada().material().getClass().getName());
-        texto = ("Golpeaste un material, tu herramienta ahora esta rota!");
+        String texto = ("Golpeaste un material, tu herramienta ahora esta rota!");
         if (!(nombreHerramienta.equals("ninguna herramienta"))) {
             double durabilidad = juego.getJugador().getHerramientaEquipada().durabilidad();
             texto = ("Golpeaste un material, tu herramienta ahora tiene una durabilidad igual a:  " + durabilidad);

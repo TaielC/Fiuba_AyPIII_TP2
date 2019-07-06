@@ -26,14 +26,10 @@ public class AlgocraftAplicacion extends Application {
         stage.setTitle("Algocraft");
         stage.setFullScreenExitKeyCombination(KeyCombination.NO_MATCH);
 
-
         Juego.resetJuego();
         Juego juego = Juego.getInstance();
         PantallaJuego pantallaJuego = new PantallaJuego(juego);
         Scene escenaJuego = new Scene(pantallaJuego);
-
-
-
 
         AplicacionOnKeyPressEventHandler AplicacionOnKeyPressEventHandler = new AplicacionOnKeyPressEventHandler(pantallaJuego, juego, stage);
         escenaJuego.setOnKeyPressed(AplicacionOnKeyPressEventHandler);

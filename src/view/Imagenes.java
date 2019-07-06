@@ -18,6 +18,9 @@ public class Imagenes {
         imagenes.put("FondoMenuDerecha", new Image("file:imagenes/FondoMenuDerecha.png", Screen.getPrimary().getVisualBounds().getHeight(), TAMANIO*1.5, false, false));
         imagenes.put("FondoMenuIzquierda", new Image("file:imagenes/FondoMenuIzquierda.png", Screen.getPrimary().getVisualBounds().getHeight(), TAMANIO*1.5, false, false));
 
+        imagenes.put("BotonMenuPausa", new Image("file:imagenes/BotonPausaJuego.png", TAMANIO*1.3, TAMANIO*1.3, false, false));
+        imagenes.put("BotonAyuda", new Image("file:imagenes/BotonAyudaJuego.png", TAMANIO*1.3, TAMANIO*1.3, false, false));
+
         // MenuPrincipal
         imagenes.put("BotonMenuPrincipal", new Image("file:imagenes/Boton.png", TAMANIO*10, TAMANIO*3, true, true));
         imagenes.put("LogoInicio", new Image("file:imagenes/LogoInicio.png"));

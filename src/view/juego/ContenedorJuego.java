@@ -20,9 +20,9 @@ public class ContenedorJuego extends GridPane {
         Mapa mapa = juego.getMapa();
 
         this.setAlignment(Pos.CENTER);
-        this.setPrefSize(16,9);
-        this.setHgap(1);
-        this.setVgap(1);
+        this.setGridLinesVisible(false);
+        this.setHgap(0);
+        this.setVgap(0);
         int tamanioHorizontal = mapa.getBordeHorizontal();
         int tamanioVertical = mapa.getBordeVertical();
         this.setPrefSize(tamanioHorizontal, tamanioVertical);

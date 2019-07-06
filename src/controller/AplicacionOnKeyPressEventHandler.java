@@ -45,5 +45,8 @@ public class AplicacionOnKeyPressEventHandler implements EventHandler<KeyEvent> 
         if (keyEvent.getCode() == KeyCode.F11) {
             stage.setFullScreen(!stage.isFullScreen());
         }
+        if (keyEvent.getCode() == KeyCode.ESCAPE) {
+            pantallaJuego.pausar();
+        }
     }
 }

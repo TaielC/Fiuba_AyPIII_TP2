@@ -25,7 +25,7 @@ public class BotonInventarioHerramientasEventHandler implements EventHandler<Act
         jugador.equiparDeInventario(posicion);
         String nombreHerramienta = Nombres.get(jugador.getHerramientaEquipada().getClass().getName() + jugador.getHerramientaEquipada().material().getClass().getName());
         texto = ("Ahora tu herramienta equipada es un "+ nombreHerramienta);
-        if(nombreHerramienta.equals("ninguna herramienta")){texto = ("Ninguna herramienta equipada");}
+        if(nombreHerramienta.equals("ninguna herramienta")){texto = ("Ninguna herramienta equipada.");}
         pantallaJuego.actualizar(texto);
     }
 }

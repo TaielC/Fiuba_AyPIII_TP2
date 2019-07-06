@@ -39,13 +39,13 @@ public class ContenedorMaterialesConstructor extends GridPane {
 
     private Button botonNuevo(String stringMaterial, MaterialInventario materialInventario, Integer cantidad){
         ImageView vistaImagen = new ImageView(Imagenes.get(stringMaterial));
-        StackPane stackPane = new StackPane();
 
         String formaLetra = "-fx-font-size: "+TAMANIO/2.3+";-fx-font-weight: bold; -fx-text-fill: #F0F0F0";
         Text stringCantidadMaterial = new Text(cantidad.toString());
         stringCantidadMaterial.setFont(Font.font("monospace"));
         stringCantidadMaterial.setStyle(formaLetra);
 
+        StackPane stackPane = new StackPane();
         stackPane.getChildren().addAll(new ImageView(Imagenes.get("FondoCasillero")), vistaImagen, stringCantidadMaterial);
         stackPane.setAlignment(Pos.CENTER);
         StackPane.setAlignment(stringCantidadMaterial, Pos.BOTTOM_RIGHT);

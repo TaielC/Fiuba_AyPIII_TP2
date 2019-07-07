@@ -4,9 +4,12 @@ import algocraft.juego.Juego;
 import algocraft.juego.Posicion;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import view.Nombres;
 import view.juego.PantallaJuego;
+
+import java.io.File;
 
 
 public class BotonMaterialMineralEventHandler implements EventHandler<ActionEvent> {
@@ -16,15 +19,19 @@ public class BotonMaterialMineralEventHandler implements EventHandler<ActionEven
     private PantallaJuego pantallaJuego;
     private MediaPlayer sonido;
 
-    public BotonMaterialMineralEventHandler(PantallaJuego pantallaJuego, Juego juego, Posicion posicion, MediaPlayer sonido){
+    public BotonMaterialMineralEventHandler(PantallaJuego pantallaJuego, Juego juego, Posicion posicion){
         this.juego = juego;
         this.pantallaJuego = pantallaJuego;
         this.posicion = posicion;
-        this.sonido = sonido;
     }
 
     @Override
     public void handle(ActionEvent actionEvent) {
+        String musicFile = "sonidos/golpe.mp3";
+        Media sound = new Media(new File(musicFile).toURI().toString());
+        MediaPlayer sonido = new MediaPlayer(sound);
+        this.sonido = sonido;
+
         juego.jugadorUsarHerramientaEquipada(posicion);
         String nombreHerramienta = Nombres.get(juego.getJugador().getHerramientaEquipada().getClass().getName() + juego.getJugador().getHerramientaEquipada().material().getClass().getName());
         String texto = ("Golpeaste un material, tu herramienta ahora esta rota!");

@@ -7,8 +7,11 @@ import algocraft.juego.Jugador;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Alert;
+import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import view.constructor.PantallaConstructor;
+
+import java.io.File;
 
 public class BotonConstruirHerramientaEventHandler implements EventHandler<ActionEvent>  {
 
@@ -17,16 +20,20 @@ public class BotonConstruirHerramientaEventHandler implements EventHandler<Actio
     private String texto;
     private MediaPlayer sonido;
 
-    public BotonConstruirHerramientaEventHandler(PantallaConstructor pantallaConstructor, Herramienta herramienta, MediaPlayer sonido) {
+    public BotonConstruirHerramientaEventHandler(PantallaConstructor pantallaConstructor, Herramienta herramienta) {
         this.pantallaConstructor = pantallaConstructor;
         this.herramienta = herramienta;
         this.texto = ("Se ha agregado una nueva herramienta al inventario!");
-        this.sonido = sonido;
 
     }
 
     @Override
     public void handle(ActionEvent actionEvent) {
+        String musicFile = "sonidos/nuevaHerramienta.mp3";
+        Media sound = new Media(new File(musicFile).toURI().toString());
+        MediaPlayer sonido = new MediaPlayer(sound);
+        this.sonido = sonido;
+
         if(herramienta instanceof HerramientaNula) return;
         Jugador jugador = pantallaConstructor.getJuego().getJugador();
         try{

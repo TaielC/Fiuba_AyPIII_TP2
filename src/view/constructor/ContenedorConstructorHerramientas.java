@@ -76,22 +76,18 @@ public class ContenedorConstructorHerramientas extends GridPane {
         }
         Image imagenHerramienta = Imagenes.get(herramienta.getClass().getName()+herramienta.material().getClass().getName());
 
-        String musicFile = "sonidos/nuevaHerramienta.mp3";
-        Media sound = new Media(new File(musicFile).toURI().toString());
-        MediaPlayer sonido = new MediaPlayer(sound);
-
         StackPane stackPane = new StackPane();
         stackPane.getChildren().addAll(new ImageView(Imagenes.get("FondoCasillero")), new ImageView(imagenHerramienta));
         stackPane.setAlignment(Pos.CENTER);
         botonConstruir.setGraphic(stackPane);
-        botonConstruir.setOnAction(new BotonConstruirHerramientaEventHandler(pantallaConstructor, herramienta, sonido));
+        botonConstruir.setOnAction(new BotonConstruirHerramientaEventHandler(pantallaConstructor, herramienta));
 
         Image construccionCorrecta = Imagenes.get("ConstruccionCorrecta");
         if(herramienta instanceof HerramientaNula){
             botonConstruir.setDisable(true);
             construccionCorrecta = Imagenes.get("ConstruccionIncorrecta");
         }
-        botonConstruir.setOnAction(new BotonConstruirHerramientaEventHandler(pantallaConstructor, herramienta, sonido));
+        botonConstruir.setOnAction(new BotonConstruirHerramientaEventHandler(pantallaConstructor, herramienta));
         seccionConstruir.getChildren().addAll(botonConstruir, new ImageView(construccionCorrecta));
 
         this.add(seccionConstruir, 2, 0);

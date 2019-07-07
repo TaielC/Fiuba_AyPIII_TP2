@@ -41,12 +41,8 @@ public class ContenedorJuego extends GridPane {
                 ObjetoUbicable objetoUbicable = mapa.getObjetoUbicable(posicion);
                 Image imagen = Imagenes.get(objetoUbicable.getClass().getName());
 
-                String musicFile = "sonidos/golpe.mp3";
-                Media sound = new Media(new File(musicFile).toURI().toString());
-                MediaPlayer sonido = new MediaPlayer(sound);
-
                 boton.setGraphic(new ImageView(imagen));
-                BotonMaterialMineralEventHandler botonEventHandler = new BotonMaterialMineralEventHandler(pantallaJuego, juego, posicion, sonido);
+                BotonMaterialMineralEventHandler botonEventHandler = new BotonMaterialMineralEventHandler(pantallaJuego, juego, posicion);
                 boton.setOnAction(botonEventHandler);
                 this.add(boton,x,y);
             }

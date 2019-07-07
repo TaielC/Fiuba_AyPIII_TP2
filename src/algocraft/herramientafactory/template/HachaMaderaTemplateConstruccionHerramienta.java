@@ -1,6 +1,6 @@
-package algocraft.constructorherramienta.template;
+package algocraft.herramientafactory.template;
 
-import algocraft.constructorherramienta.TableroConstruccionHerramienta;
+import algocraft.herramientafactory.TableroConstruccionHerramienta;
 import algocraft.herramienta.Hacha;
 import algocraft.herramienta.Herramienta;
 import algocraft.materialherramienta.MaderaMaterialHerramienta;

@@ -25,12 +25,10 @@ public class Posicion {
         return direccion.obtenerSiguiente(this);
     }
 
-
     @Override
     public boolean equals(Object objeto){
         return this.hashCode() == objeto.hashCode();
     }
-
 
     @Override
     public int hashCode() {
@@ -40,7 +38,6 @@ public class Posicion {
         String string = Arrays.toString(posicion);
         return string.hashCode();
     }
-
 
     public boolean esAdyacente(Posicion posicion) {
         for(int x=-1 ;x<=1 ;x++) {

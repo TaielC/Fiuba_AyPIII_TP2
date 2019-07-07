@@ -1,4 +1,4 @@
-package algocraft.constructorherramienta;
+package algocraft.herramientafactory;
 
 import algocraft.excepciones.PosicionDeTableroConstruccionHerramientaInvalidaException;
 import algocraft.materialinventario.MaterialInventario;

@@ -1,7 +1,7 @@
 package constructorherramientatest;
 
-import algocraft.constructorherramienta.ConstructorHerramientas;
-import algocraft.constructorherramienta.TableroConstruccionHerramienta;
+import algocraft.herramientafactory.HerramientaFactory;
+import algocraft.herramientafactory.TableroConstruccionHerramienta;
 import algocraft.herramienta.*;
 import algocraft.materialherramienta.MaderaMaterialHerramienta;
 import algocraft.materialherramienta.MetalMaterialHerramienta;
@@ -11,7 +11,7 @@ import algocraft.materialinventario.*;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-public class ConstructorHerramientasTest {
+public class HerramientaFactoryTest {
 
     @Test
     public void test01ElConstructorDevuelveNullAlPasarUnTableroQueNoConstruyeNingunaHerramienta() {
@@ -20,7 +20,7 @@ public class ConstructorHerramientasTest {
         tablero.putSuperiorIzquierda(new MetalMaterialInventario());
         tablero.putInferiorDerecha(new MaderaMaterialInventario());
 
-        assertTrue(ConstructorHerramientas.obtenerHerramienta(tablero) instanceof HerramientaNula);
+        assertTrue(HerramientaFactory.obtenerHerramienta(tablero) instanceof HerramientaNula);
     }
 
     @Test
@@ -33,7 +33,7 @@ public class ConstructorHerramientasTest {
         tablero.putCentro(new MaderaMaterialInventario());
         tablero.putInferior(new MaderaMaterialInventario());
 
-        Herramienta hacha = ConstructorHerramientas.obtenerHerramienta(tablero);
+        Herramienta hacha = HerramientaFactory.obtenerHerramienta(tablero);
         assertNotNull(hacha);
         assertEquals(Hacha.class, hacha.getClass());
         assertEquals(MaderaMaterialHerramienta.class, hacha.material().getClass());
@@ -49,7 +49,7 @@ public class ConstructorHerramientasTest {
         tablero.putCentro(new MaderaMaterialInventario());
         tablero.putInferior(new MaderaMaterialInventario());
 
-        Herramienta pico = ConstructorHerramientas.obtenerHerramienta(tablero);
+        Herramienta pico = HerramientaFactory.obtenerHerramienta(tablero);
         assertNotNull(pico);
         assertEquals(Pico.class, pico.getClass());
         assertEquals(MaderaMaterialHerramienta.class, pico.material().getClass());
@@ -65,7 +65,7 @@ public class ConstructorHerramientasTest {
         tablero.putCentro(new MaderaMaterialInventario());
         tablero.putInferior(new MaderaMaterialInventario());
 
-        Herramienta hacha = ConstructorHerramientas.obtenerHerramienta(tablero);
+        Herramienta hacha = HerramientaFactory.obtenerHerramienta(tablero);
         assertNotNull(hacha);
         assertEquals(Hacha.class, hacha.getClass());
         assertEquals(PiedraMaterialHerramienta.class, hacha.material().getClass());
@@ -81,7 +81,7 @@ public class ConstructorHerramientasTest {
         tablero.putCentro(new MaderaMaterialInventario());
         tablero.putInferior(new MaderaMaterialInventario());
 
-        Herramienta pico = ConstructorHerramientas.obtenerHerramienta(tablero);
+        Herramienta pico = HerramientaFactory.obtenerHerramienta(tablero);
         assertNotNull(pico);
         assertEquals(Pico.class, pico.getClass());
         assertEquals(PiedraMaterialHerramienta.class, pico.material().getClass());
@@ -97,7 +97,7 @@ public class ConstructorHerramientasTest {
         tablero.putCentro(new MaderaMaterialInventario());
         tablero.putInferior(new MaderaMaterialInventario());
 
-        Herramienta hacha = ConstructorHerramientas.obtenerHerramienta(tablero);
+        Herramienta hacha = HerramientaFactory.obtenerHerramienta(tablero);
         assertNotNull(hacha);
         assertEquals(Hacha.class, hacha.getClass());
         assertEquals(MetalMaterialHerramienta.class, hacha.material().getClass());
@@ -113,7 +113,7 @@ public class ConstructorHerramientasTest {
         tablero.putCentro(new MaderaMaterialInventario());
         tablero.putInferior(new MaderaMaterialInventario());
 
-        Herramienta pico = ConstructorHerramientas.obtenerHerramienta(tablero);
+        Herramienta pico = HerramientaFactory.obtenerHerramienta(tablero);
         assertNotNull(pico);
         assertEquals(Pico.class, pico.getClass());
         assertEquals(MetalMaterialHerramienta.class, pico.material().getClass());
@@ -130,7 +130,7 @@ public class ConstructorHerramientasTest {
         tablero.putCentro(new MaderaMaterialInventario());
         tablero.putInferior(new MaderaMaterialInventario());
 
-        Herramienta picoFino = ConstructorHerramientas.obtenerHerramienta(tablero);
+        Herramienta picoFino = HerramientaFactory.obtenerHerramienta(tablero);
         assertNotNull(picoFino);
         assertEquals(PicoFino.class, picoFino.getClass());
     }

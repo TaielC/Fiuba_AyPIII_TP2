@@ -1,7 +1,7 @@
 package constructorherramientatest;
 
-import algocraft.constructorherramienta.TableroConstruccionHerramienta;
-import algocraft.constructorherramienta.template.*;
+import algocraft.herramientafactory.TableroConstruccionHerramienta;
+import algocraft.herramientafactory.template.*;
 import algocraft.materialinventario.*;
 
 import org.junit.Test;

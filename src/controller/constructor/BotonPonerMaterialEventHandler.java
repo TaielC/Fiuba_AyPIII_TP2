@@ -1,6 +1,6 @@
 package controller.constructor;
 
-import algocraft.constructorherramienta.TableroConstruccionHerramienta;
+import algocraft.herramientafactory.TableroConstruccionHerramienta;
 import algocraft.inventario.InventarioMateriales;
 import algocraft.materialinventario.MaterialInventario;
 import javafx.event.ActionEvent;

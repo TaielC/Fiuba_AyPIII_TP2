@@ -7,6 +7,7 @@ import algocraft.juego.Jugador;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Alert;
+import javafx.scene.media.MediaPlayer;
 import view.constructor.PantallaConstructor;
 
 public class BotonConstruirHerramientaEventHandler implements EventHandler<ActionEvent>  {
@@ -14,11 +15,13 @@ public class BotonConstruirHerramientaEventHandler implements EventHandler<Actio
     private PantallaConstructor pantallaConstructor;
     private Herramienta herramienta;
     private String texto;
+    private MediaPlayer sonido;
 
-    public BotonConstruirHerramientaEventHandler(PantallaConstructor pantallaConstructor, Herramienta herramienta) {
+    public BotonConstruirHerramientaEventHandler(PantallaConstructor pantallaConstructor, Herramienta herramienta, MediaPlayer sonido) {
         this.pantallaConstructor = pantallaConstructor;
         this.herramienta = herramienta;
         this.texto = ("Se ha agregado una nueva herramienta al inventario!");
+        this.sonido = sonido;
 
     }
 
@@ -28,6 +31,7 @@ public class BotonConstruirHerramientaEventHandler implements EventHandler<Actio
         Jugador jugador = pantallaConstructor.getJuego().getJugador();
         try{
             jugador.agregarAInventario(herramienta);
+            sonido.play();
         } catch (InventarioHerramientasEstaLlenoException e) {
             Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.setTitle("");

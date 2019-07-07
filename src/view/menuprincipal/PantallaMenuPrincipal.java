@@ -17,7 +17,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
-import view.Imagenes;
+import media.Imagenes;
 
 public class PantallaMenuPrincipal extends VBox {
 

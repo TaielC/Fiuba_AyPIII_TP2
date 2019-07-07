@@ -15,7 +15,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.stage.Screen;
-import view.Imagenes;
+import media.Imagenes;
 
 public class ContenedorInventarioHerramientas extends VBox {
 

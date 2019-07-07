@@ -1,15 +1,17 @@
 package controller.juego;
 
+import algocraft.herramienta.Hacha;
+import algocraft.herramienta.Pico;
 import algocraft.juego.Juego;
 import algocraft.juego.Posicion;
+import algocraft.materialmineral.MaterialMineralNulo;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
+import media.Sonidos;
 import view.Nombres;
 import view.juego.PantallaJuego;
-
-import java.io.File;
 
 
 public class BotonMaterialMineralEventHandler implements EventHandler<ActionEvent> {
@@ -17,7 +19,6 @@ public class BotonMaterialMineralEventHandler implements EventHandler<ActionEven
     private Juego juego;
     private Posicion posicion;
     private PantallaJuego pantallaJuego;
-    private MediaPlayer sonido;
 
     public BotonMaterialMineralEventHandler(PantallaJuego pantallaJuego, Juego juego, Posicion posicion){
         this.juego = juego;
@@ -27,19 +28,31 @@ public class BotonMaterialMineralEventHandler implements EventHandler<ActionEven
 
     @Override
     public void handle(ActionEvent actionEvent) {
-        String musicFile = "sonidos/golpe.mp3";
-        Media sound = new Media(new File(musicFile).toURI().toString());
-        MediaPlayer sonido = new MediaPlayer(sound);
-        this.sonido = sonido;
+        Media soundMadera = Sonidos.get("golpeMadera");
+        MediaPlayer sonidoMadera = new MediaPlayer(soundMadera);
+        Media soundNoMadera = Sonidos.get("golpeNoMadera");
+        MediaPlayer sonidoNoMadera = new MediaPlayer(soundNoMadera);
+        Media soundObtenido = Sonidos.get("materialObtenido");
+        MediaPlayer sonidoObtenido = new MediaPlayer(soundObtenido);
 
+        boolean habiaMaterial = !(juego.getMapa().getObjetoUbicable(posicion) instanceof MaterialMineralNulo);
         juego.jugadorUsarHerramientaEquipada(posicion);
+
         String nombreHerramienta = Nombres.get(juego.getJugador().getHerramientaEquipada().getClass().getName() + juego.getJugador().getHerramientaEquipada().material().getClass().getName());
-        String texto = ("Golpeaste un material, tu herramienta ahora esta rota!");
+        String texto = ("Golpeaste un material, no hay una Herramienta equipada!");
         if (!(nombreHerramienta.equals("ninguna herramienta"))) {
             double durabilidad = juego.getJugador().getHerramientaEquipada().durabilidad();
-            texto = ("Golpeaste un material, tu herramienta ahora tiene una durabilidad igual a:  " + durabilidad);
+            texto = ("Golpeaste un material, tu Herramienta ahora tiene una durabilidad igual a: " + durabilidad);
+            if(habiaMaterial && juego.getJugador().getPosicion().esAdyacente(posicion)){
+                if(juego.getJugador().getHerramientaEquipada() instanceof Hacha)
+                    sonidoMadera.play();
+                else
+                    sonidoNoMadera.play();
+                if(juego.getMapa().getObjetoUbicable(posicion) instanceof MaterialMineralNulo)
+                    sonidoObtenido.play();
+            }
+
         }
-        sonido.play();
         pantallaJuego.actualizar(texto);
     }
 }

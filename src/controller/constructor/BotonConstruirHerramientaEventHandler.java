@@ -9,16 +9,14 @@ import javafx.event.EventHandler;
 import javafx.scene.control.Alert;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
+import media.Sonidos;
 import view.constructor.PantallaConstructor;
-
-import java.io.File;
 
 public class BotonConstruirHerramientaEventHandler implements EventHandler<ActionEvent>  {
 
     private PantallaConstructor pantallaConstructor;
     private Herramienta herramienta;
     private String texto;
-    private MediaPlayer sonido;
 
     public BotonConstruirHerramientaEventHandler(PantallaConstructor pantallaConstructor, Herramienta herramienta) {
         this.pantallaConstructor = pantallaConstructor;
@@ -29,10 +27,8 @@ public class BotonConstruirHerramientaEventHandler implements EventHandler<Actio
 
     @Override
     public void handle(ActionEvent actionEvent) {
-        String musicFile = "sonidos/nuevaHerramienta.mp3";
-        Media sound = new Media(new File(musicFile).toURI().toString());
+        Media sound = Sonidos.get("nuevaHerramienta");
         MediaPlayer sonido = new MediaPlayer(sound);
-        this.sonido = sonido;
 
         if(herramienta instanceof HerramientaNula) return;
         Jugador jugador = pantallaConstructor.getJuego().getJugador();

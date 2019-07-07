@@ -19,7 +19,7 @@ import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextAlignment;
 import javafx.stage.Screen;
-import view.Imagenes;
+import media.Imagenes;
 
 public class ContenedorInventarioMateriales extends BorderPane {
 

@@ -5,7 +5,10 @@ import javafx.event.EventHandler;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.effect.ColorAdjust;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.scene.text.Text;
+import media.Sonidos;
 
 public class BotonAyudaEventHandler implements EventHandler<ActionEvent> {
 
@@ -30,6 +33,9 @@ public class BotonAyudaEventHandler implements EventHandler<ActionEvent> {
                 " - Utilice la tecla 'esc' para el menú de pausa.\n";
         alert.getDialogPane().setContent(new Text(mensaje));
         alert.setOnHidden((e) -> boton.setEffect(new ColorAdjust()));
+        Media sound = Sonidos.get("boton");
+        MediaPlayer sonido = new MediaPlayer(sound);
+        sonido.play();
         alert.show();
     }
 }

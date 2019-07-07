@@ -16,12 +16,8 @@ import javafx.scene.layout.GridPane;
 
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
-import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer;
 import javafx.stage.Screen;
-import view.Imagenes;
-import java.awt.font.ImageGraphicAttribute;
-import java.io.File;
+import media.Imagenes;
 
 
 public class ContenedorConstructorHerramientas extends GridPane {

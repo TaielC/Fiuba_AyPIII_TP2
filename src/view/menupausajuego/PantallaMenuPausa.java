@@ -9,7 +9,7 @@ import javafx.scene.layout.*;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Screen;
-import view.Imagenes;
+import media.Imagenes;
 
 public class PantallaMenuPausa extends VBox {
 

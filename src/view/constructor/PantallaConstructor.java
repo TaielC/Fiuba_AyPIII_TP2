@@ -17,7 +17,7 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
-import view.Imagenes;
+import media.Imagenes;
 import view.juego.PantallaJuego;
 
 public class PantallaConstructor extends BorderPane{

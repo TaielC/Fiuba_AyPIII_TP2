@@ -5,7 +5,10 @@ import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.effect.ColorAdjust;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
+import media.Sonidos;
 
 import java.util.concurrent.TimeUnit;
 
@@ -23,10 +26,9 @@ public class BotonJugarEventHandler implements EventHandler<ActionEvent> {
 
     @Override
     public void handle(ActionEvent actionEvent) {
-        Button boton = (Button) actionEvent.getSource();
-        ColorAdjust colorAdjust = new ColorAdjust();
-        colorAdjust.setBrightness(-0.5);
-        boton.setEffect(colorAdjust);
+        Media sound = Sonidos.get("boton");
+        MediaPlayer sonido = new MediaPlayer(sound);
+        sonido.play();
         ejecutarJuego();
     }
 

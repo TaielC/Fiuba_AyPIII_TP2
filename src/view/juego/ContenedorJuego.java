@@ -9,12 +9,8 @@ import javafx.scene.layout.*;
 
 import javafx.scene.image.ImageView;
 import javafx.scene.control.Button;
-import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer;
 import javafx.stage.Screen;
-import view.Imagenes;
-
-import java.io.File;
+import media.Imagenes;
 
 public class ContenedorJuego extends GridPane {
 
